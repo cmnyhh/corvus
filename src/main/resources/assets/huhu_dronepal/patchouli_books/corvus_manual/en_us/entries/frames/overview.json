@@ -1,0 +1,20 @@
+{
+  "name": "dronepal.manual.entry.overview",
+  "category": "huhu_dronepal:frames",
+  "icon": "huhu_dronepal:airframe",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.frames.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.frames.2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.frames.3"
+    }
+  ]
+}

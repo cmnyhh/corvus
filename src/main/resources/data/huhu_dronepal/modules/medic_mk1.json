@@ -1,0 +1,30 @@
+{
+  "display_name": "dronepal.module.medic",
+  "family": "medic",
+  "tier": 1,
+  "slot_type": "function",
+  "drain_watts": 4,
+  "goals": [
+    "drone_heal"
+  ],
+  "intents": [
+    "order.heal"
+  ],
+  "params": {
+    "active_drain_watts": 12,
+    "heal_per_tick": 0.025,
+    "max_heal_per_use": 6.0,
+    "cooldown_ticks": 800,
+    "cure_effect_every_ticks": 1200,
+    "bonus": null,
+    "break_on_damage": true
+  },
+  "wheel": {
+    "kind": "toggle",
+    "label": "dronepal.wheel.medic"
+  },
+  "vendor": "alb",
+  "tier_label": "Gen 1",
+  "product_name": "纳米修复套件",
+  "product_name_en": "Nano Repair Kit"
+}

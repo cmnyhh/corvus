@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:circuit_board",
+      "count": 2
+    },
+    {
+      "item": "huhu_dronepal:servo_motor",
+      "count": 1
+    },
+    {
+      "item": "minecraft:gold_ingot",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:flight_controller"
+  }
+}

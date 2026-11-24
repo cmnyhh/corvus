@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{module_product:\"huhu_dronepal:medic_mk1\",module_family:\"medic\",module_tier:1}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{module_product:\"huhu_dronepal:medic_mk2\",module_family:\"medic\",module_tier:2}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{module_product:\"huhu_dronepal:medic_mk3\",module_family:\"medic\",module_tier:3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

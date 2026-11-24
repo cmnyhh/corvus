@@ -1,0 +1,170 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "huhu_dronepal:item/module"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.03125
+      },
+      "model": "huhu_dronepal:item/carry_mk1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.0625
+      },
+      "model": "huhu_dronepal:item/carry_mk2"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.09375
+      },
+      "model": "huhu_dronepal:item/carry_mk3"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.125
+      },
+      "model": "huhu_dronepal:item/carry_rust_g1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.15625
+      },
+      "model": "huhu_dronepal:item/combat_mk1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.1875
+      },
+      "model": "huhu_dronepal:item/combat_mk2"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.21875
+      },
+      "model": "huhu_dronepal:item/combat_mk3"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.25
+      },
+      "model": "huhu_dronepal:item/combat_rust_g1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.28125
+      },
+      "model": "huhu_dronepal:item/light_mk1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.3125
+      },
+      "model": "huhu_dronepal:item/light_mk2"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.34375
+      },
+      "model": "huhu_dronepal:item/light_mk3"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.375
+      },
+      "model": "huhu_dronepal:item/light_rust_g1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.40625
+      },
+      "model": "huhu_dronepal:item/link_mk1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.4375
+      },
+      "model": "huhu_dronepal:item/link_mk2"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.46875
+      },
+      "model": "huhu_dronepal:item/link_mk3"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.5
+      },
+      "model": "huhu_dronepal:item/medic_mk1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.53125
+      },
+      "model": "huhu_dronepal:item/medic_mk2"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.5625
+      },
+      "model": "huhu_dronepal:item/medic_mk3"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.59375
+      },
+      "model": "huhu_dronepal:item/medic_rust_g1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.625
+      },
+      "model": "huhu_dronepal:item/scan_mk1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.65625
+      },
+      "model": "huhu_dronepal:item/scan_mk2"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.6875
+      },
+      "model": "huhu_dronepal:item/scan_mk3"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.71875
+      },
+      "model": "huhu_dronepal:item/scan_rust_g1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.75
+      },
+      "model": "huhu_dronepal:item/solar_mk1"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.78125
+      },
+      "model": "huhu_dronepal:item/solar_mk2"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.8125
+      },
+      "model": "huhu_dronepal:item/solar_mk3"
+    },
+    {
+      "predicate": {
+        "huhu_dronepal:module_product": 0.84375
+      },
+      "model": "huhu_dronepal:item/solar_rust_g1"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "vendor": "ahi",
+  "tier": 3,
+  "tier_label": "Mk.III",
+  "product_name": "装甲电池",
+  "capacity_fe": 1200000,
+  "max_receive": 1000,
+  "display_name": "dronepal.battery",
+  "slot_type": "battery",
+  "mass": 2.8,
+  "knockback_resistance_bonus": 0.34,
+  "mount_capacity_bonus": 0.28
+}

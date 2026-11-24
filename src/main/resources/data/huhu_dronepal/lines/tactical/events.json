@@ -1,0 +1,66 @@
+{
+  "pack": "tactical",
+  "group": "events",
+  "lines": [
+    {
+      "id": "low_battery",
+      "text": "电量低。剩余 {energy} FE。",
+      "weight": 1,
+      "voice": "tactical/low_battery"
+    },
+    {
+      "id": "dimension",
+      "text": "新维度已记录。",
+      "weight": 1,
+      "voice": "tactical/dimension"
+    },
+    {
+      "id": "nightfall",
+      "text": "已入夜。注意警戒。",
+      "weight": 1,
+      "voice": "tactical/nightfall"
+    },
+    {
+      "id": "rain_start",
+      "text": "降雨开始。",
+      "weight": 1,
+      "voice": "tactical/rain_start"
+    },
+    {
+      "id": "fall",
+      "text": "检测到坠落。检查生命体征。",
+      "weight": 1,
+      "voice": "tactical/fall"
+    },
+    {
+      "id": "module_offline",
+      "text": "模块离线，检查供能。",
+      "weight": 1,
+      "voice": "tactical/module_offline"
+    },
+    {
+      "id": "death",
+      "text": "生命信号中断。",
+      "weight": 1,
+      "voice": "tactical/death"
+    },
+    {
+      "id": "respawn",
+      "text": "生命信号恢复。",
+      "weight": 1,
+      "voice": "tactical/respawn"
+    },
+    {
+      "id": "hostile_group",
+      "text": "扫描发现多个敌对目标。",
+      "weight": 1,
+      "voice": "tactical/hostile_group"
+    },
+    {
+      "id": "rare_ore",
+      "text": "稀有矿物已标记。",
+      "weight": 1,
+      "voice": "tactical/rare_ore"
+    }
+  ]
+}

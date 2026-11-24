@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:battery_cell",
+      "count": 1
+    },
+    {
+      "item": "minecraft:glass",
+      "count": 2
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:medical_pump"
+  }
+}

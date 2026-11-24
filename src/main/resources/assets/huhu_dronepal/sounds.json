@@ -1,0 +1,170 @@
+{
+  "voice/chatty/dimension": {
+    "subtitle": "subtitles.dronepal.voice.chatty.dimension",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/dimension"
+    ]
+  },
+  "voice/chatty/fire_start": {
+    "subtitle": "subtitles.dronepal.voice.chatty.fire_start",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/fire_start"
+    ]
+  },
+  "voice/chatty/friend_low": {
+    "subtitle": "subtitles.dronepal.voice.chatty.friend_low",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/friend_low"
+    ]
+  },
+  "voice/chatty/help": {
+    "subtitle": "subtitles.dronepal.voice.chatty.help",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/help"
+    ]
+  },
+  "voice/chatty/hostile_near": {
+    "subtitle": "subtitles.dronepal.voice.chatty.hostile_near",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/hostile_near"
+    ]
+  },
+  "voice/chatty/insult": {
+    "subtitle": "subtitles.dronepal.voice.chatty.insult",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/insult"
+    ]
+  },
+  "voice/chatty/kill": {
+    "subtitle": "subtitles.dronepal.voice.chatty.kill",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/kill"
+    ]
+  },
+  "voice/chatty/low_battery": {
+    "subtitle": "subtitles.dronepal.voice.chatty.low_battery",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/low_battery"
+    ]
+  },
+  "voice/chatty/nightfall": {
+    "subtitle": "subtitles.dronepal.voice.chatty.nightfall",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/nightfall"
+    ]
+  },
+  "voice/chatty/no_ammo": {
+    "subtitle": "subtitles.dronepal.voice.chatty.no_ammo",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/no_ammo"
+    ]
+  },
+  "voice/chatty/rain_start": {
+    "subtitle": "subtitles.dronepal.voice.chatty.rain_start",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/rain_start"
+    ]
+  },
+  "voice/chatty/smalltalk": {
+    "subtitle": "subtitles.dronepal.voice.chatty.smalltalk",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/smalltalk"
+    ]
+  },
+  "voice/chatty/thanks": {
+    "subtitle": "subtitles.dronepal.voice.chatty.thanks",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/thanks"
+    ]
+  },
+  "voice/chatty/unknown": {
+    "subtitle": "subtitles.dronepal.voice.chatty.unknown",
+    "sounds": [
+      "huhu_dronepal:voice/chatty/unknown"
+    ]
+  },
+  "voice/tactical/dimension": {
+    "subtitle": "subtitles.dronepal.voice.tactical.dimension",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/dimension"
+    ]
+  },
+  "voice/tactical/fire_start": {
+    "subtitle": "subtitles.dronepal.voice.tactical.fire_start",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/fire_start"
+    ]
+  },
+  "voice/tactical/friend_low": {
+    "subtitle": "subtitles.dronepal.voice.tactical.friend_low",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/friend_low"
+    ]
+  },
+  "voice/tactical/help": {
+    "subtitle": "subtitles.dronepal.voice.tactical.help",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/help"
+    ]
+  },
+  "voice/tactical/hostile_near": {
+    "subtitle": "subtitles.dronepal.voice.tactical.hostile_near",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/hostile_near"
+    ]
+  },
+  "voice/tactical/insult": {
+    "subtitle": "subtitles.dronepal.voice.tactical.insult",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/insult"
+    ]
+  },
+  "voice/tactical/kill": {
+    "subtitle": "subtitles.dronepal.voice.tactical.kill",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/kill"
+    ]
+  },
+  "voice/tactical/low_battery": {
+    "subtitle": "subtitles.dronepal.voice.tactical.low_battery",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/low_battery"
+    ]
+  },
+  "voice/tactical/nightfall": {
+    "subtitle": "subtitles.dronepal.voice.tactical.nightfall",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/nightfall"
+    ]
+  },
+  "voice/tactical/no_ammo": {
+    "subtitle": "subtitles.dronepal.voice.tactical.no_ammo",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/no_ammo"
+    ]
+  },
+  "voice/tactical/rain_start": {
+    "subtitle": "subtitles.dronepal.voice.tactical.rain_start",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/rain_start"
+    ]
+  },
+  "voice/tactical/smalltalk": {
+    "subtitle": "subtitles.dronepal.voice.tactical.smalltalk",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/smalltalk"
+    ]
+  },
+  "voice/tactical/thanks": {
+    "subtitle": "subtitles.dronepal.voice.tactical.thanks",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/thanks"
+    ]
+  },
+  "voice/tactical/unknown": {
+    "subtitle": "subtitles.dronepal.voice.tactical.unknown",
+    "sounds": [
+      "huhu_dronepal:voice/tactical/unknown"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "family": "medic",
+  "tier": 1,
+  "vendor": "rust",
+  "tier_label": "G1",
+  "product_name": "土法止血包",
+  "drain_watts": 5,
+  "goals": [
+    "drone_heal"
+  ],
+  "intents": [
+    "order.heal"
+  ],
+  "params": {
+    "active_drain_watts": 14,
+    "heal_per_tick": 0.04,
+    "max_heal_per_use": 6.0,
+    "cooldown_ticks": 600,
+    "cure_effect_every_ticks": 1500,
+    "side_effect_chance": 0.2,
+    "side_effect": "minecraft:nausea",
+    "side_effect_ticks": 200,
+    "break_on_damage": true
+  },
+  "desc": "治得快，但两成概率让你头晕十秒。",
+  "display_name": "dronepal.module.medic",
+  "slot_type": "function"
+}

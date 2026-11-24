@@ -1,0 +1,23 @@
+{
+  "display_name": "dronepal.vendor.cvs",
+  "name_zh": "渡鸦系统",
+  "name_en": "Corvus Systems",
+  "prefix": "CVS",
+  "tier_labels": [
+    "R-1",
+    "R-2",
+    "R-3"
+  ],
+  "category": "military",
+  "badge_color": "#2F4A6B",
+  "traits": {
+    "scan_radius_multiplier": 1.2,
+    "drain_multiplier": 1.0,
+    "reliability": 1.0
+  },
+  "obtain": {
+    "method": "military_supply",
+    "note": "军用补给箱 / 遗迹终端"
+  },
+  "flavor": "你听得见，是因为我们想让你听见。"
+}

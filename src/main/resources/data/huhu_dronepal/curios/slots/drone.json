@@ -1,0 +1,5 @@
+{
+  "size": 1,
+  "icon": "huhu_dronepal:slot/drone",
+  "validators": ["curios:tag"]
+}

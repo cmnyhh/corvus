@@ -1,0 +1,28 @@
+{
+  "name": "dronepal.manual.entry.modules_overview",
+  "category": "huhu_dronepal:modules",
+  "icon": "huhu_dronepal:module",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.modules.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.modules.2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.modules.3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.modules.4"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.modules.5"
+    }
+  ]
+}

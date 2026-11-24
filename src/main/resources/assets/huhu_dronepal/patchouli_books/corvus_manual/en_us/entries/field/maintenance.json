@@ -1,0 +1,16 @@
+{
+  "name": "dronepal.manual.entry.maintenance",
+  "category": "huhu_dronepal:field",
+  "icon": "huhu_dronepal:chip_silent",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.maint.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.maint.2"
+    }
+  ]
+}

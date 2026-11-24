@@ -1,0 +1,48 @@
+{
+  "pack": "chatty",
+  "group": "console",
+  "lines": [
+    {
+      "trigger": "greeting",
+      "id": "hello",
+      "text": "我在呢！今天去哪里？",
+      "weight": 4
+    },
+    {
+      "trigger": "greeting",
+      "id": "wave",
+      "text": "嗨！我在你旁边呀。",
+      "weight": 2
+    },
+    {
+      "trigger": "greeting",
+      "id": "ready",
+      "text": "收到收到，小七就位！",
+      "weight": 1
+    },
+    {
+      "trigger": "status",
+      "id": "battery",
+      "text": "我还剩 {energy} FE 电哦！",
+      "weight": 1
+    },
+    {
+      "trigger": "player",
+      "id": "vitals",
+      "text": "你还有 {hp}% 的血，注意脚下哦！",
+      "weight": 1
+    },
+    {
+      "trigger": "weather",
+      "id": "weather",
+      "text": "抬头看看，今天是{weather}呀。",
+      "weight": 1
+    },
+    {
+      "trigger": "time",
+      "id": "clock",
+      "text": "现在是 {time}，我帮你盯着呢！",
+      "weight": 1
+    }
+  ]
+}

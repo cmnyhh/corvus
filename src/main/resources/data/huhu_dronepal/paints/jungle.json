@@ -1,0 +1,7 @@
+{
+  "display_name": "dronepal.paint.jungle",
+  "name_zh": "丛林绿",
+  "texture": "huhu_dronepal:entity/drone_jungle",
+  "glow_color": "#4f9c2a",
+  "hud_tint": "#c8ff9a"
+}

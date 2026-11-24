@@ -1,0 +1,8 @@
+{
+  "id": "order.cover",
+  "requires_module": "mod_combat",
+  "aliases": ["掩护我", "开火", "打它", "上", "干掉它"],
+  "patterns": [".*(打|射|干).*(它|那只|前面).*"],
+  "response": "action",
+  "denied": "我没装武器模块。"
+}

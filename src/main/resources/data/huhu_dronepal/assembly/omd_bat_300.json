@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:omd_bat_200",
+      "count": 1
+    },
+    {
+      "item": "huhu_dronepal:battery_cell",
+      "count": 4
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:omd_bat_300"
+  }
+}

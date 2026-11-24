@@ -1,0 +1,25 @@
+{
+  "display_name": "dronepal.module.light",
+  "family": "light",
+  "tier": 2,
+  "slot_type": "function",
+  "drain_watts": 3,
+  "goals": [],
+  "intents": [
+    "order.light"
+  ],
+  "params": {
+    "light_level": 15,
+    "radius": 12,
+    "underwater": false,
+    "tint": "#A8E8FF"
+  },
+  "wheel": {
+    "kind": "toggle",
+    "label": "dronepal.wheel.light"
+  },
+  "vendor": "omd",
+  "tier_label": "200",
+  "product_name": "照明灯组",
+  "product_name_en": "Luma Pod"
+}

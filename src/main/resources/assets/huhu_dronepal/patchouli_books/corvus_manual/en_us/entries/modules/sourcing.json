@@ -1,0 +1,20 @@
+{
+  "name": "dronepal.manual.entry.sourcing",
+  "category": "huhu_dronepal:modules",
+  "icon": "huhu_dronepal:circuit_board",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.sourcing.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.sourcing.2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.sourcing.3"
+    }
+  ]
+}

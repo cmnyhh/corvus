@@ -1,0 +1,8 @@
+{
+  "id": "order.place",
+  "requires_module": null,
+  "aliases": ["放个方块", "帮我放", "搭一下", "挖掉它", "把门打开"],
+  "patterns": [".*(放|搭|挖|拆|开).*(方块|门|墙).*"],
+  "response": "refuse",
+  "line": "我没有机械臂。"
+}

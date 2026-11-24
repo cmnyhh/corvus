@@ -1,0 +1,16 @@
+{
+  "name": "dronepal.manual.entry.controls",
+  "category": "huhu_dronepal:start",
+  "icon": "huhu_dronepal:chip_tactical",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.controls.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.controls.2"
+    }
+  ]
+}

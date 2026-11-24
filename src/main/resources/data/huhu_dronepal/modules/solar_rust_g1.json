@@ -1,0 +1,19 @@
+{
+  "family": "solar",
+  "tier": 1,
+  "vendor": "rust",
+  "tier_label": "G1",
+  "product_name": "捡来的板子",
+  "drain_watts": 0,
+  "goals": [],
+  "intents": [],
+  "params": {
+    "clear": 5,
+    "rain": 1,
+    "night": 0,
+    "output_jitter": 0.3
+  },
+  "desc": "效率只有正品六成，输出还忽高忽低。",
+  "display_name": "dronepal.module.solar",
+  "slot_type": "function"
+}

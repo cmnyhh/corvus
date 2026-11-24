@@ -1,0 +1,65 @@
+// Corvus for Minecraft 1.20.1 (Forge 47.x). 1.20.1 predates NeoForge, so this is a separate toolchain.
+plugins {
+    id 'eclipse'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+version = '0.1.0'
+group = 'dev.corvus'
+base { archivesName = '渡鸦-随行无人机-1.20.1' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    // Curios is a mixin mod whose refmap is authored in SRG names. In a dev runtime the classes are
+    // official names, so Mixin has to remap that refmap with the SRG->official mapping ForgeGradle
+    // generates. Without these two properties Curios fails to apply AccessorEntity at boot.
+    def mixinProps = [
+            'mixin.env.remapRefMap'       : 'true',
+            'mixin.env.refMapRemappingFile': "${buildDir}/createSrgToMcp/output.srg"
+    ]
+    runs {
+        client {
+            workingDirectory project.file('run')
+            // Dev smoke harness switches; both default to off so a plain runClient is untouched.
+            property 'corvus.smoke', (project.findProperty('corvusSmoke') ?: '0').toString()
+            property 'corvus.gapsShot', (project.findProperty('corvusGapsShot') ?: '0').toString()
+            property 'corvus.artifacts', project.file('artifacts/client').absolutePath
+            mixinProps.each { key, value -> property key, value.toString() }
+            if (project.hasProperty('corvusQuickPlay')) {
+                args '--quickPlaySingleplayer', project.property('corvusQuickPlay').toString()
+            }
+        }
+        server {
+            workingDirectory project.file('run-server')
+            property 'corvus.genworld', (project.findProperty('corvusGenWorld') ?: '0').toString()
+            // Data/hardware acceptance run (see dev.corvus.devtools.HardwareSmoke).
+            property 'corvus.hwtest', (project.findProperty('corvusHwtest') ?: '0').toString()
+            property 'corvus.gaps', (project.findProperty('corvusGaps') ?: '0').toString()
+            mixinProps.each { key, value -> property key, value.toString() }
+            args '--nogui'
+            // Parallel agents share run-server; -PcorvusLevel=<name> runs the smoke against its own
+            // world instead of fighting over the session lock of the shared one.
+            if (project.hasProperty('corvusLevel')) {
+                args '--world', project.property('corvusLevel').toString()
+            }
+        }
+    }
+}
+repositories {
+    mavenCentral()
+    // Curios 5.x (1.20.1) is published only by its author's maven. A plain maven block (not
+    // exclusiveContent): fg.deobf resolves the remapped artifact through ForgeGradle's own
+    // generated repository, which exclusiveContent would hide for this group.
+    maven {
+        name = 'IllusiveNetworks'
+        url = 'https://maven.theillusivec4.top/'
+    }
+}
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+    // The api classifier is mojmap-compiled, so it compiles without deobf; the runtime jar must be
+    // deobfuscated like any other 1.20.1 mod jar. Neither is bundled into our jar.
+    compileOnly 'top.theillusivec4.curios:curios-forge:5.14.1+1.20.1:api'
+    runtimeOnly fg.deobf('top.theillusivec4.curios:curios-forge:5.14.1+1.20.1')
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }

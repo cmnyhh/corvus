@@ -1,0 +1,24 @@
+{
+  "family": "scan",
+  "tier": 1,
+  "vendor": "rust",
+  "tier_label": "G1",
+  "product_name": "拼装测距仪",
+  "drain_watts": 5,
+  "goals": [],
+  "intents": [
+    "scan",
+    "scan.hostile"
+  ],
+  "params": {
+    "radius": 14,
+    "hostile": true,
+    "ore": false,
+    "mark_ticks": 80,
+    "malfunction_chance": 0.08,
+    "malfunction_ticks": 40
+  },
+  "desc": "范围不如军品，但便宜。偶尔会报错把石头当敌人。",
+  "display_name": "dronepal.module.scan",
+  "slot_type": "function"
+}

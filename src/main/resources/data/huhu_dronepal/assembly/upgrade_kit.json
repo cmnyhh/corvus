@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:circuit_board",
+      "count": 2
+    },
+    {
+      "item": "minecraft:copper_block",
+      "count": 1
+    },
+    {
+      "item": "minecraft:amethyst_shard",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:upgrade_kit"
+  }
+}

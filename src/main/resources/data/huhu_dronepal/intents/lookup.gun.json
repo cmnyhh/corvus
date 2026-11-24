@@ -1,0 +1,11 @@
+{
+  "id": "lookup.gun",
+  "aliases": [
+    "枪械数据",
+    "这枪",
+    "枪伤害",
+    "伤害",
+    "gun"
+  ],
+  "response": "lookup"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "dronepal.manual.entry.batteries",
+  "category": "huhu_dronepal:power",
+  "icon": "huhu_dronepal:omd_bat_300",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "huhu_dronepal:omd_bat_300",
+      "text": "dronepal.manual.p.batteries.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.batteries.2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.batteries.3"
+    }
+  ]
+}

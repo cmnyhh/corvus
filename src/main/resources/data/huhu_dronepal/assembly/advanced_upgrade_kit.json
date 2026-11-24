@@ -1,0 +1,23 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:circuit_board",
+      "count": 3
+    },
+    {
+      "item": "minecraft:diamond",
+      "count": 1
+    },
+    {
+      "item": "minecraft:netherite_scrap",
+      "count": 1
+    },
+    {
+      "item": "huhu_dronepal:heat_sink",
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:advanced_upgrade_kit"
+  }
+}

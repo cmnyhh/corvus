@@ -1,0 +1,23 @@
+{
+  "display_name": "dronepal.vendor.alb",
+  "name_zh": "白鸦医疗",
+  "name_en": "Alba Medical",
+  "prefix": "ALB",
+  "tier_labels": [
+    "Gen 1",
+    "Gen 2",
+    "Gen 3"
+  ],
+  "category": "civilian",
+  "badge_color": "#DDE4EA",
+  "traits": {
+    "heal_rate_multiplier": 1.15,
+    "consumes_medkit": true,
+    "reliability": 1.0
+  },
+  "obtain": {
+    "method": "trade",
+    "note": "与村民医生交易 / 医疗箱掉落"
+  },
+  "flavor": "修复是廉价的，预防才是本行。"
+}

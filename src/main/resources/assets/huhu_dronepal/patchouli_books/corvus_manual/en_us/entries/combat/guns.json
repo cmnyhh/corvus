@@ -1,0 +1,16 @@
+{
+  "name": "dronepal.manual.entry.guns",
+  "category": "huhu_dronepal:combat",
+  "icon": "huhu_dronepal:weapon_interface",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.guns.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.guns.2"
+    }
+  ]
+}

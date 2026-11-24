@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:medical_pump",
+      "count": 1
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 3
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:medic_core"
+  }
+}

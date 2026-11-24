@@ -1,0 +1,14 @@
+{
+  "name": "dronepal.manual.name",
+  "landing_text": "dronepal.manual.landing",
+  "subtitle": "dronepal.manual.subtitle",
+  "version": "0",
+  "i18n": true,
+  "creative_tab": "huhu_dronepal:drones",
+  "use_resource_pack": true,
+  "show_progress": false,
+  "pause_game": false,
+  "show_toasts": true,
+  "use_blocky_font": false,
+  "macros": {}
+}

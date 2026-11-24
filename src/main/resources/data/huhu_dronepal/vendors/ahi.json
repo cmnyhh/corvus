@@ -1,0 +1,23 @@
+{
+  "display_name": "dronepal.vendor.ahi",
+  "name_zh": "铁砧重工",
+  "name_en": "Anvil Heavy Industries",
+  "prefix": "AHI",
+  "tier_labels": [
+    "Mk.I",
+    "Mk.II",
+    "Mk.III"
+  ],
+  "category": "military",
+  "badge_color": "#8B1E1E",
+  "traits": {
+    "drain_multiplier": 1.1,
+    "spread_multiplier": 0.8,
+    "reliability": 1.0
+  },
+  "obtain": {
+    "method": "military_supply",
+    "note": "军用补给箱 / 军械商交易，不合成"
+  },
+  "flavor": "只卖给有编号的客户。"
+}

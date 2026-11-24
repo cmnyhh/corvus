@@ -1,0 +1,7 @@
+{
+  "id": "order.hold",
+  "aliases": ["停火", "别打", "待机", "hold"],
+  "response": "action",
+  "requires_module": "mod_combat",
+  "denied": "我没装武器模块。"
+}

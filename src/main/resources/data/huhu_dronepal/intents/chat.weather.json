@@ -1,0 +1,9 @@
+{
+  "id": "chat.weather",
+  "aliases": [
+    "天气",
+    "下雨了吗"
+  ],
+  "response": "line",
+  "line": "weather"
+}

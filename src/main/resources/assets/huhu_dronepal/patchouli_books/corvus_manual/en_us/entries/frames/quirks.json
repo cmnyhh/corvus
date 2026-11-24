@@ -1,0 +1,16 @@
+{
+  "name": "dronepal.manual.entry.quirks",
+  "category": "huhu_dronepal:frames",
+  "icon": "huhu_dronepal:armor_plate",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.quirks.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.quirks.2"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "status.self",
+  "aliases": [
+    "电量",
+    "状态",
+    "你还行吗",
+    "status"
+  ],
+  "response": "line",
+  "line": "status"
+}

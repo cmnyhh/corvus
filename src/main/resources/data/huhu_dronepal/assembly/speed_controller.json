@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:circuit_board",
+      "count": 1
+    },
+    {
+      "item": "huhu_dronepal:servo_motor",
+      "count": 2
+    },
+    {
+      "item": "minecraft:copper_block",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:speed_controller"
+  }
+}

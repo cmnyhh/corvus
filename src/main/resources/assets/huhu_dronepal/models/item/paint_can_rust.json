@@ -1,0 +1,4 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {"layer0": "huhu_dronepal:item/paint_can_rust"}
+}

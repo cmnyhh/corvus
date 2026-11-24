@@ -1,0 +1,16 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:solar_core",
+      "count": 1
+    },
+    {
+      "item": "huhu_dronepal:airframe",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:module",
+    "module": "solar_mk1"
+  }
+}

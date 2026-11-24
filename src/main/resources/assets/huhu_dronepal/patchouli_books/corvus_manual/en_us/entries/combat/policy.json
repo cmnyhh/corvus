@@ -1,0 +1,16 @@
+{
+  "name": "dronepal.manual.entry.policy",
+  "category": "huhu_dronepal:combat",
+  "icon": "huhu_dronepal:chip_tactical",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.policy.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.policy.2"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "chat.time",
+  "aliases": [
+    "几点了",
+    "天黑了吗"
+  ],
+  "response": "line",
+  "line": "time"
+}

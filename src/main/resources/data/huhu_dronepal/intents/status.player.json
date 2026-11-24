@@ -1,0 +1,10 @@
+{
+  "id": "status.player",
+  "aliases": [
+    "我怎么样",
+    "我状态",
+    "我的状态"
+  ],
+  "response": "line",
+  "line": "player"
+}

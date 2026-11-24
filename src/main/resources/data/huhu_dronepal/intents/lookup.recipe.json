@@ -1,0 +1,11 @@
+{
+  "id": "lookup.recipe",
+  "aliases": [
+    "配方",
+    "怎么合成",
+    "怎么做",
+    "合成表",
+    "recipe"
+  ],
+  "response": "lookup"
+}

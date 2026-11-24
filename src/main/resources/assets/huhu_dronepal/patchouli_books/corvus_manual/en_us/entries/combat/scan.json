@@ -1,0 +1,16 @@
+{
+  "name": "dronepal.manual.entry.scan",
+  "category": "huhu_dronepal:combat",
+  "icon": "huhu_dronepal:optics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.scan.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.scan.2"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "_note": "角色 C 新增语言键。按语言分组；A 合并进 assets/huhu_dronepal/lang/zh_cn.json 与 en_us.json。现有键一个都不用改（C 用到的 message.dronepal.scan_error / dronepal.wheel.* / dronepal.pvp.* 已在 lang 里）。",
+  "zh_cn": {
+    "dronepal.chip.silent": "静默芯片",
+    "dronepal.chip.tactical": "战术芯片",
+    "dronepal.chip.chatty": "健谈芯片"
+  },
+  "en_us": {
+    "dronepal.chip.silent": "Silent Chip",
+    "dronepal.chip.tactical": "Tactical Chip",
+    "dronepal.chip.chatty": "Chatty Chip"
+  }
+}

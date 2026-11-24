@@ -1,0 +1,7 @@
+{
+  "display_name": "dronepal.paint.standard",
+  "name_zh": "出厂灰银",
+  "texture": "huhu_dronepal:entity/drone_standard",
+  "glow_color": "#ff379a",
+  "hud_tint": "#ffa8d4"
+}

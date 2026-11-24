@@ -1,0 +1,24 @@
+{
+  "type": "huhu_dronepal:supply",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/abandoned_mineshaft"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/shipwreck_supply"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/underwater_ruin_big"
+        }
+      ]
+    }
+  ],
+  "table": "huhu_dronepal:supplies/salvage",
+  "chance": 0.35
+}

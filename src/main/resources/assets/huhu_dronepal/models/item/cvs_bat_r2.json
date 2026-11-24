@@ -1,0 +1,6 @@
+{
+  "parent": "huhu_dronepal:item/battery_mk2",
+  "textures": {
+    "layer0": "huhu_dronepal:item/cvs_bat_r2"
+  }
+}

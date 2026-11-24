@@ -1,0 +1,40 @@
+{
+  "max_health": 80,
+  "max_damage_per_hit": 10,
+  "vendor": "cvs",
+  "class_name": "标准型",
+  "product_name": "游隼",
+  "product_name_en": "Peregrine",
+  "display_name": "dronepal.frame.peregrine",
+  "callsign_number": "07",
+  "callsign_prefix": "PR",
+  "model": "huhu_dronepal:geo/peregrine",
+  "default_paint": "huhu_dronepal:standard",
+  "collision": [
+    0.7,
+    0.7,
+    0.7
+  ],
+  "span_blocks": 1.45,
+  "module_slots": 3,
+  "ammo_slots": 6,
+  "battery_max_tier": 3,
+  "weight": 2.0,
+  "gun_mount_offset": 0.22,
+  "allowed_gun_types": [
+    "pistol",
+    "smg",
+    "rifle",
+    "sniper"
+  ],
+  "solar_bonus": 1.0,
+  "obtain": {
+    "method": "crafting"
+  },
+  "desc": "渡鸦系统民品线的主力机，也是本项目的原型机。三模块槽，步枪到狙击都能挂。",
+  "follow_teleport_threshold": 16,
+  "teleport_cooldown_ticks": 40,
+  "accel_response": 1.0,
+  "knockback_resistance": 0.3,
+  "mount_capacity": 1.0
+}

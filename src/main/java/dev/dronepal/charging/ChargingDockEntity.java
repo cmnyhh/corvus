@@ -31,7 +31,7 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
  */
 public final class ChargingDockEntity extends BlockEntity implements IEnergyStorage {
     private static final int BUFFER = 32_000;
-    private static final int BASE_CABLE_RATE = 2_000;
+    static final int BASE_CABLE_RATE = 2_000;
     private static final int COAL_YIELD = 4_000;
     private static final int COAL_RATE = 200;
     /** Ticks between two throttled update packets (10 ticks = twice a second). */
@@ -54,7 +54,7 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
     ChargingDockEntity(BlockPos pos, BlockState state) { super(ChargingDockRegistry.TYPE.get(), pos, state); }
 
     boolean insert(ItemStack stack) {
-        if (!target.isEmpty() || Hardware.capacity(stack) <= 0) return false;
+        if (!target.isEmpty() || !DockEnergy.chargeable(stack)) return false;
         target = stack.split(1);
         refreshTarget();
         requestSync();
@@ -80,7 +80,7 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
 
     Component status() {
         Component detail = target.isEmpty() ? Component.translatable("message.dronepal.dock_empty") :
-                Component.empty().append(target.getHoverName()).append(" " + Hardware.energy(target) + "/" + Hardware.capacity(target) + " FE");
+                Component.empty().append(target.getHoverName()).append(" " + DockEnergy.energy(target) + "/" + DockEnergy.capacity(target) + " FE");
         return Component.translatable("message.dronepal.dock_status", energy, BUFFER, coal, detail);
     }
 
@@ -115,7 +115,7 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
     }
 
     private boolean transfer(ItemStack stack) {
-        int received = Hardware.charge(stack, energy, false);
+        int received = DockEnergy.charge(stack, energy, false);
         if (received == 0) return false;
         energy -= received;
         setChanged();
@@ -127,8 +127,8 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
      * the server value is the one shipped in the update tag, so a client never has to guess.
      */
     private void refreshTarget() {
-        targetEnergy = target.isEmpty() ? 0 : Math.max(0, Hardware.energy(target));
-        targetCapacity = target.isEmpty() ? 0 : Math.max(0, Hardware.capacity(target));
+        targetEnergy = target.isEmpty() ? 0 : Math.max(0, DockEnergy.energy(target));
+        targetCapacity = target.isEmpty() ? 0 : Math.max(0, DockEnergy.capacity(target));
     }
 
     private void requestSync() {

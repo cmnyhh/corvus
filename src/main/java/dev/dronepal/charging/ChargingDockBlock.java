@@ -39,7 +39,7 @@ final class ChargingDockBlock extends BaseEntityBlock {
     }
 
     @Override protected ItemInteractionResult useItemOn(ItemStack held, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (!held.is(Items.COAL) && Hardware.capacity(held) <= 0) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        if (!held.is(Items.COAL) && !DockEnergy.chargeable(held)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         if (!level.isClientSide && level.getBlockEntity(pos) instanceof ChargingDockEntity dock) {
             if (held.is(Items.COAL)) held.consume(dock.addCoal(held.getCount()), player);
             else dock.insert(held);

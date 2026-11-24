@@ -50,7 +50,7 @@ final class ChargingDockBlock extends BaseEntityBlock {
             if (held.is(Items.COAL)) {
                 int accepted = dock.addCoal(held.getCount());
                 held.shrink(accepted);
-            } else if (!held.isEmpty() && Hardware.capacity(held) > 0) {
+            } else if (!held.isEmpty() && DockEnergy.chargeable(held)) {
                 dwimInsert(dock, held);
             } else if (held.isEmpty()) {
                 ItemStack taken = dock.take();

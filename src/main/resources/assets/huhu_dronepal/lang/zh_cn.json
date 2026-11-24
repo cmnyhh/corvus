@@ -394,5 +394,8 @@
   "dronepal.tip.leak": "每 10 秒有 %1$s%% 概率漏电，损失 %2$s%% 电量",
   "dronepal.chip.silent": "静默芯片",
   "dronepal.chip.tactical": "战术芯片",
-  "dronepal.chip.chatty": "健谈芯片"
+  "dronepal.chip.chatty": "健谈芯片",
+  "dronepal.light.on": "照明已开启",
+  "dronepal.light.off": "照明已关闭",
+  "dronepal.light.no_power": "电量不足，照明无法点亮"
 }

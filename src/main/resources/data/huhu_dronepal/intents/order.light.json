@@ -1,0 +1,14 @@
+{
+  "id": "order.light",
+  "aliases": [
+    "开灯",
+    "关灯",
+    "灯光",
+    "照明",
+    "把灯打开",
+    "灯",
+    "light"
+  ],
+  "response": "action",
+  "requires_module": "mod_light"
+}

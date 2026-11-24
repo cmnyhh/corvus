@@ -94,16 +94,16 @@ public final class CarryLight {
     /**
      * 递弹: one ammo stack out of the hold.
      *
-     * <p>With a gun backend the matcher is the backend's own ammo predicate — the 1.21 rule, which asks
-     * TaCZ whether the stack is ammo for the held gun. <b>This build has no TaCZ for 1.20.1</b> (see
-     * {@link TaczLink}), so "ammo" has no definition at all; the degraded rule hands over a hold stack
-     * that matches what the owner is currently holding. That keeps the transaction real and conservative
-     * rather than inventing an ammo taxonomy, and it stops applying the moment a backend is fitted.</p>
+     * <p>When a gun is actually mounted the matcher is the gun backend's own ammo predicate — the 1.21
+     * rule, which asks TaCZ whether the stack is ammunition for the mounted gun. With no gun fitted (and
+     * in a build with no backend at all) "ammo" has no definition, so the degraded rule hands over a hold
+     * stack that matches what the owner is currently holding. Gating on a mounted gun matters: merely
+     * having TaCZ installed must not turn a plain arrow delivery into "no match".</p>
      */
     private static boolean supply(ServerPlayer player, ItemStack controller) {
         Predicate<ItemStack> matches;
-        if (CombatSlots.available()) {
-            matches = CombatSlots::isAmmo;
+        if (CombatSlots.available() && !CombatSlots.mounted(controller).isEmpty()) {
+            matches = CombatSlots.ammoFor(player.getMainHandItem());
         } else {
             ItemStack held = player.getMainHandItem();
             matches = candidate -> !held.isEmpty() && ItemStack.isSameItemSameTags(candidate, held);

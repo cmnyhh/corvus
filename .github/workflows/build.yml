@@ -18,6 +18,11 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: gradle/actions/setup-gradle@v4
+      - name: Download TaCZ 1.1.8 (optional at runtime, needed to compile the gun bridge)
+        run: |
+          mkdir -p ../.dronepal-gradle/tacz-1.20.1
+          curl -sSL --retry 3 -o ../.dronepal-gradle/tacz-1.20.1/tacz-1.20.1-1.1.8.jar \
+            https://cdn.modrinth.com/data/SzzJttH8/versions/C2pCZ5ht/tacz-1.20.1-1.1.8-release.jar
       - name: Build (Forge 1.20.1)
         run: |
           chmod +x gradlew

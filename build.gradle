@@ -35,6 +35,8 @@ minecraft {
             // Data/hardware acceptance run (see dev.corvus.devtools.HardwareSmoke).
             property 'corvus.hwtest', (project.findProperty('corvusHwtest') ?: '0').toString()
             property 'corvus.gaps', (project.findProperty('corvusGaps') ?: '0').toString()
+            // TaCZ gun-backend acceptance run (see dev.corvus.devtools.TaczSmoke).
+            property 'corvus.tacztest', (project.findProperty('corvusTacz') ?: '0').toString()
             mixinProps.each { key, value -> property key, value.toString() }
             args '--nogui'
             // Parallel agents share run-server; -PcorvusLevel=<name> runs the smoke against its own
@@ -42,11 +44,21 @@ minecraft {
             if (project.hasProperty('corvusLevel')) {
                 args '--world', project.property('corvusLevel').toString()
             }
+            // The shared 25565 belongs to whichever harness is already running; a scoreboard run
+            // never accepts connections, so it can pick its own port instead of failing to bind.
+            if (project.hasProperty('corvusPort')) {
+                args '--port', project.property('corvusPort').toString()
+            }
         }
     }
 }
 repositories {
     mavenCentral()
+    // TaCZ ships no maven artifact this build can reach. fg.deobf cannot remap a files(...) dependency
+    // (ForgeGradle warns and keeps the obfuscated jar), so the staged jar is exposed as a flatDir module
+    // and declared by coordinate: the file name must stay tacz-1.20.1-1.1.8.jar. -PtaczDir=<dir> points
+    // the build at another copy.
+    flatDir { dirs file(project.findProperty('taczDir') ?: "${rootDir}/../.dronepal-gradle/tacz-1.20.1") }
     // Curios 5.x (1.20.1) is published only by its author's maven. A plain maven block (not
     // exclusiveContent): fg.deobf resolves the remapped artifact through ForgeGradle's own
     // generated repository, which exclusiveContent would hide for this group.
@@ -61,5 +73,16 @@ dependencies {
     // deobfuscated like any other 1.20.1 mod jar. Neither is bundled into our jar.
     compileOnly 'top.theillusivec4.curios:curios-forge:5.14.1+1.20.1:api'
     runtimeOnly fg.deobf('top.theillusivec4.curios:curios-forge:5.14.1+1.20.1')
+
+    // TaCZ 1.1.8+ (1.20.1 Forge), resolved from the flatDir repository declared above:
+    //   compileOnly: TaCZ's own classes and its api package are mojmap-compiled, so no deobf is needed
+    //                to compile against them. Every call site sits behind ModList/instanceof guards,
+    //                so the mod stays optional (see CombatSlots).
+    //   runtimeOnly:  the released jar still carries SRG references (it is a production mod jar), so
+    //                the dev runtime only sees working method names after fg.deobf — which writes the
+    //                remapped copy to caches/forge_gradle/deobf_dependencies/tacz/... and remaps the
+    //                mixin refmap through the two mixin properties below (same as Curios).
+    compileOnly group: 'tacz', name: 'tacz-1.20.1', version: '1.1.8'
+    runtimeOnly fg.deobf(group: 'tacz', name: 'tacz-1.20.1', version: '1.1.8')
 }
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }

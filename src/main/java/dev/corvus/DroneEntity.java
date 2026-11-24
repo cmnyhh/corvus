@@ -266,6 +266,8 @@ public final class DroneEntity extends PathfinderMob {
             ItemStack terminal = controller(pilot);
             if (!terminal.isEmpty()) {
                 DroneArchive.checkpoint(serverLevel, this);
+                // Power transaction, lamp profile and cargo pickup, once per second (see ModuleRuntime).
+                ModuleRuntime.second(this, pilot, terminal);
                 systems.second(this, pilot, terminal);
             }
         }

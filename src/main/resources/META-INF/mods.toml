@@ -24,3 +24,12 @@ description='''Corvus — 随行无人机搭档（1.20.1 移植版）。'''
     versionRange="[5,)"
     ordering="AFTER"
     side="BOTH"
+[[dependencies.huhu_dronepal]]
+    # Optional: the gun backend. TaCZ 1.1.8 is the oldest version whose api/ carries the operator,
+    # gun/ammo and EntityHurtByGunEvent surface this mod links against; every call is guarded, so a
+    # 1.20.1 instance without TaCZ still loads and flies the degraded (aim-only) weapon bus.
+    modId="tacz"
+    mandatory=false
+    versionRange="[1.1.8,)"
+    ordering="AFTER"
+    side="BOTH"

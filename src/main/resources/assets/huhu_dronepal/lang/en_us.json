@@ -394,5 +394,8 @@
   "dronepal.tip.leak": "Leaks %2$s%% of its charge every 10 s (%1$s%% chance)",
   "dronepal.chip.silent": "Silent Chip",
   "dronepal.chip.tactical": "Tactical Chip",
-  "dronepal.chip.chatty": "Chatty Chip"
+  "dronepal.chip.chatty": "Chatty Chip",
+  "dronepal.light.on": "Lamp on",
+  "dronepal.light.off": "Lamp off",
+  "dronepal.light.no_power": "Not enough charge — the lamp stays dark"
 }

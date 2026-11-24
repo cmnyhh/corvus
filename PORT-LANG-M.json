@@ -1,0 +1,13 @@
+{
+  "_note": "角色 M（light 族 / 电力事务 / carry 自动拾取）新增语言键。按语言分组；A 合并进 assets/huhu_dronepal/lang/zh_cn.json 与 en_us.json。现有键一个都不用改（dronepal.wheel.light / dronepal.wheel.pickup / dronepal.tip.light / dronepal.module.light 已在 lang 里）。",
+  "zh_cn": {
+    "dronepal.light.on": "照明已开启",
+    "dronepal.light.off": "照明已关闭",
+    "dronepal.light.no_power": "电量不足，照明无法点亮"
+  },
+  "en_us": {
+    "dronepal.light.on": "Lamp on",
+    "dronepal.light.off": "Lamp off",
+    "dronepal.light.no_power": "Not enough charge — the lamp stays dark"
+  }
+}

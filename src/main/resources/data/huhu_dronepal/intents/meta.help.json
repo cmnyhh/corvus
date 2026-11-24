@@ -1,0 +1,10 @@
+{
+  "id": "meta.help",
+  "aliases": [
+    "你能干啥",
+    "帮助",
+    "help"
+  ],
+  "response": "line",
+  "line": "help"
+}

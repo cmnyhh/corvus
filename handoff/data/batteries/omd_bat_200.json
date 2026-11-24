@@ -1,0 +1,13 @@
+{
+  "vendor": "omd",
+  "tier": 2,
+  "tier_label": "200",
+  "product_name": "标准电池组",
+  "capacity_fe": 350000,
+  "max_receive": 400,
+  "display_name": "dronepal.battery",
+  "slot_type": "battery",
+  "mass": 1.0,
+  "knockback_resistance_bonus": 0.12,
+  "mount_capacity_bonus": 0.1
+}

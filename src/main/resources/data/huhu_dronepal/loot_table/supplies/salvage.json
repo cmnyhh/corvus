@@ -1,0 +1,135 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:combat_rust_g1",
+                  "module_family": "combat",
+                  "module_tier": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:scan_rust_g1",
+                  "module_family": "scan",
+                  "module_tier": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:carry_rust_g1",
+                  "module_family": "carry",
+                  "module_tier": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:medic_rust_g1",
+                  "module_family": "medic",
+                  "module_tier": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:light_rust_g1",
+                  "module_family": "light",
+                  "module_tier": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:solar_rust_g1",
+                  "module_family": "solar",
+                  "module_tier": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:drone",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "huhu_dronepal:frame": "huhu_dronepal:scrap"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:rn_bat_g1",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:rn_bat_g2",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

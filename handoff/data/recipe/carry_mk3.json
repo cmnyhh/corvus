@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:chest"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "minecraft:netherite_ingot"
+    }
+  ],
+  "result": {
+    "id": "dronepal:module",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": "{module_family:\"carry\",module_tier:3}"
+    }
+  }
+}

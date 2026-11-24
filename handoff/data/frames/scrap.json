@@ -1,0 +1,38 @@
+{
+  "vendor": "rust",
+  "class_name": "改装型",
+  "product_name": "拼装",
+  "product_name_en": "Patchwork",
+  "display_name": "dronepal.frame.scrap",
+  "callsign_prefix": "RN",
+  "model": "dronepal:geo/scrap",
+  "default_paint": "dronepal:rust",
+  "collision": [
+    0.7,
+    0.7,
+    0.7
+  ],
+  "span_blocks": 1.35,
+  "module_slots": 3,
+  "battery_max_tier": 2,
+  "weight": 2.6,
+  "gun_mount_offset": 0.24,
+  "allowed_gun_types": [
+    "pistol",
+    "smg",
+    "rifle"
+  ],
+  "solar_bonus": 0.9,
+  "malfunction_chance": 0.05,
+  "malfunction_ticks": 60,
+  "obtain": {
+    "method": "loot"
+  },
+  "desc": "能飞、能挂枪、会抽风。开箱得来，修不好。",
+  "follow_teleport_threshold": 18,
+  "teleport_cooldown_ticks": 60,
+  "accel_response": 0.9,
+  "knockback_resistance": 0.25,
+  "mount_capacity": 1.0,
+  "teleport_fail_chance": 0.08
+}

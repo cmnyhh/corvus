@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "top": "huhu_dronepal:block/charging_dock_top",
+    "side": "huhu_dronepal:block/charging_dock_side",
+    "bottom": "huhu_dronepal:block/charging_dock_bottom"
+  }
+}

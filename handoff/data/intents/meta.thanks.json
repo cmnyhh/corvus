@@ -1,0 +1,10 @@
+{
+  "id": "meta.thanks",
+  "aliases": [
+    "谢谢",
+    "谢了",
+    "thanks"
+  ],
+  "response": "line",
+  "line": "thanks"
+}

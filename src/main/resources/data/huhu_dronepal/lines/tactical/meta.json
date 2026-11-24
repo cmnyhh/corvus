@@ -1,0 +1,42 @@
+{
+  "pack": "tactical",
+  "group": "meta",
+  "lines": [
+    {
+      "id": "name",
+      "text": "{product}。呼号 {callsign}{designation}。",
+      "voice": "",
+      "weight": 3
+    },
+    {
+      "id": "help",
+      "text": "当前模块：{modules}。",
+      "voice": "tactical/help",
+      "weight": 2
+    },
+    {
+      "id": "thanks",
+      "text": "记录在案。",
+      "voice": "tactical/thanks",
+      "weight": 1
+    },
+    {
+      "id": "insult",
+      "text": "记录在案。",
+      "voice": "tactical/insult",
+      "weight": 1
+    },
+    {
+      "id": "smalltalk_refuse",
+      "text": "闲聊不在任务范围内。",
+      "voice": "tactical/smalltalk",
+      "weight": 3
+    },
+    {
+      "id": "unknown",
+      "text": "没有对应指令。说“帮助”看可用指令。",
+      "voice": "tactical/unknown",
+      "weight": 2
+    }
+  ]
+}

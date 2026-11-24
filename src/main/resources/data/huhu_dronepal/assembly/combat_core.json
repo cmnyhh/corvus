@@ -1,0 +1,23 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:weapon_interface",
+      "count": 1
+    },
+    {
+      "item": "huhu_dronepal:circuit_board",
+      "count": 2
+    },
+    {
+      "item": "minecraft:gunpowder",
+      "count": 4
+    },
+    {
+      "item": "huhu_dronepal:heat_sink",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:combat_core"
+  }
+}

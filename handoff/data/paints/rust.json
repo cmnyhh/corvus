@@ -1,0 +1,7 @@
+{
+  "display_name": "dronepal.paint.rust",
+  "name_zh": "锈钉拼装",
+  "texture": "dronepal:entity/drone_rust",
+  "glow_color": "#e89322",
+  "hud_tint": "#ffc470"
+}

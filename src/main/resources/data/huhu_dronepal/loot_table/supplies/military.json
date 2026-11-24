@@ -1,0 +1,214 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:combat_mk1",
+                  "module_family": "combat",
+                  "module_tier": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:combat_mk2",
+                  "module_family": "combat",
+                  "module_tier": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:combat_mk3",
+                  "module_family": "combat",
+                  "module_tier": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:scan_mk1",
+                  "module_family": "scan",
+                  "module_tier": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:scan_mk2",
+                  "module_family": "scan",
+                  "module_tier": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:scan_mk3",
+                  "module_family": "scan",
+                  "module_tier": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:link_mk1",
+                  "module_family": "link",
+                  "module_tier": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:link_mk2",
+                  "module_family": "link",
+                  "module_tier": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:module",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "module_product": "huhu_dronepal:link_mk3",
+                  "module_family": "link",
+                  "module_tier": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:drone",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "huhu_dronepal:frame": "huhu_dronepal:owl"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:drone",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "huhu_dronepal:frame": "huhu_dronepal:bedrock"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:ahi_bat_mk1",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:ahi_bat_mk2",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:ahi_bat_mk3",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:cvs_bat_r1",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "huhu_dronepal:cvs_bat_r2",
+          "weight": 3
+        }
+      ]
+    }
+  ]
+}

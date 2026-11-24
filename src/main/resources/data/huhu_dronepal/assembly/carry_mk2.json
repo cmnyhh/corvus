@@ -1,0 +1,17 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:module",
+      "module": "carry_mk1",
+      "count": 1
+    },
+    {
+      "item": "huhu_dronepal:upgrade_kit",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:module",
+    "module": "carry_mk2"
+  }
+}

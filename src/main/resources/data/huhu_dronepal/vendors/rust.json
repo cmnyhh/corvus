@@ -1,0 +1,23 @@
+{
+  "display_name": "dronepal.vendor.rust",
+  "name_zh": "锈钉作坊",
+  "name_en": "Rustnail",
+  "prefix": "RN",
+  "tier_labels": [
+    "G1",
+    "G2",
+    "G3"
+  ],
+  "category": "blackmarket",
+  "badge_color": "#6B5A3A",
+  "traits": {
+    "drain_multiplier": 0.75,
+    "malfunction_chance": 0.05,
+    "malfunction_ticks": 60
+  },
+  "obtain": {
+    "method": "loot",
+    "note": "遗迹 / 沉船 / 矿洞箱；v0.5 才铺开"
+  },
+  "flavor": "保证能用，保证不保证。"
+}

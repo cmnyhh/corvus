@@ -1,0 +1,10 @@
+{
+  "id": "scan.hostile",
+  "aliases": [
+    "有敌人吗",
+    "附近有怪吗"
+  ],
+  "response": "data",
+  "requires_module": "mod_scan",
+  "denied": "未安装扫描模块。"
+}

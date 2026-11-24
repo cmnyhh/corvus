@@ -1,0 +1,28 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:airframe",
+      "count": 2
+    },
+    {
+      "item": "huhu_dronepal:powertrain",
+      "count": 1
+    },
+    {
+      "item": "huhu_dronepal:flight_controller",
+      "count": 1
+    },
+    {
+      "item": "huhu_dronepal:sensor_array",
+      "count": 1
+    },
+    {
+      "item": "minecraft:glass",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:drone",
+    "frame": "peregrine"
+  }
+}

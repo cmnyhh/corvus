@@ -1,0 +1,10 @@
+{
+  "order": 3,
+  "display_name": "dronepal.engage.assist",
+  "auto_acquire_radius": 0,
+  "retaliate": true,
+  "attack_owner_target": true,
+  "target_filter": "owner_target",
+  "pvp": false,
+  "desc": "优先打你正在打的目标，其余情况按反击处理。"
+}

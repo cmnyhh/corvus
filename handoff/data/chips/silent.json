@@ -1,0 +1,12 @@
+{
+  "display_name": "dronepal.chip.silent",
+  "prompt_profile": "silent",
+  "voice_pack": "dronepal:silent",
+  "voice_speed": 1.0,
+  "bark_rate": 0.0,
+  "bark_cooldown_ticks": 400,
+  "max_chars_per_line": 0,
+  "unlocks_chat": false,
+  "allows_smalltalk": false,
+  "tint": "#9E9E9E"
+}

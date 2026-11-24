@@ -1,0 +1,7 @@
+{
+  "display_name": "dronepal.paint.neon",
+  "name_zh": "霓虹黑粉",
+  "texture": "dronepal:entity/drone_neon",
+  "glow_color": "#ff2f7d",
+  "hud_tint": "#ffb3d9"
+}

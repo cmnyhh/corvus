@@ -1,0 +1,66 @@
+{
+  "pack": "chatty",
+  "group": "events",
+  "lines": [
+    {
+      "id": "low_battery",
+      "text": "电池快见底了！只剩 {energy} FE 哦。",
+      "weight": 1,
+      "voice": "chatty/low_battery"
+    },
+    {
+      "id": "dimension",
+      "text": "到了新地方！我得好好看看。",
+      "weight": 1,
+      "voice": "chatty/dimension"
+    },
+    {
+      "id": "nightfall",
+      "text": "天黑啦，别走太远哦！",
+      "weight": 1,
+      "voice": "chatty/nightfall"
+    },
+    {
+      "id": "rain_start",
+      "text": "下雨了！快看看哪里能躲雨！",
+      "weight": 1,
+      "voice": "chatty/rain_start"
+    },
+    {
+      "id": "fall",
+      "text": "刚才摔疼没有？我在旁边呢。",
+      "weight": 1,
+      "voice": "chatty/fall"
+    },
+    {
+      "id": "module_offline",
+      "text": "不好，有个模块掉线了！",
+      "weight": 1,
+      "voice": "chatty/module_offline"
+    },
+    {
+      "id": "death",
+      "text": "我会记住这里，等你回来。",
+      "weight": 1,
+      "voice": "chatty/death"
+    },
+    {
+      "id": "respawn",
+      "text": "你回来了！我们再出发吧。",
+      "weight": 1,
+      "voice": "chatty/respawn"
+    },
+    {
+      "id": "hostile_group",
+      "text": "这附近有一群怪，小心哦！",
+      "weight": 1,
+      "voice": "chatty/hostile_group"
+    },
+    {
+      "id": "rare_ore",
+      "text": "我扫到稀有矿了！快看标记！",
+      "weight": 1,
+      "voice": "chatty/rare_ore"
+    }
+  ]
+}

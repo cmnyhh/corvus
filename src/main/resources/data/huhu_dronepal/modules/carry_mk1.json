@@ -1,0 +1,30 @@
+{
+  "display_name": "dronepal.module.carry",
+  "family": "carry",
+  "tier": 1,
+  "slot_type": "function",
+  "drain_watts": 5,
+  "goals": [],
+  "intents": [
+    "order.fetch"
+  ],
+  "params": {
+    "slots": 9,
+    "pickup_radius": 6,
+    "auto_deliver": false,
+    "sort": false
+  },
+  "wheel": {
+    "kind": "mix",
+    "label": "dronepal.wheel.carry",
+    "extra": {
+      "fam": "pickup",
+      "kind": "toggle",
+      "label": "dronepal.wheel.pickup"
+    }
+  },
+  "vendor": "omd",
+  "tier_label": "100",
+  "product_name": "货舱挂架",
+  "product_name_en": "Cargo Rack"
+}

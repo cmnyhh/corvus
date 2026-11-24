@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "materials": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:spyglass"
+          }
+        ]
+      }
+    },
+    "recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "dronepal:scan_mk3"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "materials",
+      "recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dronepal:scan_mk3"
+    ]
+  }
+}

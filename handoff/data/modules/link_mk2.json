@@ -1,0 +1,25 @@
+{
+  "display_name": "dronepal.module.link",
+  "family": "link",
+  "tier": 2,
+  "slot_type": "function",
+  "drain_watts": 5,
+  "goals": [],
+  "intents": [],
+  "mod_dependency": "tacz",
+  "params": {
+    "report_ammo": true,
+    "report_hits": true,
+    "deliver_mags": true,
+    "auto_deliver": false,
+    "armor_hint": false
+  },
+  "wheel": {
+    "kind": "toggle",
+    "label": "dronepal.wheel.link"
+  },
+  "vendor": "cvs",
+  "tier_label": "R-2",
+  "product_name": "弹药链路模块",
+  "product_name_en": "Ammo Datalink"
+}

@@ -1,0 +1,48 @@
+{
+  "pack": "tactical",
+  "group": "console",
+  "lines": [
+    {
+      "trigger": "greeting",
+      "id": "online",
+      "text": "本机在线。",
+      "weight": 4
+    },
+    {
+      "trigger": "greeting",
+      "id": "ready",
+      "text": "指令通道就绪。",
+      "weight": 2
+    },
+    {
+      "trigger": "greeting",
+      "id": "standing_by",
+      "text": "待命。",
+      "weight": 1
+    },
+    {
+      "trigger": "status",
+      "id": "battery",
+      "text": "剩余电量 {energy} FE。",
+      "weight": 1
+    },
+    {
+      "trigger": "player",
+      "id": "vitals",
+      "text": "生命体征 {hp}%。",
+      "weight": 1
+    },
+    {
+      "trigger": "weather",
+      "id": "weather",
+      "text": "气象：{weather}。",
+      "weight": 1
+    },
+    {
+      "trigger": "time",
+      "id": "clock",
+      "text": "当地时间 {time}。",
+      "weight": 1
+    }
+  ]
+}

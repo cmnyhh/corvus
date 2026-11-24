@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "materials": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:quartz"
+          }
+        ]
+      }
+    },
+    "recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "dronepal:chip_chatty"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "materials",
+      "recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dronepal:chip_chatty"
+    ]
+  }
+}

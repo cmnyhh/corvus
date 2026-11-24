@@ -1,0 +1,38 @@
+{
+  "max_health": 56,
+  "max_damage_per_hit": 8,
+  "vendor": "cvs",
+  "class_name": "侦察型",
+  "product_name": "夜枭",
+  "product_name_en": "Owl",
+  "display_name": "dronepal.frame.owl",
+  "callsign_number": "03",
+  "callsign_prefix": "OW",
+  "model": "huhu_dronepal:geo/owl",
+  "default_paint": "huhu_dronepal:arctic",
+  "collision": [
+    0.55,
+    0.55,
+    0.55
+  ],
+  "span_blocks": 1.1,
+  "module_slots": 2,
+  "ammo_slots": 4,
+  "battery_max_tier": 2,
+  "weight": 1.4,
+  "gun_mount_offset": 0.18,
+  "allowed_gun_types": [
+    "pistol",
+    "smg"
+  ],
+  "solar_bonus": 1.0,
+  "obtain": {
+    "method": "military_supply"
+  },
+  "desc": "轻、快、藏得住。只挂手枪和冲锋枪。",
+  "follow_teleport_threshold": 13,
+  "teleport_cooldown_ticks": 20,
+  "accel_response": 1.25,
+  "knockback_resistance": 0.05,
+  "mount_capacity": 0.6
+}

@@ -1,0 +1,24 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:airframe",
+      "count": 1
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 3
+    },
+    {
+      "item": "minecraft:gunpowder",
+      "count": 3
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:module",
+    "module": "combat_rust_g1"
+  }
+}

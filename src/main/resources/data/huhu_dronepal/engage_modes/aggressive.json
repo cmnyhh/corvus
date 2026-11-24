@@ -1,0 +1,10 @@
+{
+  "order": 4,
+  "display_name": "dronepal.engage.aggressive",
+  "auto_acquire_radius": 16,
+  "retaliate": true,
+  "attack_owner_target": true,
+  "target_filter": "monster",
+  "pvp": false,
+  "desc": "主动索敌 16 格内所有敌对生物。会引来不必要的战斗。"
+}

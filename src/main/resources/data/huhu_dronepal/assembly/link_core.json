@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:circuit_board",
+      "count": 2
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 2
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 3
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:link_core"
+  }
+}

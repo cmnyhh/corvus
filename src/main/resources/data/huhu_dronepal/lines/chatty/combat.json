@@ -1,0 +1,48 @@
+{
+  "pack": "chatty",
+  "group": "combat",
+  "lines": [
+    {
+      "id": "hostile_near",
+      "text": "诶诶！{dir}那边 {n} 个！{dist} 格！",
+      "voice": "chatty/hostile_near",
+      "weight": 3
+    },
+    {
+      "id": "fire_start",
+      "text": "打了打了打了！",
+      "voice": "chatty/fire_start",
+      "weight": 5
+    },
+    {
+      "id": "kill",
+      "text": "搞定！我准吧？",
+      "voice": "chatty/kill",
+      "weight": 2
+    },
+    {
+      "id": "no_ammo",
+      "text": "没子弹了没子弹了！你腰上不是有弹匣吗！",
+      "voice": "chatty/no_ammo",
+      "weight": 4
+    },
+    {
+      "id": "friend_low",
+      "text": "喂喂喂你血都快没了！快跑啊！",
+      "voice": "chatty/friend_low",
+      "weight": 3
+    },
+    {
+      "id": "low_ammo",
+      "text": "喂，子弹不多了！省着点打，我可不想看你空枪乱晃。",
+      "voice": "chatty/low_ammo",
+      "weight": 4
+    },
+    {
+      "id": "reload_done",
+      "text": "弹匣换好啦，继续！",
+      "voice": "",
+      "weight": 3
+    }
+  ]
+}

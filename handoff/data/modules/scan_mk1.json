@@ -1,0 +1,27 @@
+{
+  "display_name": "dronepal.module.scan",
+  "family": "scan",
+  "tier": 1,
+  "slot_type": "function",
+  "drain_watts": 6,
+  "goals": [],
+  "intents": [
+    "scan",
+    "scan.hostile",
+    "scan.ore"
+  ],
+  "params": {
+    "radius": 16,
+    "hostile": true,
+    "ore": false,
+    "mark_ticks": 120
+  },
+  "wheel": {
+    "kind": "trigger",
+    "label": "dronepal.wheel.scan"
+  },
+  "vendor": "cvs",
+  "tier_label": "R-1",
+  "product_name": "频谱嗅探器",
+  "product_name_en": "Spectrum Sniffer"
+}

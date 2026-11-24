@@ -1,0 +1,40 @@
+{
+  "display_name": "dronepal.module.combat",
+  "family": "combat",
+  "tier": 3,
+  "slot_type": "function",
+  "drain_watts": 22,
+  "goals": [
+    "drone_attack"
+  ],
+  "intents": [
+    "order.cover",
+    "order.hold"
+  ],
+  "params": {
+    "range": 24,
+    "burst": 5,
+    "cooldown_ticks": 8,
+    "damage_mult": 1.3,
+    "spread_deg": 2.5,
+    "fire_modes": [
+      "burst",
+      "semi",
+      "auto"
+    ]
+  },
+  "wheel": {
+    "kind": "toggle",
+    "label": "dronepal.wheel.combat",
+    "extra": {
+      "fam": "fire_mode",
+      "kind": "cycle",
+      "label": "dronepal.wheel.fire_mode",
+      "only_tier": 3
+    }
+  },
+  "vendor": "ahi",
+  "tier_label": "Mk.III",
+  "product_name": "火控组件",
+  "product_name_en": "Fire Control Group"
+}

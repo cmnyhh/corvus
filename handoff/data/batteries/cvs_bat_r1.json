@@ -1,0 +1,13 @@
+{
+  "vendor": "cvs",
+  "tier": 1,
+  "tier_label": "R-1",
+  "product_name": "轻量电芯",
+  "capacity_fe": 150000,
+  "max_receive": 400,
+  "display_name": "dronepal.battery",
+  "slot_type": "battery",
+  "mass": 0.35,
+  "knockback_resistance_bonus": 0.04,
+  "mount_capacity_bonus": 0.03
+}

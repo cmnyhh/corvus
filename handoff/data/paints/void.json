@@ -1,0 +1,7 @@
+{
+  "display_name": "dronepal.paint.void",
+  "name_zh": "虚空紫",
+  "texture": "dronepal:entity/drone_void",
+  "glow_color": "#7a2fd8",
+  "hud_tint": "#d9b3ff"
+}

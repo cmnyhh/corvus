@@ -1,0 +1,11 @@
+{
+  "id": "meta.name",
+  "aliases": [
+    "你叫啥",
+    "你是谁",
+    "你叫什么",
+    "name"
+  ],
+  "response": "line",
+  "line": "name"
+}

@@ -1,0 +1,10 @@
+{
+  "order": 1,
+  "display_name": "dronepal.engage.hostile_only",
+  "auto_acquire_radius": 16,
+  "retaliate": true,
+  "attack_owner_target": false,
+  "target_filter": "monster",
+  "pvp": false,
+  "desc": "只打敌对生物（僵尸/骷髅/苦力怕等），不碰中立与玩家。"
+}

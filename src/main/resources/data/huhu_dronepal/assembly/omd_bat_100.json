@@ -1,0 +1,15 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:battery_cell",
+      "count": 3
+    },
+    {
+      "item": "huhu_dronepal:airframe",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:omd_bat_100"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "order": 0,
+  "display_name": "dronepal.engage.passive",
+  "auto_acquire_radius": 0,
+  "retaliate": false,
+  "attack_owner_target": false,
+  "target_filter": "none",
+  "pvp": false,
+  "desc": "永不主动开火，被打也不还手。"
+}

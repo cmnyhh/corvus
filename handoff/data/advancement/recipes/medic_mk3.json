@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "materials": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:glistering_melon_slice"
+          }
+        ]
+      }
+    },
+    "recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "dronepal:medic_mk3"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "materials",
+      "recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dronepal:medic_mk3"
+    ]
+  }
+}

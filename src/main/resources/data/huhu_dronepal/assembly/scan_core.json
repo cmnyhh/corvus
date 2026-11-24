@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:sensor_array",
+      "count": 1
+    },
+    {
+      "item": "huhu_dronepal:optics",
+      "count": 2
+    },
+    {
+      "item": "minecraft:amethyst_shard",
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:scan_core"
+  }
+}

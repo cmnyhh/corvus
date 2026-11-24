@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "minecraft:lantern"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "id": "dronepal:module",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": "{module_family:\"light\",module_tier:2}"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "meta.insult",
+  "aliases": [
+    "你真菜",
+    "垃圾"
+  ],
+  "response": "line",
+  "line": "insult"
+}

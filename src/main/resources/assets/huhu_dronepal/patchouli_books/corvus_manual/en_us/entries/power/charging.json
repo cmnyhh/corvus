@@ -1,0 +1,17 @@
+{
+  "name": "dronepal.manual.entry.charging",
+  "category": "huhu_dronepal:power",
+  "icon": "huhu_dronepal:charging_dock",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "huhu_dronepal:charging_dock",
+      "text": "dronepal.manual.p.charging.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.charging.2"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:airframe",
+      "count": 1
+    },
+    {
+      "item": "minecraft:chest",
+      "count": 1
+    },
+    {
+      "item": "huhu_dronepal:servo_motor",
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:carry_core"
+  }
+}

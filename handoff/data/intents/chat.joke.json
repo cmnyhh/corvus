@@ -1,0 +1,10 @@
+{
+  "id": "chat.joke",
+  "aliases": [
+    "讲个笑话",
+    "闲聊",
+    "joke"
+  ],
+  "response": "smalltalk",
+  "line": "smalltalk"
+}

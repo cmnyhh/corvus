@@ -1,0 +1,15 @@
+{
+  "vendor": "rust",
+  "tier": 1,
+  "tier_label": "G1",
+  "product_name": "拆机电芯",
+  "capacity_fe": 400000,
+  "max_receive": 500,
+  "leak_chance_per_10s": 0.02,
+  "leak_fraction": 0.05,
+  "display_name": "dronepal.battery",
+  "slot_type": "battery",
+  "mass": 1.1,
+  "knockback_resistance_bonus": 0.13,
+  "mount_capacity_bonus": 0.11
+}

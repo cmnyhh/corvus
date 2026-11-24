@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "materials": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:chest"
+          }
+        ]
+      }
+    },
+    "recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "dronepal:carry_mk1"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "materials",
+      "recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dronepal:carry_mk1"
+    ]
+  }
+}

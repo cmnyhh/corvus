@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:battery_cell",
+      "count": 2
+    },
+    {
+      "item": "huhu_dronepal:speed_controller",
+      "count": 1
+    },
+    {
+      "item": "huhu_dronepal:airframe",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:powertrain"
+  }
+}

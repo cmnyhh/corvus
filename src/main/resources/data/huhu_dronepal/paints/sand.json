@@ -1,0 +1,7 @@
+{
+  "display_name": "dronepal.paint.sand",
+  "name_zh": "沙漠沙",
+  "texture": "huhu_dronepal:entity/drone_sand",
+  "glow_color": "#c98a2a",
+  "hud_tint": "#ffe6a8"
+}

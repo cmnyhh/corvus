@@ -1,0 +1,30 @@
+{
+  "family": "combat",
+  "tier": 1,
+  "vendor": "rust",
+  "tier_label": "G1",
+  "product_name": "土制击发器",
+  "drain_watts": 10,
+  "goals": [
+    "drone_attack"
+  ],
+  "intents": [
+    "order.cover",
+    "order.hold"
+  ],
+  "params": {
+    "range": 12,
+    "burst": 2,
+    "cooldown_ticks": 16,
+    "damage_mult": 0.85,
+    "spread_deg": 9.0,
+    "fire_modes": [
+      "burst"
+    ],
+    "malfunction_chance": 0.06,
+    "malfunction_ticks": 50
+  },
+  "desc": "便宜、糙、偶尔卡壳。",
+  "display_name": "dronepal.module.combat",
+  "slot_type": "function"
+}

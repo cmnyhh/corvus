@@ -1,0 +1,7 @@
+{
+  "display_name": "dronepal.paint.arctic",
+  "name_zh": "极地白",
+  "texture": "huhu_dronepal:entity/drone_arctic",
+  "glow_color": "#4fb6d8",
+  "hud_tint": "#d8f6ff"
+}

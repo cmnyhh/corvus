@@ -1,0 +1,42 @@
+{
+  "pack": "chatty",
+  "group": "meta",
+  "lines": [
+    {
+      "id": "name",
+      "text": "我叫游隼！渡鸦系统出厂的，好听吧？",
+      "voice": "chatty/name",
+      "weight": 3
+    },
+    {
+      "id": "help",
+      "text": "我现在装着 {modules}，够用了吧？",
+      "voice": "chatty/help",
+      "weight": 2
+    },
+    {
+      "id": "thanks",
+      "text": "嘿嘿，不客气不客气～",
+      "voice": "chatty/thanks",
+      "weight": 1
+    },
+    {
+      "id": "insult",
+      "text": "……我记住你了。",
+      "voice": "chatty/insult",
+      "weight": 1
+    },
+    {
+      "id": "smalltalk",
+      "text": "讲真的，这片矿洞有点阴森。你觉不觉得？",
+      "voice": "chatty/smalltalk",
+      "weight": 3
+    },
+    {
+      "id": "unknown",
+      "text": "嗯…这个我真不懂，你问点别的？",
+      "voice": "chatty/unknown",
+      "weight": 2
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "vendor": "ahi",
+  "class_name": "重装型",
+  "product_name": "磐石",
+  "product_name_en": "Bedrock",
+  "display_name": "dronepal.frame.bedrock",
+  "callsign_prefix": "BR",
+  "model": "dronepal:geo/bedrock",
+  "default_paint": "dronepal:crimson",
+  "collision": [
+    0.9,
+    0.9,
+    0.9
+  ],
+  "span_blocks": 1.8,
+  "module_slots": 4,
+  "battery_max_tier": 3,
+  "weight": 4.2,
+  "gun_mount_offset": 0.32,
+  "allowed_gun_types": [
+    "pistol",
+    "smg",
+    "rifle",
+    "sniper",
+    "rpg"
+  ],
+  "solar_bonus": 0.6,
+  "obtain": {
+    "method": "military_supply"
+  },
+  "desc": "军规重装。四槽、能挂 RPG，但笨重且太阳能效率低。",
+  "follow_teleport_threshold": 24,
+  "teleport_cooldown_ticks": 80,
+  "accel_response": 0.75,
+  "knockback_resistance": 0.85,
+  "mount_capacity": 1.6
+}

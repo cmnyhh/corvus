@@ -1,0 +1,7 @@
+{
+  "display_name": "dronepal.paint.chrome",
+  "name_zh": "铬银",
+  "texture": "dronepal:entity/drone_chrome",
+  "glow_color": "#2fa8c8",
+  "hud_tint": "#e8fbff"
+}

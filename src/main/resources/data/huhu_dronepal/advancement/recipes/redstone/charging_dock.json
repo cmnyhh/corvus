@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_furnace": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {"items": [{"items": "minecraft:furnace"}]}
+    },
+    "has_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {"recipe": "huhu_dronepal:charging_dock"}
+    }
+  },
+  "requirements": [["has_furnace", "has_recipe"]],
+  "rewards": {"recipes": ["huhu_dronepal:charging_dock"]}
+}

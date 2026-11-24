@@ -1,0 +1,30 @@
+{
+  "pack": "chatty",
+  "group": "events",
+  "lines": [
+    {
+      "id": "low_battery",
+      "text": "电池快见底了！只剩 {energy} FE 哦。",
+      "weight": 1,
+      "voice": "chatty/low_battery"
+    },
+    {
+      "id": "dimension",
+      "text": "到了新地方！我得好好看看。",
+      "weight": 1,
+      "voice": "chatty/dimension"
+    },
+    {
+      "id": "nightfall",
+      "text": "天黑啦，别走太远哦！",
+      "weight": 1,
+      "voice": "chatty/nightfall"
+    },
+    {
+      "id": "rain_start",
+      "text": "下雨了！快看看哪里能躲雨！",
+      "weight": 1,
+      "voice": "chatty/rain_start"
+    }
+  ]
+}

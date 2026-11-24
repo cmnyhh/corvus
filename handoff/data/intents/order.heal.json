@@ -1,0 +1,8 @@
+{
+  "id": "order.heal",
+  "requires_module": "mod_medic",
+  "aliases": ["治疗", "回血", "补血", "治一下", "救命", "heal"],
+  "patterns": [".*(治|回血|补血).*"],
+  "response": "action",
+  "denied": "没有医疗模块，我只能看着你流血。"
+}

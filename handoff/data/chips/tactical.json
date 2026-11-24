@@ -1,0 +1,12 @@
+{
+  "display_name": "dronepal.chip.tactical",
+  "prompt_profile": "tactical",
+  "voice_pack": "dronepal:tactical",
+  "voice_speed": 1.15,
+  "bark_rate": 0.2,
+  "bark_cooldown_ticks": 160,
+  "max_chars_per_line": 24,
+  "unlocks_chat": true,
+  "allows_smalltalk": false,
+  "tint": "#4FC3F7"
+}

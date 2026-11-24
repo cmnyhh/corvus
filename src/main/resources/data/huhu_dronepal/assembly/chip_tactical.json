@@ -1,0 +1,19 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:circuit_board",
+      "count": 1
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 2
+    },
+    {
+      "item": "minecraft:compass",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:chip_tactical"
+  }
+}

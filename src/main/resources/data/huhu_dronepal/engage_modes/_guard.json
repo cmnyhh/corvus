@@ -1,0 +1,15 @@
+{
+  "never_target": [
+    "owner",
+    "owner_team",
+    "owner_pet",
+    "villager",
+    "iron_golem",
+    "allay"
+  ],
+  "pvp_default_off": true,
+  "friendly_fire_check": true,
+  "require_line_of_sight": true,
+  "min_range": 3.0,
+  "max_range": 16.0
+}

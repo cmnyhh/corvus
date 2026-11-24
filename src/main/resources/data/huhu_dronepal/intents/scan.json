@@ -1,0 +1,8 @@
+{
+  "id": "scan",
+  "requires_module": "mod_scan",
+  "aliases": ["扫描", "看看周围", "周围有什么", "探一下", "sm"],
+  "patterns": [".*(扫|探).*(一下|周围|附近).*"],
+  "response": "data",
+  "denied": "没有扫描模块，我看不见远处。"
+}

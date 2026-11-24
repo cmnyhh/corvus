@@ -1,0 +1,23 @@
+{
+  "display_name": "dronepal.vendor.omd",
+  "name_zh": "万向动力",
+  "name_en": "OmniDrive",
+  "prefix": "OMD",
+  "tier_labels": [
+    "100",
+    "200",
+    "300"
+  ],
+  "category": "civilian",
+  "badge_color": "#C88A2A",
+  "traits": {
+    "drain_multiplier": 0.85,
+    "max_tier": 2,
+    "reliability": 1.0
+  },
+  "obtain": {
+    "method": "crafting",
+    "note": "工作台合成，材料是铁/铜/红石"
+  },
+  "flavor": "家用、耐用、价格合理。"
+}

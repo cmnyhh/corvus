@@ -1,0 +1,24 @@
+{
+  "family": "light",
+  "tier": 1,
+  "vendor": "rust",
+  "tier_label": "G1",
+  "product_name": "拆车大灯",
+  "drain_watts": 3,
+  "goals": [
+    "drone_light"
+  ],
+  "intents": [
+    "order.light"
+  ],
+  "params": {
+    "light_level": 14,
+    "radius": 9,
+    "underwater": false,
+    "tint": "#FFE7B0",
+    "flicker": true
+  },
+  "desc": "很亮，但会闪。",
+  "display_name": "dronepal.module.light",
+  "slot_type": "function"
+}

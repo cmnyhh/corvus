@@ -1,0 +1,11 @@
+{
+  "id": "chat.greeting",
+  "aliases": [
+    "在吗",
+    "你好",
+    "嗨",
+    "hello"
+  ],
+  "response": "line",
+  "line": "greeting"
+}

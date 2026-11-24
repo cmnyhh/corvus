@@ -1,0 +1,11 @@
+{
+  "pack": "tactical",
+  "group": "combat",
+  "lines": [
+    { "id": "hostile_near", "text": "{n} 个敌对目标，{dir}，{dist} 格。", "voice": "tactical/hostile_near", "weight": 3 },
+    { "id": "fire_start", "text": "开火。", "voice": "tactical/fire_start", "weight": 5 },
+    { "id": "kill", "text": "目标清除。", "voice": "tactical/kill", "weight": 2 },
+    { "id": "no_ammo", "text": "弹药耗尽。", "voice": "tactical/no_ammo", "weight": 4 },
+    { "id": "friend_low", "text": "生命体征 {hp}%。建议后撤。", "voice": "tactical/friend_low", "weight": 3 }
+  ]
+}

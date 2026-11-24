@@ -1,0 +1,10 @@
+{
+  "id": "lookup.advancement",
+  "aliases": [
+    "下一步干嘛",
+    "我该做什么",
+    "进度",
+    "advancement"
+  ],
+  "response": "lookup"
+}

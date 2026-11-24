@@ -1,0 +1,24 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:airframe",
+      "count": 1
+    },
+    {
+      "item": "minecraft:glass",
+      "count": 2
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 3
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:module",
+    "module": "scan_rust_g1"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "display_name": "dronepal.chip.chatty",
+  "prompt_profile": "chatty",
+  "voice_pack": "huhu_dronepal:chatty",
+  "voice_speed": 0.95,
+  "bark_rate": 0.9,
+  "bark_cooldown_ticks": 40,
+  "max_chars_per_line": 60,
+  "unlocks_chat": true,
+  "allows_smalltalk": true,
+  "tint": "#FFB74D"
+}

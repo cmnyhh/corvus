@@ -1,0 +1,7 @@
+{
+  "display_name": "dronepal.paint.crimson",
+  "name_zh": "血刃黑红",
+  "texture": "dronepal:entity/drone_crimson",
+  "glow_color": "#c81f2a",
+  "hud_tint": "#ff9a9a"
+}

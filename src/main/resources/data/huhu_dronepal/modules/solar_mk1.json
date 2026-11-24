@@ -1,0 +1,22 @@
+{
+  "display_name": "dronepal.module.solar",
+  "family": "solar",
+  "tier": 1,
+  "slot_type": "function",
+  "drain_watts": 0,
+  "goals": [],
+  "intents": [],
+  "params": {
+    "clear": 8,
+    "rain": 2,
+    "night": 0
+  },
+  "wheel": {
+    "kind": "readonly",
+    "label": "dronepal.wheel.solar"
+  },
+  "vendor": "omd",
+  "tier_label": "100",
+  "product_name": "光伏膜",
+  "product_name_en": "SolarPac"
+}

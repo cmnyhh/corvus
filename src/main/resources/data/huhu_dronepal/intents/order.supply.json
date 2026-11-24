@@ -1,0 +1,8 @@
+{
+  "id": "order.supply",
+  "requires_module": "mod_link",
+  "aliases": ["递弹", "递弹匣", "补给弹药", "supply ammo"],
+  "patterns": [".*(递弹|补给弹药).*"],
+  "response": "action",
+  "denied": "需要弹药链路模块。"
+}

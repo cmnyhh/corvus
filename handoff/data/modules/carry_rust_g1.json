@@ -1,0 +1,24 @@
+{
+  "family": "carry",
+  "tier": 1,
+  "vendor": "rust",
+  "tier_label": "G1",
+  "product_name": "焊铁货筐",
+  "drain_watts": 4,
+  "goals": [
+    "drone_pickup"
+  ],
+  "intents": [
+    "order.fetch"
+  ],
+  "params": {
+    "slots": 12,
+    "pickup_radius": 5,
+    "auto_deliver": false,
+    "sort": false,
+    "drop_chance_on_hit": 0.15
+  },
+  "desc": "容量不小，但被打一下会掉东西。",
+  "display_name": "dronepal.module.carry",
+  "slot_type": "function"
+}

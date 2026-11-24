@@ -1,0 +1,10 @@
+{
+  "order": 2,
+  "display_name": "dronepal.engage.retaliate",
+  "auto_acquire_radius": 0,
+  "retaliate": true,
+  "attack_owner_target": false,
+  "target_filter": "attacker",
+  "pvp": false,
+  "desc": "默认档。只有你或它被攻击时才还击，打谁由攻击者决定。"
+}

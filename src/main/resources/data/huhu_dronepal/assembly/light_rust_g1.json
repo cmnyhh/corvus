@@ -1,0 +1,24 @@
+{
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:airframe",
+      "count": 1
+    },
+    {
+      "item": "minecraft:glass",
+      "count": 2
+    },
+    {
+      "item": "minecraft:glowstone_dust",
+      "count": 2
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:module",
+    "module": "light_rust_g1"
+  }
+}

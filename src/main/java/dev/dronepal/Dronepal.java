@@ -63,6 +63,13 @@ public final class Dronepal {
                 event.put(ENTITY.get(), net.minecraft.world.entity.Mob.createMobAttributes().build()));
         Frames.register(bus);
         Hardware.register(bus);
+        // Batteries expose their charge as a drain-only FE capability, so other FE consumers
+        // (e.g. the Stringblade quiver) can tap a battery the player is carrying.
+        bus.addListener((net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent event) ->
+                Hardware.BATTERIES.forEach(item -> event.registerItem(
+                        net.neoforged.neoforge.capabilities.Capabilities.EnergyStorage.ITEM,
+                        (stack, context) -> new BatteryEnergyStorage(stack),
+                        item.get())));
         PaintCans.register(bus);
         SurvivalWorks.register(bus);
         DroneCombat.register(bus);

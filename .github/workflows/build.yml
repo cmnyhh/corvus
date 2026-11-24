@@ -38,7 +38,7 @@ jobs:
           name: "${{ github.ref_name }} latest build"
           body: "Automatically built from the ${{ github.ref_name }} branch."
           prerelease: true
-          files: build/libs/*.jar
+          files: dist/*.jar
           fail_on_unmatched_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

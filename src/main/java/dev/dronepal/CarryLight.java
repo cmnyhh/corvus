@@ -127,8 +127,11 @@ final class CarryLight {
         if (p.isSpectator() || Hardware.controller(p)!=stack) return false;
         if (intent.equals("order.fetch") && viewing(p,stack)) return false;
         if (intent.equals("order.light")) {
+            // Toggle, so "开灯"/"关灯" both mean what they say; the 1.20.1 build uses the same semantics.
             if (Hardware.energy(stack)<=0 || Hardware.tier(stack,"light")==0) return false;
-            DroneRemote.enable(stack,"light"); return Hardware.online(stack,"light");
+            CustomData.update(DataComponents.CUSTOM_DATA, stack, tag ->
+                    tag.putBoolean("dronepal_off_light", !tag.getBoolean("dronepal_off_light")));
+            return !DroneRemote.disabled(stack, "light") && Hardware.online(stack, "light");
         }
         return intent.equals("order.fetch") && Hardware.powered(stack,"carry") && deliver(p,stack,read(p,stack),true);
     }

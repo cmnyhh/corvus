@@ -5,3 +5,4 @@ artifacts/
 dist/
 .gradle/
 *.log
+.DS_Store

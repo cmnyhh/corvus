@@ -333,7 +333,7 @@
   "dronepal.manual.entry.scan": "Scanning",
   "dronepal.manual.entry.maintenance": "Upkeep and Commands",
   "dronepal.manual.p.what.terminal": "Deployment Terminal",
-  "dronepal.manual.p.what.1": "Corvus is a companion drone that lives in a Curios slot.$(br)Put the terminal into the Drone slot and the airframe appears at your shoulder; take it out and it is stowed again.$(br)Modules, battery, gun and cargo are all stored in the terminal, so recalling never loses anything.",
+  "dronepal.manual.p.what.1": "PROBE: single 5% double 5%% end.$(br)Second line, checking wrap.$(br)Third line: bus, latch, duct.",
   "dronepal.manual.p.what.2": "It does exactly four things: follow you, look for you, fight for you and carry for you.$(br)It will not mine, place blocks or craft for you.$(br)Abilities come from modules. Without the module the ability simply does not exist; it is not merely switched off.",
   "dronepal.manual.p.deploy.1": "$(li)Press G, open Curios, and drag the terminal into the Drone slot.$(br)$(li)A terminal that only sits in your backpack never deploys; right-clicking in hand just reminds you to slot it.$(br)$(li)Once deployed it follows you, and holds position while you turn on the spot.$(br)$(li)Removing the terminal from the slot recalls the drone; everything inside is kept.",
   "dronepal.manual.p.deploy.2": "$(li)Stand close, empty-handed, hold Shift and right-click the airframe to open its panel.$(br)$(li)Drag battery, modules, gun and ammo into their slots; Shift-click moves stacks between panel and inventory.$(br)$(li)Hover a module for its full numbers.$(br)$(li)With no battery every module goes offline; only following and hovering remain.",

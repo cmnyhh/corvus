@@ -1,0 +1,34 @@
+// 手册验证专用 Gradle init 脚本（不改 build.gradle）。
+//   用法： gradle -I gradle/patchouli-dev.init.gradle runClient -PcorvusQuickPlay=CorvusSmoke
+//
+// 1) 把 Patchouli 1.20.1 的 jar 挂进 dev 运行时的 runtimeClasspath。
+//    注意：fg.deobf(files(...)) 在 ForgeGradle 下不生效（它拿不到 artifact 元数据，只会原样返回
+//    未重映射的生产 jar），所以这里和 build.gradle 里 TaCZ 的做法一样：用 flatDir 仓库把它摆成
+//    一个可解析的 module，再交给 fg.deobf 做 SRG -> official 重映射。
+//    flatDir 的坐标 (group, name, version) 映射到文件名 name-version.jar，因此本目录里那份
+//    patchouli-1.20.1-85-forge-1.20.1.jar 与 Modrinth 下载的文件逐字节相同（cmp 验证）。
+//
+// 2) 把 gradle/manualshot/java 加成 main 的额外源码目录（只在本脚本生效时编译）。
+//    那里只有一个 dev 截图 harness，用来在无窗口焦点的开发运行里拍手册页面；它不在 src/ 下，
+//    `gradle build` 不受影响。
+def patchouliDir = '/Users/lyk/Documents/deepseek-harness/default-workspace/.dronepal-gradle/patchouli-1.20.1'
+
+allprojects { p ->
+    p.afterEvaluate {
+        if (p != p.rootProject) return
+        p.repositories {
+            flatDir { dirs patchouliDir }
+        }
+        p.dependencies {
+            // implementation（而不是 runtimeOnly）：截图 harness 要 compile 期看到 Patchouli 的 API，
+            // 但它只在本次 init 脚本生效的构建里存在，不进 mod 的 jar。
+            implementation p.fg.deobf(group: 'patchouli', name: 'patchouli-1.20.1-85-forge', version: '1.20.1')
+        }
+        p.sourceSets.main.java.srcDirs += p.file('gradle/manualshot/java')
+        // 用 -PmanualShot=1 打开截图 harness（build.gradle 的 client run 只声明了 corvus.smoke /
+        // corvus.gapsShot 两个开关，新开关只能从 init 脚本注入给 runClient 的 JVM）。
+        if (p.hasProperty('manualShot')) {
+            p.minecraft.runs.client.property 'corvus.manualShot', p.property('manualShot').toString()
+        }
+    }
+}

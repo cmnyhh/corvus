@@ -33,3 +33,16 @@ description='''Corvus — 随行无人机搭档（1.20.1 移植版）。'''
     versionRange="[1.1.8,)"
     ordering="AFTER"
     side="BOTH"
+# Mixin registration, declared the 1.21.1 way (config + requiredMods=["tacz"]).
+#
+# On 1.20.1 this block is INERT: FML's ModFileParser/ModInfo know only mods, dependencies,
+# modproperties and features, and no Java class in forge-1.20.1-47.2.0 or fmlloader-1.20.1-47.2.0
+# references a "mixins" key (checked with javap/constant-pool grep on the shipped jars). The
+# mechanism that actually makes Forge 1.20.1 apply a mixin config is the jar manifest attribute
+# "MixinConfigs", which build.gradle writes for the jar and for the exploded dev resource set.
+# It is kept here so the file stays in the 1.21.1 shape and reads honestly as "this config belongs
+# to tacz". Robustness without TaCZ comes from @Pseudo on the mixin (the target class is absent, so
+# Mixin skips it) — that path is not exercised by the smokes, which always run with TaCZ present.
+[[mixins]]
+    config="corvus.tacz.mixins.json"
+    requiredMods=["tacz"]

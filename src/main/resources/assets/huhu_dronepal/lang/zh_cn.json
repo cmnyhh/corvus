@@ -333,7 +333,7 @@
   "dronepal.manual.entry.scan": "扫描",
   "dronepal.manual.entry.maintenance": "维护与指令",
   "dronepal.manual.p.what.terminal": "部署终端",
-  "dronepal.manual.p.what.1": "Corvus 是一架装在饰品栏里的随行无人机。$(br)把终端放进 Curios 的「无人机」槽，机体就会出现你肩旁；取出终端，它立刻收回。$(br)模块、电池、枪和货物都保存在终端里，召回不会丢东西。",
+  "dronepal.manual.p.what.1": "探测：单百分号 5% 双百分号 5%% 末尾。$(br)第二行，看换行与折行是否正常显示。$(br)第三行：饰品栏、母线、锁扣。",
   "dronepal.manual.p.what.2": "它只做四件事：跟着你、替你看、替你打、替你背。$(br)它不会挖矿、不会放方块、不会替你合成。$(br)能力来自模块：没装对应模块，就没有对应能力，而不是被禁用。",
   "dronepal.manual.p.deploy.1": "$(li)按 G 打开 Curios 界面，把终端拖进「无人机」槽。$(br)$(li)只放在背包里不会部署；手持右键只会提示你装进槽位。$(br)$(li)部署后它会跟随你；你原地转头时它停在原处。$(br)$(li)把终端从槽里取出即召回，内容物全部保留。",
   "dronepal.manual.p.deploy.2": "$(li)靠近机体，空手按住 Shift 右键，打开配置面板。$(br)$(li)把电池、模块、枪和弹药拖进对应槽位；按住 Shift 点击可在背包与机体之间快速移动。$(br)$(li)悬停模块可以看完整数值。$(br)$(li)没有电池，模块全部离线，只剩跟随与悬浮。",

@@ -14,7 +14,8 @@
   ],
   "result": {
     "item": "patchouli:guide_book",
-    "count": 1
+    "count": 1,
+    "nbt": "{\"patchouli:book\":\"huhu_dronepal:corvus_manual\"}"
   },
   "conditions": [
     {

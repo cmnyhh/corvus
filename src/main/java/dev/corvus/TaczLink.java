@@ -11,16 +11,22 @@ import com.tacz.guns.api.item.IAmmoBox;
 import com.tacz.guns.api.item.IGun;
 import com.tacz.guns.api.item.gun.AbstractGunItem;
 import com.tacz.guns.resource.index.CommonGunIndex;
+import com.tacz.guns.resource.pojo.data.gun.GunReloadData;
+import com.tacz.guns.resource.pojo.data.gun.GunReloadTime;
+import com.tacz.guns.sound.SoundManager;
 import java.util.Map;
 import java.util.WeakHashMap;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.ExplosionEvent;
@@ -46,12 +52,21 @@ public final class TaczLink {
     private static final int LOW_RESERVE = 6;
     /** Gun-pack weight is in "weight points"; the frame budget is in the same unit used by the 1.21 build. */
     private static final double WEIGHT_PER_UNIT = 6.0D;
+    /** 换弹锁定 length when the gun pack carries no reload data at all: 30 tick ≈ 1.5 s. */
+    static final int DEFAULT_RELOAD_TICKS = 30;
+    /** 换弹音效 reach in blocks (the gun packs' own reload audio is short-ranged as well). */
+    private static final int SOUND_RADIUS = 24;
 
     private record Sample(ResourceLocation gun, int loaded, int reserve) {}
 
     /** Test hooks: rounds actually fired and hit/kill lines delivered (the dev smoke asserts these). */
     static int shots;
     static int reports;
+    /** Test hooks: 装填 locks armed, and the feedback sound — total, plus which flavour was used. */
+    static int reloads;
+    static int reloadSounds;
+    static int taczReloadSounds;
+    static int vanillaReloadSounds;
 
     private static final Map<ServerPlayer, Sample> previous = new WeakHashMap<>();
     private static final Map<ServerPlayer, Long> nextHit = new WeakHashMap<>();
@@ -105,6 +120,9 @@ public final class TaczLink {
      * client from the gun display index ({@code SoundManager.SHOOT_SOUND} + the display asset). TaCZ
      * already pushes that to every nearby client when the drone fires, so the port needs no separate
      * sound path; the method stays for callers that probe it and answers "unknown" honestly.</p>
+     *
+     * <p>The reload sound needs our own dispatch (TaCZ only plays it from a gun pack's Lua on a human
+     * reload) but it works the same name-based way — see {@link #reloadSound}.</p>
      */
     static ResourceLocation soundId(ItemStack stack) {
         return null;
@@ -134,6 +152,7 @@ public final class TaczLink {
      *
      * @return true only when TaCZ reports {@code SUCCESS}, i.e. a bullet really left the barrel
      */
+    @SuppressWarnings("UnnecessaryDefaultInEnumSwitch")
     static boolean shoot(DroneEntity drone, float pitch, float yaw) {
         IGunOperator operator = IGunOperator.fromLivingEntity(drone);
         ShootResult result = operator.shoot(() -> pitch, () -> yaw);
@@ -143,8 +162,12 @@ public final class TaczLink {
                 shots++;
                 return true;
             }
-            // Everything else is a state the next tick can recover from; TaCZ keeps the timers.
-            case NO_AMMO -> operator.reload();
+            // NO_AMMO is answered one layer up ({@link DroneCombat#fire}): the drone performs the
+            // 装填 itself and then holds the trigger through a reload lock. TaCZ's own {@code reload}
+            // is deliberately NOT started — it exists to drive a humanoid reload animation, which a
+            // drone must not play; the magazine transaction is local and instantaneous.
+            case NO_AMMO -> {
+            }
             case NEED_BOLT -> operator.bolt();
             case NOT_DRAW -> draw(drone);
             default -> {
@@ -161,6 +184,11 @@ public final class TaczLink {
      * consults an attached provider, so the drone carries the ammunition itself and hands it over here.
      * The capacity is the gun-pack's base {@code ammo_amount}; extended-magazine attachments are not
      * simulated yet (TODO, needs TaCZ's attachment cache which 1.1.8 keeps operator-internal).</p>
+     *
+     * <p>A successful feed is not free any more: the magazine taking rounds arms the 装填 lock
+     * ({@link DroneCombat#beginReload}, length {@link #reloadTicks}) and plays the reload sound, so
+     * the drone cannot answer {@code NO_AMMO} with an instant resupply that looks like infinite ammo.
+     * </p>
      *
      * @param reserve mutable working copies of the controller's ammo parts, in slot order
      * @return how many rounds actually went in
@@ -188,9 +216,81 @@ public final class TaczLink {
         if (moved > 0) {
             gun.setCurrentAmmoCount(gunStack, current + moved);
             gun.setBulletInBarrel(gunStack, true);
-            drone.combat.lastResult = "FED";
+            // 换弹锁定 + 云台反馈: the trigger is dead until the gun says the reload is done, and the
+            // gimbal takes the recoil of a magazine going in (DroneCombat applies it to aimPitch).
+            drone.combat.beginReload(drone, reloadTicks(gunStack));
+            reloadSound(drone, gunStack);
+            reloads++;
         }
         return moved;
+    }
+
+    /**
+     * 换弹时长 in ticks, read straight out of the gun pack.
+     *
+     * <p>TaCZ's own reload state machine splits a reload into a feed phase and a finishing phase and
+     * only calls it done at {@code reload.cooldown.empty} seconds — verified against
+     * {@code ModernKineticGunItem#defaultTickReload}: {@code elapsed < feed → *FEEDING},
+     * {@code elapsed < cooldown → *FINISHING, else NOT_RELOADING}. The drone only ever reloads from an
+     * empty magazine (that IS the {@code NO_AMMO} state this feed answers), so the empty column is the
+     * right one — for the stock {@code tacz:m4a1} that is 2.2 s = 44 tick. Guns whose pack carries no
+     * reload data fall back to {@link #DEFAULT_RELOAD_TICKS}.</p>
+     */
+    static int reloadTicks(ItemStack gunStack) {
+        IGun gun = IGun.getIGunOrNull(gunStack);
+        if (gun == null) return DEFAULT_RELOAD_TICKS;
+        CommonGunIndex index = TimelessAPI.getCommonGunIndex(gun.getGunId(gunStack)).orElse(null);
+        if (index == null) return DEFAULT_RELOAD_TICKS;
+        GunReloadData reload = index.getGunData().getReloadData();
+        if (reload == null) return DEFAULT_RELOAD_TICKS;
+        GunReloadTime cooldown = reload.getCooldown();
+        if (cooldown == null) return DEFAULT_RELOAD_TICKS;
+        float seconds = cooldown.getEmptyTime();
+        if (seconds <= 0F) return DEFAULT_RELOAD_TICKS;
+        // 4 tick floor: a lock shorter than that is not a reload, it is a stutter.
+        return Mth.clamp(Math.round(seconds * 20F), 4, 200);
+    }
+
+    /**
+     * 装填音效: the clack of a magazine, audible to every player around the drone.
+     *
+     * <p><b>First choice is the gun pack's own reload audio.</b> TaCZ 1.1.8 exposes no server-side
+     * <em>sound event</em> for a reload: {@code GunData} carries only volume multipliers, and the real
+     * asset id lives in the gun's <em>display</em> json ({@code "sounds": {"reload_empty": ...}}),
+     * which is client-side data — {@code TimelessAPI.getGunDisplay} answers empty on a dedicated
+     * server. What the server can do is exactly what a gun pack's own Lua does for a human reload:
+     * {@link SoundManager#sendSoundToNearby} ships the gun id, the display id and the sound
+     * <em>name</em> ({@code "reload_empty"}) to nearby clients, and every client resolves that name
+     * out of its own display index. No sound id has to be fetched here, skins included.</p>
+     *
+     * <p><b>Fallback.</b> If no gun or display id resolves (or the dispatch throws), the vanilla
+     * mechanical layer plays through {@code level.playSound(null, pos, ...)} so the reload is still
+     * audible: {@code ARMOR_EQUIP_IRON} — an iron clack that reads as a magazine seating, chosen over
+     * {@code BLOCK_PISTON_CONTRACT} because the piston line is slow and airy while the armour equip is
+     * a short, hard, metallic "click-clack" at exactly the right length.</p>
+     */
+    static void reloadSound(DroneEntity drone, ItemStack gunStack) {
+        reloadSounds++;
+        IGun gun = IGun.getIGunOrNull(gunStack);
+        ResourceLocation gunId = gun == null ? null : gun.getGunId(gunStack);
+        ResourceLocation displayId = gun == null ? null : gun.getGunDisplayId(gunStack);
+        if (gunId != null && displayId != null) {
+            try {
+                SoundManager.sendSoundToNearby(drone, SOUND_RADIUS, gunId, displayId,
+                        SoundManager.RELOAD_EMPTY_SOUND, 1.0F, 1.0F);
+                taczReloadSounds++;
+                return;
+            } catch (Throwable ignored) {
+                // The TaCZ dispatch is unavailable on this runtime (or the channel is not up):
+                // fall through to the vanilla layer rather than reloading in silence.
+            }
+        }
+        Level level = drone.level();
+        if (level != null && !level.isClientSide) {
+            level.playSound(null, drone.blockPosition(), SoundEvents.ARMOR_EQUIP_IRON,
+                    SoundSource.PLAYERS, 0.9F, 1.15F);
+            vanillaReloadSounds++;
+        }
     }
 
     /** Why the last attempt produced no round; the combat tick records this. */

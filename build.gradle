@@ -86,3 +86,33 @@ dependencies {
     runtimeOnly fg.deobf(group: 'tacz', name: 'tacz-1.20.1', version: '1.1.8')
 }
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+// ---- Mixin wiring (dev.corvus.mixin) -----------------------------------------------------------
+// Forge 1.20.1 learns about mixin configurations from the manifest attribute "MixinConfigs"
+// (org.spongepowered.asm.launch.platform.MixinPlatformAgentDefault#prepare -> MixinPlatformManager
+// #addConfig), NOT from mods.toml: [[mixins]] is the NeoForge 1.20.2+ spelling and FML 47 has no
+// parser for it (ModFileParser/ModInfo only read mods, dependencies, modproperties, features).
+// Mixin reads that attribute from a jar *and* from a classpath directory (MainAttributes
+// #getDirAttributes), so the same one-line attribute is written twice: the real jar manifest below,
+// and build/resources/main/META-INF/MANIFEST.MF, because a dev run's copy of the mod is just the
+// exploded source set and has no manifest of its own.
+def mixinConfigs = 'corvus.tacz.mixins.json'
+
+tasks.named('processResources', ProcessResources).configure {
+    // Dev-only manifest: Mixin's container for a classpath directory is read from this file.
+    def outDir = destinationDir
+    doLast {
+        File metaInf = new File(outDir, 'META-INF')
+        metaInf.mkdirs()
+        new File(metaInf, 'MANIFEST.MF').setText(
+                "Manifest-Version: 1.0\r\nMixinConfigs: ${mixinConfigs}\r\n\r\n", 'UTF-8')
+    }
+}
+
+jar {
+    // ... and it must not land next to the archive's real manifest.
+    exclude 'META-INF/MANIFEST.MF'
+    manifest {
+        attributes('MixinConfigs': mixinConfigs)
+    }
+}

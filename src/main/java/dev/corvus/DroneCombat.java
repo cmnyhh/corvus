@@ -28,6 +28,14 @@ import net.minecraftforge.common.MinecraftForge;
  * local — and {@link #flush} writes every change back into the controller's parts list, so the terminal
  * always shows the real ammunition left.</p>
  *
+ * <p><b>装填锁定 (the reload lock).</b> A magazine that fills itself on the tick the gun runs dry reads
+ * as infinite ammo, so a feed is followed by a lock of the gun's own empty-reload length
+ * ({@link TaczLink#reloadTicks}, 30 tick when the pack omits it). While it runs the bus refuses to
+ * fire and keeps {@link #lastResult} at {@code RELOADING}; the trigger is only released when the lock
+ * expires. The gimbal reports the work: {@link #RELOAD_DIP_DEG} of extra down-pitch on {@code aimPitch}
+ * for the first {@link #RELOAD_DIP_TICKS} tick, then back to the target. TaCZ's own reload — the
+ * humanoid animation path — is never started.</p>
+ *
  * <p>Without TaCZ ({@link CombatSlots#available()} false) the bus keeps its documented degraded
  * behaviour: pose, target selection, ally protection and the mode cycle are live, {@link #fire}
  * records {@code NO_FIRE_BACKEND}, and nothing leaves the barrel.</p>
@@ -39,12 +47,25 @@ public final class DroneCombat {
     /** Fire modes for a Mk3 combat module: burst / single / sustained. */
     private static final int MODES = 3;
 
+    /** 云台反馈: extra down-pitch (degrees) the gimbal takes while a magazine goes in. */
+    public static final float RELOAD_DIP_DEG = 6F;
+    /** 云台反馈: how many ticks the dip lasts before the gimbal returns to the target. */
+    public static final int RELOAD_DIP_TICKS = 8;
+
     public String lastResult = "idle";
     private boolean drawn;
     private int graceUntil;
     private int mode;
     private int inBurst;
     private int nextAttempt;
+    /** 装填锁定: ticks left in the reload lock; the trigger is dead while this is above zero. */
+    private int reloadTicks;
+    /** Length of the lock currently running, so the terminal/report can say how long a reload takes. */
+    private int reloadLength;
+    /** 装填锁定: how many ticks of the current lock have already been spent (drives the dip window). */
+    private int reloadDipTicks;
+    /** 云台反馈: the dip currently added to {@code aimPitch}, in degrees (0 when not kicking). */
+    private float reloadDip;
     private ItemStack controller = ItemStack.EMPTY;
     /** The gun/ammo view last written back to the controller; also the "was this edited?" mark. */
     private ItemStack savedGun = ItemStack.EMPTY;
@@ -80,6 +101,26 @@ public final class DroneCombat {
 
     public static float aimPitch(DroneEntity drone) {
         return drone.aimPitch();
+    }
+
+    /** 装填锁定: true while the magazine is being changed — no round leaves the barrel. */
+    public static boolean reloading(DroneEntity drone) {
+        return drone.combat.reloadTicks > 0;
+    }
+
+    /** 装填锁定: ticks left before the trigger is released again (0 when idle). */
+    public static int reloadRemaining(DroneEntity drone) {
+        return Math.max(0, drone.combat.reloadTicks);
+    }
+
+    /** 装填锁定: full length of the lock currently running in ticks (0 when idle). */
+    public static int reloadLength(DroneEntity drone) {
+        return drone.combat.reloadTicks > 0 ? drone.combat.reloadLength : 0;
+    }
+
+    /** 云台反馈: the extra down-pitch currently added to {@code aimPitch}, in degrees (0 = returned). */
+    public static float reloadDip(DroneEntity drone) {
+        return drone.combat.reloadDip;
     }
 
     public static boolean automatic(ItemStack controller) {
@@ -136,6 +177,11 @@ public final class DroneCombat {
         combat.controller = current;
         combat.drawn = false;
         combat.inBurst = 0;
+        // A different gun/ammo view is a different magazine: whatever the old one was loading is gone.
+        combat.reloadTicks = 0;
+        combat.reloadLength = 0;
+        combat.reloadDipTicks = 0;
+        combat.reloadDip = 0F;
         combat.combatTier = current.isEmpty() ? -1 : Hardware.tier(current, "combat");
         if (!CombatSlots.available() || current.isEmpty()) return;
         ItemStack gun = Hardware.tier(current, "combat") > 0
@@ -210,6 +256,26 @@ public final class DroneCombat {
         return false;
     }
 
+    /**
+     * 装填锁定: arms the reload lock right after {@link TaczLink#feed} put rounds into the magazine.
+     *
+     * <p>The lock is a wall-clock promise, not a busy-wait: it counts down in {@link #tick} whether or
+     * not the drone has a target, and it abandons the burst that was interrupted so the next trigger
+     * pull starts a fresh burst instead of resuming a half-spent one.</p>
+     *
+     * @param ticks lock length — the gun's own empty-reload time (see {@link TaczLink#reloadTicks})
+     */
+    void beginReload(DroneEntity drone, int ticks) {
+        reloadLength = Math.max(1, ticks);
+        reloadTicks = reloadLength;
+        reloadDipTicks = 0;
+        reloadDip = 0F;
+        inBurst = 0;
+        // The schedule written before the feed is stale: never fire on the very tick the lock expires.
+        nextAttempt = Math.max(nextAttempt, drone.tickCount + 2);
+        lastResult = "RELOADING";
+    }
+
     void tick(DroneEntity drone) {
         ItemStack current = drone.controller();
         if (current.isEmpty()) {
@@ -228,6 +294,16 @@ public final class DroneCombat {
             flush(drone);
         }
         controller = current;
+        // 装填锁定 countdown, then the gimbal dip it drives: the first RELOAD_DIP_TICKS of the lock push
+        // the muzzle RELOAD_DIP_DEG further down, and the gimbal returns to the target afterwards.
+        if (reloadTicks > 0) {
+            reloadTicks--;
+            reloadDip = reloadDipTicks < RELOAD_DIP_TICKS ? RELOAD_DIP_DEG : 0F;
+            reloadDipTicks++;
+        } else {
+            reloadDipTicks = 0;
+            reloadDip = 0F;
+        }
         Hardware.Module module = Hardware.installed(current).stream()
                 .filter(candidate -> candidate.family().equals("combat")).findFirst().orElse(null);
         boolean armed = module != null && automatic(current) && Hardware.online(current, "combat")
@@ -260,10 +336,18 @@ public final class DroneCombat {
         float gimbal = Mth.clamp(relative, -75F, 75F);
         drone.faceHeading(drone.followHeading() + relative - gimbal);
         drone.setAimYaw(gimbal);
-        drone.setAimPitch(pitchToTarget);
+        // 云台反馈 rides the existing synced gimbal pitch: nothing new to sync, the renderer untouched.
+        drone.setAimPitch(pitchToTarget + reloadDip);
         if (!drawn) {
             if (CombatSlots.available()) TaczLink.draw(drone);
             drawn = true;
+        }
+        if (reloadTicks > 0) {
+            // 装填锁定: the magazine is out of the gun. Aiming above already ran, so the gimbal keeps
+            // tracking (and shows the dip) while the trigger is dead.
+            inBurst = 0;
+            lastResult = "RELOADING";
+            return;
         }
         if (nextPitch > 0 || drone.tickCount < nextAttempt) return;
         if (!Engagement.clearOfAllies(drone, target)) {
@@ -312,6 +396,11 @@ public final class DroneCombat {
     /**
      * Firing is the only TaCZ-only step. Returns true when a round actually left the gun — TaCZ's
      * own {@code ShootResult} decides, so a cooldown, a reload or an empty magazine is not a shot.
+     *
+     * <p>{@code NO_AMMO} is answered by {@link TaczLink#feed}, which also arms the 装填 lock: the round
+     * that was just loaded is <em>not</em> fired on the same tick any more (that instant resupply was
+     * what made the drone look like it had infinite ammo). The trigger stays dead until the lock runs
+     * out, and {@link #lastResult} says {@code RELOADING} the whole time.</p>
      */
     private boolean fire(DroneEntity drone, float pitch, float yaw) {
         if (!CombatSlots.available()) {
@@ -319,9 +408,11 @@ public final class DroneCombat {
             return false;
         }
         boolean fired = TaczLink.shoot(drone, pitch, yaw);
-        if (!fired && "NO_AMMO".equals(TaczLink.lastResult(drone)) && TaczLink.feed(drone, reserve) > 0) {
-            // The drone's own ammunition just went into the magazine: shoot the round we just loaded.
-            fired = TaczLink.shoot(drone, pitch, yaw);
+        if (!fired && "NO_AMMO".equals(TaczLink.lastResult(drone))) {
+            // 打空: the drone's own ammunition goes into the magazine, and the bus goes quiet for the
+            // gun's reload time. An empty reserve leaves NO_AMMO on the table (dry fire, no lock).
+            lastResult = TaczLink.feed(drone, reserve) > 0 ? "RELOADING" : "NO_AMMO";
+            return false;
         }
         lastResult = fired ? "SUCCESS" : TaczLink.lastResult(drone);
         return fired;

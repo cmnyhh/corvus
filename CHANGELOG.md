@@ -1,5 +1,9 @@
 # Corvus 更新日志
 
+## 0.2.3 — 电网掉落测试改为确定性
+- `PowerTowerBlock` 增加同步掉落计数（`dropEvents()`），测试不再依赖掉落物实体在世界上出现的时机；拆塔掉落断言改为“每座塔恰好计一次”。
+- 1.21.1 GameTest **121/121** 全绿（连续两轮稳定通过）。
+- 无玩法数值改动。
 ## 0.2.2 — 水管竖向接头
 - 水管 blockstate 从 64 条 `variants` 改为 **108 条 `multipart`**：凡是同时含水平与 `up/down` 的掩码，现在会叠加一根立管（`water_pipe_arm_up`），不再出现“水平那一臂整个消失、拐角断开”。
 - 新增 `water_pipe_arm_up` 与 `water_pipe_cap_vertical` 两个模型（同一套参数化生成器产出，既有 11 个模型逐字节未变）。

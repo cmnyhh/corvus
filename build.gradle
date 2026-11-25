@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'dev.dronepal'
-version = '0.2.2'
+version = '0.2.3'
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 neoForge {
     version = '21.1.267'

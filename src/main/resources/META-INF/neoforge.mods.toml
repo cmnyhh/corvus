@@ -3,7 +3,7 @@ loaderVersion="[4,)"
 license="All Rights Reserved"
 [[mods]]
 modId="huhu_dronepal"
-version="0.2.2"
+version="0.2.3"
 displayName="Corvus"
 description='''Corvus — 随行无人机搭档。'''
 [[dependencies.huhu_dronepal]]

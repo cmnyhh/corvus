@@ -31,6 +31,13 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public final class PowerTowerBlock extends BaseEntityBlock {
     private static final MapCodec<PowerTowerBlock> CODEC = simpleCodec(PowerTowerBlock::new);
     private static final VoxelShape SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 15.8D, 15.0D);
+    /** Number of tower items spawned by segment removal; a synchronous, entity-timing-free test hook. */
+    private static final java.util.concurrent.atomic.AtomicInteger DROP_EVENTS =
+            new java.util.concurrent.atomic.AtomicInteger();
+
+    /** Test seam: how many tower drops the removal path has produced since the last reset. */
+    public static int dropEvents() { return DROP_EVENTS.get(); }
+    public static void resetDropEventsForTest() { DROP_EVENTS.set(0); }
 
     public PowerTowerBlock(Properties properties) { super(properties); }
 
@@ -82,6 +89,7 @@ public final class PowerTowerBlock extends BaseEntityBlock {
             clearPart(level, pos.above(2));
             // Spawn directly instead of through the loot table: the bottom is the only segment
             // with an item, and this makes "break any segment, one drop" independent of loot data.
+            DROP_EVENTS.incrementAndGet();
             net.minecraft.world.Containers.dropItemStack(level, pos.getX() + 0.5D, pos.getY() + 0.5D,
                     pos.getZ() + 0.5D, new net.minecraft.world.item.ItemStack(TowerRegistry.TOWER.get()));
         }

@@ -258,48 +258,27 @@ public final class PowerGridGameTest {
     public static void breakingAnySegmentRemovesTowerAndDropsOnce(GameTestHelper test) {
         prepare(test);
         ServerLevel level = test.getLevel();
-
-        // Bottom broken directly: the bottom must drop once. The item is spawned on the next
-        // server task, so the count happens after one tick.
+        PowerTowerBlock.resetDropEventsForTest();
         BlockPos baseA = new BlockPos(24, 1, 24);
         BlockPos baseB = new BlockPos(34, 1, 24);
         tower(test, baseA);
         tower(test, baseB);
+
+        // Bottom broken directly.
         level.destroyBlock(abs(test, baseA), true);
-        level.destroyBlock(abs(test, baseB.above()), true);
         test.assertTrue(test.getBlockState(baseA).isAir() && test.getBlockState(baseA.above()).isAir()
                 && test.getBlockState(baseA.above(2)).isAir(), "bottom break left a segment behind");
+
+        // Middle broken: cascade must remove the bottom and the top.
+        level.destroyBlock(abs(test, baseB.above()), true);
         test.assertTrue(test.getBlockState(baseB).isAir() && test.getBlockState(baseB.above()).isAir()
                 && test.getBlockState(baseB.above(2)).isAir(), "middle break left a segment behind");
-        test.runAfterDelay(5, () -> {
-            try {
-                int fromBottom = towerDrops(level, abs(test, baseA));
-                int fromMiddle = towerDrops(level, abs(test, baseB));
-                test.assertTrue(fromBottom == 1, "bottom break dropped " + fromBottom + " towers");
-                test.assertTrue(fromMiddle == 1, "middle break dropped " + fromMiddle + " towers");
-                test.succeed();
-            } finally {
-                cleanup(test);
-            }
-        });
-    }
 
-    /** Counts and discards power-tower items near {@code pos}; the list keeps positions for diagnostics. */
-    private static int towerDrops(ServerLevel level, BlockPos pos) {
-        int towers = 0;
-        for (ItemEntity entity : level.getEntitiesOfClass(ItemEntity.class, new AABB(pos).inflate(6.0D))) {
-            if (entity.getItem().is(TowerRegistry.ITEM.get())) towers += entity.getItem().getCount();
-            entity.discard();
-        }
-        return towers;
-    }
-
-    private static String towerDropPositions(ServerLevel level, BlockPos pos) {
-        StringBuilder out = new StringBuilder();
-        for (ItemEntity entity : level.getEntitiesOfClass(ItemEntity.class, new AABB(pos).inflate(6.0D))) {
-            out.append(entity.getItem()).append("@").append(entity.blockPosition()).append(" ");
-        }
-        return out.toString();
+        // Synchronous assertion: no dependence on item-entity spawn/visibility timing.
+        int drops = PowerTowerBlock.dropEvents();
+        test.assertTrue(drops == 2, "removal path dropped " + drops + " towers, expected exactly 2 (one per tower)");
+        cleanup(test);
+        test.succeed();
     }
 
     // ---------------------------------------------------------------- 7

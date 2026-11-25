@@ -1,6 +1,7 @@
 package dev.dronepal;
 
 import com.google.gson.JsonObject;
+import dev.corvus.core.IntentRules;
 import java.text.Normalizer;
 import java.util.*;
 import java.util.random.RandomGenerator;
@@ -41,8 +42,11 @@ final class LocalDialogue {
                     String id = json.get("id").getAsString();
                     var aliases = strings(json, "aliases").stream().map(LocalDialogue::normalize).filter(s -> !s.isEmpty()).toList();
                     var patterns = strings(json, "patterns").stream().map(Pattern::compile).toList();
+                    // The module gate of a built-in order is pinned by the shared table (order.supply is a
+                    // cargo action on both builds); a data pack only gates orders the mod does not know.
                     var intent = new Intent(id, aliases, patterns, json.get("response").getAsString(),
-                        optional(json, "requires_module").replaceFirst("^mod_", ""), optional(json, "denied"), optional(json, "line"));
+                        IntentRules.moduleFor(id, optional(json, "requires_module").replaceFirst("^mod_", "")),
+                        optional(json, "denied"), optional(json, "line"));
                     if (intents.put(id, intent) != null) throw new IllegalArgumentException("duplicate intent " + id);
                 } else if (path.startsWith("lines/")) {
                     String pack = json.get("pack").getAsString();
@@ -105,14 +109,14 @@ final class LocalDialogue {
             case "refuse" -> new Reply(intent.line());
             case "smalltalk" -> speak(chip, chip.smalltalk() ? "smalltalk" : "smalltalk_refuse", device.slots(), previous, random);
             case "line" -> speak(chip, intent.line(), device.slots(), previous, random);
-            case "data", "action" -> switch (intent.id()) {
-                case "scan", "scan.hostile", "scan.ore", "order.heal", "order.cover", "order.hold", "order.work", "order.idle" -> {
-                    if (!device.execute(intent.id())) yield new Reply("当前无法执行，请检查能量、目标或冷却。");
-                    // Successful scans answer exactly once when their results are ready.
-                    yield new Reply(intent.id().startsWith("scan") ? "" : "指令已执行。");
-                }
-                default -> new Reply("当前固件尚未实现这项指令。");
-            };
+            case "data", "action" -> {
+                // One shared whitelist (dev.corvus.core.IntentRules), so "which orders run" can no longer
+                // differ between the builds: everything in the table executes, anything else is "尚未实现".
+                if (!IntentRules.implemented(intent.id())) yield new Reply("当前固件尚未实现这项指令。");
+                if (!device.execute(intent.id())) yield new Reply("当前无法执行，请检查能量、目标或冷却。");
+                // Successful scans answer exactly once when their results are ready.
+                yield new Reply(intent.id().startsWith("scan") ? "" : "指令已执行。");
+            }
             default -> new Reply("未知的对话响应类型。");
         };
     }

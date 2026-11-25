@@ -1,5 +1,6 @@
 package dev.dronepal;
 
+import dev.corvus.core.FrameStats;
 import dev.dronepal.mill.DroneWork;
 import java.util.UUID;
 import net.minecraft.nbt.CompoundTag;
@@ -41,14 +42,17 @@ public final class DroneEntity extends net.minecraft.world.entity.PathfinderMob 
                     if (pilot != null && pilot.isCreative()) return false;
                 }
             }
-            amount = Math.min(amount, ordinaryHitCap);
+            // Shared arithmetic (dev.corvus.core.FrameStats#mitigate): same per-hit ceiling rule the
+            // 1.20.1 build now uses, so a data-pack hit cap cannot behave differently on the two sides.
+            amount = (float) FrameStats.mitigate(amount, 1.0D, ordinaryHitCap);
         }
         return super.hurt(source, amount);
     }
     void setFrame(String id) {
         Frames.Frame frame = Frames.byId(id);
         float healthFraction = getHealth() / getMaxHealth();
-        getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).setBaseValue(frame.maxHealth());
+        getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
+                .setBaseValue(FrameStats.maxHealth(Math.round(frame.maxHealth()), 1.0D));
         setHealth(getMaxHealth() * healthFraction);
         ordinaryHitCap = frame.hitCap();
         entityData.set(FRAME, frame.id());
@@ -65,14 +69,18 @@ public final class DroneEntity extends net.minecraft.world.entity.PathfinderMob 
         if (key == FRAME_WIDTH || key == FRAME_HEIGHT) refreshDimensions();
     }
     Vec3 followPosition(Vec3 target) {
-        // TODO(corvus-core): the blend is dev.corvus.core.FrameStats#followStep(current, target, accel, 1)
-        // per axis; keep the teleport branch here. See corvus-core/TODO.md.
+        // The blend is dev.corvus.core.FrameStats#followStep per axis (the teleport branch stays here,
+        // because the cooldown is entity state): both builds now step from the same frame numbers.
         Frames.Frame frame = Frames.byId(getFrameId());
         if (tickCount >= nextFrameTeleport && position().distanceToSqr(target) > frame.teleportThreshold() * frame.teleportThreshold()) {
             nextFrameTeleport = tickCount + frame.teleportCooldown();
             if (frame.teleportFailChance() == 0 || random.nextFloat() >= frame.teleportFailChance()) return target;
         }
-        return position().lerp(target, Math.clamp(0.2 * frame.accelResponse(), 0, 1));
+        double accel = frame.accelResponse();
+        return new Vec3(
+                FrameStats.followStep(getX(), target.x, accel, 1),
+                FrameStats.followStep(getY(), target.y, accel, 1),
+                FrameStats.followStep(getZ(), target.z, accel, 1));
     }
     private static final net.minecraft.network.syncher.EntityDataAccessor<Byte> PAINT = SynchedEntityData.defineId(DroneEntity.class, net.minecraft.network.syncher.EntityDataSerializers.BYTE);
     public String getPaintName() { return PAINTS.get(entityData.get(PAINT)); }

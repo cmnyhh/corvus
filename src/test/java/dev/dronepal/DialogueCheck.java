@@ -22,6 +22,17 @@ public final class DialogueCheck {
             return success;
         }
     }
+    /** Device that reports every module fitted, records what was dispatched and answers pass/fail. */
+    private static final class Orders implements LocalDialogue.Device {
+        boolean success = true;
+        final List<String> executed = new ArrayList<>();
+        public boolean active() { return true; }
+        public String chip() { return "tactical"; }
+        public boolean installed(String family) { return true; }
+        public Map<String,String> slots() { return Map.of(); }
+        public boolean execute(String id) { executed.add(id); return success; }
+        public String lookup(String id, String question) { return id; }
+    }
     static void expect(boolean test, String description) { if (!test) throw new AssertionError(description); }
     public static void main(String[] ignored) throws Exception {
         var docs = new HashMap<String,JsonObject>();
@@ -100,6 +111,37 @@ public final class DialogueCheck {
         expect("friend_low".equals(barks.advance(new DroneBarks.State("cave", true, true, false, false), 200, 0, 1, 40)), "low health");
         expect(barks.advance(day, 240, 0, 1, 40) == null, "revisited dimension");
         expect(barks.advance(new DroneBarks.State("home", true, true, false, false), 280, .9, .2, 40) == null, "probability");
-        System.out.println("DialogueCheck passed: deployed/silent gates, personality, status, intent dispatch, module gates, refusal, reload, weighted non-repeat " + frequencies);
+        // ---- R3: the eleven implemented orders dispatch on this build too, with the same words ----
+        // The same sentences are asserted in the 1.20.1 GapSmoke (whitelist phase), so a whitelist that
+        // drifts again fails on one side immediately.
+        String[][] cases = {
+                {"扫描", "scan"}, {"附近有怪吗", "scan.hostile"}, {"找矿", "scan.ore"},
+                {"治疗", "order.heal"}, {"捡一下", "order.fetch"}, {"递弹", "order.supply"},
+                {"开灯", "order.light"}, {"掩护我", "order.cover"}, {"停火", "order.hold"},
+                {"上工", "order.work"}, {"回来", "order.idle"}};
+        for (String[] sample : cases) {
+            var intent = library[0].match(sample[0]);
+            expect(intent != null && sample[1].equals(intent.id()),
+                    sample[0] + " -> " + (intent == null ? "unknown" : intent.id()));
+        }
+        var orders = new Orders();
+        orders.success = true;
+        expect("指令已执行。".equals(library[0].respond(orders, "开灯", "", rng).text()), "light success line");
+        orders.success = false;
+        expect("当前无法执行，请检查能量、目标或冷却。".equals(library[0].respond(orders, "开灯", "", rng).text()),
+                "light refusal line");
+        orders.executed.clear();
+        orders.success = true;
+        for (String[] sample : cases) library[0].respond(orders, sample[0], "", rng);
+        expect(orders.executed.size() == cases.length, "not every whitelisted order dispatched: " + orders.executed);
+        var extra = new HashMap<>(docs);
+        extra.put("intents/order.hack.json", JsonParser.parseString(
+                "{\"id\":\"order.hack\",\"aliases\":[\"hack\"],\"response\":\"action\"}").getAsJsonObject());
+        var strict = new LocalDialogue(extra);
+        orders.executed.clear();
+        expect("当前固件尚未实现这项指令。".equals(strict.respond(orders, "hack", "", rng).text()),
+                "an unknown action order is not dispatched");
+        expect(orders.executed.isEmpty(), "an unknown order must not reach the handler");
+        System.out.println("DialogueCheck passed: deployed/silent gates, personality, status, intent dispatch, module gates, refusal, reload, weighted non-repeat, R3 whitelist (" + cases.length + " orders) " + frequencies);
     }
 }

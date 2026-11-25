@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ICI",
+    "CBC",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "B": {
+      "item": "huhu_dronepal:battery_cell"
+    }
+  },
+  "result": {
+    "id": "huhu_dronepal:power_tower",
+    "count": 1
+  }
+}

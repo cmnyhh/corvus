@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
+import dev.corvus.core.HardwareRules;
 import java.util.*;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
@@ -258,16 +259,16 @@ public final class Hardware {
         return "";
     }
     public static boolean online(ItemStack stack, String family) {
-        // TODO(corvus-core): the rule itself is dev.corvus.core.HardwareRules#online(userDisabled, powered)
-        // and dev.corvus.core.HardwareRules#brownout(energy, capacity); move the call over together with
-        // the 1.20.1 side (see corvus-core/TODO.md) so the two cannot drift again.
-        return !DroneRemote.disabled(stack, family) && powered(stack, family);
+        // One shared rule (dev.corvus.core.HardwareRules#online): the player switch always wins over
+        // charge, so a module switched off in the wheel neither draws power nor speaks (R2).
+        return HardwareRules.online(DroneRemote.disabled(stack, family), powered(stack, family));
     }
     public static boolean powered(ItemStack stack, String family) {
         int energy = energy(stack);
         if (energy <= 0) return false;
         var installed = installed(stack);
-        String disabled = energy < capacity(stack) / 5 ? installed.stream().filter(m -> m.drain() > 0)
+        String disabled = HardwareRules.brownout(energy, capacity(stack))
+                ? installed.stream().filter(m -> m.drain() > 0)
                 .max(Comparator.<Module>comparingInt(m -> m.draw(20)).thenComparing(Module::family)).map(Module::family).orElse("") : "";
         if (disabled.equals(family)) return false;
         return installed.stream().anyMatch(m -> m.family().equals(family) && !faulted(stack, m));

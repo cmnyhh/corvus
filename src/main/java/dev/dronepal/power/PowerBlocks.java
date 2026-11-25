@@ -74,12 +74,16 @@ public final class PowerBlocks {
         ITEMS.register(bus);
         TYPES.register(bus);
         bus.addListener(PowerBlocks::capabilities);
+        // TODO(grid): wireless power tower registration (power/grid); kept in this file so the
+        //  mod entry point needs no extra line.
+        dev.dronepal.power.grid.TowerRegistry.register(bus);
     }
 
     public static void addToTab(CreativeModeTab.Output output) {
         output.accept(BURNER_ITEM.get());
         output.accept(SOLAR_ITEM.get());
         output.accept(BANK_ITEM.get());
+        dev.dronepal.power.grid.TowerRegistry.addToTab(output);
     }
 
     private static void capabilities(RegisterCapabilitiesEvent event) {

@@ -104,6 +104,17 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
     }
 
     void tick(ServerLevel world) {
+        // TODO(grid): an in-grid pad fills its buffer from the wireless grid before burning fuel.
+        int gridRoom = Math.min(BASE_CABLE_RATE, BUFFER - energy);
+        if (gridRoom > 0) {
+            int fromGrid = dev.dronepal.power.grid.GridLink.draw(world, this, gridRoom,
+                    dev.dronepal.power.grid.GridLink.PRIORITY_DOCK,
+                    () -> Math.min(BASE_CABLE_RATE, BUFFER - energy));
+            if (fromGrid > 0) {
+                energy += fromGrid;
+                setChanged();
+            }
+        }
         if (energy < BUFFER && fuel.hasFuel() && fuel.ignite(world, worldPosition)) {
             energy += fuel.draw(Math.min(COAL_RATE, BUFFER - energy));
             setChanged();

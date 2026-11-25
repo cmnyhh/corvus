@@ -55,7 +55,9 @@ public final class DroneHud {
         var header = Component.empty().append(Frames.name(sample.frame())).append(" · ").append(status);
         var battery = sample.capacity() == 0 ? text("no_battery") : text(low ? "low" : "charge", 100L*sample.energy()/sample.capacity());
         var rate = text("rate", DroneTelemetry.rate(sample.consumed()));
-        var power = Component.empty().append(battery).append("   ").append(rate);
+        // TODO(grid): the wireless-grid state is part of the deployed-power readout.
+        var grid = text(sample.gridOnline() ? "grid_online" : "grid_offline");
+        var power = Component.empty().append(battery).append("   ").append(rate).append("   ").append(grid);
         var modes = text("modules", Integer.bitCount(sample.online()), Integer.bitCount(sample.fitted()));
         var summary = Component.empty().append(modes);
         if ((sample.fitted() & 1) != 0) summary.append(" · ").append(Component.translatable("dronepal.engage." + sample.mode()));

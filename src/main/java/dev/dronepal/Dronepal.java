@@ -35,6 +35,7 @@ public final class Dronepal {
                 PaintCans.addToTab(output);
                 output.accept(ChargingDockRegistry.DOCK.get());
                 PowerBlocks.addToTab(output);
+                dev.dronepal.power.io.PowerIoRegistry.addToTab(output);
                 SurvivalWorks.addToTab(output);
                 OreMillRegistry.creative(output);
             }).build());
@@ -80,6 +81,7 @@ public final class Dronepal {
         TerminalMenus.register(bus);
         dev.dronepal.charging.ChargingDockRegistry.register(bus);
         PowerBlocks.register(bus);
+        dev.dronepal.power.io.PowerIoRegistry.register(bus);
         OreMillRegistry.register(bus);
         TABS.register(bus);
     }

@@ -52,7 +52,7 @@ final class AssemblyStation extends BlockEntity {
     boolean start() {
         var plan = plan();
         if (busy() || plan == null) return false;
-        ItemStack result = plan.output().stack();
+        ItemStack result = plan.result();
         if (result.isEmpty() || !room(result)) return false;
         int[] allocation = new int[INPUTS];
         for (var cost : plan.costs()) {

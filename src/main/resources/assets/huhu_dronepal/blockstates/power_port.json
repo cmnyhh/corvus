@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "huhu_dronepal:block/power_port",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "huhu_dronepal:block/power_port",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "huhu_dronepal:block/power_port",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "huhu_dronepal:block/power_port",
+      "y": 270
+    }
+  }
+}

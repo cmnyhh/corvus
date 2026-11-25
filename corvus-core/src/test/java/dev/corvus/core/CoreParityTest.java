@@ -132,6 +132,19 @@ class CoreParityTest {
     }
 
     @Test
+    @DisplayName("bank: the model segment is displayed as 0..3 on both sides, never 1..4")
+    void bankWindowDomain() {
+        assertEquals(4, Bank.WINDOWS, "four segments");
+        assertEquals(3, Bank.LAST_WINDOW, "the display domain ends at 3, not 4 (R5)");
+        assertEquals(Bank.LAST_WINDOW, Bank.window(100, 100), "a full bank prints its own segment");
+        assertEquals(0, Bank.window(0, 100), "an empty bank prints 0");
+        for (int percent = 0; percent <= 100; percent++) {
+            int window = Bank.window(percent, 100);
+            assertTrue(window >= 0 && window <= Bank.LAST_WINDOW, "segment out of 0..3 at " + percent + "%: " + window);
+        }
+    }
+
+    @Test
     @DisplayName("bank: the model segment switches at 34/67/100 of the rounded percentage")
     void bankWindow() {
         assertEquals(0, Bank.window(0, 100), "0 %");
@@ -150,46 +163,60 @@ class CoreParityTest {
     // ------------------------------------------------------------------ push split (§1.11)
 
     @Test
-    @DisplayName("pushSplit: 40 FE across two receivers is 20/20, not 40/0")
-    void pushSplitEven() {
-        assertArrayEquals(new int[] {20, 20}, Bank.pushSplit(40, new int[] {1_000, 1_000}, new int[] {0, 0}),
-                "even split (the 1.20.1 face-order link used to give 40/0)");
-        assertArrayEquals(new int[] {21, 20}, Bank.pushSplit(41, new int[] {1_000, 1_000}, new int[] {0, 0}),
-                "the odd FE goes to the first target");
-        assertArrayEquals(new int[] {1, 0, 0}, Bank.pushSplit(1, new int[] {10, 10, 10}, new int[] {0, 0, 0}),
-                "a 1 FE budget goes to the first target");
-        assertArrayEquals(new int[] {2, 1, 1}, Bank.pushSplit(4, new int[] {10, 10, 10}, new int[] {0, 0, 0}),
-                "4 across 3 targets: remainder in index order");
+    @DisplayName("pushTo: the first receiver is filled first, so 40 FE across two is 40/0, not 20/20")
+    void pushToFillsInOrder() {
+        assertArrayEquals(new int[] {40, 0}, Bank.pushTo(40, new int[] {1_000, 1_000}, new int[] {0, 0}),
+                "fill in order (the 1.21.1 push used to split evenly, R5)");
+        assertArrayEquals(new int[] {10, 30}, Bank.pushTo(40, new int[] {10, 1_000}, new int[] {0, 0}),
+                "the first receiver's 10 FE room leaves 30 for the second");
+        assertArrayEquals(new int[] {10, 10, 20}, Bank.pushTo(40, new int[] {10, 10, 1_000}, new int[] {0, 0, 0}),
+                "three receivers fill left to right");
+        assertArrayEquals(new int[] {1, 0, 0}, Bank.pushTo(1, new int[] {10, 10, 10}, new int[] {0, 0, 0}),
+                "a 1 FE budget goes to the first receiver");
+        assertEquals(40, Bank.planned(Bank.pushTo(40, new int[] {1_000, 1_000}, new int[] {0, 0})),
+                "the plan moves the whole budget when there is room");
     }
 
     @Test
-    @DisplayName("pushSplit: full targets are skipped, not counted")
-    void pushSplitEligibility() {
-        assertArrayEquals(new int[] {0, 40}, Bank.pushSplit(40, new int[] {1_000, 1_000}, new int[] {1_000, 0}),
-                "a full neighbour gets nothing and does not halve the share");
-        assertArrayEquals(new int[] {0, 0}, Bank.pushSplit(40, new int[] {1_000, 1_000}, new int[] {1_000, 1_000}),
-                "nobody can take power");
-        assertArrayEquals(new int[] {0, 0}, Bank.pushSplit(0, new int[] {1_000, 1_000}, new int[] {0, 0}),
+    @DisplayName("pushTo: full receivers are skipped and the budget carries on to the next one")
+    void pushToSkipsFullReceivers() {
+        assertArrayEquals(new int[] {0, 40}, Bank.pushTo(40, new int[] {1_000, 1_000}, new int[] {1_000, 0}),
+                "a full first receiver does not block the second");
+        assertArrayEquals(new int[] {0, 0}, Bank.pushTo(40, new int[] {1_000, 1_000}, new int[] {1_000, 1_000}),
+                "nobody can take power, so the sender keeps it");
+        assertArrayEquals(new int[] {0, 0}, Bank.pushTo(0, new int[] {1_000, 1_000}, new int[] {0, 0}),
                 "a zero budget moves nothing");
-        assertArrayEquals(new int[] {0, 0}, Bank.pushSplit(-5, new int[] {1_000, 1_000}, new int[] {0, 0}),
+        assertArrayEquals(new int[] {0, 0}, Bank.pushTo(-5, new int[] {1_000, 1_000}, new int[] {0, 0}),
                 "a negative budget moves nothing");
-        assertArrayEquals(new int[] {5, 0}, Bank.pushSplit(40, new int[] {5, 0}, new int[] {0, 0}),
-                "a capacity-0 target is not eligible");
+        assertArrayEquals(new int[] {0, 40}, Bank.pushTo(40, new int[] {0, 1_000}, new int[] {0, 0}),
+                "a capacity-0 target is skipped, so the second one sees the whole budget");
+        assertArrayEquals(new int[] {0, 0}, Bank.pushTo(40, new int[] {5, 0}, new int[] {5, 0}),
+                "a full target and a capacity-0 target take nothing between them");
     }
 
     @Test
-    @DisplayName("pushSplit: a target's free room truncates its share")
-    void pushSplitRoom() {
-        assertArrayEquals(new int[] {10, 20}, Bank.pushSplit(40, new int[] {10, 1_000}, new int[] {0, 0}),
-                "a 10 FE room caps the first share");
-        assertArrayEquals(new int[] {5, 5}, Bank.pushSplit(40, new int[] {5, 5}, new int[] {0, 0}),
-                "both capped");
-        assertArrayEquals(new int[] {0, 12}, Bank.pushSplit(24, new int[] {100, 100}, new int[] {100, 88}),
-                "storage over capacity counts as full");
+    @DisplayName("pushTo: nobody is credited more than its own free room")
+    void pushToRoom() {
+        assertArrayEquals(new int[] {5, 5}, Bank.pushTo(40, new int[] {5, 5}, new int[] {0, 0}),
+                "both capped, the rest stays with the sender");
+        assertArrayEquals(new int[] {0, 12}, Bank.pushTo(24, new int[] {100, 100}, new int[] {100, 88}),
+                "the full target gets nothing, the second gets its 12 FE of room");
+        assertEquals(12, Bank.planned(Bank.pushTo(24, new int[] {100, 100}, new int[] {100, 88})),
+                "the plan never invents FE");
         assertThrows(IllegalArgumentException.class,
-                () -> Bank.pushSplit(10, new int[] {1, 2}, new int[] {0}), "length mismatch is a caller bug");
+                () -> Bank.pushTo(10, new int[] {1, 2}, new int[] {0}), "length mismatch is a caller bug");
         assertThrows(IllegalArgumentException.class,
-                () -> Bank.pushSplit(10, null, new int[] {0}), "null array is a caller bug");
+                () -> Bank.pushTo(10, null, new int[] {0}), "null array is a caller bug");
+    }
+
+    @Test
+    @DisplayName("probe: a burner only lights fuel when a neighbour would accept 1 FE")
+    void pushProbe() {
+        assertEquals(1, Bank.PROBE_FE, "the probe is exactly one FE");
+        assertTrue(Bank.canTakeProbe(1), "an empty neighbour accepts the probe");
+        assertTrue(Bank.canTakeProbe(40), "a half-full neighbour accepts the probe");
+        assertFalse(Bank.canTakeProbe(0), "a full neighbour answers 0, so no fuel is burnt (R5)");
+        assertFalse(Bank.canTakeProbe(-1), "a negative answer is not an acceptance");
     }
 
     // ------------------------------------------------------------------ settlement (§1.4, R5)
@@ -254,6 +281,53 @@ class CoreParityTest {
         assertFalse(HardwareRules.brownout(1, 5), "capacity 5 -> threshold 1, 1 is not < 1");
         assertFalse(HardwareRules.brownout(0, 0), "no battery is not a brown-out");
         assertTrue(HardwareRules.brownout(-1, 100), "a negative reading is below any threshold");
+    }
+
+    @Test
+    @DisplayName("hardware: a module switched off in the wheel stays off and stops drawing (R2)")
+    void disabledModuleStaysOff() {
+        int[] watts = {5, 14, 2};
+        boolean[] disabled = {true, false, false};
+        for (int second = 0; second < 15; second++) {
+            int[] flags = new int[watts.length];
+            for (int i = 0; i < watts.length; i++) {
+                flags[i] = HardwareRules.online(disabled[i], true) ? 1 : 0;
+            }
+            assertEquals(16, HardwareRules.drainPerTick(watts, flags),
+                    "carry is off, so only combat 14 + light 2 draw at second " + second);
+            assertFalse(HardwareRules.online(disabled[0], true), "carry is still off at second " + second);
+        }
+        assertEquals(0, HardwareRules.drainPerTick(new int[] {5}, new int[] {0}),
+                "and an all-off drone draws nothing at all");
+    }
+
+    // ------------------------------------------------------------------ dialogue intents (R3)
+
+    @Test
+    @DisplayName("intents: both builds accept every implemented order, and only those")
+    void intentsImplemented() {
+        for (String id : new String[] {"scan", "scan.hostile", "scan.ore", "order.heal", "order.fetch",
+                "order.supply", "order.light", "order.cover", "order.hold", "order.work", "order.idle"}) {
+            assertTrue(IntentRules.implemented(id), "implemented: " + id);
+        }
+        assertFalse(IntentRules.implemented("order.place"), "order.place is answered by its data line, not run");
+        assertFalse(IntentRules.implemented("meta.help"), "chat/lookup intents are not actions");
+        assertFalse(IntentRules.implemented(null), "no id is not an action");
+        assertEquals(11, IntentRules.IMPLEMENTED.size(), "the whitelist is exactly the eleven orders");
+    }
+
+    @Test
+    @DisplayName("intents: the module gate is pinned per order, and order.supply needs carry (not link)")
+    void intentModules() {
+        assertEquals("carry", IntentRules.moduleFor("order.supply", "link"),
+                "a data pack cannot put supply back on link (R3)");
+        assertEquals("carry", IntentRules.moduleFor("order.fetch", null), "fetch is a cargo order");
+        assertEquals("medic", IntentRules.moduleFor("order.heal", "carry"), "heal is pinned to medic");
+        assertEquals("scan", IntentRules.moduleFor("scan.hostile", ""), "hostile scan is the scan module");
+        assertEquals("combat", IntentRules.moduleFor("order.cover", null), "cover is the weapon bus");
+        assertEquals("", IntentRules.moduleFor("order.work", null), "work needs a mill, not a module");
+        assertEquals("link", IntentRules.moduleFor("custom.order", "link"), "unknown ids keep their data gate");
+        assertEquals("", IntentRules.moduleFor("custom.order", null), "and fall back to no gate");
     }
 
     // ------------------------------------------------------------------ frame stats

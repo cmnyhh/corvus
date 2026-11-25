@@ -105,9 +105,15 @@ public final class SurvivalWorks {
         }
     }
     record Cost(Product product, int count) {}
-    record Plan(ResourceLocation id, Product output, List<Cost> costs, int ticks) {
+    record Plan(ResourceLocation id, Product output, List<Cost> costs, int ticks, int count) {
+        /** The stack one craft commits. {@code count} comes from the blueprint's optional result count. */
+        ItemStack result() {
+            ItemStack stack = output.stack();
+            if (!stack.isEmpty()) stack.setCount(count);
+            return stack;
+        }
         ItemStack icon(SimpleContainer inventory) {
-            ItemStack result = output.stack();
+            ItemStack result = result();
             List<Component> lines = new ArrayList<>();
             for (Cost cost : costs) {
                 int owned = 0;
@@ -186,7 +192,7 @@ public final class SurvivalWorks {
                 ItemStack display = cost.product().stack();
                 ingredients.add(new Catalog.Ingredient(BuiltInRegistries.ITEM.getKey(display.getItem()).toString(), cost.product().module(), display, cost.count()));
             }
-            ItemStack icon = plan.output().stack();
+            ItemStack icon = plan.result();
             entries.add(new Catalog.Entry(icon.getHoverName(), icon, List.copyOf(ingredients)));
         }
         return new Catalog(List.copyOf(entries));
@@ -211,7 +217,10 @@ public final class SurvivalWorks {
                     if (costs.isEmpty()) throw new IllegalArgumentException("Missing assembly cost " + key);
                     int ticks = json.has("duration_ticks") ? json.get("duration_ticks").getAsInt() : 80;
                     if (ticks < 1 || ticks > 32000) throw new IllegalArgumentException("Invalid duration " + key);
-                    ordered.put(key, new Plan(key, Product.parse(json.getAsJsonObject("result")), List.copyOf(costs), ticks));
+                    JsonObject result = json.getAsJsonObject("result");
+                    int produced = result.has("count") ? result.get("count").getAsInt() : 1;
+                    if (produced < 1 || produced > 64) throw new IllegalArgumentException("Invalid assembly result count " + key);
+                    ordered.put(key, new Plan(key, Product.parse(result), List.copyOf(costs), ticks, produced));
                 });
                 if (ordered.size() > 54) throw new IllegalArgumentException("Assembly bench supports 54 blueprints");
                 plans = List.copyOf(ordered.values());

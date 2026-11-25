@@ -1,5 +1,6 @@
 package dev.dronepal.power;
 
+import dev.corvus.core.Bank;
 import dev.dronepal.ServerOptions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -44,16 +45,20 @@ public final class BatteryBankEntity extends BlockEntity implements IEnergyStora
         syncChargeWindow(level);
     }
 
-    /** 0-100, rounded down; capacity is a config value and always positive. */
+    /**
+     * 0-100, rounded to the nearest percent ({@link Bank#percent}); capacity is a config value and
+     * always positive. Both builds round, so 66.7 % reads 67 % and selects the third segment.
+     */
     public int percent() {
-        int capacity = capacity();
-        return capacity <= 0 ? 0 : (int) Math.min(100L, (long) energy * 100L / capacity);
+        return Bank.percent(energy, capacity());
     }
 
-    /** 0 = 0-33%, 1 = 34-66%, 2 = 67-99%, 3 = 100%. Mirrors {@link BatteryBankBlock#CHARGE}. */
+    /**
+     * 0 = 0-33%, 1 = 34-66%, 2 = 67-99%, 3 = 100%. Mirrors {@link BatteryBankBlock#CHARGE} and is
+     * printed as-is by the status line (the display domain is 0..3 on both builds).
+     */
     public int chargeWindow() {
-        int percent = percent();
-        return percent >= 100 ? 3 : percent >= 67 ? 2 : percent >= 34 ? 1 : 0;
+        return Bank.window(energy, capacity());
     }
 
     /**
@@ -69,7 +74,7 @@ public final class BatteryBankEntity extends BlockEntity implements IEnergyStora
     }
 
     Component status() {
-        return Component.translatable("message.dronepal.bank_status", energy, capacity(), percent(), chargeWindow() + 1);
+        return Component.translatable("message.dronepal.bank_status", energy, capacity(), percent(), chargeWindow());
     }
 
     @Override public int receiveEnergy(int amount, boolean simulate) {

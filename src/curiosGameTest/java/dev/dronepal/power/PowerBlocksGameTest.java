@@ -211,6 +211,9 @@ public final class PowerBlocksGameTest {
         var solar = (SolarGeneratorEntity) world.getBlockEntity(abs(test, SOLAR));
         world.setDayTime(6_000L);
         world.setWeatherParameters(6_000, 0, false, false);
+        // Deterministic weather: rainLevel only ramps by 0.01/tick, so a sibling test's rain would keep
+        // this one dim for a hundred ticks. Pinning it makes the test independent of the batch order.
+        world.setRainLevel(0F);
         int start = solar.getEnergyStored();
         for (int i = 0; i < 10; i++) solar.tick(world);
         test.assertTrue(world.getBlockState(abs(test, SOLAR)).getValue(SolarGeneratorBlock.SUN) == 2,
@@ -227,6 +230,7 @@ public final class PowerBlocksGameTest {
         for (int i = 0; i < 10; i++) solar.tick(world);
         test.assertTrue(solar.getEnergyStored() == night, "solar charged at night");
         world.setDayTime(6_000L);
+        world.setRainLevel(0F);
         test.setBlock(new BlockPos(3, 2, 2), Blocks.STONE);
         // Sky light is recalculated by the light engine, not by setBlock itself: give the level a tick
         // before expecting canSeeSky to flip, otherwise the panel is still lit in the same tick.
@@ -248,6 +252,9 @@ public final class PowerBlocksGameTest {
         test.setBlock(solarPos, PowerBlocks.SOLAR.get());
         world.setDayTime(6_000L);
         world.setWeatherParameters(6_000, 0, false, false);
+        // The level's rainLevel ramps 0.01/tick and every power test shares this level, so a neighbouring
+        // test that just made it rain would leave us at 30 FE/t. Pin it: the test owns its own weather.
+        world.setRainLevel(0F);
         var solar = (SolarGeneratorEntity) world.getBlockEntity(abs(test, solarPos));
         var dock = (ChargingDockEntity) world.getBlockEntity(abs(test, dockPos));
         // 30 synthetic ticks stay below the pad's 2,000 FE/t cable ceiling, which is keyed to world
@@ -278,7 +285,7 @@ public final class PowerBlocksGameTest {
             int window = world.getBlockState(pos).getValue(BatteryBankBlock.CHARGE);
             test.assertTrue(window == step[1], "gauge window for " + bank.percent() + "% was " + window + ", expected " + step[1]);
         }
-        test.assertTrue(bank.percent() == 100 && bank.chargeWindow() == 3, "full bank does not report 100% / window 4");
+        test.assertTrue(bank.percent() == 100 && bank.chargeWindow() == 3, "full bank does not report 100% / segment 3");
         test.succeed();
     }
 
@@ -290,20 +297,28 @@ public final class PowerBlocksGameTest {
         var solar = (SolarGeneratorEntity) world.getBlockEntity(pos);
         world.setDayTime(6_000L);
         world.setWeatherParameters(6_000, 0, false, false);
+        // Own the weather instead of waiting for the ramp: rainLevel is a shared level field that every
+        // power test in the batch writes, and 0.01/tick means a sibling test can keep us dim or clear.
+        world.setRainLevel(0F);
         solar.tick(world);
         test.assertTrue(world.getBlockState(pos).getValue(SolarGeneratorBlock.SUN) == 2,
                 "clear day should show the full-sun state");
         test.assertTrue(SolarGeneratorEntity.rate(world, pos) == 60, "clear day rate is not 60 FE/t");
-        // Rain ramps up over several ticks (rainLevel > 0.2 turns isRaining true), so wait for it.
+        // Rain: isRaining() is rainLevel > 0.2, so set the level instead of waiting ~35 ticks for the ramp
+        // (a sibling test clearing the weather during that wait is exactly the flake this removes).
         world.setWeatherParameters(0, 6_000, true, false);
-        test.runAfterDelay(35, () -> {
+        world.setRainLevel(1F);
+        test.runAfterDelay(6, () -> {
             solar.tick(world);
+            world.setRainLevel(1F);
             test.assertTrue(world.getBlockState(pos).getValue(SolarGeneratorBlock.SUN) == 1,
                     "rain should dim the panel, state=" + world.getBlockState(pos).getValue(SolarGeneratorBlock.SUN));
             test.assertTrue(SolarGeneratorEntity.rate(world, pos) == 30, "rain rate is not half of 60 FE/t");
             world.setWeatherParameters(6_000, 0, false, false);
-            test.runAfterDelay(40, () -> {
+            world.setRainLevel(0F);
+            test.runAfterDelay(6, () -> {
                 solar.tick(world);
+                world.setRainLevel(0F);
                 test.assertTrue(world.getBlockState(pos).getValue(SolarGeneratorBlock.SUN) == 2,
                         "panel stayed dim after the rain stopped");
                 test.succeed();
@@ -330,7 +345,11 @@ public final class PowerBlocksGameTest {
         test.useBlock(BURNER, player);
         for (int i = 0; i < 10; i++) burner.tick(world);
         test.assertTrue(bank.getEnergyStored() == capacity, "bank overflowed or under-filled: " + bank.getEnergyStored());
-        test.assertTrue(burner.getEnergyStored() == 300, "burner did not retain the surplus: " + burner.getEnergyStored());
+        // R5: the fuel gate is a one-FE probe (Bank#canTakeProbe), so a neighbour that has become full
+        // stops the fire instead of letting the burner pile 300 FE into its own buffer. The most that can
+        // be left over is the one tick of output that had nowhere to go.
+        test.assertTrue(burner.getEnergyStored() <= burner.output(),
+                "burner kept burning into a full neighbour: " + burner.getEnergyStored() + " FE");
         for (int i = 0; i < 100; i++) burner.tick(world);
         test.assertTrue(bank.getEnergyStored() == capacity, "full bank kept accepting charge");
         test.succeed();

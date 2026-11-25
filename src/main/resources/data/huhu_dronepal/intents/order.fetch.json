@@ -1,0 +1,8 @@
+{
+  "id": "order.fetch",
+  "requires_module": "mod_carry",
+  "aliases": ["捡一下", "捡", "取货", "帮我拿", "取回来", "fetch"],
+  "patterns": [".*(捡|取货|取回来).*"],
+  "response": "action",
+  "denied": "没有货舱模块，我装不下东西。"
+}

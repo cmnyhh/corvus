@@ -380,6 +380,16 @@ public final class OreMillEntity extends BlockEntity implements IEnergyStorage, 
         resetInputClock(world);
         int budget = Math.min(OreMillRules.FE_PER_TICK - inputThisTick, OreMillRules.BUFFER - energy);
         if (budget <= 0) return;
+        // TODO(grid): ask the wireless grid before the six wired neighbours.
+        int fromGrid = dev.dronepal.power.grid.GridLink.draw(world, this, budget,
+                dev.dronepal.power.grid.GridLink.PRIORITY_MILL,
+                () -> Math.min(OreMillRules.FE_PER_TICK, OreMillRules.BUFFER - energy));
+        if (fromGrid > 0) {
+            energy += fromGrid;
+            inputThisTick += fromGrid;
+            budget -= fromGrid;
+            setChanged();
+        }
         for (Direction side : Direction.values()) {
             if (budget <= 0) break;
             IEnergyStorage storage = world.getCapability(Capabilities.EnergyStorage.BLOCK, worldPosition.relative(side), side.getOpposite());

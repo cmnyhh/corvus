@@ -39,8 +39,10 @@ public final class BurnerGeneratorEntity extends BlockEntity implements IEnergyS
             moved = pushed.moved();
             if (moved > 0) energy -= moved;
         }
-        // Idle when the output is full or nothing can take power: "no fuel burnt into nothing".
-        boolean canBurn = energy < BUFFER && PowerPush.receivers(level, worldPosition) > 0;
+        // Idle when the output is full or nothing can take power: "no fuel burnt into nothing". The
+        // receiver test is a one-FE simulated offer (PowerPush#canAccept / Bank#canTakeProbe), the same
+        // rule the 1.20.1 burner uses, so a present-but-full neighbour stops the fire on both builds.
+        boolean canBurn = energy < BUFFER && PowerPush.canAccept(level, worldPosition);
         int generated = 0;
         if (canBurn && fuel.hasFuel() && fuel.ignite(level, worldPosition)) {
             generated = fuel.draw(Math.min(output(), BUFFER - energy));

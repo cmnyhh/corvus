@@ -60,11 +60,17 @@ tasks.register('checkDialogue', JavaExec) {
 tasks.named('check') { dependsOn 'checkDroneMesh', 'checkCuriosContract', 'checkDialogue' }
 
 // Corvus shared core: one copy of the cross-version rules, compiled into both loaders.
+// The shared core lives next to the two projects in the dev workspace, but inside the
+// repository on CI (where each branch root is the project itself). Accept both layouts.
+def coreSrc = { String sub ->
+    def sibling = file("../corvus-core/${sub}")
+    sibling.exists() ? sibling : file("corvus-core/${sub}")
+}
 sourceSets {
     main {
-        java.srcDir '../corvus-core/src/main/java'
+        java.srcDir coreSrc('src/main/java')
     }
     test {
-        java.srcDir '../corvus-core/src/test/java'
+        java.srcDir coreSrc('src/test/java')
     }
 }

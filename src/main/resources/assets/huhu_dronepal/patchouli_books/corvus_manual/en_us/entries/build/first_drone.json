@@ -1,0 +1,16 @@
+{
+  "name": "dronepal.manual.entry.first_drone",
+  "category": "huhu_dronepal:build",
+  "icon": "huhu_dronepal:drone",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.first.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.first.2"
+    }
+  ]
+}

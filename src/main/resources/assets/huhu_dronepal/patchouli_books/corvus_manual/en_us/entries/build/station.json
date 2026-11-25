@@ -1,0 +1,17 @@
+{
+  "name": "dronepal.manual.entry.station",
+  "category": "huhu_dronepal:build",
+  "icon": "huhu_dronepal:assembly_bench",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "huhu_dronepal:assembly_bench",
+      "text": "dronepal.manual.p.station.1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.station.2"
+    }
+  ]
+}

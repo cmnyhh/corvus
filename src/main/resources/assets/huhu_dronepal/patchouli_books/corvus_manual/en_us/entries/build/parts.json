@@ -1,0 +1,39 @@
+{
+  "name": "dronepal.manual.entry.parts",
+  "category": "huhu_dronepal:build",
+  "icon": "huhu_dronepal:airframe",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "huhu_dronepal:airframe",
+      "recipe2": "huhu_dronepal:servo_motor"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.parts.1"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "huhu_dronepal:circuit_board",
+      "recipe2": "huhu_dronepal:battery_cell"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.parts.2"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "huhu_dronepal:optics",
+      "recipe2": "huhu_dronepal:heat_sink"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.parts.3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "dronepal.manual.p.parts.4"
+    }
+  ]
+}

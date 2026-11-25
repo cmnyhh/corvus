@@ -61,6 +61,30 @@
       "text": "稀有矿物已标记。",
       "weight": 1,
       "voice": "tactical/rare_ore"
+    },
+    {
+      "id": "work",
+      "trigger": "work",
+      "text": "作业指令确认。已锁定选矿台，开始值守。",
+      "weight": 1
+    },
+    {
+      "id": "idle",
+      "trigger": "idle",
+      "text": "作业结束。返回站位。",
+      "weight": 1
+    },
+    {
+      "id": "refuse",
+      "trigger": "refuse",
+      "text": "缺少扫描模块，无法判读矿石。作业拒绝。",
+      "weight": 1
+    },
+    {
+      "id": "no_mill",
+      "trigger": "no_mill",
+      "text": "32 格内无选矿台。作业取消。",
+      "weight": 1
     }
   ]
 }

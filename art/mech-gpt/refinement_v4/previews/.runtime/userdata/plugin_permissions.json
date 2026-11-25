@@ -1,0 +1,7 @@
+{
+  "bb-agent-bridge": {
+    "allowed": {
+      "fs": true
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "order.work",
+  "aliases": [
+    "上工",
+    "去干活",
+    "开工",
+    "干活去",
+    "work"
+  ],
+  "patterns": [
+    ".*(上工|去干活|开工).*"
+  ],
+  "response": "action"
+}

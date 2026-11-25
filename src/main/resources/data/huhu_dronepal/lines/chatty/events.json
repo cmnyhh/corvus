@@ -61,6 +61,30 @@
       "text": "我扫到稀有矿了！快看标记！",
       "weight": 1,
       "voice": "chatty/rare_ore"
+    },
+    {
+      "id": "work",
+      "trigger": "work",
+      "text": "上工啦！矿石就交给我吧～",
+      "weight": 1
+    },
+    {
+      "id": "idle",
+      "trigger": "idle",
+      "text": "好嘞，收工！我回来啦。",
+      "weight": 1
+    },
+    {
+      "id": "refuse",
+      "trigger": "refuse",
+      "text": "没有扫描模块，我看不出这是什么矿呀。",
+      "weight": 1
+    },
+    {
+      "id": "no_mill",
+      "trigger": "no_mill",
+      "text": "这附近没有选矿台，我找不到活儿干。",
+      "weight": 1
     }
   ]
 }

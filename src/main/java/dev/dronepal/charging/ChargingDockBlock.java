@@ -2,6 +2,7 @@ package dev.dronepal.charging;
 
 import com.mojang.serialization.MapCodec;
 import dev.dronepal.Hardware;
+import dev.dronepal.power.FuelValues;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
@@ -9,7 +10,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -39,10 +39,14 @@ final class ChargingDockBlock extends BaseEntityBlock {
     }
 
     @Override protected ItemInteractionResult useItemOn(ItemStack held, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (!held.is(Items.COAL) && !DockEnergy.chargeable(held)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        if (!DockEnergy.chargeable(held) && !FuelValues.burnable(held)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         if (!level.isClientSide && level.getBlockEntity(pos) instanceof ChargingDockEntity dock) {
-            if (held.is(Items.COAL)) held.consume(dock.addCoal(held.getCount()), player);
-            else dock.insert(held);
+            // A chargeable stack (cell, terminal, foreign FE item) has priority: it is what the pad is for.
+            if (DockEnergy.chargeable(held)) {
+                dock.insert(held);
+            } else {
+                held.consume(dock.addFuel(held), player);
+            }
             player.displayClientMessage(dock.status(), true);
         }
         return ItemInteractionResult.sidedSuccess(level.isClientSide);
@@ -52,6 +56,7 @@ final class ChargingDockBlock extends BaseEntityBlock {
         if (!level.isClientSide && level.getBlockEntity(pos) instanceof ChargingDockEntity dock) {
             if (player.getMainHandItem().isEmpty()) {
                 ItemStack taken = dock.take();
+                if (taken.isEmpty()) taken = dock.takeFuel();
                 if (!taken.isEmpty()) player.setItemInHand(InteractionHand.MAIN_HAND, taken);
             }
             player.displayClientMessage(dock.status(), true);

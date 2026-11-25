@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:debris_shard"
+    },
+    {
+      "item": "huhu_dronepal:debris_shard"
+    },
+    {
+      "item": "huhu_dronepal:debris_shard"
+    },
+    {
+      "item": "huhu_dronepal:debris_shard"
+    },
+    {
+      "item": "huhu_dronepal:debris_shard"
+    },
+    {
+      "item": "huhu_dronepal:debris_shard"
+    },
+    {
+      "item": "huhu_dronepal:debris_shard"
+    },
+    {
+      "item": "huhu_dronepal:debris_shard"
+    },
+    {
+      "item": "huhu_dronepal:debris_shard"
+    }
+  ],
+  "result": {
+    "id": "minecraft:netherite_scrap",
+    "count": 1
+  }
+}

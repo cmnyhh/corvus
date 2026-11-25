@@ -1,0 +1,23 @@
+{
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 4
+    },
+    {
+      "item": "minecraft:glass",
+      "count": 4
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 2
+    },
+    {
+      "item": "huhu_dronepal:solar_core",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:solar_generator"
+  }
+}

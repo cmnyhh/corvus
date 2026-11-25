@@ -1,5 +1,6 @@
 package dev.dronepal;
 
+import dev.dronepal.mill.DroneWork;
 import java.util.*;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -14,7 +15,10 @@ import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 
 /** Each command is authorised against the owner's current controller again at execution. */
 public final class DroneRemote {
-    public enum Action { FOLLOW, WEAPON, MODE, SCAN, MEDIC, CARRY, LIGHT, LINK, RECALL, DELIVER, SUPPLY, FIREMODE }
+    /** Sector order is the wheel order: the first nine values are the nine sectors. */
+    public enum Action { FOLLOW, WEAPON, MODE, SCAN, MEDIC, CARRY, LIGHT, LINK, WORK, RECALL, DELIVER, SUPPLY, FIREMODE }
+    /** The wheel now has the work sector on top of the original eight. */
+    public static final int SECTORS = 9;
     static final UUID EMPTY = new UUID(0, 0);
     private static final Map<ServerPlayer,Long> requests = new WeakHashMap<>(), commands = new WeakHashMap<>();
     /** All spoken lines live behind the chip: no chip, a silent chip, or the switch off means silence. */
@@ -93,7 +97,7 @@ public final class DroneRemote {
         int nonce=b.readInt(), revision=b.readInt(); UUID serial=b.readUUID(); boolean signal=b.readBoolean();
         int enabled=b.readInt(), off=b.readInt(), solar=b.readInt();
         List<String> labels = new ArrayList<>();
-        for(int i=0;i<8;i++) labels.add(b.readUtf(128));
+        for(int i=0;i<SECTORS;i++) labels.add(b.readUtf(128));
         return new Status(nonce,revision,serial,signal,enabled,off,solar,List.copyOf(labels));
     }
     private static boolean allow(Map<ServerPlayer,Long> map, ServerPlayer p) {
@@ -113,11 +117,14 @@ public final class DroneRemote {
     private static Status status(ServerPlayer p, int nonce, int revision) {
         UUID id=p.getPersistentData().hasUUID(DroneItem.ACTIVE) ? p.getPersistentData().getUUID(DroneItem.ACTIVE) : EMPTY;
         ItemStack stack=controller(p,id);
-        var labels=new ArrayList<>(Collections.nCopies(8,""));
+        var labels=new ArrayList<>(Collections.nCopies(SECTORS,""));
         boolean signal = !stack.isEmpty() && entity(p,id) != null;
         int enabled=0, off=0, solar=-1;
         if (!stack.isEmpty()) {
             enabled=1; labels.set(0,"dronepal.wheel.follow");
+            // The work sector is offered whenever a controller exists: the drone itself refuses
+            // without a scan module, which is the moment the player needs to hear about it.
+            enabled |= 1<<8; labels.set(8,"dronepal.wheel.work");
             if (disabled(stack,"follow")) off |= 1;
             for(var m:Hardware.installed(stack)) {
                 int slot=switch(m.family()) { case "combat" -> 1; case "scan" -> 3; case "medic" -> 4; case "carry" -> 5; case "light" -> 6; case "link" -> 7; default -> -1; };
@@ -144,7 +151,13 @@ public final class DroneRemote {
         if(command.action==Action.RECALL) return rescue(p,stack,command.serial,d);
         if(d==null) return feedback(p,"signal");
         boolean ok=switch(command.action) {
-            case FOLLOW -> { toggle(stack,"follow"); d.holdingStation = disabled(stack,"follow"); yield true; }
+            case FOLLOW -> {
+                toggle(stack,"follow");
+                d.holdingStation = disabled(stack,"follow");
+                if (d.holdingStation) DroneWork.stop(d);
+                yield true;
+            }
+            case WORK -> Hardware.execute(p,"order.work");
             case WEAPON -> DroneCombat.toggle(d);
             case MODE -> Engagement.cycle(d);
             case SCAN -> {
@@ -183,6 +196,7 @@ public final class DroneRemote {
             d=entity(p,id);
         }
         if(d==null) return false;
+        DroneWork.stop(d);
         d.holdingStation = false;
         d.setTarget(null); d.setDeltaMovement(net.minecraft.world.phys.Vec3.ZERO); d.setPos(DroneEntity.station(p));
         CustomData.update(DataComponents.CUSTOM_DATA,stack,t -> { t.putLong("dronepal_recall",now+200); t.remove("dronepal_off_follow"); });

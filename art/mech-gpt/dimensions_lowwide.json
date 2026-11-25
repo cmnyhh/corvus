@@ -1,0 +1,24 @@
+{
+  "units": "u; 16u=1 cell",
+  "axis": "x=width, y=up, z=depth; forward=-Z",
+  "envelope": [
+    38.4,
+    36.5,
+    19.75
+  ],
+  "cells": [
+    2.4,
+    2.28,
+    1.23
+  ],
+  "hull_width": 27,
+  "hull_height": 13.5,
+  "lowest_hull_clearance": 12.1,
+  "upper_thigh_link_length": 6.72,
+  "lower_shin_link_length": 5.61,
+  "arm_link_reach": 9.35,
+  "stance_center_spacing": 17.3,
+  "each_footpad_width": 10,
+  "width_including_feet": 38.4,
+  "model": "geometry-only preview; no export or detailed texture, per revision request"
+}

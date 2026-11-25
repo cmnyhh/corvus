@@ -92,6 +92,19 @@ public final class DialogueServer {
         if (trigger != null) announce(device, memory, profile, trigger);
         else if (wentOffline) signal(player, "module_offline");
     }
+    /**
+     * Deterministic event line (no bark dice): used by explicit orders such as the mill work order, so a
+     * fitted chip always speaks. Still silent without a chip, with a silent chip or with barks switched off.
+     */
+    public static void event(ServerPlayer player, String trigger) {
+        var device = new Device(player, Hardware.controller(player));
+        if (!device.active() || !DroneRemote.barksEnabled(device.stack())) return;
+        var profile = library.profile(device.chip());
+        if (profile == null || !profile.chat()) return;
+        var memory = conversations.computeIfAbsent(player, unused -> new Memory());
+        announce(device, memory, profile, trigger);
+    }
+
     public static void signal(ServerPlayer player, String trigger) {
         signal(new Device(player, Hardware.controller(player)), trigger);
     }

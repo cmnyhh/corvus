@@ -1,0 +1,5846 @@
+{
+ "meta": {
+  "format_version": "5.0",
+  "model_format": "java_block",
+  "box_uv": false
+ },
+ "name": "burner_generator",
+ "model_identifier": "burner_generator",
+ "parent": "block/block",
+ "ambientocclusion": true,
+ "texture_size": [
+  32,
+  32
+ ],
+ "resolution": {
+  "width": 32,
+  "height": 32
+ },
+ "elements": [
+  {
+   "name": "foot_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.2,
+    0.0,
+    2.2
+   ],
+   "to": [
+    4.2,
+    0.8,
+    4.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-000"
+  },
+  {
+   "name": "foot_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.8,
+    0.0,
+    2.2
+   ],
+   "to": [
+    13.8,
+    0.8,
+    4.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-001"
+  },
+  {
+   "name": "foot_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.2,
+    0.0,
+    11.8
+   ],
+   "to": [
+    4.2,
+    0.8,
+    13.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-002"
+  },
+  {
+   "name": "foot_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.8,
+    0.0,
+    11.8
+   ],
+   "to": [
+    13.8,
+    0.8,
+    13.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-003"
+  },
+  {
+   "name": "plinth",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.0,
+    0.8,
+    2.0
+   ],
+   "to": [
+    14.0,
+    2.5,
+    14.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      11.0,
+      20.0,
+      23.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      11.0,
+      20.0,
+      23.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      20.0,
+      23.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      11.0,
+      20.0,
+      23.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-004"
+  },
+  {
+   "name": "housing",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.0,
+    2.5,
+    3.0
+   ],
+   "to": [
+    13.0,
+    14.0,
+    13.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      1.0,
+      23.0,
+      13.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      1.0,
+      14.0,
+      11.0,
+      26.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      14.0,
+      11.0,
+      26.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      1.0,
+      14.0,
+      11.0,
+      26.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-005"
+  },
+  {
+   "name": "pillar_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.0,
+    2.5,
+    2.0
+   ],
+   "to": [
+    3.0,
+    14.0,
+    3.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-006"
+  },
+  {
+   "name": "pillar_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    13.0,
+    2.5,
+    2.0
+   ],
+   "to": [
+    14.0,
+    14.0,
+    3.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-007"
+  },
+  {
+   "name": "pillar_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.0,
+    2.5,
+    13.0
+   ],
+   "to": [
+    3.0,
+    14.0,
+    14.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-008"
+  },
+  {
+   "name": "pillar_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    13.0,
+    2.5,
+    13.0
+   ],
+   "to": [
+    14.0,
+    14.0,
+    14.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-009"
+  },
+  {
+   "name": "top_cap",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.0,
+    14.0,
+    2.0
+   ],
+   "to": [
+    14.0,
+    15.0,
+    14.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      1.0,
+      13.0,
+      13.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-010"
+  },
+  {
+   "name": "chimney_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.0,
+    15.0,
+    6.0
+   ],
+   "to": [
+    10.0,
+    16.0,
+    7.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-011"
+  },
+  {
+   "name": "chimney_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.0,
+    15.0,
+    9.0
+   ],
+   "to": [
+    10.0,
+    16.0,
+    10.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-012"
+  },
+  {
+   "name": "chimney_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.0,
+    15.0,
+    7.0
+   ],
+   "to": [
+    7.0,
+    16.0,
+    9.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-013"
+  },
+  {
+   "name": "chimney_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.0,
+    15.0,
+    7.0
+   ],
+   "to": [
+    10.0,
+    16.0,
+    9.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-014"
+  },
+  {
+   "name": "chimney_bore",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.0,
+    15.35,
+    7.0
+   ],
+   "to": [
+    9.0,
+    15.55,
+    9.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-015"
+  },
+  {
+   "name": "louvre_back_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.55,
+    3.4,
+    3.4
+   ],
+   "to": [
+    13.55,
+    11.4,
+    12.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-016"
+  },
+  {
+   "name": "louvre_e0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.7,
+    3.35,
+    3.5
+   ],
+   "to": [
+    13.7,
+    5.05,
+    12.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    13.2,
+    4.2,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      11.0,
+      23.0,
+      20.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-017",
+   "rotation": [
+    0,
+    0,
+    -22.5
+   ]
+  },
+  {
+   "name": "louvre_e1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.7,
+    5.55,
+    3.5
+   ],
+   "to": [
+    13.7,
+    7.25,
+    12.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    13.2,
+    6.4,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      11.0,
+      23.0,
+      20.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-018",
+   "rotation": [
+    0,
+    0,
+    -22.5
+   ]
+  },
+  {
+   "name": "louvre_e2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.7,
+    7.75,
+    3.5
+   ],
+   "to": [
+    13.7,
+    9.45,
+    12.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    13.2,
+    8.6,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      11.0,
+      23.0,
+      20.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-019",
+   "rotation": [
+    0,
+    0,
+    -22.5
+   ]
+  },
+  {
+   "name": "louvre_e3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.7,
+    9.95,
+    3.5
+   ],
+   "to": [
+    13.7,
+    11.65,
+    12.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    13.2,
+    10.8,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      11.0,
+      23.0,
+      20.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-020",
+   "rotation": [
+    0,
+    0,
+    -22.5
+   ]
+  },
+  {
+   "name": "louvre_back_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.45,
+    3.4,
+    3.4
+   ],
+   "to": [
+    3.45,
+    11.4,
+    12.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-021"
+  },
+  {
+   "name": "louvre_w0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.3,
+    3.35,
+    3.5
+   ],
+   "to": [
+    3.3,
+    5.05,
+    12.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    2.8,
+    4.2,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      11.0,
+      23.0,
+      20.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-022",
+   "rotation": [
+    0,
+    0,
+    22.5
+   ]
+  },
+  {
+   "name": "louvre_w1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.3,
+    5.55,
+    3.5
+   ],
+   "to": [
+    3.3,
+    7.25,
+    12.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    2.8,
+    6.4,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      11.0,
+      23.0,
+      20.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-023",
+   "rotation": [
+    0,
+    0,
+    22.5
+   ]
+  },
+  {
+   "name": "louvre_w2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.3,
+    7.75,
+    3.5
+   ],
+   "to": [
+    3.3,
+    9.45,
+    12.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    2.8,
+    8.6,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      11.0,
+      23.0,
+      20.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-024",
+   "rotation": [
+    0,
+    0,
+    22.5
+   ]
+  },
+  {
+   "name": "louvre_w3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.3,
+    9.95,
+    3.5
+   ],
+   "to": [
+    3.3,
+    11.65,
+    12.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    2.8,
+    10.8,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      11.0,
+      23.0,
+      20.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      23.0,
+      29.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-025",
+   "rotation": [
+    0,
+    0,
+    22.5
+   ]
+  },
+  {
+   "name": "win_frame_t",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.6,
+    11.6,
+    2.45
+   ],
+   "to": [
+    11.4,
+    12.5,
+    2.95
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-026"
+  },
+  {
+   "name": "win_frame_b",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.6,
+    8.6,
+    2.45
+   ],
+   "to": [
+    11.4,
+    9.5,
+    2.95
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-027"
+  },
+  {
+   "name": "win_frame_l",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.6,
+    9.5,
+    2.45
+   ],
+   "to": [
+    5.5,
+    11.6,
+    2.95
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-028"
+  },
+  {
+   "name": "win_frame_r",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.5,
+    9.5,
+    2.45
+   ],
+   "to": [
+    11.4,
+    11.6,
+    2.95
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-029"
+  },
+  {
+   "name": "ember_glass",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.5,
+    9.5,
+    2.62
+   ],
+   "to": [
+    10.5,
+    11.6,
+    2.86
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      15.0,
+      27.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      15.0,
+      27.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      15.0,
+      27.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      15.0,
+      27.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      23.0,
+      15.0,
+      27.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      23.0,
+      15.0,
+      27.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-030"
+  },
+  {
+   "name": "ember_grate_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.3,
+    9.5,
+    2.45
+   ],
+   "to": [
+    6.55,
+    11.6,
+    2.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-031"
+  },
+  {
+   "name": "ember_grate_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.9,
+    9.5,
+    2.45
+   ],
+   "to": [
+    8.15,
+    11.6,
+    2.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-032"
+  },
+  {
+   "name": "ember_grate_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.45,
+    9.5,
+    2.45
+   ],
+   "to": [
+    9.7,
+    11.6,
+    2.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-033"
+  },
+  {
+   "name": "accent_mag_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.75,
+    9.5,
+    2.42
+   ],
+   "to": [
+    5.1,
+    11.6,
+    2.72
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-034"
+  },
+  {
+   "name": "accent_mag_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.15,
+    9.5,
+    2.42
+   ],
+   "to": [
+    11.5,
+    11.6,
+    2.72
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-035"
+  },
+  {
+   "name": "fuel_hood",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.4,
+    7.0,
+    2.0
+   ],
+   "to": [
+    11.6,
+    7.6,
+    3.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-036"
+  },
+  {
+   "name": "fuel_cavity",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.9,
+    4.7,
+    2.3
+   ],
+   "to": [
+    10.9,
+    7.0,
+    3.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      11.0,
+      14.0,
+      23.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-037"
+  },
+  {
+   "name": "fuel_tray",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.2,
+    4.1,
+    1.8
+   ],
+   "to": [
+    11.8,
+    4.7,
+    3.05
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-038"
+  },
+  {
+   "name": "fuel_guide_l",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.15,
+    4.7,
+    1.95
+   ],
+   "to": [
+    4.9,
+    7.0,
+    2.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-039"
+  },
+  {
+   "name": "fuel_guide_r",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.9,
+    4.7,
+    1.95
+   ],
+   "to": [
+    11.65,
+    7.0,
+    2.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-040"
+  },
+  {
+   "name": "front_band",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.3,
+    2.85,
+    2.9
+   ],
+   "to": [
+    12.7,
+    3.9,
+    3.12
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      23.0,
+      31.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-041"
+  },
+  {
+   "name": "rivet_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.4,
+    13.2,
+    2.8
+   ],
+   "to": [
+    3.9,
+    13.7,
+    3.05
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-042"
+  },
+  {
+   "name": "rivet_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.0,
+    13.2,
+    2.8
+   ],
+   "to": [
+    12.5,
+    13.7,
+    3.05
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-043"
+  },
+  {
+   "name": "led_amber",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.0,
+    14.2,
+    2.05
+   ],
+   "to": [
+    11.7,
+    14.9,
+    2.45
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      27.0,
+      10.0,
+      31.0,
+      14.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      27.0,
+      10.0,
+      31.0,
+      14.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      27.0,
+      10.0,
+      31.0,
+      14.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      27.0,
+      10.0,
+      31.0,
+      14.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      10.0,
+      31.0,
+      14.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      10.0,
+      31.0,
+      14.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-044"
+  },
+  {
+   "name": "led_mag",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.9,
+    14.2,
+    2.05
+   ],
+   "to": [
+    10.6,
+    14.9,
+    2.45
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      15.0,
+      31.0,
+      19.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-045"
+  },
+  {
+   "name": "rear_grille_plate",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.0,
+    4.0,
+    13.0
+   ],
+   "to": [
+    12.0,
+    12.0,
+    13.25
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      1.0,
+      31.0,
+      9.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      20.0,
+      23.0,
+      22.0,
+      25.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-046"
+  },
+  {
+   "name": "rear_slat_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.4,
+    4.6,
+    13.2
+   ],
+   "to": [
+    11.6,
+    5.05,
+    13.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-047"
+  },
+  {
+   "name": "rear_slat_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.4,
+    6.0,
+    13.2
+   ],
+   "to": [
+    11.6,
+    6.45,
+    13.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-048"
+  },
+  {
+   "name": "rear_slat_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.4,
+    7.4,
+    13.2
+   ],
+   "to": [
+    11.6,
+    7.85,
+    13.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-049"
+  },
+  {
+   "name": "rear_slat_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.4,
+    8.8,
+    13.2
+   ],
+   "to": [
+    11.6,
+    9.25,
+    13.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-050"
+  },
+  {
+   "name": "rear_slat_4",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.4,
+    10.2,
+    13.2
+   ],
+   "to": [
+    11.6,
+    10.65,
+    13.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      11.0,
+      26.0,
+      13.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      24.0,
+      25.0,
+      26.0,
+      27.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      26.0,
+      15.0,
+      28.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      20.0,
+      31.0,
+      22.0
+     ],
+     "texture": "tex-burner_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-burner_generator-051"
+  }
+ ],
+ "outliner": [
+  "pb-burner_generator-000",
+  "pb-burner_generator-001",
+  "pb-burner_generator-002",
+  "pb-burner_generator-003",
+  "pb-burner_generator-004",
+  "pb-burner_generator-005",
+  "pb-burner_generator-006",
+  "pb-burner_generator-007",
+  "pb-burner_generator-008",
+  "pb-burner_generator-009",
+  "pb-burner_generator-010",
+  "pb-burner_generator-011",
+  "pb-burner_generator-012",
+  "pb-burner_generator-013",
+  "pb-burner_generator-014",
+  "pb-burner_generator-015",
+  "pb-burner_generator-016",
+  "pb-burner_generator-017",
+  "pb-burner_generator-018",
+  "pb-burner_generator-019",
+  "pb-burner_generator-020",
+  "pb-burner_generator-021",
+  "pb-burner_generator-022",
+  "pb-burner_generator-023",
+  "pb-burner_generator-024",
+  "pb-burner_generator-025",
+  "pb-burner_generator-026",
+  "pb-burner_generator-027",
+  "pb-burner_generator-028",
+  "pb-burner_generator-029",
+  "pb-burner_generator-030",
+  "pb-burner_generator-031",
+  "pb-burner_generator-032",
+  "pb-burner_generator-033",
+  "pb-burner_generator-034",
+  "pb-burner_generator-035",
+  "pb-burner_generator-036",
+  "pb-burner_generator-037",
+  "pb-burner_generator-038",
+  "pb-burner_generator-039",
+  "pb-burner_generator-040",
+  "pb-burner_generator-041",
+  "pb-burner_generator-042",
+  "pb-burner_generator-043",
+  "pb-burner_generator-044",
+  "pb-burner_generator-045",
+  "pb-burner_generator-046",
+  "pb-burner_generator-047",
+  "pb-burner_generator-048",
+  "pb-burner_generator-049",
+  "pb-burner_generator-050",
+  "pb-burner_generator-051"
+ ],
+ "textures": [
+  {
+   "path": "",
+   "name": "burner_generator.png",
+   "folder": "block",
+   "namespace": "",
+   "id": "0",
+   "width": 32,
+   "height": 32,
+   "uv_width": 32,
+   "uv_height": 32,
+   "particle": true,
+   "use_as_default": false,
+   "layers_enabled": false,
+   "sync_to_project": "",
+   "render_mode": "default",
+   "render_sides": "auto",
+   "frame_time": 1,
+   "frame_order": "loop",
+   "frame_interpolate": false,
+   "visible": true,
+   "internal": true,
+   "saved": false,
+   "uuid": "tex-burner_generator",
+   "relative_path": "export/textures/block/burner_generator.png",
+   "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABpElEQVR42u2XsUqDMRDHO7uIotVSikjRIlax4mBdipMgCK59BcHN2QdwdHTSwTdwdHT3HZxcfYJP/4ULd9c0uaumOjj8++VLw+WXy90lX22p3qi46qtNodL/19B5e/fo0kqjZVJ7s5uUAHh+ea2OBidJYQwB5MYSwE7vMKoxgJxBEgHACNpksLO9L/oI4PLqOqoAgB8N0O31hWIAOfdaPIDFjwFgwoP+sRCH4B6gVbc7u6FNsnjgxwAIIgYwEw9Qm0OYPaCD0APAJ+TbwQHMaVgiCF2FaJo01FugY6C6WZN6OhP6ViGaFFxuAArCEqU4BxCyoNThYwawrmh+YdklywICwOn5MCmMabbWR0KU59pQdbEoNbgXCnXAerp5lQMIWTAtwMNwTjx1vwvAklZ6kpFRBNfXk8PgvYgHilzJKAg3tvaSwhiqAzhMeF2Y9P72/iEE7/DtEllQIghdABYPeF2uAZJ1wOIBS5mm0zAGQAFNNt11AAUJBlJPftbrFWsAkQUWeaKcKijdgJL3AeuekptxLEN/GsBVB2b5LRjNgn+A3wT4BBNst6rcJmtyAAAAAElFTkSuQmCC"
+  }
+ ],
+ "display": {
+  "gui": {
+   "rotation": [
+    30,
+    225,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.625,
+    0.625,
+    0.625
+   ]
+  },
+  "ground": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    3,
+    0
+   ],
+   "scale": [
+    0.25,
+    0.25,
+    0.25
+   ]
+  },
+  "fixed": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.5,
+    0.5,
+    0.5
+   ]
+  },
+  "thirdperson_righthand": {
+   "rotation": [
+    75,
+    45,
+    0
+   ],
+   "translation": [
+    0,
+    2.5,
+    0
+   ],
+   "scale": [
+    0.375,
+    0.375,
+    0.375
+   ]
+  },
+  "firstperson_righthand": {
+   "rotation": [
+    0,
+    45,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.4,
+    0.4,
+    0.4
+   ]
+  }
+ }
+}

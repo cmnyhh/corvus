@@ -1,0 +1,11405 @@
+{
+ "meta": {
+  "format_version": "5.0",
+  "model_format": "java_block",
+  "box_uv": false
+ },
+ "name": "power_tower_mid",
+ "model_identifier": "power_tower_mid",
+ "parent": "block/block",
+ "ambientocclusion": true,
+ "texture_size": [
+  32,
+  32
+ ],
+ "resolution": {
+  "width": 32,
+  "height": 32
+ },
+ "elements": [
+  {
+   "name": "mast",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.3,
+    1.4,
+    6.3
+   ],
+   "to": [
+    9.7,
+    14.6,
+    9.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      15.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      15.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      15.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      15.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-000"
+  },
+  {
+   "name": "angle_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.78,
+    1.4,
+    5.78
+   ],
+   "to": [
+    6.2,
+    14.6,
+    6.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-001"
+  },
+  {
+   "name": "angle_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.8,
+    1.4,
+    5.78
+   ],
+   "to": [
+    10.22,
+    14.6,
+    6.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-002"
+  },
+  {
+   "name": "angle_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.78,
+    1.4,
+    9.8
+   ],
+   "to": [
+    6.2,
+    14.6,
+    10.22
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-003"
+  },
+  {
+   "name": "angle_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.8,
+    1.4,
+    9.8
+   ],
+   "to": [
+    10.22,
+    14.6,
+    10.22
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-004"
+  },
+  {
+   "name": "flange_lo",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.0,
+    0.2,
+    5.0
+   ],
+   "to": [
+    11.0,
+    1.4,
+    11.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-005"
+  },
+  {
+   "name": "flange_lo_bolt0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.3,
+    0.4,
+    5.3
+   ],
+   "to": [
+    6.0,
+    1.2,
+    6.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-006"
+  },
+  {
+   "name": "flange_lo_bolt1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.0,
+    0.4,
+    5.3
+   ],
+   "to": [
+    10.7,
+    1.2,
+    6.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-007"
+  },
+  {
+   "name": "flange_lo_bolt2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.3,
+    0.4,
+    10.0
+   ],
+   "to": [
+    6.0,
+    1.2,
+    10.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-008"
+  },
+  {
+   "name": "flange_lo_bolt3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.0,
+    0.4,
+    10.0
+   ],
+   "to": [
+    10.7,
+    1.2,
+    10.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-009"
+  },
+  {
+   "name": "flange_hi",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.0,
+    14.6,
+    5.0
+   ],
+   "to": [
+    11.0,
+    15.8,
+    11.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-010"
+  },
+  {
+   "name": "flange_hi_bolt0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.3,
+    14.8,
+    5.3
+   ],
+   "to": [
+    6.0,
+    15.6,
+    6.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-011"
+  },
+  {
+   "name": "flange_hi_bolt1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.0,
+    14.8,
+    5.3
+   ],
+   "to": [
+    10.7,
+    15.6,
+    6.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-012"
+  },
+  {
+   "name": "flange_hi_bolt2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.3,
+    14.8,
+    10.0
+   ],
+   "to": [
+    6.0,
+    15.6,
+    10.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-013"
+  },
+  {
+   "name": "flange_hi_bolt3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.0,
+    14.8,
+    10.0
+   ],
+   "to": [
+    10.7,
+    15.6,
+    10.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-014"
+  },
+  {
+   "name": "ring0_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.0,
+    3.2,
+    5.85
+   ],
+   "to": [
+    10.0,
+    3.9,
+    6.45
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-015"
+  },
+  {
+   "name": "ring0_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.0,
+    3.2,
+    9.55
+   ],
+   "to": [
+    10.0,
+    3.9,
+    10.15
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-016"
+  },
+  {
+   "name": "ring0_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.85,
+    3.2,
+    6.0
+   ],
+   "to": [
+    6.45,
+    3.9,
+    10.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-017"
+  },
+  {
+   "name": "ring0_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.55,
+    3.2,
+    6.0
+   ],
+   "to": [
+    10.15,
+    3.9,
+    10.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-018"
+  },
+  {
+   "name": "ring0_c0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.45,
+    3.2,
+    5.45
+   ],
+   "to": [
+    6.15,
+    3.9,
+    6.15
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-019"
+  },
+  {
+   "name": "ring0_c1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.85,
+    3.2,
+    5.45
+   ],
+   "to": [
+    10.55,
+    3.9,
+    6.15
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-020"
+  },
+  {
+   "name": "ring0_c2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.45,
+    3.2,
+    9.85
+   ],
+   "to": [
+    6.15,
+    3.9,
+    10.55
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-021"
+  },
+  {
+   "name": "ring0_c3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.85,
+    3.2,
+    9.85
+   ],
+   "to": [
+    10.55,
+    3.9,
+    10.55
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-022"
+  },
+  {
+   "name": "ring1_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.0,
+    7.2,
+    5.85
+   ],
+   "to": [
+    10.0,
+    7.9,
+    6.45
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-023"
+  },
+  {
+   "name": "ring1_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.0,
+    7.2,
+    9.55
+   ],
+   "to": [
+    10.0,
+    7.9,
+    10.15
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-024"
+  },
+  {
+   "name": "ring1_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.85,
+    7.2,
+    6.0
+   ],
+   "to": [
+    6.45,
+    7.9,
+    10.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-025"
+  },
+  {
+   "name": "ring1_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.55,
+    7.2,
+    6.0
+   ],
+   "to": [
+    10.15,
+    7.9,
+    10.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-026"
+  },
+  {
+   "name": "ring1_c0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.45,
+    7.2,
+    5.45
+   ],
+   "to": [
+    6.15,
+    7.9,
+    6.15
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-027"
+  },
+  {
+   "name": "ring1_c1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.85,
+    7.2,
+    5.45
+   ],
+   "to": [
+    10.55,
+    7.9,
+    6.15
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-028"
+  },
+  {
+   "name": "ring1_c2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.45,
+    7.2,
+    9.85
+   ],
+   "to": [
+    6.15,
+    7.9,
+    10.55
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-029"
+  },
+  {
+   "name": "ring1_c3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.85,
+    7.2,
+    9.85
+   ],
+   "to": [
+    10.55,
+    7.9,
+    10.55
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-030"
+  },
+  {
+   "name": "ring2_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.0,
+    11.4,
+    5.85
+   ],
+   "to": [
+    10.0,
+    12.1,
+    6.45
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-031"
+  },
+  {
+   "name": "ring2_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.0,
+    11.4,
+    9.55
+   ],
+   "to": [
+    10.0,
+    12.1,
+    10.15
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-032"
+  },
+  {
+   "name": "ring2_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.85,
+    11.4,
+    6.0
+   ],
+   "to": [
+    6.45,
+    12.1,
+    10.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-033"
+  },
+  {
+   "name": "ring2_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.55,
+    11.4,
+    6.0
+   ],
+   "to": [
+    10.15,
+    12.1,
+    10.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-034"
+  },
+  {
+   "name": "ring2_c0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.45,
+    11.4,
+    5.45
+   ],
+   "to": [
+    6.15,
+    12.1,
+    6.15
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-035"
+  },
+  {
+   "name": "ring2_c1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.85,
+    11.4,
+    5.45
+   ],
+   "to": [
+    10.55,
+    12.1,
+    6.15
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-036"
+  },
+  {
+   "name": "ring2_c2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.45,
+    11.4,
+    9.85
+   ],
+   "to": [
+    6.15,
+    12.1,
+    10.55
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-037"
+  },
+  {
+   "name": "ring2_c3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.85,
+    11.4,
+    9.85
+   ],
+   "to": [
+    10.55,
+    12.1,
+    10.55
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-038"
+  },
+  {
+   "name": "coil0_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.88,
+    4.5,
+    7.38
+   ],
+   "to": [
+    13.12,
+    5.3,
+    8.62
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-039"
+  },
+  {
+   "name": "coil0_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.537,
+    4.5,
+    9.102
+   ],
+   "to": [
+    12.777,
+    5.3,
+    10.342
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-040"
+  },
+  {
+   "name": "coil0_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.562,
+    4.5,
+    10.562
+   ],
+   "to": [
+    11.802,
+    5.3,
+    11.802
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-041"
+  },
+  {
+   "name": "coil0_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.102,
+    4.5,
+    11.537
+   ],
+   "to": [
+    10.342,
+    5.3,
+    12.777
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-042"
+  },
+  {
+   "name": "coil0_4",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.38,
+    4.5,
+    11.88
+   ],
+   "to": [
+    8.62,
+    5.3,
+    13.12
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-043"
+  },
+  {
+   "name": "coil0_5",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.658,
+    4.5,
+    11.537
+   ],
+   "to": [
+    6.898,
+    5.3,
+    12.777
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-044"
+  },
+  {
+   "name": "coil0_6",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.198,
+    4.5,
+    10.562
+   ],
+   "to": [
+    5.438,
+    5.3,
+    11.802
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-045"
+  },
+  {
+   "name": "coil0_7",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.223,
+    4.5,
+    9.102
+   ],
+   "to": [
+    4.463,
+    5.3,
+    10.342
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-046"
+  },
+  {
+   "name": "coil0_8",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.88,
+    4.5,
+    7.38
+   ],
+   "to": [
+    4.12,
+    5.3,
+    8.62
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-047"
+  },
+  {
+   "name": "coil0_9",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.223,
+    4.5,
+    5.658
+   ],
+   "to": [
+    4.463,
+    5.3,
+    6.898
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-048"
+  },
+  {
+   "name": "coil0_10",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.198,
+    4.5,
+    4.198
+   ],
+   "to": [
+    5.438,
+    5.3,
+    5.438
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-049"
+  },
+  {
+   "name": "coil0_11",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.658,
+    4.5,
+    3.223
+   ],
+   "to": [
+    6.898,
+    5.3,
+    4.463
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-050"
+  },
+  {
+   "name": "coil0_12",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.38,
+    4.5,
+    2.88
+   ],
+   "to": [
+    8.62,
+    5.3,
+    4.12
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-051"
+  },
+  {
+   "name": "coil0_13",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.102,
+    4.5,
+    3.223
+   ],
+   "to": [
+    10.342,
+    5.3,
+    4.463
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-052"
+  },
+  {
+   "name": "coil0_14",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.562,
+    4.5,
+    4.198
+   ],
+   "to": [
+    11.802,
+    5.3,
+    5.438
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-053"
+  },
+  {
+   "name": "coil0_15",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.537,
+    4.5,
+    5.658
+   ],
+   "to": [
+    12.777,
+    5.3,
+    6.898
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-054"
+  },
+  {
+   "name": "coil0_tie0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.6,
+    4.65,
+    9.6
+   ],
+   "to": [
+    12.2,
+    5.15,
+    12.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-055"
+  },
+  {
+   "name": "coil0_tie1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.8,
+    4.65,
+    9.6
+   ],
+   "to": [
+    6.4,
+    5.15,
+    12.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-056"
+  },
+  {
+   "name": "coil0_tie2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.6,
+    4.65,
+    9.6
+   ],
+   "to": [
+    12.2,
+    5.15,
+    12.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-057"
+  },
+  {
+   "name": "coil0_tie3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.6,
+    4.65,
+    3.8
+   ],
+   "to": [
+    12.2,
+    5.15,
+    6.4
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-058"
+  },
+  {
+   "name": "coil1_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.88,
+    12.3,
+    7.38
+   ],
+   "to": [
+    13.12,
+    13.1,
+    8.62
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-059"
+  },
+  {
+   "name": "coil1_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.537,
+    12.3,
+    9.102
+   ],
+   "to": [
+    12.777,
+    13.1,
+    10.342
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-060"
+  },
+  {
+   "name": "coil1_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.562,
+    12.3,
+    10.562
+   ],
+   "to": [
+    11.802,
+    13.1,
+    11.802
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-061"
+  },
+  {
+   "name": "coil1_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.102,
+    12.3,
+    11.537
+   ],
+   "to": [
+    10.342,
+    13.1,
+    12.777
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-062"
+  },
+  {
+   "name": "coil1_4",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.38,
+    12.3,
+    11.88
+   ],
+   "to": [
+    8.62,
+    13.1,
+    13.12
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-063"
+  },
+  {
+   "name": "coil1_5",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.658,
+    12.3,
+    11.537
+   ],
+   "to": [
+    6.898,
+    13.1,
+    12.777
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-064"
+  },
+  {
+   "name": "coil1_6",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.198,
+    12.3,
+    10.562
+   ],
+   "to": [
+    5.438,
+    13.1,
+    11.802
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-065"
+  },
+  {
+   "name": "coil1_7",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.223,
+    12.3,
+    9.102
+   ],
+   "to": [
+    4.463,
+    13.1,
+    10.342
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-066"
+  },
+  {
+   "name": "coil1_8",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.88,
+    12.3,
+    7.38
+   ],
+   "to": [
+    4.12,
+    13.1,
+    8.62
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-067"
+  },
+  {
+   "name": "coil1_9",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.223,
+    12.3,
+    5.658
+   ],
+   "to": [
+    4.463,
+    13.1,
+    6.898
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-068"
+  },
+  {
+   "name": "coil1_10",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.198,
+    12.3,
+    4.198
+   ],
+   "to": [
+    5.438,
+    13.1,
+    5.438
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-069"
+  },
+  {
+   "name": "coil1_11",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.658,
+    12.3,
+    3.223
+   ],
+   "to": [
+    6.898,
+    13.1,
+    4.463
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-070"
+  },
+  {
+   "name": "coil1_12",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.38,
+    12.3,
+    2.88
+   ],
+   "to": [
+    8.62,
+    13.1,
+    4.12
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-071"
+  },
+  {
+   "name": "coil1_13",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.102,
+    12.3,
+    3.223
+   ],
+   "to": [
+    10.342,
+    13.1,
+    4.463
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-072"
+  },
+  {
+   "name": "coil1_14",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.562,
+    12.3,
+    4.198
+   ],
+   "to": [
+    11.802,
+    13.1,
+    5.438
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-073"
+  },
+  {
+   "name": "coil1_15",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.537,
+    12.3,
+    5.658
+   ],
+   "to": [
+    12.777,
+    13.1,
+    6.898
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      4.0,
+      31.0,
+      6.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-074"
+  },
+  {
+   "name": "coil1_tie0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.6,
+    12.45,
+    9.6
+   ],
+   "to": [
+    12.2,
+    12.95,
+    12.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-075"
+  },
+  {
+   "name": "coil1_tie1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.8,
+    12.45,
+    9.6
+   ],
+   "to": [
+    6.4,
+    12.95,
+    12.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-076"
+  },
+  {
+   "name": "coil1_tie2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.6,
+    12.45,
+    9.6
+   ],
+   "to": [
+    12.2,
+    12.95,
+    12.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-077"
+  },
+  {
+   "name": "coil1_tie3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.6,
+    12.45,
+    3.8
+   ],
+   "to": [
+    12.2,
+    12.95,
+    6.4
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-078"
+  },
+  {
+   "name": "fin0_in",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.1,
+    6.9,
+    7.58
+   ],
+   "to": [
+    12.9,
+    8.9,
+    8.42
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    6.9,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-079"
+  },
+  {
+   "name": "fin0_out",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.6,
+    8.0,
+    7.58
+   ],
+   "to": [
+    14.35,
+    10.0,
+    8.42
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    6.9,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-080"
+  },
+  {
+   "name": "fin1_in",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.1,
+    7.7,
+    7.58
+   ],
+   "to": [
+    12.9,
+    9.7,
+    8.42
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    7.7,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-081",
+   "rotation": [
+    0,
+    45.0,
+    0
+   ]
+  },
+  {
+   "name": "fin1_out",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.6,
+    8.8,
+    7.58
+   ],
+   "to": [
+    14.35,
+    10.8,
+    8.42
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    7.7,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-082",
+   "rotation": [
+    0,
+    45.0,
+    0
+   ]
+  },
+  {
+   "name": "fin2_in",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.58,
+    6.9,
+    3.1
+   ],
+   "to": [
+    8.42,
+    8.9,
+    4.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    6.9,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-083"
+  },
+  {
+   "name": "fin2_out",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.58,
+    8.0,
+    1.65
+   ],
+   "to": [
+    8.42,
+    10.0,
+    3.4
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    6.9,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-084"
+  },
+  {
+   "name": "fin3_in",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.58,
+    7.7,
+    3.1
+   ],
+   "to": [
+    8.42,
+    9.7,
+    4.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    7.7,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-085",
+   "rotation": [
+    0,
+    45.0,
+    0
+   ]
+  },
+  {
+   "name": "fin3_out",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.58,
+    8.8,
+    1.65
+   ],
+   "to": [
+    8.42,
+    10.8,
+    3.4
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    7.7,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-086",
+   "rotation": [
+    0,
+    45.0,
+    0
+   ]
+  },
+  {
+   "name": "fin4_in",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.1,
+    6.9,
+    7.58
+   ],
+   "to": [
+    4.9,
+    8.9,
+    8.42
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    6.9,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-087"
+  },
+  {
+   "name": "fin4_out",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.65,
+    8.0,
+    7.58
+   ],
+   "to": [
+    3.4,
+    10.0,
+    8.42
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    6.9,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-088"
+  },
+  {
+   "name": "fin5_in",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.1,
+    7.7,
+    7.58
+   ],
+   "to": [
+    4.9,
+    9.7,
+    8.42
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    7.7,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-089",
+   "rotation": [
+    0,
+    -45.0,
+    0
+   ]
+  },
+  {
+   "name": "fin5_out",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.65,
+    8.8,
+    7.58
+   ],
+   "to": [
+    3.4,
+    10.8,
+    8.42
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    7.7,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-090",
+   "rotation": [
+    0,
+    -45.0,
+    0
+   ]
+  },
+  {
+   "name": "fin6_in",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.58,
+    6.9,
+    11.1
+   ],
+   "to": [
+    8.42,
+    8.9,
+    12.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    6.9,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-091"
+  },
+  {
+   "name": "fin6_out",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.58,
+    8.0,
+    12.6
+   ],
+   "to": [
+    8.42,
+    10.0,
+    14.35
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    6.9,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-092"
+  },
+  {
+   "name": "fin7_in",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.58,
+    7.7,
+    11.1
+   ],
+   "to": [
+    8.42,
+    9.7,
+    12.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    7.7,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-093",
+   "rotation": [
+    0,
+    -45.0,
+    0
+   ]
+  },
+  {
+   "name": "fin7_out",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.58,
+    8.8,
+    12.6
+   ],
+   "to": [
+    8.42,
+    10.8,
+    14.35
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    7.7,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      25.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      6.0,
+      9.0,
+      8.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-094",
+   "rotation": [
+    0,
+    -45.0,
+    0
+   ]
+  },
+  {
+   "name": "node_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.62,
+    9.9,
+    2.22
+   ],
+   "to": [
+    8.38,
+    10.7,
+    2.98
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      1.0,
+      17.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-095"
+  },
+  {
+   "name": "node_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    13.02,
+    9.9,
+    7.62
+   ],
+   "to": [
+    13.78,
+    10.7,
+    8.38
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      1.0,
+      17.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-096"
+  },
+  {
+   "name": "node_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.62,
+    9.9,
+    13.02
+   ],
+   "to": [
+    8.38,
+    10.7,
+    13.78
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      1.0,
+      17.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-097"
+  },
+  {
+   "name": "node_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.22,
+    9.9,
+    7.62
+   ],
+   "to": [
+    2.98,
+    10.7,
+    8.38
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      1.0,
+      17.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-098"
+  },
+  {
+   "name": "spine_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.95,
+    2.4,
+    9.95
+   ],
+   "to": [
+    10.23,
+    13.6,
+    10.23
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-099"
+  },
+  {
+   "name": "spine_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.77,
+    2.4,
+    9.95
+   ],
+   "to": [
+    6.05,
+    13.6,
+    10.23
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-100"
+  },
+  {
+   "name": "spine_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.95,
+    2.4,
+    9.95
+   ],
+   "to": [
+    10.23,
+    13.6,
+    10.23
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-101"
+  },
+  {
+   "name": "spine_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    9.95,
+    2.4,
+    5.77
+   ],
+   "to": [
+    10.23,
+    13.6,
+    6.05
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      9.0,
+      1.0,
+      13.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      5.0,
+      1.0,
+      9.0,
+      5.0
+     ],
+     "texture": "tex-power_tower_mid",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-power_tower_mid-102"
+  }
+ ],
+ "outliner": [
+  "pb-power_tower_mid-000",
+  "pb-power_tower_mid-001",
+  "pb-power_tower_mid-002",
+  "pb-power_tower_mid-003",
+  "pb-power_tower_mid-004",
+  "pb-power_tower_mid-005",
+  "pb-power_tower_mid-006",
+  "pb-power_tower_mid-007",
+  "pb-power_tower_mid-008",
+  "pb-power_tower_mid-009",
+  "pb-power_tower_mid-010",
+  "pb-power_tower_mid-011",
+  "pb-power_tower_mid-012",
+  "pb-power_tower_mid-013",
+  "pb-power_tower_mid-014",
+  "pb-power_tower_mid-015",
+  "pb-power_tower_mid-016",
+  "pb-power_tower_mid-017",
+  "pb-power_tower_mid-018",
+  "pb-power_tower_mid-019",
+  "pb-power_tower_mid-020",
+  "pb-power_tower_mid-021",
+  "pb-power_tower_mid-022",
+  "pb-power_tower_mid-023",
+  "pb-power_tower_mid-024",
+  "pb-power_tower_mid-025",
+  "pb-power_tower_mid-026",
+  "pb-power_tower_mid-027",
+  "pb-power_tower_mid-028",
+  "pb-power_tower_mid-029",
+  "pb-power_tower_mid-030",
+  "pb-power_tower_mid-031",
+  "pb-power_tower_mid-032",
+  "pb-power_tower_mid-033",
+  "pb-power_tower_mid-034",
+  "pb-power_tower_mid-035",
+  "pb-power_tower_mid-036",
+  "pb-power_tower_mid-037",
+  "pb-power_tower_mid-038",
+  "pb-power_tower_mid-039",
+  "pb-power_tower_mid-040",
+  "pb-power_tower_mid-041",
+  "pb-power_tower_mid-042",
+  "pb-power_tower_mid-043",
+  "pb-power_tower_mid-044",
+  "pb-power_tower_mid-045",
+  "pb-power_tower_mid-046",
+  "pb-power_tower_mid-047",
+  "pb-power_tower_mid-048",
+  "pb-power_tower_mid-049",
+  "pb-power_tower_mid-050",
+  "pb-power_tower_mid-051",
+  "pb-power_tower_mid-052",
+  "pb-power_tower_mid-053",
+  "pb-power_tower_mid-054",
+  "pb-power_tower_mid-055",
+  "pb-power_tower_mid-056",
+  "pb-power_tower_mid-057",
+  "pb-power_tower_mid-058",
+  "pb-power_tower_mid-059",
+  "pb-power_tower_mid-060",
+  "pb-power_tower_mid-061",
+  "pb-power_tower_mid-062",
+  "pb-power_tower_mid-063",
+  "pb-power_tower_mid-064",
+  "pb-power_tower_mid-065",
+  "pb-power_tower_mid-066",
+  "pb-power_tower_mid-067",
+  "pb-power_tower_mid-068",
+  "pb-power_tower_mid-069",
+  "pb-power_tower_mid-070",
+  "pb-power_tower_mid-071",
+  "pb-power_tower_mid-072",
+  "pb-power_tower_mid-073",
+  "pb-power_tower_mid-074",
+  "pb-power_tower_mid-075",
+  "pb-power_tower_mid-076",
+  "pb-power_tower_mid-077",
+  "pb-power_tower_mid-078",
+  "pb-power_tower_mid-079",
+  "pb-power_tower_mid-080",
+  "pb-power_tower_mid-081",
+  "pb-power_tower_mid-082",
+  "pb-power_tower_mid-083",
+  "pb-power_tower_mid-084",
+  "pb-power_tower_mid-085",
+  "pb-power_tower_mid-086",
+  "pb-power_tower_mid-087",
+  "pb-power_tower_mid-088",
+  "pb-power_tower_mid-089",
+  "pb-power_tower_mid-090",
+  "pb-power_tower_mid-091",
+  "pb-power_tower_mid-092",
+  "pb-power_tower_mid-093",
+  "pb-power_tower_mid-094",
+  "pb-power_tower_mid-095",
+  "pb-power_tower_mid-096",
+  "pb-power_tower_mid-097",
+  "pb-power_tower_mid-098",
+  "pb-power_tower_mid-099",
+  "pb-power_tower_mid-100",
+  "pb-power_tower_mid-101",
+  "pb-power_tower_mid-102"
+ ],
+ "textures": [
+  {
+   "path": "",
+   "name": "power_tower_mid.png",
+   "folder": "block",
+   "namespace": "",
+   "id": "0",
+   "width": 32,
+   "height": 32,
+   "uv_width": 32,
+   "uv_height": 32,
+   "particle": true,
+   "use_as_default": false,
+   "layers_enabled": false,
+   "sync_to_project": "",
+   "render_mode": "default",
+   "render_sides": "auto",
+   "frame_time": 1,
+   "frame_order": "loop",
+   "frame_interpolate": false,
+   "visible": true,
+   "internal": true,
+   "saved": false,
+   "uuid": "tex-power_tower_mid",
+   "relative_path": "export/textures/block/power_tower_mid.png",
+   "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzklEQVR42mMQEZP8j4zFJKRRMK3lGUCCuSV1KHhhJBcK/t8lj4q3+KJg0+svUPCjFx/BGKQWpF9cUhaMldV0wFjX0AKMURxg4+RNNQfsOXIejAfMAZNmLQVjmAPwRgGIQLaUFg6wsncHY6+ASDCGeRTkILgDYIbDJKiZ6IhyAHIUwHwAi0ta5oqBdwC2RDgg5QByIhwQByAnwgFxwIBFAbZESM+6YfA4ABnT3QH0jHOs5cCAtwdGHTCgDhjwRDjqgNFyYNQBo+XAqAMG2gEA6TDWXLFrgGEAAAAASUVORK5CYII="
+  }
+ ],
+ "display": {
+  "gui": {
+   "rotation": [
+    30,
+    225,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.625,
+    0.625,
+    0.625
+   ]
+  },
+  "ground": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    3,
+    0
+   ],
+   "scale": [
+    0.25,
+    0.25,
+    0.25
+   ]
+  },
+  "fixed": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.5,
+    0.5,
+    0.5
+   ]
+  },
+  "thirdperson_righthand": {
+   "rotation": [
+    75,
+    45,
+    0
+   ],
+   "translation": [
+    0,
+    2.5,
+    0
+   ],
+   "scale": [
+    0.375,
+    0.375,
+    0.375
+   ]
+  },
+  "firstperson_righthand": {
+   "rotation": [
+    0,
+    45,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.4,
+    0.4,
+    0.4
+   ]
+  }
+ }
+}

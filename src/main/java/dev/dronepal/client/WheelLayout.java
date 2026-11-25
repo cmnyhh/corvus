@@ -2,6 +2,8 @@ package dev.dronepal.client;
 
 /** All distances are in GUI-scaled pixels, shared by drawing and hit testing. */
 record WheelLayout(int x, int y, int radius, int hole) {
+    /** Eight original sectors plus the work sector. */
+    static final int SECTORS = 9;
     static WheelLayout fit(int width, int height, int footerLines, int lineHeight) {
         int y = height / 2;
         int footer = footerLines * lineHeight + 12;
@@ -13,7 +15,7 @@ record WheelLayout(int x, int y, int radius, int hole) {
         double dx = mouseX - x, dy = mouseY - y;
         double distance = Math.hypot(dx, dy);
         if (distance < hole || distance > radius) return -1;
-        return Math.floorMod((int)Math.floor(Math.atan2(dx, -dy) / (Math.PI / 4) + 0.5), 8);
+        return Math.floorMod((int)Math.floor(Math.atan2(dx, -dy) / (2 * Math.PI / SECTORS) + 0.5), SECTORS);
     }
 
     record Box(int x, int y, int width, int height) {}
@@ -21,9 +23,9 @@ record WheelLayout(int x, int y, int radius, int hole) {
     Box sectorText(int slot) {
         // The rotated wedge contains this circle, so its inscribed horizontal rectangle
         // fits even in the diagonal sectors, independent of the selected font.
-        double angle = slot * Math.PI / 4;
+        double angle = slot * 2 * Math.PI / SECTORS;
         double distance = (radius + hole) * 0.52;
-        double safeRadius = Math.min(radius - distance, Math.min(distance - hole, distance * Math.sin(Math.PI / 8))) - 2;
+        double safeRadius = Math.min(radius - distance, Math.min(distance - hole, distance * Math.sin(Math.PI / SECTORS))) - 2;
         int cx = x + (int)Math.round(distance * Math.sin(angle));
         int cy = y - (int)Math.round(distance * Math.cos(angle));
         return new Box(cx, cy, Math.max(2,(int)(safeRadius * 1.76)), Math.max(2,(int)(safeRadius * .90)));

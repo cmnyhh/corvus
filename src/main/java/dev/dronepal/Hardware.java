@@ -258,6 +258,9 @@ public final class Hardware {
         return "";
     }
     public static boolean online(ItemStack stack, String family) {
+        // TODO(corvus-core): the rule itself is dev.corvus.core.HardwareRules#online(userDisabled, powered)
+        // and dev.corvus.core.HardwareRules#brownout(energy, capacity); move the call over together with
+        // the 1.20.1 side (see corvus-core/TODO.md) so the two cannot drift again.
         return !DroneRemote.disabled(stack, family) && powered(stack, family);
     }
     public static boolean powered(ItemStack stack, String family) {
@@ -310,7 +313,7 @@ public final class Hardware {
             }
         }
     }
-    static void setEnergy(ItemStack stack, int value) {
+    public static void setEnergy(ItemStack stack, int value) {
         var cell = battery(stack);
         var model = Batteries.model(cell);
         if (model == null) return;
@@ -318,7 +321,8 @@ public final class Hardware {
         if (stack != cell) storeCell(stack, cell);
     }
     public static int charge(ItemStack stack, int amount, boolean simulate) { return Batteries.charge(stack, amount, simulate); }
-    private static DroneEntity active(ServerPlayer p) {
+    /** The deployed, owned projection this player's fitted controller belongs to, or null. */
+    public static DroneEntity active(ServerPlayer p) {
         var tag = p.getPersistentData();
         return tag.hasUUID(DroneItem.ACTIVE) && p.serverLevel().getEntity(tag.getUUID(DroneItem.ACTIVE)) instanceof DroneEntity d && p.getUUID().equals(d.owner) && d.getUUID().equals(DroneItem.serial(CuriosDrones.equipped(p))) ? d : null;
     }
@@ -327,6 +331,7 @@ public final class Hardware {
         DroneEntity drone = active(p);
         if (drone == null) return false;
         if (intent.equals("order.supply")) return CombatSlots.available() && TaczLink.supply(p);
+        if (intent.equals("order.work") || intent.equals("order.idle")) return dev.dronepal.mill.DroneWork.order(p, intent);
         if (intent.equals("order.cover") || intent.equals("order.hold")) {
             if (installed(drone.controller()).stream().noneMatch(m -> m.family().equals("combat") && m.intents().contains(intent))) return false;
             return DroneCombat.setDeployed(drone, intent.equals("order.cover"));

@@ -9,7 +9,7 @@ public final class WheelLayoutCheck {
                 WheelLayout w = WheelLayout.fit(width,height,lines,10);
                 if (w.sector(w.x(),w.y()) != -1 || w.sector(w.x(), w.y()-w.radius()-1) != -1) throw new AssertionError("cancel");
                 if (w.y()+w.radius()+5+lines*10 > height) throw new AssertionError("footer clipped");
-                for (int slot=0; slot<8; slot++) {
+                for (int slot=0; slot<WheelLayout.SECTORS; slot++) {
                     var box = w.sectorText(slot);
                     for (int x=-1; x<=1; x++) for (int y=-1; y<=1; y++) {
                         if (w.sector(box.x()+x*box.width()*.5, box.y()+y*box.height()*.5)!=slot) throw new AssertionError("text outside its sector");

@@ -2,6 +2,7 @@ package dev.dronepal.charging;
 
 import dev.dronepal.Hardware;
 import dev.dronepal.ServerOptions;
+import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.energy.IEnergyStorage;
@@ -11,8 +12,8 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
  *
  * <p>Corvus' own cells are handled by {@link Hardware}: they keep FE in {@code custom_data.energy}
  * and know their tier, capacity and per-tick ceiling. Anything else falls back to NeoForge's item
- * energy capability, so a foreign FE item (Mekanism energy tablet, Immersive Engineering capacitor,
- * ...) charges on the pad too instead of being rejected.</p>
+ * {@link IEnergyStorage} capability, so a foreign FE item (Mekanism energy tablet, Immersive
+ * Engineering capacitor, ...) charges on the pad too instead of being rejected.</p>
  *
  * <p>Foreign items are capped to the pad's cable rate per tick ({@link ChargingDockEntity#BASE_CABLE_RATE}
  * scaled by {@link ServerOptions#chargeMultiplier()}), mirroring how the buffer treats cable input, so a
@@ -47,7 +48,7 @@ final class DockEnergy {
         if (Hardware.capacity(stack) > 0) return Hardware.charge(stack, amount, simulate);
         IEnergyStorage cell = itemCell(stack);
         if (cell == null || !cell.canReceive()) return 0;
-        int budget = Math.clamp(Math.round(ChargingDockEntity.BASE_CABLE_RATE * ServerOptions.chargeMultiplier()), 1, 1_000_000);
+        int budget = (int) Math.clamp(Math.round(ChargingDockEntity.BASE_CABLE_RATE * ServerOptions.chargeMultiplier()), 1, 1_000_000);
         int received = cell.receiveEnergy(Math.min(amount, budget), simulate);
         return Math.max(0, received);
     }

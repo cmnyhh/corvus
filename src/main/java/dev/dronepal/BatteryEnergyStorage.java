@@ -6,21 +6,25 @@ import net.minecraft.world.item.component.CustomData;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 
 /**
- * A battery stack seen through NeoForge's item energy capability.
+ * A battery stack seen through NeoForge's item energy capability: drain for the outside world, charge
+ * through the same budgeted path the dock uses.
  *
- * <p>Corvus keeps cell charge in {@code custom_data.energy} and charges it through
- * {@link Batteries#charge} so the per-tick budget holds. That is invisible to everything else in the
- * pack, which means no other FE consumer — the Stringblade quiver, a charger, a machine — can draw
- * from a battery the player is carrying.</p>
- *
- * <p>This view exposes that charge as a normal {@link IEnergyStorage}:</p>
+ * <p>Corvus keeps cell charge in {@code custom_data.energy} so the per-tick ceiling can be enforced.
+ * That is invisible to everything else in the pack, which means no other FE consumer — the Stringblade
+ * quiver, a charger, a machine — could draw from a battery the player is carrying. This view exposes
+ * that charge as a normal {@link IEnergyStorage}:</p>
  * <ul>
- *   <li>{@link #canExtract()} is {@code true}: anything that understands FE can drain the cell.</li>
- *   <li>{@link #canReceive()} is {@code false}: charging keeps going through the dock / coal path, so
- *       the per-tick ceiling and the {@code charge_tick} bookkeeping cannot be bypassed.</li>
+ *   <li>{@link #canExtract()} / {@link #extractEnergy} drain the cell directly.</li>
+ *   <li>{@link #canReceive()} / {@link #receiveEnergy} delegate to {@link Hardware#charge}, which
+ *       enforces the model's FE/t ceiling and the shared {@code charge_tick} bookkeeping. Receiving
+ *       here therefore cannot refill a cell faster than the dock can.</li>
  * </ul>
  *
- * <p>Registered in {@code Dronepal}'s constructor through {@code RegisterCapabilitiesEvent}.</p>
+ * <p><b>Registration order matters.</b> NeoForge resolves an item capability by taking the first
+ * non-null provider in registration order, and {@code Dronepal}'s constructor registers this class
+ * before {@code ChargingDockRegistry} registers its own {@code BatteryPort}. This provider is the one
+ * that wins for batteries, so it must cover both directions; the later registration stays harmless
+ * (and still serves the drone entity).</p>
  */
 public final class BatteryEnergyStorage implements IEnergyStorage {
     private final ItemStack stack;
@@ -35,7 +39,9 @@ public final class BatteryEnergyStorage implements IEnergyStorage {
 
     @Override
     public int receiveEnergy(int amount, boolean simulate) {
-        return 0;
+        // Budgeted exactly like the dock: Batteries#charge owns the per-tick ceiling and the shared
+        // charge_tick counter, so an external charger cannot outrun a dock.
+        return Hardware.charge(stack, amount, simulate);
     }
 
     @Override
@@ -71,6 +77,6 @@ public final class BatteryEnergyStorage implements IEnergyStorage {
 
     @Override
     public boolean canReceive() {
-        return false;
+        return true;
     }
 }

@@ -1,0 +1,4509 @@
+{
+ "meta": {
+  "format_version": "5.0",
+  "model_format": "java_block",
+  "box_uv": false
+ },
+ "name": "solar_generator",
+ "model_identifier": "solar_generator",
+ "parent": "block/block",
+ "ambientocclusion": true,
+ "texture_size": [
+  32,
+  32
+ ],
+ "resolution": {
+  "width": 32,
+  "height": 32
+ },
+ "elements": [
+  {
+   "name": "base",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.5,
+    0.0,
+    0.5
+   ],
+   "to": [
+    15.5,
+    2.6,
+    15.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      16.0,
+      12.0,
+      31.0,
+      15.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      16.0,
+      12.0,
+      31.0,
+      15.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      16.0,
+      12.0,
+      31.0,
+      15.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      16.0,
+      12.0,
+      31.0,
+      15.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-000"
+  },
+  {
+   "name": "base_deck",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.2,
+    2.6,
+    1.2
+   ],
+   "to": [
+    14.8,
+    3.15,
+    14.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      1.0,
+      16.0,
+      16.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-001"
+  },
+  {
+   "name": "weight_cap_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.7,
+    3.15,
+    0.7
+   ],
+   "to": [
+    3.3,
+    3.95,
+    3.3
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-002"
+  },
+  {
+   "name": "weight_cap_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.7,
+    3.15,
+    0.7
+   ],
+   "to": [
+    15.3,
+    3.95,
+    3.3
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-003"
+  },
+  {
+   "name": "weight_cap_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.7,
+    3.15,
+    12.7
+   ],
+   "to": [
+    3.3,
+    3.95,
+    15.3
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-004"
+  },
+  {
+   "name": "weight_cap_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.7,
+    3.15,
+    12.7
+   ],
+   "to": [
+    15.3,
+    3.95,
+    15.3
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-005"
+  },
+  {
+   "name": "junction_box",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    6.6,
+    3.15,
+    6.2
+   ],
+   "to": [
+    9.4,
+    4.3,
+    7.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      17.0,
+      7.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-006"
+  },
+  {
+   "name": "cable_column",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.2,
+    4.3,
+    6.6
+   ],
+   "to": [
+    8.8,
+    9.3,
+    7.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      17.0,
+      7.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      17.0,
+      7.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      17.0,
+      7.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-007"
+  },
+  {
+   "name": "deck_led",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.1,
+    3.24,
+    1.14
+   ],
+   "to": [
+    8.9,
+    3.66,
+    1.32
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      16.0,
+      16.0,
+      20.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      16.0,
+      16.0,
+      20.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      16.0,
+      16.0,
+      20.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      16.0,
+      16.0,
+      20.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      16.0,
+      16.0,
+      20.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      16.0,
+      16.0,
+      20.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-008"
+  },
+  {
+   "name": "post_r_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.6,
+    3.95,
+    10.2
+   ],
+   "to": [
+    5.0,
+    10.5,
+    11.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      3.0,
+      20.0,
+      5.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-009"
+  },
+  {
+   "name": "post_r_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.0,
+    3.95,
+    10.2
+   ],
+   "to": [
+    12.4,
+    10.5,
+    11.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      3.0,
+      20.0,
+      5.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-010"
+  },
+  {
+   "name": "post_f_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.6,
+    3.95,
+    4.0
+   ],
+   "to": [
+    5.0,
+    8.1,
+    5.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      3.0,
+      20.0,
+      5.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-011"
+  },
+  {
+   "name": "post_f_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.0,
+    3.95,
+    4.0
+   ],
+   "to": [
+    12.4,
+    8.1,
+    5.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      3.0,
+      20.0,
+      5.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-012"
+  },
+  {
+   "name": "cross_brace",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.0,
+    5.6,
+    4.3
+   ],
+   "to": [
+    11.0,
+    6.3,
+    5.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      17.0,
+      7.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      17.0,
+      7.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      17.0,
+      7.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      7.0,
+      17.0,
+      9.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-013"
+  },
+  {
+   "name": "rear_beam",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.0,
+    8.6,
+    10.4
+   ],
+   "to": [
+    11.0,
+    9.3,
+    11.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      17.0,
+      7.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      17.0,
+      7.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      17.0,
+      7.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-014"
+  },
+  {
+   "name": "panel_backing",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.6,
+    9.25,
+    2.6
+   ],
+   "to": [
+    14.4,
+    9.52,
+    12.4
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      3.0,
+      17.0,
+      5.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      16.0,
+      1.0,
+      29.0,
+      11.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-015",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_frame_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.6,
+    9.32,
+    2.6
+   ],
+   "to": [
+    14.4,
+    9.88,
+    3.4
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-016",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_frame_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.6,
+    9.32,
+    11.6
+   ],
+   "to": [
+    14.4,
+    9.88,
+    12.4
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-017",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_frame_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.6,
+    9.32,
+    3.4
+   ],
+   "to": [
+    2.4,
+    9.88,
+    11.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-018",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_frame_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    13.6,
+    9.32,
+    3.4
+   ],
+   "to": [
+    14.4,
+    9.88,
+    11.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-019",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "grid_z0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.98,
+    9.52,
+    3.4
+   ],
+   "to": [
+    5.28,
+    9.92,
+    11.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-020",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "grid_z1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.85,
+    9.52,
+    3.4
+   ],
+   "to": [
+    8.15,
+    9.92,
+    11.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-021",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "grid_z2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.73,
+    9.52,
+    3.4
+   ],
+   "to": [
+    11.03,
+    9.92,
+    11.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-022",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "grid_x0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.4,
+    9.52,
+    5.93
+   ],
+   "to": [
+    13.6,
+    9.92,
+    6.23
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-023",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "grid_x1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.4,
+    9.52,
+    8.77
+   ],
+   "to": [
+    13.6,
+    9.92,
+    9.07
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      28.0,
+      19.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-024",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.4,
+    9.52,
+    3.4
+   ],
+   "to": [
+    4.975,
+    9.7,
+    5.933
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-025",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.275,
+    9.52,
+    3.4
+   ],
+   "to": [
+    7.85,
+    9.7,
+    5.933
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-026",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.15,
+    9.52,
+    3.4
+   ],
+   "to": [
+    10.725,
+    9.7,
+    5.933
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-027",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_4",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.025,
+    9.52,
+    3.4
+   ],
+   "to": [
+    13.6,
+    9.7,
+    5.933
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-028",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_5",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.4,
+    9.52,
+    6.233
+   ],
+   "to": [
+    4.975,
+    9.7,
+    8.766
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-029",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_6",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.275,
+    9.52,
+    6.233
+   ],
+   "to": [
+    7.85,
+    9.7,
+    8.766
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-030",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_7",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.15,
+    9.52,
+    6.233
+   ],
+   "to": [
+    10.725,
+    9.7,
+    8.766
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-031",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_8",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.025,
+    9.52,
+    6.233
+   ],
+   "to": [
+    13.6,
+    9.7,
+    8.766
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-032",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_9",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.4,
+    9.52,
+    9.066
+   ],
+   "to": [
+    4.975,
+    9.7,
+    11.599
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-033",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_10",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.275,
+    9.52,
+    9.066
+   ],
+   "to": [
+    7.85,
+    9.7,
+    11.599
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-034",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_11",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.15,
+    9.52,
+    9.066
+   ],
+   "to": [
+    10.725,
+    9.7,
+    11.599
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-035",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "pv_cell_12",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.025,
+    9.52,
+    9.066
+   ],
+   "to": [
+    13.6,
+    9.7,
+    11.599
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      5.0,
+      20.0,
+      8.0,
+      21.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      20.0,
+      16.0,
+      24.0,
+      20.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      9.0,
+      17.0,
+      11.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-036",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "hinge_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.0,
+    9.2,
+    12.0
+   ],
+   "to": [
+    5.6,
+    9.6,
+    12.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      3.0,
+      20.0,
+      5.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-037",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "hinge_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.4,
+    9.2,
+    12.0
+   ],
+   "to": [
+    12.0,
+    9.6,
+    12.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    9.5,
+    7.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      1.0,
+      20.0,
+      3.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      3.0,
+      20.0,
+      5.0,
+      22.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      17.0,
+      3.0,
+      19.0
+     ],
+     "texture": "tex-solar_generator",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-solar_generator-038",
+   "rotation": [
+    -22.5,
+    0,
+    0
+   ]
+  }
+ ],
+ "outliner": [
+  "pb-solar_generator-000",
+  "pb-solar_generator-001",
+  "pb-solar_generator-002",
+  "pb-solar_generator-003",
+  "pb-solar_generator-004",
+  "pb-solar_generator-005",
+  "pb-solar_generator-006",
+  "pb-solar_generator-007",
+  "pb-solar_generator-008",
+  "pb-solar_generator-009",
+  "pb-solar_generator-010",
+  "pb-solar_generator-011",
+  "pb-solar_generator-012",
+  "pb-solar_generator-013",
+  "pb-solar_generator-014",
+  "pb-solar_generator-015",
+  "pb-solar_generator-016",
+  "pb-solar_generator-017",
+  "pb-solar_generator-018",
+  "pb-solar_generator-019",
+  "pb-solar_generator-020",
+  "pb-solar_generator-021",
+  "pb-solar_generator-022",
+  "pb-solar_generator-023",
+  "pb-solar_generator-024",
+  "pb-solar_generator-025",
+  "pb-solar_generator-026",
+  "pb-solar_generator-027",
+  "pb-solar_generator-028",
+  "pb-solar_generator-029",
+  "pb-solar_generator-030",
+  "pb-solar_generator-031",
+  "pb-solar_generator-032",
+  "pb-solar_generator-033",
+  "pb-solar_generator-034",
+  "pb-solar_generator-035",
+  "pb-solar_generator-036",
+  "pb-solar_generator-037",
+  "pb-solar_generator-038"
+ ],
+ "textures": [
+  {
+   "path": "",
+   "name": "solar_generator.png",
+   "folder": "block",
+   "namespace": "",
+   "id": "0",
+   "width": 32,
+   "height": 32,
+   "uv_width": 32,
+   "uv_height": 32,
+   "particle": true,
+   "use_as_default": false,
+   "layers_enabled": false,
+   "sync_to_project": "",
+   "render_mode": "default",
+   "render_sides": "auto",
+   "frame_time": 1,
+   "frame_order": "loop",
+   "frame_interpolate": false,
+   "visible": true,
+   "internal": true,
+   "saved": false,
+   "uuid": "tex-solar_generator",
+   "relative_path": "export/textures/block/solar_generator.png",
+   "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABK0lEQVR42mMQEZP8j4zFJKRRMK3lGUCC4pKydMVYHZBbUgfHVvbuODGyOpiBQhoORGO8Dthz5DyY1jW0wImR1cEcwCWqQjTGcACIQA8BQg6gNASQ0wTcAdgsU1bTwSkHwuSGANEOAImDHEHIAUM7BGCJkJ4hgDUX0DMEiHYAsSFAlYKI3BCguCimtByYNGsp2RglF5BbEsKKZ2xFNiExDAeQWxKSi1EcQI0ERU71zEBpIvq/xRcFaxatRMn3j158RMHoDgc7AJTakbMbLI68AiLBGJaHYYbKeleAMS4HwORBegbEAbZte8EYmwOwtoioGQXoJR+6A2AJGKUcgOVLUPYCYZgPYb6kZhsQ5gCU2hDdAfRspDLQuxU8+BwwKPoFow4YUAeM5oIR7wAAfbT7trv+nSMAAAAASUVORK5CYII="
+  }
+ ],
+ "display": {
+  "gui": {
+   "rotation": [
+    30,
+    225,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.625,
+    0.625,
+    0.625
+   ]
+  },
+  "ground": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    3,
+    0
+   ],
+   "scale": [
+    0.25,
+    0.25,
+    0.25
+   ]
+  },
+  "fixed": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.5,
+    0.5,
+    0.5
+   ]
+  },
+  "thirdperson_righthand": {
+   "rotation": [
+    75,
+    45,
+    0
+   ],
+   "translation": [
+    0,
+    2.5,
+    0
+   ],
+   "scale": [
+    0.375,
+    0.375,
+    0.375
+   ]
+  },
+  "firstperson_righthand": {
+   "rotation": [
+    0,
+    45,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.4,
+    0.4,
+    0.4
+   ]
+  }
+ }
+}

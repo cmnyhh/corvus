@@ -1,0 +1,73 @@
+
+=== burner_generator ===
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block model parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  all 2 texture entries resolve to a shipped PNG
+  PASS  52 elements, 312 faces
+  PASS  cullface used only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [2.0, 0.0, 1.8] .. [14.0, 16.0, 14.0])
+  PASS  every element from/to inside 0..16 (no neighbour interpenetration)
+  PASS  all rotations use a single axis with angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every textured face has 1:1 pixel aspect (no stretching)
+  PASS  30 glow faces are single flat colours (ready for emissive maps)
+  WARN  foot_0: touches the 0 boundary on y (flush with neighbour)
+  WARN  foot_1: touches the 0 boundary on y (flush with neighbour)
+  WARN  foot_2: touches the 0 boundary on y (flush with neighbour)
+  WARN  foot_3: touches the 0 boundary on y (flush with neighbour)
+  WARN  chimney_n: touches the 16 boundary on y (flush with neighbour)
+  WARN  chimney_s: touches the 16 boundary on y (flush with neighbour)
+  WARN  chimney_w: touches the 16 boundary on y (flush with neighbour)
+  WARN  chimney_e: touches the 16 boundary on y (flush with neighbour)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (52)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 52 cubes / 312 faces / 8 rotated, bbox [12.0, 16.0, 12.2] px-class units
+
+=== solar_generator ===
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block model parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  all 2 texture entries resolve to a shipped PNG
+  PASS  39 elements, 234 faces
+  PASS  cullface used only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [0.5, 0.0, 0.5] .. [15.5, 11.73, 15.5])
+  PASS  every element from/to inside 0..16 (no neighbour interpenetration)
+  PASS  all rotations use a single axis with angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every textured face has 1:1 pixel aspect (no stretching)
+  PASS  6 glow faces are single flat colours (ready for emissive maps)
+  WARN  base: touches the 0 boundary on y (flush with neighbour)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (39)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 39 cubes / 234 faces / 24 rotated, bbox [15.0, 10.5, 15.0] px-class units
+
+=== battery_bank ===
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block model parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  all 2 texture entries resolve to a shipped PNG
+  PASS  39 elements, 234 faces
+  PASS  cullface used only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [0.45, 0.0, 2.3] .. [15.55, 11.4, 13.5])
+  PASS  every element from/to inside 0..16 (no neighbour interpenetration)
+  PASS  all rotations use a single axis with angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every textured face has 1:1 pixel aspect (no stretching)
+  PASS  24 glow faces are single flat colours (ready for emissive maps)
+  WARN  base: touches the 0 boundary on y (flush with neighbour)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (39)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 39 cubes / 234 faces / 0 rotated, bbox [15.1, 11.4, 11.2] px-class units
+
+=== summary ===
+  errors: 0   warnings: 10

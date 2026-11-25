@@ -250,6 +250,8 @@ final class DroneSystems {
         if (end != start) Hardware.setEnergy(stack, end);
         DroneTelemetry.publish(drone, p, stack, Math.min(drain, start + charge), charge);
         CarryLight.second(drone,p,stack);
+        // The mill's extra 20 FE/t is settled with the rest of the hardware draw, once a second.
+        dev.dronepal.mill.DroneWork.second(drone, stack);
         var scanner = modules.stream().filter(m -> m.family().equals("scan")).findFirst().orElse(null);
         if (scanner == null || !Hardware.online(stack, "scan") || p.isSpectator()) {
             if (markTicks > 0) clearScan(drone, p);

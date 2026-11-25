@@ -1,0 +1,84 @@
+{
+  "project": "refinement_v10-1b7e1501",
+  "revision": 10,
+  "bones": 26,
+  "cubes": 922,
+  "bounds": [
+    27.519999986886976,
+    37.79750834447096,
+    16.345632323687973
+  ],
+  "capture": [
+    "bb_orbit: 8 cells 640px, elevation 0, 384.8ms",
+    "bb_look: focus core_ring, azimuth 0/30/78, elevation 0, padding .95, 3 x 768px, 195.4ms"
+  ],
+  "azimuth": {
+    "front": 0,
+    "right_3q": 45,
+    "back": 180,
+    "side": 90
+  },
+  "source_sha256": "ac7055d8703bd1099b88dddd6544af0be5cc45e55cd38e3bed780414fc619e41",
+  "attachment_sha256": [
+    "ce8eb328d4e83f25fa7b3fee6fafaf19b3e6991491d74831c0a64b4282c365cf",
+    "5761b0119ae114ebb175c4f02f8025c6c74f9af761415211194a4563c37c89d8"
+  ],
+  "files": {
+    "back.png": {
+      "size": [
+        640,
+        640
+      ],
+      "sha256": "d9e997e145c08cea9a9e6af44c0e0a0c2e608fae3b4711acace84f521537f0fa"
+    },
+    "core.png": {
+      "size": [
+        2304,
+        768
+      ],
+      "sha256": "5761b0119ae114ebb175c4f02f8025c6c74f9af761415211194a4563c37c89d8"
+    },
+    "four_views.png": {
+      "size": [
+        1280,
+        1280
+      ],
+      "sha256": "39c79be77755282e9c5a9d5c3c3b4bd5b45efa9a9ba5bc835549ceaaa7bdadf0"
+    },
+    "front.png": {
+      "size": [
+        640,
+        640
+      ],
+      "sha256": "fd460e165aa682c4b2892f77d5caa4f1a3e21fc30b2336c352c63e09b5c6bb45"
+    },
+    "right_3q.png": {
+      "size": [
+        640,
+        640
+      ],
+      "sha256": "d4ec2f5da9d9813698d931acd742e1fc5181b6a5768c6c22d646c5787d2d67c5"
+    },
+    "side.png": {
+      "size": [
+        640,
+        640
+      ],
+      "sha256": "19cf342c0f5a53a8741ab3ed9fb643e5a7d24a5ec581bd4758659b7aa1ed2def"
+    }
+  },
+  "forward_axis": "-Z",
+  "forward_distance_of_lip_centers_from_matching_outer_facet_centers_u": [
+    1.8931,
+    2.4018,
+    2.1038,
+    1.9754,
+    2.021,
+    2.0268,
+    2.021,
+    1.9754,
+    2.1038,
+    2.4018
+  ],
+  "review": "At 78 degrees the violet lip protrudes ahead of the broader grey frame. The front view shows doubled thin violet lines and small visible joints. Full body uncropped."
+}

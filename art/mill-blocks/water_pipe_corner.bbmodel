@@ -1,0 +1,6569 @@
+{
+ "meta": {
+  "format_version": "5.0",
+  "model_format": "java_block",
+  "box_uv": false
+ },
+ "name": "water_pipe_corner",
+ "model_identifier": "water_pipe_corner",
+ "parent": "block/block",
+ "ambientocclusion": true,
+ "texture_size": [
+  32,
+  32
+ ],
+ "resolution": {
+  "width": 32,
+  "height": 32
+ },
+ "elements": [
+  {
+   "name": "joint_core",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.65,
+    4.95,
+    5.65
+   ],
+   "to": [
+    10.35,
+    11.05,
+    10.35
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      1.0,
+      25.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      1.0,
+      25.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      1.0,
+      25.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      1.0,
+      25.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      15.0,
+      1.0,
+      17.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-000"
+  },
+  {
+   "name": "joint_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.65,
+    4.95,
+    4.95
+   ],
+   "to": [
+    10.35,
+    11.05,
+    5.65
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      1.0,
+      25.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-001"
+  },
+  {
+   "name": "joint_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.65,
+    4.95,
+    10.35
+   ],
+   "to": [
+    10.35,
+    11.05,
+    11.05
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      1.0,
+      25.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-002"
+  },
+  {
+   "name": "joint_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.95,
+    4.95,
+    5.65
+   ],
+   "to": [
+    5.65,
+    11.05,
+    10.35
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      1.0,
+      25.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-003"
+  },
+  {
+   "name": "joint_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.35,
+    4.95,
+    5.65
+   ],
+   "to": [
+    11.05,
+    11.05,
+    10.35
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      1.0,
+      25.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-004"
+  },
+  {
+   "name": "joint_c0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.4,
+    4.95,
+    5.4
+   ],
+   "to": [
+    5.65,
+    11.05,
+    5.65
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-005"
+  },
+  {
+   "name": "joint_c1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.35,
+    4.95,
+    5.4
+   ],
+   "to": [
+    10.6,
+    11.05,
+    5.65
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-006"
+  },
+  {
+   "name": "joint_c2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.4,
+    4.95,
+    10.35
+   ],
+   "to": [
+    5.65,
+    11.05,
+    10.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-007"
+  },
+  {
+   "name": "joint_c3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.35,
+    4.95,
+    10.35
+   ],
+   "to": [
+    10.6,
+    11.05,
+    10.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-008"
+  },
+  {
+   "name": "arm_n_core",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.9,
+    5.9,
+    1.0
+   ],
+   "to": [
+    10.1,
+    10.1,
+    8.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-009"
+  },
+  {
+   "name": "arm_n_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.9,
+    5.0,
+    1.0
+   ],
+   "to": [
+    10.1,
+    5.9,
+    8.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-010"
+  },
+  {
+   "name": "arm_n_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.9,
+    10.1,
+    1.0
+   ],
+   "to": [
+    10.1,
+    11.0,
+    8.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-011"
+  },
+  {
+   "name": "arm_n_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.0,
+    5.9,
+    1.0
+   ],
+   "to": [
+    5.9,
+    10.1,
+    8.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-012"
+  },
+  {
+   "name": "arm_n_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.1,
+    5.9,
+    1.0
+   ],
+   "to": [
+    11.0,
+    10.1,
+    8.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-013"
+  },
+  {
+   "name": "arm_n_c0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.68,
+    5.68,
+    1.0
+   ],
+   "to": [
+    5.9,
+    5.9,
+    8.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-014"
+  },
+  {
+   "name": "arm_n_c1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.1,
+    5.68,
+    1.0
+   ],
+   "to": [
+    10.32,
+    5.9,
+    8.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-015"
+  },
+  {
+   "name": "arm_n_c2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.68,
+    10.1,
+    1.0
+   ],
+   "to": [
+    5.9,
+    10.32,
+    8.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-016"
+  },
+  {
+   "name": "arm_n_c3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.1,
+    10.1,
+    1.0
+   ],
+   "to": [
+    10.32,
+    10.32,
+    8.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-017"
+  },
+  {
+   "name": "fl_n_core",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.45,
+    5.45,
+    0.05
+   ],
+   "to": [
+    10.55,
+    10.55,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-018"
+  },
+  {
+   "name": "fl_n_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.45,
+    4.25,
+    0.05
+   ],
+   "to": [
+    10.55,
+    5.45,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-019"
+  },
+  {
+   "name": "fl_n_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.45,
+    10.55,
+    0.05
+   ],
+   "to": [
+    10.55,
+    11.75,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-020"
+  },
+  {
+   "name": "fl_n_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.25,
+    5.45,
+    0.05
+   ],
+   "to": [
+    5.45,
+    10.55,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-021"
+  },
+  {
+   "name": "fl_n_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.55,
+    5.45,
+    0.05
+   ],
+   "to": [
+    11.75,
+    10.55,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-022"
+  },
+  {
+   "name": "fl_n_c0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.17,
+    5.17,
+    0.05
+   ],
+   "to": [
+    5.45,
+    5.45,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-023"
+  },
+  {
+   "name": "fl_n_c1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.55,
+    5.17,
+    0.05
+   ],
+   "to": [
+    10.83,
+    5.45,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-024"
+  },
+  {
+   "name": "fl_n_c2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.17,
+    10.55,
+    0.05
+   ],
+   "to": [
+    5.45,
+    10.83,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-025"
+  },
+  {
+   "name": "fl_n_c3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.55,
+    10.55,
+    0.05
+   ],
+   "to": [
+    10.83,
+    10.83,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-026"
+  },
+  {
+   "name": "fl_n_bolt0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.11,
+    5.11,
+    0.05
+   ],
+   "to": [
+    5.79,
+    5.79,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-027"
+  },
+  {
+   "name": "fl_n_bolt1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.21,
+    5.11,
+    0.05
+   ],
+   "to": [
+    10.89,
+    5.79,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-028"
+  },
+  {
+   "name": "fl_n_bolt2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.11,
+    10.21,
+    0.05
+   ],
+   "to": [
+    5.79,
+    10.89,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-029"
+  },
+  {
+   "name": "fl_n_bolt3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.21,
+    10.21,
+    0.05
+   ],
+   "to": [
+    10.89,
+    10.89,
+    1.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-030"
+  },
+  {
+   "name": "sight_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.7,
+    6.6,
+    3.5
+   ],
+   "to": [
+    11.3,
+    9.4,
+    4.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      5.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      5.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      5.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      5.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-031"
+  },
+  {
+   "name": "sight_n_r0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.7,
+    6.6,
+    2.8
+   ],
+   "to": [
+    11.3,
+    9.4,
+    3.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      15.0,
+      1.0,
+      17.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-032"
+  },
+  {
+   "name": "sight_n_r1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.7,
+    6.6,
+    4.7
+   ],
+   "to": [
+    11.3,
+    9.4,
+    5.4
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      15.0,
+      1.0,
+      17.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-033"
+  },
+  {
+   "name": "arm_e_core",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.0,
+    5.9,
+    5.9
+   ],
+   "to": [
+    15.0,
+    10.1,
+    10.1
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-034"
+  },
+  {
+   "name": "arm_e_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.0,
+    5.9,
+    5.0
+   ],
+   "to": [
+    15.0,
+    10.1,
+    5.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-035"
+  },
+  {
+   "name": "arm_e_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.0,
+    5.9,
+    10.1
+   ],
+   "to": [
+    15.0,
+    10.1,
+    11.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-036"
+  },
+  {
+   "name": "arm_e_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.0,
+    5.0,
+    5.9
+   ],
+   "to": [
+    15.0,
+    5.9,
+    10.1
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-037"
+  },
+  {
+   "name": "arm_e_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.0,
+    10.1,
+    5.9
+   ],
+   "to": [
+    15.0,
+    11.0,
+    10.1
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      1.0,
+      23.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-038"
+  },
+  {
+   "name": "arm_e_c0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.0,
+    5.68,
+    5.68
+   ],
+   "to": [
+    15.0,
+    5.9,
+    5.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-039"
+  },
+  {
+   "name": "arm_e_c1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.0,
+    10.1,
+    5.68
+   ],
+   "to": [
+    15.0,
+    10.32,
+    5.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-040"
+  },
+  {
+   "name": "arm_e_c2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.0,
+    5.68,
+    10.1
+   ],
+   "to": [
+    15.0,
+    5.9,
+    10.32
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-041"
+  },
+  {
+   "name": "arm_e_c3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.0,
+    10.1,
+    10.1
+   ],
+   "to": [
+    15.0,
+    10.32,
+    10.32
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      19.0,
+      1.0,
+      21.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-042"
+  },
+  {
+   "name": "fl_e_core",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    5.45,
+    5.45
+   ],
+   "to": [
+    15.95,
+    10.55,
+    10.55
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-043"
+  },
+  {
+   "name": "fl_e_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    5.45,
+    4.25
+   ],
+   "to": [
+    15.95,
+    10.55,
+    5.45
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-044"
+  },
+  {
+   "name": "fl_e_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    5.45,
+    10.55
+   ],
+   "to": [
+    15.95,
+    10.55,
+    11.75
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-045"
+  },
+  {
+   "name": "fl_e_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    4.25,
+    5.45
+   ],
+   "to": [
+    15.95,
+    5.45,
+    10.55
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-046"
+  },
+  {
+   "name": "fl_e_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    10.55,
+    5.45
+   ],
+   "to": [
+    15.95,
+    11.75,
+    10.55
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-047"
+  },
+  {
+   "name": "fl_e_c0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    5.17,
+    5.17
+   ],
+   "to": [
+    15.95,
+    5.45,
+    5.45
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-048"
+  },
+  {
+   "name": "fl_e_c1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    10.55,
+    5.17
+   ],
+   "to": [
+    15.95,
+    10.83,
+    5.45
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-049"
+  },
+  {
+   "name": "fl_e_c2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    5.17,
+    10.55
+   ],
+   "to": [
+    15.95,
+    5.45,
+    10.83
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-050"
+  },
+  {
+   "name": "fl_e_c3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    10.55,
+    10.55
+   ],
+   "to": [
+    15.95,
+    10.83,
+    10.83
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-051"
+  },
+  {
+   "name": "fl_e_bolt0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    5.11,
+    5.11
+   ],
+   "to": [
+    15.95,
+    5.79,
+    5.79
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-052"
+  },
+  {
+   "name": "fl_e_bolt1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    10.21,
+    5.11
+   ],
+   "to": [
+    15.95,
+    10.89,
+    5.79
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-053"
+  },
+  {
+   "name": "fl_e_bolt2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    5.11,
+    10.21
+   ],
+   "to": [
+    15.95,
+    5.79,
+    10.89
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-054"
+  },
+  {
+   "name": "fl_e_bolt3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.0,
+    10.21,
+    10.21
+   ],
+   "to": [
+    15.95,
+    10.89,
+    10.89
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      29.0,
+      1.0,
+      31.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-055"
+  },
+  {
+   "name": "sight_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.3,
+    6.6,
+    4.7
+   ],
+   "to": [
+    12.5,
+    9.4,
+    11.3
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      5.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      5.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      5.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      1.0,
+      5.0,
+      5.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-056"
+  },
+  {
+   "name": "sight_e_r0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.6,
+    6.6,
+    4.7
+   ],
+   "to": [
+    11.3,
+    9.4,
+    11.3
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      15.0,
+      1.0,
+      17.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-057"
+  },
+  {
+   "name": "sight_e_r1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.5,
+    6.6,
+    4.7
+   ],
+   "to": [
+    13.2,
+    9.4,
+    11.3
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      1.0,
+      27.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      1.0,
+      29.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      15.0,
+      1.0,
+      17.0,
+      3.0
+     ],
+     "texture": "tex-water_pipe",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-water_pipe_corner-058"
+  }
+ ],
+ "outliner": [
+  "pb-water_pipe_corner-000",
+  "pb-water_pipe_corner-001",
+  "pb-water_pipe_corner-002",
+  "pb-water_pipe_corner-003",
+  "pb-water_pipe_corner-004",
+  "pb-water_pipe_corner-005",
+  "pb-water_pipe_corner-006",
+  "pb-water_pipe_corner-007",
+  "pb-water_pipe_corner-008",
+  "pb-water_pipe_corner-009",
+  "pb-water_pipe_corner-010",
+  "pb-water_pipe_corner-011",
+  "pb-water_pipe_corner-012",
+  "pb-water_pipe_corner-013",
+  "pb-water_pipe_corner-014",
+  "pb-water_pipe_corner-015",
+  "pb-water_pipe_corner-016",
+  "pb-water_pipe_corner-017",
+  "pb-water_pipe_corner-018",
+  "pb-water_pipe_corner-019",
+  "pb-water_pipe_corner-020",
+  "pb-water_pipe_corner-021",
+  "pb-water_pipe_corner-022",
+  "pb-water_pipe_corner-023",
+  "pb-water_pipe_corner-024",
+  "pb-water_pipe_corner-025",
+  "pb-water_pipe_corner-026",
+  "pb-water_pipe_corner-027",
+  "pb-water_pipe_corner-028",
+  "pb-water_pipe_corner-029",
+  "pb-water_pipe_corner-030",
+  "pb-water_pipe_corner-031",
+  "pb-water_pipe_corner-032",
+  "pb-water_pipe_corner-033",
+  "pb-water_pipe_corner-034",
+  "pb-water_pipe_corner-035",
+  "pb-water_pipe_corner-036",
+  "pb-water_pipe_corner-037",
+  "pb-water_pipe_corner-038",
+  "pb-water_pipe_corner-039",
+  "pb-water_pipe_corner-040",
+  "pb-water_pipe_corner-041",
+  "pb-water_pipe_corner-042",
+  "pb-water_pipe_corner-043",
+  "pb-water_pipe_corner-044",
+  "pb-water_pipe_corner-045",
+  "pb-water_pipe_corner-046",
+  "pb-water_pipe_corner-047",
+  "pb-water_pipe_corner-048",
+  "pb-water_pipe_corner-049",
+  "pb-water_pipe_corner-050",
+  "pb-water_pipe_corner-051",
+  "pb-water_pipe_corner-052",
+  "pb-water_pipe_corner-053",
+  "pb-water_pipe_corner-054",
+  "pb-water_pipe_corner-055",
+  "pb-water_pipe_corner-056",
+  "pb-water_pipe_corner-057",
+  "pb-water_pipe_corner-058"
+ ],
+ "textures": [
+  {
+   "path": "",
+   "name": "water_pipe.png",
+   "folder": "block",
+   "namespace": "",
+   "id": "0",
+   "width": 32,
+   "height": 32,
+   "uv_width": 32,
+   "uv_height": 32,
+   "particle": true,
+   "use_as_default": false,
+   "layers_enabled": false,
+   "sync_to_project": "",
+   "render_mode": "default",
+   "render_sides": "auto",
+   "frame_time": 1,
+   "frame_order": "loop",
+   "frame_interpolate": false,
+   "visible": true,
+   "internal": true,
+   "saved": false,
+   "uuid": "tex-water_pipe",
+   "relative_path": "export/textures/block/water_pipe.png",
+   "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAjUlEQVR42mMQEZP8j4zFJKRRMK3lGUCCptdfoOAt3/6jYG4jCzCWyq8FY3FJWTBWVtMBY11DCzC2sncHY6+ASDDOLakD40mzloLxniPnwfjRi49gPHQcQNMoABGEHEDLNMFA70Q36gAMBwyKcmDUAQPqgNFcMOqA0Vww6oDRXDDqgNFcMOqA0Vww4h0AAA/wfFSJ+sw4AAAAAElFTkSuQmCC"
+  }
+ ],
+ "display": {
+  "gui": {
+   "rotation": [
+    30,
+    225,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.625,
+    0.625,
+    0.625
+   ]
+  },
+  "ground": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    3,
+    0
+   ],
+   "scale": [
+    0.25,
+    0.25,
+    0.25
+   ]
+  },
+  "fixed": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.5,
+    0.5,
+    0.5
+   ]
+  },
+  "thirdperson_righthand": {
+   "rotation": [
+    75,
+    45,
+    0
+   ],
+   "translation": [
+    0,
+    2.5,
+    0
+   ],
+   "scale": [
+    0.375,
+    0.375,
+    0.375
+   ]
+  },
+  "firstperson_righthand": {
+   "rotation": [
+    0,
+    45,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.4,
+    0.4,
+    0.4
+   ]
+  }
+ }
+}

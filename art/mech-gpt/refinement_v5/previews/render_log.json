@@ -1,0 +1,36 @@
+{
+  "project": "refinement_v5-cca7b310",
+  "revision": 5,
+  "bones": 26,
+  "cubes": 834,
+  "bounds": [
+    27.246903678559168,
+    37.80318215802476,
+    16.100594649932674
+  ],
+  "tool": "bb_orbit",
+  "render_ms": 351.8,
+  "steps": 8,
+  "elevation": 0,
+  "cell": 768,
+  "attachment_dimensions": [
+    2896,
+    1448
+  ],
+  "output_tile": 724,
+  "azimuth": {
+    "front": 0,
+    "right_3q": 45,
+    "back": 180,
+    "side": 90
+  },
+  "source_sha256": "739bee78f10ff6712fe1bd064f6b660642b19015995e7d81507417e104be41ce",
+  "capture_sha256": "83e0f469d8ed05ca3b6cc0b02140b749fc58569a2b2c2a9ab576c669b3f3ae5d",
+  "png_sha256": {
+    "front": "986b6843f86d4ad09f13ec1a4a7f91f926258a722292f661fc0f10f527dae566",
+    "right_3q": "f19cf2dedfbcc41d5e4de5bf47e32193313de0cd42e13762673ff7518799296b",
+    "back": "9da768506491ce77ca4422e06497141bb2aec3b6ab85a978a12d70666d118688",
+    "side": "9fe5c80505c9d0e0639011011c914b29d1135b8b5d04868c470f65376b66501c"
+  },
+  "review": "Front: head pad, seat back and two warm harness strips visible through windshield; sill occludes cushion. Side: forward knees and steep lower legs give a low lunging stance; torso itself remains fairly upright. Antenna, feet and arms uncropped in all four views."
+}

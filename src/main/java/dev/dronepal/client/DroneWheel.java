@@ -106,6 +106,7 @@ public final class DroneWheel extends Screen {
         if(act==DroneRemote.Action.SUPPLY) return text("supply");
         if(act==DroneRemote.Action.DELIVER) return text("deliver");
         if(act==DroneRemote.Action.FIREMODE) return text("firemode");
+        if(act==DroneRemote.Action.WORK) return text("work");
         return Component.translatable(state.labels().get(slot));
     }
     private String sectorIcon(int slot) {
@@ -120,6 +121,7 @@ public final class DroneWheel extends Screen {
             case DELIVER -> "wheel_deliver";
             case LIGHT -> "wheel_light";
             case LINK, SUPPLY -> "wheel_link";
+            case WORK -> "wheel_work";
             case FIREMODE -> "wheel_burst";
         };
     }
@@ -137,18 +139,19 @@ public final class DroneWheel extends Screen {
         selection=wheel.sector(mx,my);
         // Eight quad strips leave a physical gap between adjacent targets.
         var pose=g.pose();
-        for(int slot=0;slot<8;slot++) {
+        float halfWidth = (float)Math.tan(Math.PI / WheelLayout.SECTORS);
+        for(int slot=0;slot<WheelLayout.SECTORS;slot++) {
             int color=!selectable(slot)?EMPTY:slot==selection?SELECTED:RING;
-            pose.pushPose(); pose.translate(x,y,0); pose.mulPose(com.mojang.math.Axis.ZP.rotationDegrees(slot*45));
+            pose.pushPose(); pose.translate(x,y,0); pose.mulPose(com.mojang.math.Axis.ZP.rotationDegrees(slot*360f/WheelLayout.SECTORS));
             for(int dy=0;dy<r;dy++) {
-                int outer=Math.min((int)(dy*.4142)-1,(int)Math.sqrt(r*r-dy*dy));
+                int outer=Math.min((int)(dy*halfWidth)-1,(int)Math.sqrt(r*r-dy*dy));
                 if(outer<=0) continue;
                 if(dy>=hole) g.fill(-outer,-dy,outer+1,1-dy,color);
                 else { int inner=(int)Math.sqrt(hole*hole-dy*dy); if(inner<outer) {g.fill(-outer,-dy,-inner,1-dy,color);g.fill(inner,-dy,outer+1,1-dy,color);} }
             }
             pose.popPose();
         }
-        for(int slot=0;slot<8;slot++) if(state!=null && (state.enabled() & 1<<slot)!=0) {
+        for(int slot=0;slot<WheelLayout.SECTORS;slot++) if(state!=null && (state.enabled() & 1<<slot)!=0) {
             iconLabel(g, sectorIcon(slot), label(slot), wheel.sectorText(slot), selectable(slot) ? WHITE : MUTED);
         }
         Component center = state == null ? text("connecting") : state.enabled() == 0 ? text("none")

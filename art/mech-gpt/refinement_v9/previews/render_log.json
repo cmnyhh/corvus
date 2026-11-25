@@ -1,0 +1,75 @@
+{
+  "project": "refinement_v9-e2941387",
+  "revision": 9,
+  "bones": 26,
+  "cubes": 922,
+  "bounds": [
+    27.519999986886976,
+    37.79750834447096,
+    16.318851618936613
+  ],
+  "capture": [
+    "bb_orbit: 8 cells 640px, elevation 0, render 383.7ms",
+    "bb_look: focus core_ring, azimuth 0 and 30 degrees, elevation 0, padding .95, 2 x 1024px, render 183.5ms"
+  ],
+  "azimuth": {
+    "front": 0,
+    "right_3q": 45,
+    "back": 180,
+    "side": 90
+  },
+  "source_sha256": "b31718ac20de67387e65652b6811d3815929236999fc6bc0e75c63cbe589384c",
+  "attachment_sha256": [
+    "12ce1ab3ae082ea1cbadee0622415093f8fc6253e0827a7983326ce930f07114",
+    "afe8d42b9d7ea70e05fc3aea4691ca62ed324caa6ff94b43b6917a8a552110b1"
+  ],
+  "files": {
+    "back.png": {
+      "size": [
+        640,
+        640
+      ],
+      "sha256": "1feac71d395693dd346e15333db1913e09e73551018fc6b6fa487af123e47c57"
+    },
+    "core.png": {
+      "size": [
+        2048,
+        1024
+      ],
+      "sha256": "afe8d42b9d7ea70e05fc3aea4691ca62ed324caa6ff94b43b6917a8a552110b1"
+    },
+    "four_views.png": {
+      "size": [
+        1280,
+        1280
+      ],
+      "sha256": "0a31db65608dd8a901c8a612fcec76582f7926e4d2c4a8a0aaa0b655ebbd4456"
+    },
+    "front.png": {
+      "size": [
+        640,
+        640
+      ],
+      "sha256": "102bb8c80cf2e012396d0b5be2dd3d8e77aad744fa1ae395dbcfa59c0ad04349"
+    },
+    "right_3q.png": {
+      "size": [
+        640,
+        640
+      ],
+      "sha256": "38511d97776aacb5c3138fd3bbac3ac7898bc4b1d148417aec18be2a1478f120"
+    },
+    "side.png": {
+      "size": [
+        640,
+        640
+      ],
+      "sha256": "277461957faf93acde7d248ef46468f1f57c13cdc5e7927e69ae90d7e68364cc"
+    }
+  },
+  "center_dark_contiguous_span_at_y512_px": {
+    "v8": 324,
+    "v9": 175
+  },
+  "review": "Smaller dark opening, wide segmented inward-sloping panels, continuous readable violet perimeter in both frontal and 30-degree views; side doors remain clear. Full-body views uncropped."
+}

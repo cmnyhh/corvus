@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "huhu_dronepal:item/refined_concentrate"
+  }
+}

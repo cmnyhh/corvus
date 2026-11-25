@@ -1,0 +1,83 @@
+{
+  "project": "refinement_v6-15b34f02",
+  "revision": 6,
+  "bones": 26,
+  "cubes": 808,
+  "bounds": [
+    27.246903678559168,
+    37.79750834447096,
+    16.100594649932674
+  ],
+  "orbit": {
+    "tool": "bb_orbit",
+    "render_ms": 327.2,
+    "steps": 8,
+    "elevation": 0,
+    "cell": 768,
+    "background": "#B4BBC2",
+    "azimuth": {
+      "front": 0,
+      "right_3q": 45,
+      "back": 180,
+      "side": 90
+    }
+  },
+  "detail": {
+    "tool": "bb_look",
+    "render_ms": 95.3,
+    "azimuth": 45,
+    "elevation": 12,
+    "padding": 0.3,
+    "cell": 1024
+  },
+  "source_sha256": "663cfeba2f37149c4cfb339a698f9ba9d637204c18d0383caf8b120647de05c4",
+  "capture_sha256": [
+    "053deffe077df9b4b9472ed02043bddfa7bb3ceecb16960b0a7e4e4020790036",
+    "15f2beb5bae88237fd05cae84e3307fce237af52bdec7b9d2a14e91719c1112a"
+  ],
+  "files": {
+    "back.png": {
+      "size": [
+        724,
+        724
+      ],
+      "sha256": "d9ecbfe33e9423d000818e70d755ce48d58b8d170ac75fad96bcb5d35bb4f6b3"
+    },
+    "detail_3q.png": {
+      "size": [
+        1024,
+        1024
+      ],
+      "sha256": "15f2beb5bae88237fd05cae84e3307fce237af52bdec7b9d2a14e91719c1112a"
+    },
+    "four_views.png": {
+      "size": [
+        1448,
+        1448
+      ],
+      "sha256": "f36f1071db2c9d5b348e05e52c0ea4fef68e1f733b6ec5ef01b70d1dac269899"
+    },
+    "front.png": {
+      "size": [
+        724,
+        724
+      ],
+      "sha256": "b63abc0ac8e216f3a241c43eec520207d80e987922c4c0b7fac8dedff979b029"
+    },
+    "right_3q.png": {
+      "size": [
+        724,
+        724
+      ],
+      "sha256": "c680fbbc2d7d9a5cd9149e2be2229460bac3ade04a645ba10f7ba2ae85df3ec8"
+    },
+    "side.png": {
+      "size": [
+        724,
+        724
+      ],
+      "sha256": "9c0990e4261331fccbf4c98eedefd6de48d32e87ebc15c6a37908feee17cd146"
+    }
+  },
+  "review": "Stepped thigh armor separates from the exposed knees and angular shin plates. Two oblique pelvis plates form a distinct V in front view. Three individual toe tips on each foot can be counted at elevation 12 degrees; the toe roots share one foot base. Antenna and feet are fully in frame."
+}

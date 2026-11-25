@@ -1,0 +1,5 @@
+{
+  "spec": 2,
+  "metadata": {"name":"Corvus refinement v3"},
+  "files": {"player": {"model":{"main":"checkpoint.bbmodel"},"texture":[]}}
+}

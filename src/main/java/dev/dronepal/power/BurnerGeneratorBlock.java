@@ -1,0 +1,106 @@
+package dev.dronepal.power;
+
+import com.mojang.serialization.MapCodec;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.core.Direction;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+/** Housing for {@link BurnerGeneratorEntity}. Right-click with fuel to load it, sneak-right-click to unload. */
+public final class BurnerGeneratorBlock extends BaseEntityBlock {
+    private static final MapCodec<BurnerGeneratorBlock> CODEC = simpleCodec(BurnerGeneratorBlock::new);
+    private static final VoxelShape SHAPE = Block.box(2, 0, 1.8, 14, 16, 14);
+    /** Front face. Defaults to north so a state read from an older save never lacks the property. */
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+
+    public BurnerGeneratorBlock(Properties props) {
+        super(props);
+        registerDefaultState(stateDefinition.any().setValue(FACING, Direction.NORTH));
+    }
+
+    @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FACING);
+    }
+
+    @Override public BlockState getStateForPlacement(BlockPlaceContext context) {
+        // The indicator grille looks at the player who placed it.
+        return defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+    }
+
+    @Override protected BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
+    }
+
+    @Override protected BlockState mirror(BlockState state, Mirror mirror) {
+        return state.rotate(mirror.getRotation(state.getValue(FACING)));
+    }
+    @Override protected MapCodec<BurnerGeneratorBlock> codec() { return CODEC; }
+    @Override protected RenderShape getRenderShape(BlockState state) { return RenderShape.MODEL; }
+    /**
+     * The model's own bounding box, not the whole cell: the housing is 12 x 16 x 12.2 units of 16, so collision
+     * (and with it "blocks sight" / "suffocates") follows the art instead of an invisible cube.
+     */
+    @Override protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE;
+    }
+
+    /** Built shell, not a full cube: skylight reaches the block below through the open corners. */
+    @Override protected boolean propagatesSkylightDown(BlockState state, BlockGetter level, BlockPos pos) {
+        return true;
+    }
+    @Override public BlockEntity newBlockEntity(BlockPos pos, BlockState state) { return new BurnerGeneratorEntity(pos, state); }
+
+    @Override public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level world, BlockState state, BlockEntityType<T> type) {
+        if (!(world instanceof ServerLevel server)) return null;
+        return createTickerHelper(type, PowerBlocks.BURNER_TYPE.get(), (level, pos, block, generator) -> generator.tick(server));
+    }
+
+    @Override protected ItemInteractionResult useItemOn(ItemStack held, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (!FuelValues.burnable(held)) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        if (!level.isClientSide && level.getBlockEntity(pos) instanceof BurnerGeneratorEntity generator) {
+            int accepted = generator.insertFuel(held);
+            if (accepted > 0) held.consume(accepted, player);
+            player.displayClientMessage(generator.status(), true);
+        }
+        return ItemInteractionResult.sidedSuccess(level.isClientSide);
+    }
+
+    @Override protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+        if (!level.isClientSide && level.getBlockEntity(pos) instanceof BurnerGeneratorEntity generator) {
+            if (player.isShiftKeyDown()) {
+                ItemStack taken = generator.takeFuel();
+                if (!taken.isEmpty() && !player.getInventory().add(taken)) player.drop(taken, false);
+            }
+            player.displayClientMessage(generator.status(), true);
+        }
+        return InteractionResult.sidedSuccess(level.isClientSide);
+    }
+
+    @Override protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState next, boolean moving) {
+        if (!state.is(next.getBlock()) && level.getBlockEntity(pos) instanceof BurnerGeneratorEntity generator) generator.dropContents();
+        super.onRemove(state, level, pos, next, moving);
+    }
+}

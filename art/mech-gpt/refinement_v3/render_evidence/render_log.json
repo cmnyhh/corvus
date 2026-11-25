@@ -1,0 +1,60 @@
+{
+  "project": "refinement_v3-672c2cf4",
+  "revision": 1,
+  "bones": 26,
+  "cubes": 292,
+  "checkpoint_sha256": "e7d0498849f3e69d7e995ff3b59e57edcc0d47ea701a52fd81b020cf400ed468",
+  "capture": "Blockbench bb_orbit, memory render.sheet; 0 to 360, 8 steps, elevation 0, 512px, background #B4BBC2; 112 ms render",
+  "tile_indices_zero_based": {
+    "front": 0,
+    "right_3q": 1,
+    "back": 4,
+    "side": 2
+  },
+  "glass_tools": "bb_look isolate cockpit_glass, front and iso_fr, 512px; white 31.2ms, black 21.5ms",
+  "attachment_sha256": {
+    "orbit": "5adb2c4f07449439d9bf2ec3c748bc6ad76b6ad883d5687c289d024452b3d7b5",
+    "glass_white": "bf01cfa769d73be2fe294cda2b7fd85685b6efa1974c7fa82da16a584a2bcb2a",
+    "glass_black": "6b2d5c671ae48363103cef6cceef66946cc9d598f3b1b53fbd3b0953aaad8c5c"
+  },
+  "samples_white_black": {
+    "pane_256_65": [
+      [
+        204,
+        209,
+        216
+      ],
+      [
+        58,
+        63,
+        70
+      ]
+    ],
+    "sill_256_88": [
+      [
+        190,
+        187,
+        188
+      ],
+      [
+        190,
+        187,
+        188
+      ]
+    ],
+    "background_150_65": [
+      [
+        255,
+        255,
+        255
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "effective_screen_opacity": 0.4275,
+  "inspection": "Full silhouettes uncropped. Side view shows articulated reverse-knee links and back pack projection; front view shows interior seat. Pane changes with background but sill does not. This is effective screen opacity, not source texel alpha."
+}

@@ -1,0 +1,23 @@
+{
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 4
+    },
+    {
+      "item": "huhu_dronepal:battery_cell",
+      "count": 3
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 6
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:battery_bank"
+  }
+}

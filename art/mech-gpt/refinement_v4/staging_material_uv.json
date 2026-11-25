@@ -1,0 +1,268 @@
+{
+  "texture": "staging_corvus.png",
+  "texture_size": [
+    128,
+    128
+  ],
+  "coordinates": "atlas pixels from upper-left; xywh",
+  "uv_regions_xywh": {
+    "shell": [
+      0,
+      0,
+      8,
+      8
+    ],
+    "chalk": [
+      8,
+      0,
+      8,
+      8
+    ],
+    "pearl": [
+      16,
+      0,
+      8,
+      8
+    ],
+    "graphite": [
+      24,
+      0,
+      8,
+      8
+    ],
+    "face": [
+      32,
+      0,
+      8,
+      8
+    ],
+    "joint": [
+      40,
+      0,
+      8,
+      8
+    ],
+    "carbon": [
+      48,
+      0,
+      8,
+      8
+    ],
+    "steel": [
+      56,
+      0,
+      8,
+      8
+    ],
+    "aluminium": [
+      0,
+      8,
+      8,
+      8
+    ],
+    "pad": [
+      8,
+      8,
+      8,
+      8
+    ],
+    "belt": [
+      16,
+      8,
+      8,
+      8
+    ],
+    "amber": [
+      24,
+      8,
+      8,
+      8
+    ],
+    "lining": [
+      32,
+      8,
+      8,
+      8
+    ],
+    "blue": [
+      40,
+      8,
+      8,
+      8
+    ],
+    "core_light": [
+      0,
+      20,
+      4,
+      4
+    ],
+    "cab_light": [
+      6,
+      20,
+      4,
+      4
+    ],
+    "foot_light": [
+      12,
+      20,
+      4,
+      4
+    ],
+    "mount_light": [
+      18,
+      20,
+      4,
+      4
+    ],
+    "glass": [
+      32,
+      20,
+      12,
+      8
+    ],
+    "stripe": [
+      48,
+      20,
+      16,
+      4
+    ],
+    "shoulder_shell": [
+      64,
+      0,
+      32,
+      20
+    ],
+    "shoulder_edge": [
+      96,
+      0,
+      32,
+      20
+    ],
+    "chest_l": [
+      0,
+      32,
+      32,
+      28
+    ],
+    "chest_r": [
+      32,
+      32,
+      32,
+      28
+    ],
+    "pelvic": [
+      64,
+      32,
+      32,
+      28
+    ],
+    "dorsal": [
+      96,
+      32,
+      32,
+      28
+    ],
+    "leg_skin": [
+      0,
+      62,
+      32,
+      28
+    ],
+    "arm_skin": [
+      32,
+      62,
+      32,
+      28
+    ],
+    "foot_skin": [
+      64,
+      62,
+      32,
+      28
+    ],
+    "seatpanel": [
+      96,
+      62,
+      32,
+      28
+    ],
+    "sideplate": [
+      0,
+      92,
+      32,
+      28
+    ],
+    "hatch": [
+      32,
+      92,
+      32,
+      28
+    ],
+    "shutter": [
+      64,
+      92,
+      32,
+      28
+    ],
+    "exhaust": [
+      96,
+      92,
+      32,
+      28
+    ]
+  },
+  "color_values": {
+    "shell": "#d2d1d6",
+    "chalk": "#eeeaeb",
+    "pearl": "#aaa8b2",
+    "graphite": "#494953",
+    "face": "#595a66",
+    "joint": "#292a31",
+    "carbon": "#191b23",
+    "steel": "#777780",
+    "aluminium": "#aeacb7",
+    "pad": "#3a3d4b",
+    "belt": "#ad875f",
+    "amber": "#bd825d",
+    "lining": "#323440",
+    "blue": "#5e657a",
+    "core_light": "#a49aff",
+    "cab_light": "#eee8ff",
+    "foot_light": "#a994d8",
+    "mount_light": "#696278",
+    "glass": [
+      167,
+      186,
+      207,
+      62
+    ],
+    "stripe": "#bd85ff",
+    "shoulder_shell": "#ddd9dc",
+    "shoulder_edge": "#bfbdc6",
+    "chest_l": "#51515c",
+    "chest_r": "#51515c",
+    "pelvic": "#66636c",
+    "dorsal": "#777580",
+    "leg_skin": "#d6d3d6",
+    "arm_skin": "#b6b6c0",
+    "foot_skin": "#888995",
+    "seatpanel": "#333542",
+    "sideplate": "#686973",
+    "hatch": "#b6b3bb",
+    "shutter": "#a19fa9",
+    "exhaust": "#585861"
+  },
+  "glass_only_translucent_region": "glass",
+  "four_exclusive_4x4_tiles": [
+    "core_light",
+    "cab_light",
+    "foot_light",
+    "mount_light"
+  ],
+  "recolorable": [
+    "stripe",
+    "shoulder_shell",
+    "shoulder_edge"
+  ],
+  "materials": "One RGBA atlas, opaque except glass; separate glow masks reserved, not a shader."
+}

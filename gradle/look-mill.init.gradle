@@ -1,0 +1,11 @@
+// Interactive client for eyeballing the ore-mill work animation.
+// ./gradlew -I gradle/look-mill.init.gradle runLookMill
+allprojects { p -> p.afterEvaluate {
+    if (!p.plugins.hasPlugin('net.neoforged.moddev')) return
+    p.neoForge.runs.create('lookMill') {
+        client()
+        sourceSet = p.sourceSets.main
+        gameDirectory = p.layout.projectDirectory.dir('run')
+        programArguments.addAll('--width','1280','--height','800','--quickPlaySingleplayer','New World')
+    }
+} }

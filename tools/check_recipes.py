@@ -64,6 +64,17 @@ def main():
     # Cleric trades the three White Crow medical modules.
     for tier in (1, 2, 3):
         obtainable.add(key(f'{NS}:module', f'medic_mk{tier}'))
+    # The ore mill is a source of its own: milling an ore hands out that mineral's concentrate and its
+    # coarse sand (rare families hand out shards instead), and nine sands craft one more concentrate.
+    # None of that needs a vanilla recipe to exist, so seed the whole family here.
+    COMMON = ('iron', 'copper', 'gold', 'nether_gold', 'coal', 'redstone', 'lapis', 'quartz')
+    RARE = ('diamond', 'emerald', 'debris')
+    mill_items = {f'{NS}:{kind}_concentrate' for kind in COMMON}
+    mill_items |= {f'{NS}:coarse_{kind}' for kind in COMMON}
+    mill_items |= {f'{NS}:{kind}_shard' for kind in RARE}
+    mill_items |= {f'{NS}:sieve', f'{NS}:cooling_tower'}
+    obtainable |= mill_items
+
     # The creative catalogue is not a survival source, so nothing else is seeded here.
 
     def outputs():
@@ -113,6 +124,7 @@ def main():
 
     # Ingredient ids must name a real registered item, not a typo.
     registered = {f'{NS}:{p.stem}' for p in (DATA / 'modules').glob('*.json')}
+    registered |= mill_items
     registered |= {f'{NS}:{p.stem}' for p in (DATA / 'batteries').glob('*.json')}
     registered |= parts | paint_ids | chips | {f'{NS}:module', f'{NS}:drone'}
     typos = []

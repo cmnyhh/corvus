@@ -165,7 +165,13 @@ public final class ChargingDockRenderer implements BlockEntityRenderer<ChargingD
             rows.add(new Row(fit(target.getHoverName().getString(), NAME_WIDTH) + "  " + percent, 0xFF9CD8FF));
             rows.add(new Row(group(charge) + " / " + group(capacity) + " FE", 0xFFB5C2CC));
         }
-        rows.add(new Row(chinese() ? "煤炭 ×" + dock.coalCount() : "Coal ×" + dock.coalCount(), 0xFFAEB6BE));
+        ItemStack fuel = dock.fuelStack();
+        if (!fuel.isEmpty()) {
+            String label = fit(fuel.getHoverName().getString(), NAME_WIDTH) + " ×" + dock.coalCount();
+            rows.add(new Row(label, 0xFFF0B45E));
+        } else {
+            rows.add(new Row(chinese() ? "无燃料" : "No fuel", 0xFFAEB6BE));
+        }
         return rows;
     }
 

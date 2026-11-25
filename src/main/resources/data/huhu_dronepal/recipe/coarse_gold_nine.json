@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:coarse_gold"
+    },
+    {
+      "item": "huhu_dronepal:coarse_gold"
+    },
+    {
+      "item": "huhu_dronepal:coarse_gold"
+    },
+    {
+      "item": "huhu_dronepal:coarse_gold"
+    },
+    {
+      "item": "huhu_dronepal:coarse_gold"
+    },
+    {
+      "item": "huhu_dronepal:coarse_gold"
+    },
+    {
+      "item": "huhu_dronepal:coarse_gold"
+    },
+    {
+      "item": "huhu_dronepal:coarse_gold"
+    },
+    {
+      "item": "huhu_dronepal:coarse_gold"
+    }
+  ],
+  "result": {
+    "id": "huhu_dronepal:gold_concentrate",
+    "count": 1
+  }
+}

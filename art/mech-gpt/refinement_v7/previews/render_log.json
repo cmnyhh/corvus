@@ -1,0 +1,78 @@
+{
+  "project": "refinement_v7-7304d5d1",
+  "revision": 7,
+  "bones": 26,
+  "cubes": 868,
+  "bounds": [
+    27.519999986886976,
+    37.79750834447096,
+    16.318851618936613
+  ],
+  "capture": [
+    "bb_orbit: 8 views at 0 elevation, 640px, 313.3ms",
+    "bb_look: top view 1024px, 112.4ms",
+    "bb_look: front focused wrist port well and back focused dorsal receiver well, 640px 108.6ms"
+  ],
+  "camera_azimuth": {
+    "front": 0,
+    "right_3q": 45,
+    "back": 180,
+    "side": 90
+  },
+  "mount_panels": [
+    "front wrist direct view",
+    "top shoulder crop bbox=[27,408,263,644]",
+    "rear rail direct view"
+  ],
+  "checkpoint_sha256": "1dd2a3a7606ad54d49c5ce5be33a55f7bc6197d8920451d1ab44b931c0af08d8",
+  "source_captures": [
+    "920704e12b59763502ebb0dbaf4b1ae6fc4bb3386e1520b382aee855d082e1ea",
+    "3b63444c40e44a4e636887f43da55a632f2f2dd9da188239e489ff75a96e5a07",
+    "5089f992b3c4db8c98ad8e0ccbe12939f171d326f47daf80f94cb5503ba001ed"
+  ],
+  "outputs": {
+    "back.png": [
+      [
+        640,
+        640
+      ],
+      "119cb4909df4db33ecfe4e8437b32cf154012dc2cc7d2451010c31877bca6487"
+    ],
+    "four_views.png": [
+      [
+        1280,
+        1280
+      ],
+      "3f1366a50954fae2d83433eee7855d3e07557a0b52886c255954482afed0424d"
+    ],
+    "front.png": [
+      [
+        640,
+        640
+      ],
+      "3d9ddecf4c94f13a9d419191557f0607adf2178e1a569e7b3a3b08cd4cbc09eb"
+    ],
+    "mounts.png": [
+      [
+        1500,
+        544
+      ],
+      "9c7b48ea9759b397541366e10ea5ed65f42a76371577fe54b5af3ba7e9a9eaa4"
+    ],
+    "right_3q.png": [
+      [
+        640,
+        640
+      ],
+      "370f2aabf100c62d66bc80cef5e021f6aef80aab15c0090e056206a8f3f2b2fc"
+    ],
+    "side.png": [
+      [
+        640,
+        640
+      ],
+      "a6237f3a7d50827af9c16c36c5849efbd96f7fb836583ebb18e6e9b3b395e1a5"
+    ]
+  },
+  "review": "Wrist jaws form eight segments around a dark centre; small upper marker. Rectangular recessed shoulder bed and paired guides are distinct in top view. Paired upright back rails have flared tops and lower stops; status marker is low contrast. No accessory fitted. Four silhouettes fully framed."
+}

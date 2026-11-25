@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:coarse_lapis"
+    },
+    {
+      "item": "huhu_dronepal:coarse_lapis"
+    },
+    {
+      "item": "huhu_dronepal:coarse_lapis"
+    },
+    {
+      "item": "huhu_dronepal:coarse_lapis"
+    },
+    {
+      "item": "huhu_dronepal:coarse_lapis"
+    },
+    {
+      "item": "huhu_dronepal:coarse_lapis"
+    },
+    {
+      "item": "huhu_dronepal:coarse_lapis"
+    },
+    {
+      "item": "huhu_dronepal:coarse_lapis"
+    },
+    {
+      "item": "huhu_dronepal:coarse_lapis"
+    }
+  ],
+  "result": {
+    "id": "huhu_dronepal:lapis_concentrate",
+    "count": 1
+  }
+}

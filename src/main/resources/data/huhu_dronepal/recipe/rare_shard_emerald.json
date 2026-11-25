@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:emerald_shard"
+    },
+    {
+      "item": "huhu_dronepal:emerald_shard"
+    },
+    {
+      "item": "huhu_dronepal:emerald_shard"
+    },
+    {
+      "item": "huhu_dronepal:emerald_shard"
+    },
+    {
+      "item": "huhu_dronepal:emerald_shard"
+    },
+    {
+      "item": "huhu_dronepal:emerald_shard"
+    },
+    {
+      "item": "huhu_dronepal:emerald_shard"
+    },
+    {
+      "item": "huhu_dronepal:emerald_shard"
+    },
+    {
+      "item": "huhu_dronepal:emerald_shard"
+    }
+  ],
+  "result": {
+    "id": "minecraft:emerald",
+    "count": 1
+  }
+}

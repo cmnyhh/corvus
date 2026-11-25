@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:coarse_coal"
+    },
+    {
+      "item": "huhu_dronepal:coarse_coal"
+    },
+    {
+      "item": "huhu_dronepal:coarse_coal"
+    },
+    {
+      "item": "huhu_dronepal:coarse_coal"
+    },
+    {
+      "item": "huhu_dronepal:coarse_coal"
+    },
+    {
+      "item": "huhu_dronepal:coarse_coal"
+    },
+    {
+      "item": "huhu_dronepal:coarse_coal"
+    },
+    {
+      "item": "huhu_dronepal:coarse_coal"
+    },
+    {
+      "item": "huhu_dronepal:coarse_coal"
+    }
+  ],
+  "result": {
+    "id": "huhu_dronepal:coal_concentrate",
+    "count": 1
+  }
+}

@@ -1,0 +1,11058 @@
+{
+ "meta": {
+  "format_version": "5.0",
+  "model_format": "java_block",
+  "box_uv": false
+ },
+ "name": "ore_mill_side",
+ "model_identifier": "ore_mill_side",
+ "parent": "block/block",
+ "ambientocclusion": true,
+ "texture_size": [
+  32,
+  32
+ ],
+ "resolution": {
+  "width": 32,
+  "height": 32
+ },
+ "elements": [
+  {
+   "name": "foot_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.9,
+    0.0,
+    0.9
+   ],
+   "to": [
+    3.9,
+    1.0,
+    3.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      21.0,
+      15.0,
+      23.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-000"
+  },
+  {
+   "name": "foot_0_bolt",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.1,
+    1.0,
+    2.1
+   ],
+   "to": [
+    2.6,
+    1.28,
+    2.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-001"
+  },
+  {
+   "name": "foot_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.8,
+    0.0,
+    0.9
+   ],
+   "to": [
+    14.8,
+    1.0,
+    3.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      21.0,
+      15.0,
+      23.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-002"
+  },
+  {
+   "name": "foot_1_bolt",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    13.0,
+    1.0,
+    2.1
+   ],
+   "to": [
+    13.5,
+    1.28,
+    2.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-003"
+  },
+  {
+   "name": "foot_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.9,
+    0.0,
+    11.8
+   ],
+   "to": [
+    3.9,
+    1.0,
+    14.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      21.0,
+      15.0,
+      23.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-004"
+  },
+  {
+   "name": "foot_2_bolt",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.1,
+    1.0,
+    13.0
+   ],
+   "to": [
+    2.6,
+    1.28,
+    13.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-005"
+  },
+  {
+   "name": "foot_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.8,
+    0.0,
+    11.8
+   ],
+   "to": [
+    14.8,
+    1.0,
+    14.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      21.0,
+      15.0,
+      23.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-006"
+  },
+  {
+   "name": "foot_3_bolt",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    13.0,
+    1.0,
+    13.0
+   ],
+   "to": [
+    13.5,
+    1.28,
+    13.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-007"
+  },
+  {
+   "name": "rail_w",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.2,
+    1.0,
+    1.5
+   ],
+   "to": [
+    3.2,
+    1.8,
+    14.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-008"
+  },
+  {
+   "name": "rail_e",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.8,
+    1.0,
+    1.5
+   ],
+   "to": [
+    12.8,
+    1.8,
+    14.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-009"
+  },
+  {
+   "name": "plinth",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    1.0,
+    0.6
+   ],
+   "to": [
+    15.4,
+    2.9,
+    15.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      22.0,
+      20.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      22.0,
+      20.0,
+      30.0,
+      21.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-010"
+  },
+  {
+   "name": "plinth_caution",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.6,
+    1.15,
+    0.46
+   ],
+   "to": [
+    15.0,
+    2.3,
+    0.64
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      20.0,
+      13.0,
+      21.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-011"
+  },
+  {
+   "name": "housing",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    2.9,
+    1.3
+   ],
+   "to": [
+    15.4,
+    13.3,
+    14.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      1.0,
+      15.0,
+      11.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      15.0,
+      1.0,
+      25.0,
+      10.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      1.0,
+      15.0,
+      11.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-012"
+  },
+  {
+   "name": "pillar_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.25,
+    2.9,
+    1.35
+   ],
+   "to": [
+    1.05,
+    15.2,
+    2.15
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-013"
+  },
+  {
+   "name": "pillar_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    14.6,
+    2.9,
+    1.35
+   ],
+   "to": [
+    15.4,
+    15.2,
+    2.15
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-014"
+  },
+  {
+   "name": "pillar_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.25,
+    2.9,
+    13.85
+   ],
+   "to": [
+    1.05,
+    15.2,
+    14.65
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-015"
+  },
+  {
+   "name": "pillar_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    14.6,
+    2.9,
+    13.85
+   ],
+   "to": [
+    15.4,
+    15.2,
+    14.65
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-016"
+  },
+  {
+   "name": "seam_flange_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.05,
+    3.2,
+    1.15
+   ],
+   "to": [
+    1.1,
+    14.5,
+    1.48
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-017"
+  },
+  {
+   "name": "seam_flange_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.05,
+    3.2,
+    14.52
+   ],
+   "to": [
+    1.1,
+    14.5,
+    14.85
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-018"
+  },
+  {
+   "name": "deck_body",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.4,
+    13.3,
+    1.3
+   ],
+   "to": [
+    5.4,
+    15.2,
+    14.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-019"
+  },
+  {
+   "name": "deck_c0n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    13.3,
+    1.3
+   ],
+   "to": [
+    1.24,
+    15.2,
+    2.414
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-020"
+  },
+  {
+   "name": "deck_c0s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    13.3,
+    13.586
+   ],
+   "to": [
+    1.24,
+    15.2,
+    14.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-021"
+  },
+  {
+   "name": "deck_c1n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.24,
+    13.3,
+    1.3
+   ],
+   "to": [
+    2.28,
+    15.2,
+    2.588
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-022"
+  },
+  {
+   "name": "deck_c1s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.24,
+    13.3,
+    13.412
+   ],
+   "to": [
+    2.28,
+    15.2,
+    14.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-023"
+  },
+  {
+   "name": "deck_c2n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.28,
+    13.3,
+    1.3
+   ],
+   "to": [
+    3.32,
+    15.2,
+    2.979
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-024"
+  },
+  {
+   "name": "deck_c2s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.28,
+    13.3,
+    13.021
+   ],
+   "to": [
+    3.32,
+    15.2,
+    14.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-025"
+  },
+  {
+   "name": "deck_c3n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.32,
+    13.3,
+    1.3
+   ],
+   "to": [
+    4.36,
+    15.2,
+    3.645
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-026"
+  },
+  {
+   "name": "deck_c3s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.32,
+    13.3,
+    12.355
+   ],
+   "to": [
+    4.36,
+    15.2,
+    14.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-027"
+  },
+  {
+   "name": "deck_c4n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.36,
+    13.3,
+    1.3
+   ],
+   "to": [
+    5.4,
+    15.2,
+    4.749
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-028"
+  },
+  {
+   "name": "deck_c4s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.36,
+    13.3,
+    11.251
+   ],
+   "to": [
+    5.4,
+    15.2,
+    14.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-029"
+  },
+  {
+   "name": "deck_body",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.4,
+    13.3,
+    1.3
+   ],
+   "to": [
+    15.4,
+    15.2,
+    14.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      15.0,
+      11.0,
+      22.0,
+      21.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-030"
+  },
+  {
+   "name": "pitrim_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    13.3,
+    2.12
+   ],
+   "to": [
+    0.32,
+    15.2,
+    3.16
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-031"
+  },
+  {
+   "name": "pitrim_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    13.3,
+    2.162
+   ],
+   "to": [
+    0.992,
+    15.2,
+    3.202
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-032"
+  },
+  {
+   "name": "pitrim_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.613,
+    13.3,
+    2.288
+   ],
+   "to": [
+    1.653,
+    15.2,
+    3.328
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-033"
+  },
+  {
+   "name": "pitrim_3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.253,
+    13.3,
+    2.496
+   ],
+   "to": [
+    2.293,
+    15.2,
+    3.536
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-034"
+  },
+  {
+   "name": "pitrim_4",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.862,
+    13.3,
+    2.783
+   ],
+   "to": [
+    2.902,
+    15.2,
+    3.823
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-035"
+  },
+  {
+   "name": "pitrim_5",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.431,
+    13.3,
+    3.144
+   ],
+   "to": [
+    3.471,
+    15.2,
+    4.184
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-036"
+  },
+  {
+   "name": "pitrim_6",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.949,
+    13.3,
+    3.573
+   ],
+   "to": [
+    3.989,
+    15.2,
+    4.613
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-037"
+  },
+  {
+   "name": "pitrim_7",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.41,
+    13.3,
+    4.063
+   ],
+   "to": [
+    4.45,
+    15.2,
+    5.103
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-038"
+  },
+  {
+   "name": "pitrim_8",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.806,
+    13.3,
+    4.608
+   ],
+   "to": [
+    4.846,
+    15.2,
+    5.648
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-039"
+  },
+  {
+   "name": "pitrim_9",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.13,
+    13.3,
+    5.198
+   ],
+   "to": [
+    5.17,
+    15.2,
+    6.238
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-040"
+  },
+  {
+   "name": "pitrim_10",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.378,
+    13.3,
+    5.824
+   ],
+   "to": [
+    5.418,
+    15.2,
+    6.864
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-041"
+  },
+  {
+   "name": "pitrim_11",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.545,
+    13.3,
+    6.476
+   ],
+   "to": [
+    5.585,
+    15.2,
+    7.516
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-042"
+  },
+  {
+   "name": "pitrim_12",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.629,
+    13.3,
+    7.143
+   ],
+   "to": [
+    5.669,
+    15.2,
+    8.183
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-043"
+  },
+  {
+   "name": "pitrim_13",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.629,
+    13.3,
+    7.817
+   ],
+   "to": [
+    5.669,
+    15.2,
+    8.857
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-044"
+  },
+  {
+   "name": "pitrim_14",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.545,
+    13.3,
+    8.484
+   ],
+   "to": [
+    5.585,
+    15.2,
+    9.524
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-045"
+  },
+  {
+   "name": "pitrim_15",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.378,
+    13.3,
+    9.136
+   ],
+   "to": [
+    5.418,
+    15.2,
+    10.176
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-046"
+  },
+  {
+   "name": "pitrim_16",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    4.13,
+    13.3,
+    9.762
+   ],
+   "to": [
+    5.17,
+    15.2,
+    10.802
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-047"
+  },
+  {
+   "name": "pitrim_17",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.806,
+    13.3,
+    10.352
+   ],
+   "to": [
+    4.846,
+    15.2,
+    11.392
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-048"
+  },
+  {
+   "name": "pitrim_18",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.41,
+    13.3,
+    10.897
+   ],
+   "to": [
+    4.45,
+    15.2,
+    11.937
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-049"
+  },
+  {
+   "name": "pitrim_19",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.949,
+    13.3,
+    11.387
+   ],
+   "to": [
+    3.989,
+    15.2,
+    12.427
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-050"
+  },
+  {
+   "name": "pitrim_20",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.431,
+    13.3,
+    11.816
+   ],
+   "to": [
+    3.471,
+    15.2,
+    12.856
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-051"
+  },
+  {
+   "name": "pitrim_21",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.862,
+    13.3,
+    12.177
+   ],
+   "to": [
+    2.902,
+    15.2,
+    13.217
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-052"
+  },
+  {
+   "name": "pitrim_22",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.253,
+    13.3,
+    12.464
+   ],
+   "to": [
+    2.293,
+    15.2,
+    13.504
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-053"
+  },
+  {
+   "name": "pitrim_23",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.613,
+    13.3,
+    12.672
+   ],
+   "to": [
+    1.653,
+    15.2,
+    13.712
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-054"
+  },
+  {
+   "name": "pitrim_24",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    13.3,
+    12.798
+   ],
+   "to": [
+    0.992,
+    15.2,
+    13.838
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-055"
+  },
+  {
+   "name": "pitrim_25",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    13.3,
+    12.84
+   ],
+   "to": [
+    0.32,
+    15.2,
+    13.88
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-056"
+  },
+  {
+   "name": "deck_trim_n",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    15.06,
+    1.3
+   ],
+   "to": [
+    15.4,
+    15.2,
+    1.75
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-057"
+  },
+  {
+   "name": "deck_trim_s",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    15.06,
+    14.25
+   ],
+   "to": [
+    15.4,
+    15.2,
+    14.7
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-058"
+  },
+  {
+   "name": "disc_r0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    13.42,
+    3.497
+   ],
+   "to": [
+    1.275,
+    14.1,
+    12.503
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-059"
+  },
+  {
+   "name": "disc_r1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.275,
+    13.42,
+    3.717
+   ],
+   "to": [
+    2.35,
+    14.1,
+    12.283
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-060"
+  },
+  {
+   "name": "disc_r2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.35,
+    13.42,
+    4.232
+   ],
+   "to": [
+    3.425,
+    14.1,
+    11.768
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-061"
+  },
+  {
+   "name": "disc_r3",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.425,
+    13.42,
+    5.188
+   ],
+   "to": [
+    4.5,
+    14.1,
+    10.812
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-062"
+  },
+  {
+   "name": "disc_hub",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    0.2,
+    14.1,
+    7.1
+   ],
+   "to": [
+    2.05,
+    14.95,
+    8.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-063"
+  },
+  {
+   "name": "vane_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.6,
+    14.14,
+    7.7
+   ],
+   "to": [
+    4.4,
+    14.94,
+    8.3
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    -0.2,
+    14.72,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-064",
+   "rotation": [
+    0,
+    -45.0,
+    0
+   ]
+  },
+  {
+   "name": "vane_0_tip",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.6,
+    14.14,
+    8.2
+   ],
+   "to": [
+    3.25,
+    14.86,
+    8.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    -0.2,
+    14.72,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-065",
+   "rotation": [
+    0,
+    -45.0,
+    0
+   ]
+  },
+  {
+   "name": "vane_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.6,
+    14.14,
+    7.7
+   ],
+   "to": [
+    4.4,
+    14.94,
+    8.3
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    -0.2,
+    14.72,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-066",
+   "rotation": [
+    0,
+    45.0,
+    0
+   ]
+  },
+  {
+   "name": "vane_1_tip",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.6,
+    14.14,
+    7.2
+   ],
+   "to": [
+    3.25,
+    14.86,
+    7.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    -0.2,
+    14.72,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-067",
+   "rotation": [
+    0,
+    45.0,
+    0
+   ]
+  },
+  {
+   "name": "vent_plate",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.2,
+    6.0,
+    1.22
+   ],
+   "to": [
+    9.6,
+    9.6,
+    1.34
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      1.0,
+      31.0,
+      4.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-068"
+  },
+  {
+   "name": "vent_frame_t",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.0,
+    9.4,
+    1.2
+   ],
+   "to": [
+    9.8,
+    9.75,
+    1.36
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-069"
+  },
+  {
+   "name": "vent_frame_b",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.0,
+    5.85,
+    1.2
+   ],
+   "to": [
+    9.8,
+    6.2,
+    1.36
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-070"
+  },
+  {
+   "name": "front_hazard",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.4,
+    6.0,
+    1.22
+   ],
+   "to": [
+    13.6,
+    9.6,
+    1.32
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-071"
+  },
+  {
+   "name": "front_plate",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.0,
+    11.0,
+    1.22
+   ],
+   "to": [
+    13.6,
+    12.4,
+    1.34
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-072"
+  },
+  {
+   "name": "front_plate_bolt_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.3,
+    11.2,
+    1.18
+   ],
+   "to": [
+    3.6,
+    11.5,
+    1.26
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-073"
+  },
+  {
+   "name": "front_plate_bolt_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    13.0,
+    12.0,
+    1.18
+   ],
+   "to": [
+    13.3,
+    12.3,
+    1.26
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      27.0,
+      22.0,
+      29.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-074"
+  },
+  {
+   "name": "door_plate",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    14.82,
+    3.6,
+    4.2
+   ],
+   "to": [
+    15.46,
+    11.4,
+    11.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      21.0,
+      15.0,
+      23.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-075"
+  },
+  {
+   "name": "door_inset",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.4,
+    4.2,
+    4.9
+   ],
+   "to": [
+    15.52,
+    10.8,
+    11.1
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      21.0,
+      15.0,
+      23.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      21.0,
+      15.0,
+      23.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      21.0,
+      15.0,
+      23.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      21.0,
+      15.0,
+      23.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-076"
+  },
+  {
+   "name": "door_hinge_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.4,
+    4.0,
+    4.5
+   ],
+   "to": [
+    15.62,
+    5.0,
+    5.5
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-077"
+  },
+  {
+   "name": "door_hinge_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.4,
+    4.0,
+    10.9
+   ],
+   "to": [
+    15.62,
+    5.0,
+    11.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-078"
+  },
+  {
+   "name": "door_handle",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.46,
+    7.0,
+    8.4
+   ],
+   "to": [
+    15.68,
+    8.2,
+    8.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-079"
+  },
+  {
+   "name": "door_lock",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.46,
+    8.6,
+    7.8
+   ],
+   "to": [
+    15.62,
+    9.6,
+    8.4
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      22.0,
+      15.0,
+      26.0,
+      19.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      22.0,
+      15.0,
+      26.0,
+      19.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      22.0,
+      15.0,
+      26.0,
+      19.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      22.0,
+      15.0,
+      26.0,
+      19.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      22.0,
+      15.0,
+      26.0,
+      19.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      22.0,
+      15.0,
+      26.0,
+      19.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-080"
+  },
+  {
+   "name": "door_window",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    15.38,
+    9.2,
+    5.4
+   ],
+   "to": [
+    15.5,
+    10.4,
+    7.0
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-081"
+  },
+  {
+   "name": "duct",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.6,
+    10.6,
+    13.9
+   ],
+   "to": [
+    13.4,
+    12.2,
+    15.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-082"
+  },
+  {
+   "name": "stack",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.7,
+    4.8,
+    14.7
+   ],
+   "to": [
+    13.3,
+    15.55,
+    15.9
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      21.0,
+      15.0,
+      23.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      10.0,
+      22.0,
+      12.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-083"
+  },
+  {
+   "name": "stack_flange_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.5,
+    6.2,
+    14.55
+   ],
+   "to": [
+    13.5,
+    6.8,
+    15.95
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-084"
+  },
+  {
+   "name": "stack_flange_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.5,
+    13.2,
+    14.55
+   ],
+   "to": [
+    13.5,
+    13.8,
+    15.95
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-085"
+  },
+  {
+   "name": "stack_cap",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    11.5,
+    15.55,
+    14.55
+   ],
+   "to": [
+    13.5,
+    15.8,
+    15.95
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      18.0,
+      15.0,
+      20.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-086"
+  },
+  {
+   "name": "stack_bore",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.1,
+    15.4,
+    14.95
+   ],
+   "to": [
+    12.9,
+    15.79,
+    15.55
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-087"
+  },
+  {
+   "name": "tray_chute",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.4,
+    4.4,
+    14.62
+   ],
+   "to": [
+    10.6,
+    6.6,
+    14.74
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-088"
+  },
+  {
+   "name": "tray_frame_l",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.1,
+    4.2,
+    14.6
+   ],
+   "to": [
+    2.7,
+    6.9,
+    14.76
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-089"
+  },
+  {
+   "name": "tray_frame_r",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    10.3,
+    4.2,
+    14.6
+   ],
+   "to": [
+    10.9,
+    6.9,
+    14.76
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-090"
+  },
+  {
+   "name": "tray_frame_t",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    2.7,
+    6.5,
+    14.6
+   ],
+   "to": [
+    10.3,
+    6.9,
+    14.76
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-091"
+  },
+  {
+   "name": "tray_floor",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.9,
+    3.4,
+    14.7
+   ],
+   "to": [
+    11.1,
+    4.4,
+    15.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      21.0,
+      22.0,
+      23.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      15.0,
+      15.0,
+      17.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-092"
+  },
+  {
+   "name": "tray_lip",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    1.9,
+    4.4,
+    15.35
+   ],
+   "to": [
+    11.1,
+    5.0,
+    15.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      25.0,
+      22.0,
+      27.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      23.0,
+      22.0,
+      25.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-093"
+  },
+  {
+   "name": "tray_ore_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    3.0,
+    4.4,
+    15.0
+   ],
+   "to": [
+    4.0,
+    5.05,
+    15.55
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      22.0,
+      21.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      17.0,
+      22.0,
+      19.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-094"
+  },
+  {
+   "name": "tray_ore_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    5.4,
+    4.4,
+    15.2
+   ],
+   "to": [
+    6.4,
+    5.05,
+    15.75
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      22.0,
+      21.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      17.0,
+      22.0,
+      19.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-095"
+  },
+  {
+   "name": "tray_ore_2",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    8.2,
+    4.4,
+    15.05
+   ],
+   "to": [
+    9.2,
+    5.05,
+    15.6
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      19.0,
+      22.0,
+      21.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      17.0,
+      22.0,
+      19.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      15.0,
+      22.0,
+      17.0,
+      24.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-096"
+  },
+  {
+   "name": "deck_vent_0",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.4,
+    15.08,
+    3.0
+   ],
+   "to": [
+    10.8,
+    15.2,
+    5.2
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-097"
+  },
+  {
+   "name": "deck_vent_1",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 0,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    7.4,
+    15.08,
+    11.6
+   ],
+   "to": [
+    10.8,
+    15.2,
+    13.8
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      13.0,
+      12.0,
+      15.0,
+      14.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-098"
+  },
+  {
+   "name": "led_amber",
+   "box_uv": false,
+   "rescale": false,
+   "locked": false,
+   "light_emission": 15,
+   "render_order": "default",
+   "allow_mirror_modeling": true,
+   "from": [
+    12.4,
+    12.4,
+    1.26
+   ],
+   "to": [
+    13.1,
+    12.9,
+    1.36
+   ],
+   "autouv": 0,
+   "color": 0,
+   "origin": [
+    8.0,
+    8.0,
+    8.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      1.0,
+      12.0,
+      5.0,
+      16.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "east": {
+     "uv": [
+      1.0,
+      12.0,
+      5.0,
+      16.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "south": {
+     "uv": [
+      1.0,
+      12.0,
+      5.0,
+      16.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "west": {
+     "uv": [
+      1.0,
+      12.0,
+      5.0,
+      16.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "up": {
+     "uv": [
+      1.0,
+      12.0,
+      5.0,
+      16.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    },
+    "down": {
+     "uv": [
+      1.0,
+      12.0,
+      5.0,
+      16.0
+     ],
+     "texture": "tex-ore_mill_side",
+     "rotation": 0,
+     "cullface": "",
+     "tint": -1,
+     "enabled": true
+    }
+   },
+   "type": "cube",
+   "uuid": "pb-ore_mill_side-099"
+  }
+ ],
+ "outliner": [
+  "pb-ore_mill_side-000",
+  "pb-ore_mill_side-001",
+  "pb-ore_mill_side-002",
+  "pb-ore_mill_side-003",
+  "pb-ore_mill_side-004",
+  "pb-ore_mill_side-005",
+  "pb-ore_mill_side-006",
+  "pb-ore_mill_side-007",
+  "pb-ore_mill_side-008",
+  "pb-ore_mill_side-009",
+  "pb-ore_mill_side-010",
+  "pb-ore_mill_side-011",
+  "pb-ore_mill_side-012",
+  "pb-ore_mill_side-013",
+  "pb-ore_mill_side-014",
+  "pb-ore_mill_side-015",
+  "pb-ore_mill_side-016",
+  "pb-ore_mill_side-017",
+  "pb-ore_mill_side-018",
+  "pb-ore_mill_side-019",
+  "pb-ore_mill_side-020",
+  "pb-ore_mill_side-021",
+  "pb-ore_mill_side-022",
+  "pb-ore_mill_side-023",
+  "pb-ore_mill_side-024",
+  "pb-ore_mill_side-025",
+  "pb-ore_mill_side-026",
+  "pb-ore_mill_side-027",
+  "pb-ore_mill_side-028",
+  "pb-ore_mill_side-029",
+  "pb-ore_mill_side-030",
+  "pb-ore_mill_side-031",
+  "pb-ore_mill_side-032",
+  "pb-ore_mill_side-033",
+  "pb-ore_mill_side-034",
+  "pb-ore_mill_side-035",
+  "pb-ore_mill_side-036",
+  "pb-ore_mill_side-037",
+  "pb-ore_mill_side-038",
+  "pb-ore_mill_side-039",
+  "pb-ore_mill_side-040",
+  "pb-ore_mill_side-041",
+  "pb-ore_mill_side-042",
+  "pb-ore_mill_side-043",
+  "pb-ore_mill_side-044",
+  "pb-ore_mill_side-045",
+  "pb-ore_mill_side-046",
+  "pb-ore_mill_side-047",
+  "pb-ore_mill_side-048",
+  "pb-ore_mill_side-049",
+  "pb-ore_mill_side-050",
+  "pb-ore_mill_side-051",
+  "pb-ore_mill_side-052",
+  "pb-ore_mill_side-053",
+  "pb-ore_mill_side-054",
+  "pb-ore_mill_side-055",
+  "pb-ore_mill_side-056",
+  "pb-ore_mill_side-057",
+  "pb-ore_mill_side-058",
+  "pb-ore_mill_side-059",
+  "pb-ore_mill_side-060",
+  "pb-ore_mill_side-061",
+  "pb-ore_mill_side-062",
+  "pb-ore_mill_side-063",
+  "pb-ore_mill_side-064",
+  "pb-ore_mill_side-065",
+  "pb-ore_mill_side-066",
+  "pb-ore_mill_side-067",
+  "pb-ore_mill_side-068",
+  "pb-ore_mill_side-069",
+  "pb-ore_mill_side-070",
+  "pb-ore_mill_side-071",
+  "pb-ore_mill_side-072",
+  "pb-ore_mill_side-073",
+  "pb-ore_mill_side-074",
+  "pb-ore_mill_side-075",
+  "pb-ore_mill_side-076",
+  "pb-ore_mill_side-077",
+  "pb-ore_mill_side-078",
+  "pb-ore_mill_side-079",
+  "pb-ore_mill_side-080",
+  "pb-ore_mill_side-081",
+  "pb-ore_mill_side-082",
+  "pb-ore_mill_side-083",
+  "pb-ore_mill_side-084",
+  "pb-ore_mill_side-085",
+  "pb-ore_mill_side-086",
+  "pb-ore_mill_side-087",
+  "pb-ore_mill_side-088",
+  "pb-ore_mill_side-089",
+  "pb-ore_mill_side-090",
+  "pb-ore_mill_side-091",
+  "pb-ore_mill_side-092",
+  "pb-ore_mill_side-093",
+  "pb-ore_mill_side-094",
+  "pb-ore_mill_side-095",
+  "pb-ore_mill_side-096",
+  "pb-ore_mill_side-097",
+  "pb-ore_mill_side-098",
+  "pb-ore_mill_side-099"
+ ],
+ "textures": [
+  {
+   "path": "",
+   "name": "ore_mill_side.png",
+   "folder": "block",
+   "namespace": "",
+   "id": "0",
+   "width": 32,
+   "height": 32,
+   "uv_width": 32,
+   "uv_height": 32,
+   "particle": true,
+   "use_as_default": false,
+   "layers_enabled": false,
+   "sync_to_project": "",
+   "render_mode": "default",
+   "render_sides": "auto",
+   "frame_time": 1,
+   "frame_order": "loop",
+   "frame_interpolate": false,
+   "visible": true,
+   "internal": true,
+   "saved": false,
+   "uuid": "tex-ore_mill_side",
+   "relative_path": "export/textures/block/ore_mill_side.png",
+   "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABqElEQVR42mMQEZP8j4zFJKRRMK3lGUCCuSV1VMWTZi1F4Ssqq2PFKA4AaTI0swPTMIyPj2wZPgxzgJW9OwrGcMCeI+fBFiArwsYHqZsyZzncAegGo2OCIQAiQIoaOiYT5QCQOpjBIOwVEIkXg9TgSxNwB+CyEBcf5gCQGDYMizKQmoWRXCiYqg5AD3KQxehRQJQDyE0DxEQBXgdQmg1xRQEMY3MA1nJAWU2HJExKeUCzgojYkvB/lzwKxnAAuUUpIccR5QAQ8X+LLyrOEkLBquraKFhcUhaMYYkQFNToCQ/ZwegOwMgFxDhAVl4ZbCm6Axzc/DEwzR0A04wrG6I7gGBJSGoUIOcEXA74b78ABeN0ADmJENkBuKIA3QF4syG+6pRQLiA2BAg6oKskAlzMgjCMjcsBuoYWYEw1B5AaBcgOwBUFRDfJQAS/oChJGDkX4MKwrIoLo+QCUhuZsNqRGo1UsAPQEx4oDaCzYfGL7IAoHxswBqkB4ZMr0sAYvb0IS1uPXnwEY6wOgFmEywfIDoBhqjhgUPQLRh0woA6gt4VYs+GoAwbSAQBsVNfWdVROegAAAABJRU5ErkJggg=="
+  }
+ ],
+ "display": {
+  "gui": {
+   "rotation": [
+    30,
+    225,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.625,
+    0.625,
+    0.625
+   ]
+  },
+  "ground": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    3,
+    0
+   ],
+   "scale": [
+    0.25,
+    0.25,
+    0.25
+   ]
+  },
+  "fixed": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.5,
+    0.5,
+    0.5
+   ]
+  },
+  "thirdperson_righthand": {
+   "rotation": [
+    75,
+    45,
+    0
+   ],
+   "translation": [
+    0,
+    2.5,
+    0
+   ],
+   "scale": [
+    0.375,
+    0.375,
+    0.375
+   ]
+  },
+  "firstperson_righthand": {
+   "rotation": [
+    0,
+    45,
+    0
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    0.4,
+    0.4,
+    0.4
+   ]
+  }
+ }
+}

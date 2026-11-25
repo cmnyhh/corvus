@@ -1,0 +1,784 @@
+{
+  "rig": {
+    "root": {
+      "parent": null,
+      "bedrock_pivot": [
+        0,
+        0,
+        0
+      ],
+      "editor_pivot": [
+        0,
+        0,
+        0
+      ],
+      "cubes": 0
+    },
+    "pelvis": {
+      "parent": "root",
+      "bedrock_pivot": [
+        0,
+        25,
+        1
+      ],
+      "editor_pivot": [
+        0,
+        25,
+        1
+      ],
+      "cubes": 5
+    },
+    "hull": {
+      "parent": "pelvis",
+      "bedrock_pivot": [
+        0,
+        28,
+        1
+      ],
+      "editor_pivot": [
+        0,
+        28,
+        1
+      ],
+      "cubes": 23
+    },
+    "shoulder_l": {
+      "parent": "hull",
+      "bedrock_pivot": [
+        -11,
+        39,
+        1
+      ],
+      "editor_pivot": [
+        11,
+        39,
+        1
+      ],
+      "cubes": 12
+    },
+    "arm_l": {
+      "parent": "shoulder_l",
+      "bedrock_pivot": [
+        -12.3,
+        39,
+        0
+      ],
+      "editor_pivot": [
+        12.3,
+        39,
+        0
+      ],
+      "cubes": 2
+    },
+    "forearm_l": {
+      "parent": "arm_l",
+      "bedrock_pivot": [
+        -13.8,
+        31,
+        2
+      ],
+      "editor_pivot": [
+        13.8,
+        31,
+        2
+      ],
+      "cubes": 21
+    },
+    "thigh_l": {
+      "parent": "pelvis",
+      "bedrock_pivot": [
+        -5,
+        25,
+        1
+      ],
+      "editor_pivot": [
+        5,
+        25,
+        1
+      ],
+      "cubes": 14
+    },
+    "shin_l": {
+      "parent": "thigh_l",
+      "bedrock_pivot": [
+        -7.1,
+        16,
+        -3.7
+      ],
+      "editor_pivot": [
+        7.1,
+        16,
+        -3.7
+      ],
+      "cubes": 13
+    },
+    "hock_l": {
+      "parent": "shin_l",
+      "bedrock_pivot": [
+        -8.1,
+        7,
+        4
+      ],
+      "editor_pivot": [
+        8.1,
+        7,
+        4
+      ],
+      "cubes": 12
+    },
+    "foot_l": {
+      "parent": "hock_l",
+      "bedrock_pivot": [
+        -8.4,
+        2,
+        -1
+      ],
+      "editor_pivot": [
+        8.4,
+        2,
+        -1
+      ],
+      "cubes": 9
+    },
+    "shoulder_r": {
+      "parent": "hull",
+      "bedrock_pivot": [
+        11,
+        39,
+        1
+      ],
+      "editor_pivot": [
+        -11,
+        39,
+        1
+      ],
+      "cubes": 12
+    },
+    "arm_r": {
+      "parent": "shoulder_r",
+      "bedrock_pivot": [
+        12.3,
+        39,
+        0
+      ],
+      "editor_pivot": [
+        -12.3,
+        39,
+        0
+      ],
+      "cubes": 2
+    },
+    "forearm_r": {
+      "parent": "arm_r",
+      "bedrock_pivot": [
+        13.8,
+        31,
+        2
+      ],
+      "editor_pivot": [
+        -13.8,
+        31,
+        2
+      ],
+      "cubes": 21
+    },
+    "thigh_r": {
+      "parent": "pelvis",
+      "bedrock_pivot": [
+        5,
+        25,
+        1
+      ],
+      "editor_pivot": [
+        -5,
+        25,
+        1
+      ],
+      "cubes": 14
+    },
+    "shin_r": {
+      "parent": "thigh_r",
+      "bedrock_pivot": [
+        7.1,
+        16,
+        -3.7
+      ],
+      "editor_pivot": [
+        -7.1,
+        16,
+        -3.7
+      ],
+      "cubes": 13
+    },
+    "hock_r": {
+      "parent": "shin_r",
+      "bedrock_pivot": [
+        8.1,
+        7,
+        4
+      ],
+      "editor_pivot": [
+        -8.1,
+        7,
+        4
+      ],
+      "cubes": 12
+    },
+    "foot_r": {
+      "parent": "hock_r",
+      "bedrock_pivot": [
+        8.4,
+        2,
+        -1
+      ],
+      "editor_pivot": [
+        -8.4,
+        2,
+        -1
+      ],
+      "cubes": 9
+    },
+    "core_ring": {
+      "parent": "hull",
+      "bedrock_pivot": [
+        0,
+        34.8,
+        -7
+      ],
+      "editor_pivot": [
+        0,
+        34.8,
+        -7
+      ],
+      "cubes": 56
+    },
+    "core_insert": {
+      "parent": "core_ring",
+      "bedrock_pivot": [
+        0,
+        34.8,
+        -6.3
+      ],
+      "editor_pivot": [
+        0,
+        34.8,
+        -6.3
+      ],
+      "cubes": 0
+    },
+    "cockpit": {
+      "parent": "hull",
+      "bedrock_pivot": [
+        0,
+        40,
+        -1
+      ],
+      "editor_pivot": [
+        0,
+        40,
+        -1
+      ],
+      "cubes": 11
+    },
+    "seat": {
+      "parent": "cockpit",
+      "bedrock_pivot": [
+        0,
+        40.8,
+        0
+      ],
+      "editor_pivot": [
+        0,
+        40.8,
+        0
+      ],
+      "cubes": 7
+    },
+    "canopy": {
+      "parent": "cockpit",
+      "bedrock_pivot": [
+        0,
+        40.5,
+        -6.1
+      ],
+      "editor_pivot": [
+        0,
+        40.5,
+        -6.1
+      ],
+      "cubes": 10
+    },
+    "antenna": {
+      "parent": "hull",
+      "bedrock_pivot": [
+        5.2,
+        41.1,
+        3.4
+      ],
+      "editor_pivot": [
+        -5.2,
+        41.1,
+        3.4
+      ],
+      "cubes": 3
+    },
+    "back_rail": {
+      "parent": "hull",
+      "bedrock_pivot": [
+        0,
+        36,
+        7.7
+      ],
+      "editor_pivot": [
+        0,
+        36,
+        7.7
+      ],
+      "cubes": 11
+    },
+    "mount_back": {
+      "parent": "back_rail",
+      "bedrock_pivot": [
+        0,
+        35.8,
+        9.2
+      ],
+      "editor_pivot": [
+        0,
+        35.8,
+        9.2
+      ],
+      "cubes": 0
+    },
+    "core_door_l": {
+      "parent": "hull",
+      "bedrock_pivot": [
+        -5.1,
+        33.45,
+        -7.2
+      ],
+      "editor_pivot": [
+        5.1,
+        33.45,
+        -7.2
+      ],
+      "cubes": 2
+    },
+    "shoulder_trim_l": {
+      "parent": "shoulder_l",
+      "bedrock_pivot": [
+        -12.5,
+        40,
+        0
+      ],
+      "editor_pivot": [
+        12.5,
+        40,
+        0
+      ],
+      "cubes": 1
+    },
+    "mount_shoulder_l": {
+      "parent": "shoulder_l",
+      "bedrock_pivot": [
+        -12.05,
+        43.3,
+        0
+      ],
+      "editor_pivot": [
+        12.05,
+        43.3,
+        0
+      ],
+      "cubes": 0
+    },
+    "mount_arm_l": {
+      "parent": "forearm_l",
+      "bedrock_pivot": [
+        -13.8,
+        25.5,
+        -5.9
+      ],
+      "editor_pivot": [
+        13.8,
+        25.5,
+        -5.9
+      ],
+      "cubes": 0
+    },
+    "vent_l": {
+      "parent": "hull",
+      "bedrock_pivot": [
+        -5.9,
+        36.75,
+        5.9
+      ],
+      "editor_pivot": [
+        5.9,
+        36.75,
+        5.9
+      ],
+      "cubes": 7
+    },
+    "core_door_r": {
+      "parent": "hull",
+      "bedrock_pivot": [
+        5.1,
+        33.45,
+        -7.2
+      ],
+      "editor_pivot": [
+        -5.1,
+        33.45,
+        -7.2
+      ],
+      "cubes": 2
+    },
+    "shoulder_trim_r": {
+      "parent": "shoulder_r",
+      "bedrock_pivot": [
+        12.5,
+        40,
+        0
+      ],
+      "editor_pivot": [
+        -12.5,
+        40,
+        0
+      ],
+      "cubes": 1
+    },
+    "mount_shoulder_r": {
+      "parent": "shoulder_r",
+      "bedrock_pivot": [
+        12.05,
+        43.3,
+        0
+      ],
+      "editor_pivot": [
+        -12.05,
+        43.3,
+        0
+      ],
+      "cubes": 0
+    },
+    "mount_arm_r": {
+      "parent": "forearm_r",
+      "bedrock_pivot": [
+        13.8,
+        25.5,
+        -5.9
+      ],
+      "editor_pivot": [
+        -13.8,
+        25.5,
+        -5.9
+      ],
+      "cubes": 0
+    },
+    "vent_r": {
+      "parent": "hull",
+      "bedrock_pivot": [
+        5.9,
+        36.75,
+        5.9
+      ],
+      "editor_pivot": [
+        -5.9,
+        36.75,
+        5.9
+      ],
+      "cubes": 7
+    }
+  },
+  "uv_xywh": {
+    "ceramic": [
+      2,
+      2,
+      4,
+      4
+    ],
+    "pearl": [
+      10,
+      2,
+      4,
+      4
+    ],
+    "slate": [
+      18,
+      2,
+      4,
+      4
+    ],
+    "steel": [
+      26,
+      2,
+      4,
+      4
+    ],
+    "iron": [
+      34,
+      2,
+      4,
+      4
+    ],
+    "black": [
+      42,
+      2,
+      4,
+      4
+    ],
+    "rubber": [
+      50,
+      2,
+      4,
+      4
+    ],
+    "metal": [
+      58,
+      2,
+      4,
+      4
+    ],
+    "orange": [
+      2,
+      10,
+      4,
+      4
+    ],
+    "violet": [
+      10,
+      10,
+      4,
+      4
+    ],
+    "lamp": [
+      18,
+      10,
+      4,
+      4
+    ],
+    "seat": [
+      26,
+      10,
+      4,
+      4
+    ],
+    "strap": [
+      34,
+      10,
+      4,
+      4
+    ],
+    "glass": [
+      42,
+      10,
+      4,
+      4
+    ],
+    "socket": [
+      50,
+      10,
+      4,
+      4
+    ],
+    "shoulder_l": [
+      1,
+      17,
+      30,
+      22
+    ],
+    "shoulder_r": [
+      33,
+      17,
+      30,
+      22
+    ],
+    "thigh_l": [
+      65,
+      17,
+      30,
+      22
+    ],
+    "thigh_r": [
+      97,
+      17,
+      30,
+      22
+    ],
+    "shin_l": [
+      1,
+      41,
+      30,
+      22
+    ],
+    "shin_r": [
+      33,
+      41,
+      30,
+      22
+    ],
+    "cheek_l": [
+      65,
+      41,
+      30,
+      22
+    ],
+    "cheek_r": [
+      97,
+      41,
+      30,
+      22
+    ],
+    "door_l": [
+      1,
+      65,
+      30,
+      22
+    ],
+    "door_r": [
+      33,
+      65,
+      30,
+      22
+    ],
+    "rear_l": [
+      65,
+      65,
+      30,
+      22
+    ],
+    "rear_r": [
+      97,
+      65,
+      30,
+      22
+    ],
+    "forearm_l": [
+      1,
+      89,
+      30,
+      22
+    ],
+    "forearm_r": [
+      33,
+      89,
+      30,
+      22
+    ],
+    "pelvis": [
+      65,
+      89,
+      30,
+      22
+    ],
+    "seatback": [
+      97,
+      89,
+      30,
+      22
+    ]
+  },
+  "coated_islands_xywh": {
+    "shoulder_l": [
+      0,
+      16,
+      32,
+      24
+    ],
+    "shoulder_r": [
+      32,
+      16,
+      32,
+      24
+    ],
+    "thigh_l": [
+      64,
+      16,
+      32,
+      24
+    ],
+    "thigh_r": [
+      96,
+      16,
+      32,
+      24
+    ],
+    "shin_l": [
+      0,
+      40,
+      32,
+      24
+    ],
+    "shin_r": [
+      32,
+      40,
+      32,
+      24
+    ],
+    "cheek_l": [
+      64,
+      40,
+      32,
+      24
+    ],
+    "cheek_r": [
+      96,
+      40,
+      32,
+      24
+    ],
+    "door_l": [
+      0,
+      64,
+      32,
+      24
+    ],
+    "door_r": [
+      32,
+      64,
+      32,
+      24
+    ],
+    "rear_l": [
+      64,
+      64,
+      32,
+      24
+    ],
+    "rear_r": [
+      96,
+      64,
+      32,
+      24
+    ],
+    "forearm_l": [
+      0,
+      88,
+      32,
+      24
+    ],
+    "forearm_r": [
+      32,
+      88,
+      32,
+      24
+    ],
+    "pelvis": [
+      64,
+      88,
+      32,
+      24
+    ],
+    "seatback": [
+      96,
+      88,
+      32,
+      24
+    ]
+  },
+  "unused_rows": [
+    112,
+    127
+  ]
+}

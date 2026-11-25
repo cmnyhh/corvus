@@ -106,7 +106,7 @@ final class LocalDialogue {
             case "smalltalk" -> speak(chip, chip.smalltalk() ? "smalltalk" : "smalltalk_refuse", device.slots(), previous, random);
             case "line" -> speak(chip, intent.line(), device.slots(), previous, random);
             case "data", "action" -> switch (intent.id()) {
-                case "scan", "scan.hostile", "scan.ore", "order.heal", "order.cover", "order.hold" -> {
+                case "scan", "scan.hostile", "scan.ore", "order.heal", "order.cover", "order.hold", "order.work", "order.idle" -> {
                     if (!device.execute(intent.id())) yield new Reply("当前无法执行，请检查能量、目标或冷却。");
                     // Successful scans answer exactly once when their results are ready.
                     yield new Reply(intent.id().startsWith("scan") ? "" : "指令已执行。");

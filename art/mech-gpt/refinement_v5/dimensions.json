@@ -1,0 +1,75 @@
+{
+  "units_per_cell": 16,
+  "basis": "Only user image SHA-256 67943adbfe93a50f2e5f7684d2bd9b1955731c075557d3250a29c75bcdcba21a. No source models, atlases or dimensions used.",
+  "axes": "Blockbench editor: Y up, front -Z; Bedrock X is mirrored.",
+  "measurements": {
+    "width": {
+      "u": 27.2469,
+      "cells": 1.702931,
+      "definition": "rotated X extent"
+    },
+    "height": {
+      "u": 37.80318,
+      "cells": 2.362699,
+      "definition": "rotated Y extent incl. antenna"
+    },
+    "depth": {
+      "u": 16.10059,
+      "cells": 1.006287,
+      "definition": "rotated Z extent incl. toes and heat exchangers"
+    },
+    "ground_clearance": {
+      "u": 15.3536,
+      "cells": 0.9596,
+      "definition": "lowest hip geometry minus ground plane"
+    },
+    "leg_length": {
+      "u": 22.04707,
+      "cells": 1.377942,
+      "definition": "hip to knee to ankle pivot along the two bones; same both sides"
+    },
+    "arm_length": {
+      "u": 16.51557,
+      "cells": 1.032223,
+      "definition": "shoulder to elbow to distal empty interface pivot; same both sides"
+    },
+    "stance_width": {
+      "u": 16.7,
+      "cells": 1.04375,
+      "definition": "distance between foot pivots at ankle centers"
+    }
+  },
+  "bounds_editor": {
+    "min": [
+      -13.623451837287066,
+      -0.005673806309456242,
+      -9.313851641416608
+    ],
+    "max": [
+      13.623451837287066,
+      37.79750839034187,
+      6.78674303071661
+    ]
+  },
+  "core_clearance": {
+    "axis": "Z",
+    "center_xy": [
+      0,
+      27.25
+    ],
+    "clear_radius_u": 2.45,
+    "clear_z_range_u": [
+      -6.8,
+      -1.61
+    ],
+    "sample_points": 1800,
+    "obstruction_count": 0,
+    "rear_stop_front_z_u": -1.55
+  },
+  "counts": {
+    "bones": 26,
+    "cubes": 834,
+    "empty_mount_leaves": 5
+  },
+  "inferred": "Rear rail, exhausts, cockpit internals and unarmed attachment surfaces inferred; reference only shows front three-quarter view."
+}

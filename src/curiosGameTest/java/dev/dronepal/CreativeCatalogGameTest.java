@@ -36,7 +36,9 @@ public final class CreativeCatalogGameTest {
         test.assertTrue(items.equals(registered), "creative catalogue does not cover every registered item");
         long own = tab.getDisplayItems().stream()
                 .filter(stack -> BuiltInRegistries.ITEM.getKey(stack.getItem()).getNamespace().equals(Dronepal.ID)).count();
-        test.assertTrue(frames.equals(Set.copyOf(Frames.IDS)) && modules.size() == 27 && own == 78,
+        // 81 before the mill: + ore_mill, water_pump, water_pipe, 8 concentrates, 8 coarse by-products,
+        // 3 shards, sieve, cooling_tower (the old mixed coarse is gone, replaced by the eight per-kind ones).
+        test.assertTrue(frames.equals(Set.copyOf(Frames.IDS)) && modules.size() == 27 && own == 105,
                 "missing frame, product or supply variant (own entries=" + own + ")");
         var tools = BuiltInRegistries.CREATIVE_MODE_TAB.getOrThrow(CreativeModeTabs.TOOLS_AND_UTILITIES);
         tools.buildContents(parameters);

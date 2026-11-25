@@ -1,0 +1,71 @@
+{
+  "burner_generator": {
+    "cubes": 52,
+    "faces": 312,
+    "rotated": 8,
+    "bbox_min": [
+      2.0,
+      0.0,
+      1.8
+    ],
+    "bbox_max": [
+      14.0,
+      16.0,
+      14.0
+    ],
+    "size": [
+      12.0,
+      16.0,
+      12.2
+    ],
+    "texture": "export/textures/block/burner_generator.png",
+    "islands": 7,
+    "swatches": 14
+  },
+  "solar_generator": {
+    "cubes": 39,
+    "faces": 234,
+    "rotated": 24,
+    "bbox_min": [
+      0.5,
+      0.0,
+      0.5
+    ],
+    "bbox_max": [
+      15.5,
+      10.5,
+      15.5
+    ],
+    "size": [
+      15.0,
+      10.5,
+      15.0
+    ],
+    "texture": "export/textures/block/solar_generator.png",
+    "islands": 5,
+    "swatches": 13
+  },
+  "battery_bank": {
+    "cubes": 39,
+    "faces": 234,
+    "rotated": 0,
+    "bbox_min": [
+      0.45,
+      0.0,
+      2.3
+    ],
+    "bbox_max": [
+      15.55,
+      11.4,
+      13.5
+    ],
+    "size": [
+      15.1,
+      11.4,
+      11.2
+    ],
+    "texture": "export/textures/block/battery_bank.png",
+    "islands": 6,
+    "swatches": 13
+  }
+}

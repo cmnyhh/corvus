@@ -1,0 +1,233 @@
+{
+  "ore_mill": {
+    "atlas": "ore_mill",
+    "cubes": 137,
+    "faces": 822,
+    "rotated": 4,
+    "bbox_min": [
+      0.02,
+      0.0,
+      0.3
+    ],
+    "bbox_max": [
+      15.95,
+      15.2,
+      15.8
+    ],
+    "size": [
+      15.93,
+      15.2,
+      15.5
+    ]
+  },
+  "ore_mill_side": {
+    "atlas": "ore_mill_side",
+    "cubes": 100,
+    "faces": 600,
+    "rotated": 4,
+    "bbox_min": [
+      0.05,
+      0.0,
+      0.46
+    ],
+    "bbox_max": [
+      15.68,
+      15.8,
+      15.95
+    ],
+    "size": [
+      15.63,
+      15.8,
+      15.49
+    ]
+  },
+  "water_pump": {
+    "atlas": "water_pump",
+    "cubes": 118,
+    "faces": 708,
+    "rotated": 0,
+    "bbox_min": [
+      1.0,
+      0.0,
+      1.0
+    ],
+    "bbox_max": [
+      15.0,
+      13.02,
+      15.0
+    ],
+    "size": [
+      14.0,
+      13.02,
+      14.0
+    ]
+  },
+  "power_tower": {
+    "atlas": "power_tower",
+    "cubes": 46,
+    "faces": 276,
+    "rotated": 0,
+    "bbox_min": [
+      1.0,
+      0.0,
+      1.0
+    ],
+    "bbox_max": [
+      15.0,
+      15.8,
+      15.0
+    ],
+    "size": [
+      14.0,
+      15.8,
+      14.0
+    ]
+  },
+  "power_tower_mid": {
+    "atlas": "power_tower_mid",
+    "cubes": 103,
+    "faces": 618,
+    "rotated": 8,
+    "bbox_min": [
+      1.65,
+      0.2,
+      1.65
+    ],
+    "bbox_max": [
+      14.35,
+      15.8,
+      14.35
+    ],
+    "size": [
+      12.7,
+      15.6,
+      12.7
+    ]
+  },
+  "power_tower_top": {
+    "atlas": "power_tower_top",
+    "cubes": 44,
+    "faces": 264,
+    "rotated": 9,
+    "bbox_min": [
+      3.3,
+      0.2,
+      3.3
+    ],
+    "bbox_max": [
+      12.7,
+      14.95,
+      12.7
+    ],
+    "size": [
+      9.4,
+      14.75,
+      9.4
+    ]
+  },
+  "water_pipe_straight": {
+    "atlas": "water_pipe",
+    "cubes": 50,
+    "faces": 300,
+    "rotated": 0,
+    "bbox_min": [
+      4.25,
+      4.25,
+      0.05
+    ],
+    "bbox_max": [
+      11.75,
+      11.75,
+      15.95
+    ],
+    "size": [
+      7.5,
+      7.5,
+      15.9
+    ]
+  },
+  "water_pipe_corner": {
+    "atlas": "water_pipe",
+    "cubes": 59,
+    "faces": 354,
+    "rotated": 0,
+    "bbox_min": [
+      4.25,
+      4.25,
+      0.05
+    ],
+    "bbox_max": [
+      15.95,
+      11.75,
+      11.75
+    ],
+    "size": [
+      11.7,
+      7.5,
+      11.7
+    ]
+  },
+  "water_pipe_tee": {
+    "atlas": "water_pipe",
+    "cubes": 84,
+    "faces": 504,
+    "rotated": 0,
+    "bbox_min": [
+      4.25,
+      4.25,
+      0.05
+    ],
+    "bbox_max": [
+      15.95,
+      11.75,
+      15.95
+    ],
+    "size": [
+      11.7,
+      7.5,
+      15.9
+    ]
+  },
+  "water_pipe_cross": {
+    "atlas": "water_pipe",
+    "cubes": 109,
+    "faces": 654,
+    "rotated": 0,
+    "bbox_min": [
+      0.05,
+      4.25,
+      0.05
+    ],
+    "bbox_max": [
+      15.95,
+      11.75,
+      15.95
+    ],
+    "size": [
+      15.9,
+      7.5,
+      15.9
+    ]
+  },
+  "water_pipe_cap": {
+    "atlas": "water_pipe",
+    "cubes": 38,
+    "faces": 228,
+    "rotated": 0,
+    "bbox_min": [
+      2.15,
+      4.25,
+      4.25
+    ],
+    "bbox_max": [
+      15.95,
+      11.75,
+      11.75
+    ],
+    "size": [
+      13.8,
+      7.5,
+      7.5
+    ]
+  }
+}

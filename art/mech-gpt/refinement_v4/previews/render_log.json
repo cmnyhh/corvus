@@ -1,0 +1,36 @@
+{
+  "project": "refinement_v4-6394ee88",
+  "revision": 4,
+  "bones": 26,
+  "cubes": 640,
+  "bounds": [
+    26.969999985694884,
+    39.80318215802476,
+    15.85385307934321
+  ],
+  "tool": "bb_orbit",
+  "render_ms": 296,
+  "steps": 8,
+  "elevation": 0,
+  "cell": 768,
+  "attachment_dimensions": [
+    2896,
+    1448
+  ],
+  "output_tile": 724,
+  "azimuth": [
+    0,
+    45,
+    180,
+    90
+  ],
+  "source_sha256": "a430806e4f4d1126cfb19db053cf45037754d239e5e739adc36b25f3689de089",
+  "capture_sha256": "81a740603a9030a6c006f1e6ffbacebc707f3e7b239d68c2570bbc0662a09842",
+  "png_sha256": {
+    "front": "2aa55be905d5ad3a6b71a96ec15fbb0c662d785be6a5a29fc97b3c80f8d04a1d",
+    "right_3q": "bb740362eac4660676826901bd0762d4ce2b66028c2a2571c4e1865af2780a44",
+    "back": "648e27e2e1bb0f67e2ea92e93a6878cc539826e869123511b0703c168ad1df79",
+    "side": "09881f030c7a4ac0413ac8dd168280c7ee49eddb5af9fa5a2b9d9334703a0cda"
+  },
+  "review": "unclipped mast and feet; stepped thigh armor and reverse joint visible"
+}

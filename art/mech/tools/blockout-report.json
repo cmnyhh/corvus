@@ -1,0 +1,82 @@
+{
+ "bones": 27,
+ "bone_names": [
+  "root",
+  "hip",
+  "torso",
+  "cockpit",
+  "core_socket",
+  "core_hatch_l",
+  "core_hatch_r",
+  "core_plug",
+  "shoulder_l",
+  "shoulder_r",
+  "arm_l",
+  "arm_r",
+  "mount_hand_l",
+  "mount_hand_r",
+  "mount_back",
+  "thruster_l",
+  "thruster_r",
+  "vent_l",
+  "vent_r",
+  "head_ring",
+  "antenna",
+  "leg_l_upper",
+  "leg_l_lower",
+  "foot_l",
+  "leg_r_upper",
+  "leg_r_lower",
+  "foot_r"
+ ],
+ "cubes": 98,
+ "faces": 588,
+ "bbox_min": [
+  -15.9,
+  0,
+  -8.4
+ ],
+ "bbox_max": [
+  16.4,
+  48.0,
+  11.2
+ ],
+ "size_units": [
+  32.3,
+  48.0,
+  19.6
+ ],
+ "size_blocks": [
+  2.019,
+  3.0,
+  1.225
+ ],
+ "per_bone_cubes": {
+  "antenna": 2,
+  "arm_l": 4,
+  "arm_r": 4,
+  "cockpit": 7,
+  "core_hatch_l": 2,
+  "core_hatch_r": 2,
+  "core_plug": 1,
+  "core_socket": 9,
+  "foot_l": 4,
+  "foot_r": 4,
+  "head_ring": 8,
+  "hip": 4,
+  "leg_l_lower": 3,
+  "leg_l_upper": 2,
+  "leg_r_lower": 3,
+  "leg_r_upper": 2,
+  "mount_back": 5,
+  "mount_hand_l": 6,
+  "mount_hand_r": 6,
+  "shoulder_l": 3,
+  "shoulder_r": 4,
+  "thruster_l": 2,
+  "thruster_r": 2,
+  "torso": 7,
+  "vent_l": 1,
+  "vent_r": 1
+ }
+}

@@ -1,0 +1,265 @@
+
+=== ore_mill ===
+  PASS  texture atlas = ore_mill.png
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  137 elements, 822 faces
+  PASS  every element from/to inside 0..16
+  PASS  all rotations single-axis, angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every painted face keeps 1:1 pixel aspect (no stretching)
+  PASS  cullface only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [0.02, 0.0, 0.3] .. [15.95, 15.2, 15.8])
+  PASS  seam discipline OK on x (0.02 .. 15.95; flange lip may enter the seam gap (west half))
+  PASS  vertical extent 0.0 .. 15.2
+  PASS  24 glow faces are single flat colours (emissive-map ready)
+  WARN  foot_0: touches 0 on y (flush with neighbour)
+  WARN  foot_1: touches 0 on y (flush with neighbour)
+  WARN  foot_2: touches 0 on y (flush with neighbour)
+  WARN  foot_3: touches 0 on y (flush with neighbour)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (137)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 137 cubes / 822 faces / 4 rotated, size [15.93, 15.2, 15.5]
+
+=== ore_mill_side ===
+  PASS  texture atlas = ore_mill_side.png
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  100 elements, 600 faces
+  PASS  every element from/to inside 0..16
+  PASS  all rotations single-axis, angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every painted face keeps 1:1 pixel aspect (no stretching)
+  PASS  cullface only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [0.05, 0.0, 0.46] .. [15.68, 15.8, 15.95])
+  PASS  seam discipline OK on x (0.05 .. 15.68; flange lip may enter the seam gap (east half))
+  PASS  vertical extent 0.0 .. 15.8
+  PASS  6 glow faces are single flat colours (emissive-map ready)
+  WARN  foot_0: touches 0 on y (flush with neighbour)
+  WARN  foot_1: touches 0 on y (flush with neighbour)
+  WARN  foot_2: touches 0 on y (flush with neighbour)
+  WARN  foot_3: touches 0 on y (flush with neighbour)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (100)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 100 cubes / 600 faces / 4 rotated, size [15.63, 15.8, 15.49]
+
+=== water_pump ===
+  PASS  texture atlas = water_pump.png
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  118 elements, 708 faces
+  PASS  every element from/to inside 0..16
+  PASS  all rotations single-axis, angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every painted face keeps 1:1 pixel aspect (no stretching)
+  PASS  cullface only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [1.0, 0.0, 1.0] .. [15.0, 13.02, 15.0])
+  PASS  vertical extent 0.0 .. 13.02
+  PASS  72 glow faces are single flat colours (emissive-map ready)
+  WARN  foot_0: touches 0 on y (flush with neighbour)
+  WARN  foot_1: touches 0 on y (flush with neighbour)
+  WARN  foot_2: touches 0 on y (flush with neighbour)
+  WARN  foot_3: touches 0 on y (flush with neighbour)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (118)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 118 cubes / 708 faces / 0 rotated, size [14.0, 13.02, 14.0]
+
+=== power_tower ===
+  PASS  texture atlas = power_tower.png
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  46 elements, 276 faces
+  PASS  every element from/to inside 0..16
+  PASS  all rotations single-axis, angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every painted face keeps 1:1 pixel aspect (no stretching)
+  PASS  cullface only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [1.0, 0.0, 1.0] .. [15.0, 15.8, 15.0])
+  PASS  seam discipline OK on y (0.0 .. 15.8; lower cell of the 3-cell tower)
+  PASS  vertical extent 0.0 .. 15.8
+  PASS  66 glow faces are single flat colours (emissive-map ready)
+  WARN  foot_0: touches 0 on y (flush with neighbour)
+  WARN  foot_1: touches 0 on y (flush with neighbour)
+  WARN  foot_2: touches 0 on y (flush with neighbour)
+  WARN  foot_3: touches 0 on y (flush with neighbour)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (46)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 46 cubes / 276 faces / 0 rotated, size [14.0, 15.8, 14.0]
+
+=== power_tower_mid ===
+  PASS  texture atlas = power_tower_mid.png
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  103 elements, 618 faces
+  PASS  every element from/to inside 0..16
+  PASS  all rotations single-axis, angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every painted face keeps 1:1 pixel aspect (no stretching)
+  PASS  cullface only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [1.65, 0.2, 1.65] .. [14.35, 15.8, 14.35])
+  PASS  seam discipline OK on y (0.2 .. 15.8; middle cell of the 3-cell tower)
+  PASS  vertical extent 0.2 .. 15.8
+  PASS  48 glow faces are single flat colours (emissive-map ready)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (103)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 103 cubes / 618 faces / 8 rotated, size [12.7, 15.6, 12.7]
+
+=== power_tower_top ===
+  PASS  texture atlas = power_tower_top.png
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  44 elements, 264 faces
+  PASS  every element from/to inside 0..16
+  PASS  all rotations single-axis, angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every painted face keeps 1:1 pixel aspect (no stretching)
+  PASS  cullface only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [3.06, 0.2, 3.13] .. [12.94, 14.95, 12.7])
+  PASS  seam discipline OK on y (0.2 .. 14.95; upper cell of the 3-cell tower)
+  PASS  vertical extent 0.2 .. 14.95
+  PASS  90 glow faces are single flat colours (emissive-map ready)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (44)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 44 cubes / 264 faces / 9 rotated, size [9.4, 14.75, 9.4]
+
+=== water_pipe_straight ===
+  PASS  texture atlas = water_pipe.png
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  50 elements, 300 faces
+  PASS  every element from/to inside 0..16
+  PASS  all rotations single-axis, angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every painted face keeps 1:1 pixel aspect (no stretching)
+  PASS  cullface only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [4.25, 4.25, 0.05] .. [11.75, 11.75, 15.95])
+  PASS  vertical extent 4.25 .. 11.75
+  PASS  36 glow faces are single flat colours (emissive-map ready)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (50)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 50 cubes / 300 faces / 0 rotated, size [7.5, 7.5, 15.9]
+
+=== water_pipe_corner ===
+  PASS  texture atlas = water_pipe.png
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  59 elements, 354 faces
+  PASS  every element from/to inside 0..16
+  PASS  all rotations single-axis, angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every painted face keeps 1:1 pixel aspect (no stretching)
+  PASS  cullface only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [4.25, 4.25, 0.05] .. [15.95, 11.75, 11.75])
+  PASS  vertical extent 4.25 .. 11.75
+  PASS  36 glow faces are single flat colours (emissive-map ready)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (59)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 59 cubes / 354 faces / 0 rotated, size [11.7, 7.5, 11.7]
+
+=== water_pipe_tee ===
+  PASS  texture atlas = water_pipe.png
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  84 elements, 504 faces
+  PASS  every element from/to inside 0..16
+  PASS  all rotations single-axis, angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every painted face keeps 1:1 pixel aspect (no stretching)
+  PASS  cullface only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [4.25, 4.25, 0.05] .. [15.95, 11.75, 15.95])
+  PASS  vertical extent 4.25 .. 11.75
+  PASS  54 glow faces are single flat colours (emissive-map ready)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (84)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 84 cubes / 504 faces / 0 rotated, size [11.7, 7.5, 15.9]
+
+=== water_pipe_cross ===
+  PASS  texture atlas = water_pipe.png
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  109 elements, 654 faces
+  PASS  every element from/to inside 0..16
+  PASS  all rotations single-axis, angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every painted face keeps 1:1 pixel aspect (no stretching)
+  PASS  cullface only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [0.05, 4.25, 0.05] .. [15.95, 11.75, 15.95])
+  PASS  vertical extent 4.25 .. 11.75
+  PASS  72 glow faces are single flat colours (emissive-map ready)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (109)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 109 cubes / 654 faces / 0 rotated, size [15.9, 7.5, 15.9]
+
+=== water_pipe_cap ===
+  PASS  texture atlas = water_pipe.png
+  PASS  texture is 32x32
+  PASS  texture fully opaque (0 transparent pixels)
+  PASS  block parent = minecraft:block/block (resolves in 1.20.1 and 1.21.1)
+  PASS  38 elements, 228 faces
+  PASS  every element from/to inside 0..16
+  PASS  all rotations single-axis, angle in {0, +-22.5, +-45}
+  PASS  all uv coordinates inside 0..16
+  PASS  all faces reference an existing texture key
+  PASS  every painted face keeps 1:1 pixel aspect (no stretching)
+  PASS  cullface only on unrotated faces flush with the block boundary
+  PASS  rotated corner sweep stays inside 0..16 (true AABB [2.15, 4.25, 4.25] .. [15.95, 11.75, 11.75])
+  PASS  vertical extent 4.25 .. 11.75
+  PASS  24 glow faces are single flat colours (emissive-map ready)
+  PASS  item model parents the block model
+  PASS  item model carries explicit gui/ground/hand display transforms
+  PASS  bbmodel element count matches java model (38)
+  PASS  .bbmodel geometry + per-face uv identical to the java model
+  PASS  stats: 38 cubes / 228 faces / 0 rotated, size [13.8, 7.5, 7.5]
+
+=== glow swatch map (for MANIFEST) ===
+  ore_mill.png           amber1@(25,10) 4x4 #ff8a1f, amber2@(1,12) 4x4 #ffb44d, ember@(5,12) 4x4 #ff6a12, mag1@(22,15) 4x4 #ff3fa0
+  ore_mill_side.png      amber1@(25,10) 4x4 #ff8a1f, amber2@(1,12) 4x4 #ffb44d, ember@(5,12) 4x4 #ff6a12, mag1@(22,15) 4x4 #ff3fa0
+  power_tower.png        amber1@(27,1) 4x4 #ff8a1f, amber2@(17,6) 4x4 #ffb44d, aqua2@(21,6) 4x4 #35d7e8, ember@(25,6) 4x4 #ff6a12, mag1@(1,8) 4x4 #ff3fa0
+  power_tower_mid.png    amber1@(9,1) 4x4 #ff8a1f, amber2@(13,1) 4x4 #ffb44d, aqua2@(17,1) 4x4 #35d7e8
+  power_tower_top.png    amber1@(14,1) 4x4 #ff8a1f, amber2@(18,1) 4x4 #ffb44d, aqua2@(22,1) 4x4 #35d7e8, lamp@(26,1) 4x4 #ffffff, mag1@(7,5) 4x4 #ff3fa0
+  water_pipe.png         aqua2@(1,1) 4x4 #35d7e8, aqua3@(5,1) 4x4 #b4f6ff
+  water_pump.png         amber2@(26,1) 4x4 #ffb44d, aqua2@(20,5) 4x4 #35d7e8, aqua3@(24,6) 4x4 #b4f6ff, mag1@(9,8) 4x4 #ff3fa0
+
+=== summary ===
+  errors: 0   warnings: 16
+  models: 11   cubes: 888   faces: 5328

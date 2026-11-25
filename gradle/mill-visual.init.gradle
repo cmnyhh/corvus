@@ -1,0 +1,18 @@
+// Isolated client that opens the ore-mill panel and then photographs the drone on station.
+// The copied game directory carries options.txt lang:zh_cn, so the capture shows shipped Chinese text.
+// gradlew -I gradle/mill-visual.init.gradle runMillVisual
+allprojects { p -> p.afterEvaluate {
+    if (!p.plugins.hasPlugin('net.neoforged.moddev')) return
+    def source = p.sourceSets.create('millVisual') {
+        compileClasspath += p.sourceSets.main.output + p.sourceSets.main.compileClasspath
+        runtimeClasspath += p.sourceSets.main.output + p.sourceSets.main.runtimeClasspath
+    }
+    p.neoForge.mods.huhu_dronepal.sourceSet(source)
+    p.neoForge.runs.create('millVisual') {
+        client()
+        sourceSet = source
+        gameDirectory = p.layout.buildDirectory.dir('mill-visual-client')
+        programArguments.addAll('--width','1280','--height','800','--quickPlaySingleplayer','New World')
+        systemProperty 'dronepal.mill.dir', p.layout.projectDirectory.dir('artifacts/client').asFile.absolutePath
+    }
+} }

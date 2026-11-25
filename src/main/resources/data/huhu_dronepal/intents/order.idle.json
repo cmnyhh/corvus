@@ -1,0 +1,14 @@
+{
+  "id": "order.idle",
+  "aliases": [
+    "下班",
+    "回来",
+    "停工",
+    "收工",
+    "idle"
+  ],
+  "patterns": [
+    ".*(下班|收工|停工).*"
+  ],
+  "response": "action"
+}

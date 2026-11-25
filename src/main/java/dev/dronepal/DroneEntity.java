@@ -1,5 +1,6 @@
 package dev.dronepal;
 
+import dev.dronepal.mill.DroneWork;
 import java.util.UUID;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -64,6 +65,8 @@ public final class DroneEntity extends net.minecraft.world.entity.PathfinderMob 
         if (key == FRAME_WIDTH || key == FRAME_HEIGHT) refreshDimensions();
     }
     Vec3 followPosition(Vec3 target) {
+        // TODO(corvus-core): the blend is dev.corvus.core.FrameStats#followStep(current, target, accel, 1)
+        // per axis; keep the teleport branch here. See corvus-core/TODO.md.
         Frames.Frame frame = Frames.byId(getFrameId());
         if (tickCount >= nextFrameTeleport && position().distanceToSqr(target) > frame.teleportThreshold() * frame.teleportThreshold()) {
             nextFrameTeleport = tickCount + frame.teleportCooldown();
@@ -85,6 +88,10 @@ public final class DroneEntity extends net.minecraft.world.entity.PathfinderMob 
     boolean holdingStation;
     public float getFlightBlend() { return entityData.get(FLIGHT) / 15F; }
     private static final net.minecraft.network.syncher.EntityDataAccessor<Boolean> SCANNING = SynchedEntityData.defineId(DroneEntity.class, net.minecraft.network.syncher.EntityDataSerializers.BOOLEAN);
+    /** Work-station pose flag: the renderer leans the airframe slowly over the assigned mill. */
+    private static final net.minecraft.network.syncher.EntityDataAccessor<Boolean> WORKING = SynchedEntityData.defineId(DroneEntity.class, net.minecraft.network.syncher.EntityDataSerializers.BOOLEAN);
+    private net.minecraft.core.BlockPos workTarget;
+    private boolean workStalled;
     private final DroneSystems systems = new DroneSystems();
     ScanSnapshot scanSnapshot;
     @Override public void remove(RemovalReason reason) {
@@ -94,6 +101,16 @@ public final class DroneEntity extends net.minecraft.world.entity.PathfinderMob 
         super.remove(reason);
     }
     public boolean isScanActive() { return entityData.get(SCANNING); }
+    public boolean isWorking() { return entityData.get(WORKING); }
+    public void working(boolean active) { entityData.set(WORKING, active); }
+    public net.minecraft.core.BlockPos workTarget() { return workTarget; }
+    /** Sticky while below 15% charge; cleared again only at 40% (see DroneWork.second). */
+    public boolean workStalled() { return workStalled; }
+    public void setWorkStalled(boolean stalled) { workStalled = stalled; }
+    public void assignWork(net.minecraft.core.BlockPos pos) { workTarget = pos; setWorkStalled(false); }
+    public void clearWork() { workTarget = null; workStalled = false; working(false); }
+    /** The flight blend is the same byte the follow AI drives; the work hover reuses it. */
+    public void setFlight(int value) { entityData.set(FLIGHT, (byte)Math.clamp(value, 0, 15)); }
     void scanPatrolChanged(ServerPlayer player, boolean enabled) { systems.patrolChanged(this, player, enabled); }
     void scanning(boolean active) { entityData.set(SCANNING, active); }
     boolean execute(ServerPlayer player, String intent) { return systems.execute(this, player, controller(), intent); }
@@ -162,6 +179,7 @@ public final class DroneEntity extends net.minecraft.world.entity.PathfinderMob 
             entityData.set(FLIGHT, (byte)0);
             return;
         }
+        if (workTarget != null && DroneWork.chase(this, p)) return;
         Vec3 target = station(p.position(), followHeading);
         Vec3 next = followPosition(target);
         double speed = next.subtract(position()).horizontalDistance();
@@ -169,7 +187,21 @@ public final class DroneEntity extends net.minecraft.world.entity.PathfinderMob 
         setPos(next);
         if (getTarget() == null) faceHeading(followHeading);
     }
-    void faceHeading(float heading) {
+    /**
+     * The work orbit turns the hull with the shared cycle (22.5 degrees per tick). That is faster than
+     * the vanilla body follower re-aims a mob that is not moving horizontally - during the drop and the
+     * reset the drone hangs still - so while a work order runs the hull simply follows the synced
+     * heading. Every other state (idle, follow, combat) keeps the vanilla rule, where the body turns
+     * toward the direction of travel and a parked drone looks wherever it last looked.
+     */
+    @Override protected float tickHeadTurn(float bodyYaw, float radius) {
+        float turn = super.tickHeadTurn(bodyYaw, radius);
+        if (isWorking()) setYBodyRot(getYRot());
+        return turn;
+    }
+
+    /** Aim body, head and view at {@code heading}; used by the follow AI and by the work orbit. */
+    public void faceHeading(float heading) {
         setYRot(heading);
         setYHeadRot(heading);
         setYBodyRot(heading);
@@ -182,7 +214,17 @@ public final class DroneEntity extends net.minecraft.world.entity.PathfinderMob 
         var equipped = CuriosDrones.equipped(player);
         return getUUID().equals(DroneItem.serial(equipped)) ? equipped : net.minecraft.world.item.ItemStack.EMPTY;
     }
-    @Override protected void defineSynchedData(SynchedEntityData.Builder builder) { super.defineSynchedData(builder); builder.define(FRAME, "peregrine"); builder.define(FRAME_WIDTH, 0.7f); builder.define(FRAME_HEIGHT, 0.7f); builder.define(MOUNT_PITCH, (byte)85); builder.define(AIM_YAW, 0f); builder.define(AIM_PITCH, 0f); builder.define(FLIGHT, (byte)0); builder.define(PAINT, (byte)0); builder.define(SCANNING, false); builder.define(LAMP,0); }
-    @Override public void readAdditionalSaveData(CompoundTag tag) { super.readAdditionalSaveData(tag); if (tag.hasUUID("Owner")) owner = tag.getUUID("Owner"); }
-    @Override public void addAdditionalSaveData(CompoundTag tag) { super.addAdditionalSaveData(tag); if (owner != null) tag.putUUID("Owner", owner); }
+    @Override protected void defineSynchedData(SynchedEntityData.Builder builder) { super.defineSynchedData(builder); builder.define(FRAME, "peregrine"); builder.define(FRAME_WIDTH, 0.7f); builder.define(FRAME_HEIGHT, 0.7f); builder.define(MOUNT_PITCH, (byte)85); builder.define(AIM_YAW, 0f); builder.define(AIM_PITCH, 0f); builder.define(FLIGHT, (byte)0); builder.define(PAINT, (byte)0); builder.define(SCANNING, false); builder.define(WORKING, false); builder.define(LAMP,0); }
+    @Override public void readAdditionalSaveData(CompoundTag tag) {
+        super.readAdditionalSaveData(tag);
+        if (tag.hasUUID("Owner")) owner = tag.getUUID("Owner");
+        if (tag.contains("WorkTarget")) workTarget = net.minecraft.core.BlockPos.of(tag.getLong("WorkTarget"));
+        workStalled = tag.getBoolean("WorkStalled");
+    }
+    @Override public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+        if (owner != null) tag.putUUID("Owner", owner);
+        if (workTarget != null) tag.putLong("WorkTarget", workTarget.asLong());
+        tag.putBoolean("WorkStalled", workStalled);
+    }
 }

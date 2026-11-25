@@ -9,6 +9,8 @@ import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import dev.dronepal.charging.ChargingDockRegistry;
+import dev.dronepal.mill.OreMillRegistry;
+import dev.dronepal.power.PowerBlocks;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -32,7 +34,9 @@ public final class Dronepal {
                 Hardware.creative(output);
                 PaintCans.addToTab(output);
                 output.accept(ChargingDockRegistry.DOCK.get());
+                PowerBlocks.addToTab(output);
                 SurvivalWorks.addToTab(output);
+                OreMillRegistry.creative(output);
             }).build());
 
     /**
@@ -75,6 +79,8 @@ public final class Dronepal {
         DroneCombat.register(bus);
         TerminalMenus.register(bus);
         dev.dronepal.charging.ChargingDockRegistry.register(bus);
+        PowerBlocks.register(bus);
+        OreMillRegistry.register(bus);
         TABS.register(bus);
     }
 }

@@ -37,11 +37,11 @@ public final class TowerRegistry {
     }
 
     public static final RegistryObject<Block> TOWER = BLOCKS.register("power_tower",
-            () -> new PowerTowerBlock(housing()));
+            () -> new PowerTowerBlock(housing().noLootTable()));
     public static final RegistryObject<Block> MID = BLOCKS.register("power_tower_mid",
-            () -> new PowerTowerPartBlock(housing(), PowerTowerPartBlock.Part.MID));
+            () -> new PowerTowerPartBlock(housing().noLootTable(), PowerTowerPartBlock.Part.MID));
     public static final RegistryObject<Block> TOP = BLOCKS.register("power_tower_top",
-            () -> new PowerTowerPartBlock(housing(), PowerTowerPartBlock.Part.TOP));
+            () -> new PowerTowerPartBlock(housing().noLootTable(), PowerTowerPartBlock.Part.TOP));
 
     public static final RegistryObject<Item> ITEM = ITEMS.register("power_tower",
             () -> new TowerItem(TOWER.get(), new Item.Properties()));

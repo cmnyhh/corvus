@@ -1,0 +1,13 @@
+// GUI fixture for the 1.20.1 V wheel. Adds one dev-only source file (never in the jar) and injects the
+// switch + screenshot directory into the client run, the same way gradle/assembly-shot.init.gradle does.
+//    gradle -I gradle/wheel-timing.init.gradle runClient -PcorvusQuickPlay=CorvusSmoke
+allprojects { p ->
+    p.afterEvaluate {
+        if (p != p.rootProject) return
+        p.sourceSets.main.java.srcDirs += p.file('gradle/wheeltiming/java')
+        p.minecraft.runs.client.property 'corvus.wheelTiming', '1'
+        p.minecraft.runs.client.property 'corvus.wheelLog', '1'
+        p.minecraft.runs.client.property 'corvus.wheel.dir',
+                p.layout.projectDirectory.dir('artifacts/client').asFile.absolutePath
+    }
+}

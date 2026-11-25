@@ -38,13 +38,27 @@ public final class DroneHud {
     private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger("corvus-hud");
     private static final String CURIO_SLOT = "drone";
     private static final int TEXT = 0xfff2f4f6, DIM = 0xffe0e4e8, GOOD = 0xffa4ddbe, LOW = 0xffff8079;
+    /** Client-side estimate of the grid charge rate, sampled once per second. */
+    private static int lastEnergy, chargeRate;
+    private static long lastSample;
     private static final int BOX = 0xb51c2024, TRACK = 0xff57616a;
 
     private static ItemStack worn = ItemStack.EMPTY;
     private static int refreshTicks;
     private static boolean sourceLogged;
+    /** Whether {@link #worn} has been read at least once, and whether Curios could be read at all. */
+    private static boolean refreshed, readable = true;
 
     private DroneHud() {}
+
+    /**
+     * The wheel's no-drone gate: {@code TRUE} controller visible, {@code FALSE} positively no
+     * controller, {@code null} unknown (not read yet, or Curios could not answer).
+     */
+    static Boolean controllerWorn() {
+        if (!refreshed || !readable) return null;
+        return !worn.isEmpty();
+    }
 
     // ------------------------------------------------------------------ overlay
 
@@ -59,6 +73,7 @@ public final class DroneHud {
         if (++refreshTicks < 10) return;
         refreshTicks = 0;
         worn = equipped();
+        refreshed = true;
         if (!worn.isEmpty() && !sourceLogged) {
             sourceLogged = true;
             LOGGER.info("[corvus-hud] controller read from the synced Curios slot: frame={} paint={} energy={}/{} modules={}",
@@ -84,6 +99,7 @@ public final class DroneHud {
                     })
                     .orElse(ItemStack.EMPTY);
         } catch (RuntimeException | LinkageError missing) {
+            readable = false;
             if (!sourceLogged) {
                 sourceLogged = true;
                 LOGGER.warn("[corvus-hud] the worn controller is not readable client-side ({}); "
@@ -91,6 +107,11 @@ public final class DroneHud {
             }
             return ItemStack.EMPTY;
         }
+    }
+
+    /** True when this client is drawing a live drone of its own; proves a controller is fitted. */
+    static boolean deployedVisible() {
+        return droneInWorld(Minecraft.getInstance());
     }
 
     /** True when this client can see a live drone of its own, used when no status has arrived yet. */
@@ -142,9 +163,25 @@ public final class DroneHud {
             power = power.copy().append("   ").append(text("rate", Component.literal(Integer.toString(state.drain()))));
         }
         if (held && game.level != null && game.player != null) {
-            // TODO(grid): in-grid / off-grid state for the deployed drone's power readout.
+            // TODO(grid): in-grid / charging / full state for the deployed drone's power readout.
             boolean onGrid = dev.corvus.power.grid.client.TowerClientState.covered(game.level, game.player.blockPosition());
-            power = power.copy().append("   ").append(text(onGrid ? "grid_online" : "grid_offline"));
+            Component gridText;
+            if (!onGrid) {
+                gridText = text("grid_offline");
+                lastEnergy = energy;
+                lastSample = game.level.getGameTime();
+                chargeRate = 0;
+            } else {
+                long now = game.level.getGameTime();
+                if (now - lastSample >= 20) {
+                    chargeRate = Math.max(0, energy - lastEnergy);
+                    lastEnergy = energy;
+                    lastSample = now;
+                }
+                gridText = capacity > 0 && energy >= capacity ? text("grid_full")
+                        : chargeRate > 0 ? text("grid_charging", chargeRate) : text("grid_online");
+            }
+            power = power.copy().append("   ").append(gridText);
         }
 
         int fitted = 0, online = 0;

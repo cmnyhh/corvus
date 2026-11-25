@@ -52,10 +52,7 @@ public final class PowerTowerPartBlock extends Block {
             BlockPos main = part == Part.TOP ? pos.below(2) : pos.below();
             // If the bottom is gone already, this removal is the cascade from the bottom itself.
             if (level.getBlockState(main).is(TowerRegistry.TOWER.get())) {
-                // The broken part's loot table (lootFrom the bottom) dropped the single tower already.
-                // Remove the bottom without a second drop; its onRemove clears the other part.
-                level.setBlock(main, net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(),
-                        net.minecraft.world.level.block.Block.UPDATE_CLIENTS);
+                level.destroyBlock(main, true);
             }
         }
         super.onRemove(state, level, pos, next, movedByPiston);

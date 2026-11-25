@@ -68,6 +68,7 @@
   "dronepal.wheel.solar": "Solar +%s FE/t",
   "dronepal.wheel.connecting": "Connecting…",
   "dronepal.wheel.none": "No drone",
+  "dronepal.wheel.no_drone": "No drone deployed",
   "dronepal.wheel.signal": "Signal lost",
   "dronepal.wheel.cancel": "Cancel",
   "dronepal.wheel.off": "Off",

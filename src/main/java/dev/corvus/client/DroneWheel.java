@@ -44,8 +44,24 @@ public final class DroneWheel extends Screen {
     private static final KeyMapping KEY = new KeyMapping("key.dronepal.wheel", InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_V, "key.categories.dronepal");
     private static final int RING = 0xd526293a, EMPTY = 0xa51c1e2c, SELECTED = 0xf165438e, WHITE = 0xfff5f2ff, MUTED = 0xffc3bcd2;
+    /** Dev-only timeline trace: {@code -Dcorvus.wheelLog=1} prints every open/close with a timestamp. */
+    private static final boolean DIAG = "1".equals(System.getProperty("corvus.wheelLog"));
+    private static void diag(String message, Object... args) {
+        if (DIAG) System.out.println("[wheel-diag] " + String.format(message, args));
+    }
     /** The wheel is a hold-to-open UI; the minimum hold stops a stray tap from firing a sector. */
     private static final long MINIMUM_HOLD_MILLIS = 160;
+    /**
+     * Physical V state, maintained from {@link InputEvent.Key} instead of {@code KEY.isDown()}.
+     * {@code Minecraft.setScreen} calls {@code KeyMapping.releaseAll()}, which clears the mapping while
+     * the key is still held; a watchdog reading the mapping therefore closed every wheel one tick after
+     * opening, no matter how long the player held V.
+     */
+    private static boolean physicallyDown;
+    /** Wall-clock start of the press under measurement, 0 when no press is pending. */
+    private static long pressedAt;
+    /** This press already opened the wheel or showed the no-drone hint. */
+    private static boolean resolved;
     /** The status answer is treated as current for this long when drawing. */
     private static final long STATUS_TTL_MILLIS = 3_000;
 
@@ -83,6 +99,8 @@ public final class DroneWheel extends Screen {
     /** Client packet sink; installed by {@link Keys} before any answer can arrive. */
     static void accept(DroneRemote.Status update) {
         if (update == null || update.revision() <= accepted) return;
+        diag("accept nonce=%d rev=%d signal=%s enabled=0x%x", update.nonce(), update.revision(),
+                update.signal(), update.enabled());
         accepted = update.revision();
         status = update;
         statusAt = net.minecraft.Util.getMillis();
@@ -100,6 +118,8 @@ public final class DroneWheel extends Screen {
 
     private void sendAction(int slot) {
         DroneRemote.Status state = status();
+        diag("sendAction slot=%d action=%s state=%s selectable=%s", slot, action(slot), state == null ? "null" : "ok",
+                selectable(slot));
         if (state == null || !selectable(slot)) return;
         revision++;
         CorvusNetwork.CHANNEL.sendToServer(new DroneRemote.Command(state.serial(), action(slot), nonce, revision));
@@ -119,10 +139,24 @@ public final class DroneWheel extends Screen {
 
     @SubscribeEvent
     static void input(InputEvent.Key event) {
-        if (event.getAction() != GLFW.GLFW_PRESS || !KEY.matches(event.getKey(), event.getScanCode())) return;
-        Minecraft game = Minecraft.getInstance();
-        if (game.player == null || game.screen != null) return;
-        open(game).keyHeld = true;
+        boolean matches = KEY.matches(event.getKey(), event.getScanCode());
+        if (!matches) return;
+        if (event.getAction() == GLFW.GLFW_PRESS) {
+            Minecraft game = Minecraft.getInstance();
+            if (game.player == null || game.screen != null) return;
+            // Do not open here: accumulate hold time first, so a tap never creates a screen at all.
+            if (pressedAt == 0) {
+                pressedAt = net.minecraft.Util.getMillis();
+                resolved = false;
+            }
+            physicallyDown = true;
+            diag("input PRESS key=%d scan=%d at=%d", event.getKey(), event.getScanCode(), pressedAt);
+        } else if (event.getAction() == GLFW.GLFW_RELEASE) {
+            physicallyDown = false;
+            diag("input RELEASE key=%d scan=%d screen=%s", event.getKey(), event.getScanCode(),
+                    Minecraft.getInstance().screen == null ? "null"
+                            : Minecraft.getInstance().screen.getClass().getSimpleName());
+        }
     }
 
     /** Opens the wheel the way the V key does; {@code keyHeld} is set by the caller that owns a press. */
@@ -138,9 +172,39 @@ public final class DroneWheel extends Screen {
         if (event.phase != TickEvent.Phase.END) return;
         Minecraft game = Minecraft.getInstance();
         if (game.player == null) return;
+        long now = net.minecraft.Util.getMillis();
+        if (pressedAt != 0 && game.screen != null && !(game.screen instanceof DroneWheel)) {
+            // Another screen (inventory, chat) took the hold: it is no longer a wheel gesture.
+            pressedAt = 0;
+            resolved = false;
+        }
+        if (physicallyDown && !resolved && pressedAt != 0 && game.screen == null
+                && now - pressedAt >= MINIMUM_HOLD_MILLIS) {
+            resolved = true;
+            long held = now - pressedAt;
+            pressedAt = 0;
+            if (noController()) {
+                hint(game);
+                diag("hold %d ms: no controller, hotbar hint instead of a wheel", held);
+            } else {
+                open(game).keyHeld = true;
+                diag("hold %d ms: wheel opened", held);
+            }
+        }
+        if (!physicallyDown && pressedAt != 0) {
+            // Released before the hold completed: a tap never opens, never acts, and stays silent.
+            diag("tap released at=%d held=%d resolved=%s", now, now - pressedAt, resolved);
+            pressedAt = 0;
+            resolved = false;
+        }
         if (game.screen instanceof DroneWheel wheel) {
             // Watchdog: the release also arrives as Screen.keyReleased, this covers a lost key event.
-            if (wheel.keyHeld && !KEY.isDown()) wheel.release();
+            // It must use the physical state: KEY.isDown() is cleared by setScreen's releaseAll().
+            if (wheel.keyHeld && !physicallyDown) {
+                diag("watchdog release nonce=%d physicallyDown=false screen=%s", wheel.nonce,
+                        game.screen.getClass().getSimpleName());
+                wheel.release();
+            }
         } else if (++polling >= 20) {
             // One status per second keeps the HUD live without the wheel being open.
             polling = 0;
@@ -148,6 +212,25 @@ public final class DroneWheel extends Screen {
         }
         DroneHud.tick();
         if (SMOKE) smoke(game);
+    }
+
+    /** True only when the client positively sees neither a controller nor a deployed drone. */
+    private static boolean noController() {
+        // Any positive sign wins: Curios sync can lag a second behind the server, and a drone drawn in
+        // the world proves a controller exists even when the synced slot has not caught up yet.
+        Boolean worn = DroneHud.controllerWorn();
+        if (worn != null && worn) return false;
+        if (DroneHud.deployedVisible()) return false;
+        DroneRemote.Status state = status();
+        if (state != null) return state.enabled() == 0;
+        if (worn != null) return !worn;
+        return false;
+    }
+
+    private static void hint(Minecraft game) {
+        if (game.player == null) return;
+        game.player.displayClientMessage(Component.translatable("dronepal.wheel.no_drone"), true);
+        diag("hint shown: no deployed drone");
     }
 
     @Override public void tick() {
@@ -160,8 +243,23 @@ public final class DroneWheel extends Screen {
     // ------------------------------------------------------------------ interaction
 
     @Override protected void init() {
+        diag("init nonce=%d age=%d keyDown=%s", nonce, net.minecraft.Util.getMillis() - opened, KEY.isDown());
         var window = minecraft.getWindow();
         GLFW.glfwSetCursorPos(window.getWindow(), window.getScreenWidth() / 2.0, window.getScreenHeight() / 2.0);
+    }
+
+    @Override public void onClose() {
+        diag("onClose nonce=%d age=%d selection=%d", nonce, net.minecraft.Util.getMillis() - opened, selection);
+        if (DIAG) {
+            var stack = new Throwable().getStackTrace();
+            for (int i = 1; i < Math.min(stack.length, 9); i++) System.out.println("[wheel-diag]   at " + stack[i]);
+        }
+        super.onClose();
+    }
+
+    @Override public void removed() {
+        diag("removed nonce=%d age=%d", nonce, net.minecraft.Util.getMillis() - opened);
+        super.removed();
     }
 
     @Override public boolean isPauseScreen() {
@@ -174,11 +272,16 @@ public final class DroneWheel extends Screen {
         var window = minecraft.getWindow();
         selection = layout().sector(minecraft.mouseHandler.xpos() * width / window.getScreenWidth(),
                 minecraft.mouseHandler.ypos() * height / window.getScreenHeight());
-        if (!clickedWhileOpen && net.minecraft.Util.getMillis() - opened >= MINIMUM_HOLD_MILLIS) sendAction(selection);
+        diag("release nonce=%d age=%d selection=%d clicked=%s keyDown=%s", nonce,
+                net.minecraft.Util.getMillis() - opened, selection, clickedWhileOpen, KEY.isDown());
+        // The screen only exists after a completed hold, so a release always runs the aimed sector.
+        if (!clickedWhileOpen) sendAction(selection);
         onClose();
     }
 
     @Override public boolean keyReleased(int key, int scan, int modifiers) {
+        diag("keyReleased key=%d scan=%d matches=%s screen=%s", key, scan, KEY.matches(key, scan),
+                minecraft == null || minecraft.screen == null ? "null" : minecraft.screen.getClass().getSimpleName());
         if (KEY.matches(key, scan)) {
             release();
             return true;

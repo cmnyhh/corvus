@@ -68,6 +68,7 @@
   "dronepal.wheel.solar": "太阳能 +%s FE/t",
   "dronepal.wheel.connecting": "连接中…",
   "dronepal.wheel.none": "未部署",
+  "dronepal.wheel.no_drone": "没有已部署的无人机",
   "dronepal.wheel.signal": "失去信号",
   "dronepal.wheel.cancel": "取消",
   "dronepal.wheel.off": "已关闭",

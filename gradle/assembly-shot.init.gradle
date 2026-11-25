@@ -1,0 +1,12 @@
+// 装配台蓝图列表点击验收 harness（1.20.1）。只在本次 init 脚本生效时编译，不进正式 jar。
+//   用法： gradle -I gradle/assembly-shot.init.gradle runClient -PcorvusQuickPlay=CorvusSmoke
+//
+// 和 patchouli-dev.init.gradle 同一套做法：把 gradle/assemblyshot/java 加进 main 的额外源码目录，
+// 再给 client run 注入 -Dcorvus.assemblyShot=1（harness 自己没打开开关时什么都不做）。
+allprojects { p ->
+    p.afterEvaluate {
+        if (p != p.rootProject) return
+        p.sourceSets.main.java.srcDirs += p.file('gradle/assemblyshot/java')
+        p.minecraft.runs.client.property 'corvus.assemblyShot', '1'
+    }
+}

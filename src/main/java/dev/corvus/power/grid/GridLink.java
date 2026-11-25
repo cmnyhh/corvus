@@ -53,6 +53,11 @@ public final class GridLink {
         return TowerGridService.drawDrone(level, drone, perSecondFe);
     }
 
+    /** True when a tower is attached to this drone, even if the battery is full. */
+    public static boolean droneAttached(ServerLevel level, Entity drone) {
+        return level != null && !level.isClientSide && drone != null && TowerGridService.droneAttached(level, drone);
+    }
+
     /** True when the last allocation gave this drone a supplier tower within five hops. */
     public static boolean droneInGrid(ServerLevel level, Entity drone) {
         return level != null && !level.isClientSide && drone != null && TowerGridService.droneInGrid(level, drone);

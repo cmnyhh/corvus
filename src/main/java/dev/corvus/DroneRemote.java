@@ -143,7 +143,8 @@ public final class DroneRemote {
         if (disabled(stack, family)) toggle(stack, family);
     }
 
-    private static boolean toggle(ItemStack stack, String family) {
+    /** Flips one switch; package-private so the acceptance run drives the same key the wheel writes. */
+    static boolean toggle(ItemStack stack, String family) {
         CorvusData data = CorvusData.of(stack);
         String key = OFF_PREFIX + family;
         data.setBoolean(key, !data.getBoolean(key));

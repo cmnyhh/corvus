@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import dev.corvus.data.CorvusData;
+import dev.corvus.core.HardwareRules;
 import dev.corvus.data.CorvusKeys;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -653,11 +654,15 @@ public final class Hardware {
         return Batteries.charge(controller, amount, simulate);
     }
 
+    /**
+     * Is the module allowed to run right now? The player switch always wins over charge.
+     *
+     * <p>Shared rule ({@link HardwareRules#online}): {@code !userDisabled && powered}. This build used to
+     * answer from the charge alone, so a module switched off in the wheel still drew power and a
+     * switched-off scanner re-armed its automatic sweep 15 seconds later (R2).</p>
+     */
     public static boolean online(ItemStack controller, String family) {
-        // TODO(corvus-core): R2. This must become
-        // dev.corvus.core.HardwareRules#online(userDisabled, powered) — the player switch is missing here,
-        // so a module switched off in the wheel still draws power and re-arms automatic scans.
-        return powered(controller, family);
+        return HardwareRules.online(DroneRemote.disabled(controller, family), powered(controller, family));
     }
 
     /**
@@ -673,7 +678,7 @@ public final class Hardware {
         if (energy <= 0) return false;
         List<Module> installed = installed(controller);
         int capacity = capacity(controller);
-        String brownedOut = energy < capacity / 5
+        String brownedOut = HardwareRules.brownout(energy, capacity)
                 ? installed.stream()
                         .filter(module -> module.drain() > 0)
                         .max(Comparator.<Module>comparingInt(module -> module.draw(20))
@@ -687,7 +692,8 @@ public final class Hardware {
 
     /**
      * FE/t this controller spends right now: the {@code drain_watts} of every fitted module that is
-     * currently {@linkplain #powered online}, after its vendor {@code drain_multiplier}. That is the same
+     * currently {@linkplain #online online} (fitted, powered, fault-free and <em>not switched off</em>),
+     * after its vendor {@code drain_multiplier}. That is the same
      * sum the 1.21 telemetry loop reports as {@code consumed / 20}.
      *
      * <p>Returns {@code -1} when there is no controller at all, so a panel can print "—" instead of a
@@ -697,7 +703,8 @@ public final class Hardware {
         if (controller == null || controller.isEmpty()) return -1;
         double total = 0D;
         for (Module module : installed(controller)) {
-            if (!powered(controller, module.family())) continue;
+            // online(), not powered(): a module the player switched off draws nothing (R2).
+            if (!online(controller, module.family())) continue;
             total += module.drain() * Mth.clamp(module.trait("drain_multiplier", 1D), 0D, 10D);
         }
         return (int) Math.round(total);

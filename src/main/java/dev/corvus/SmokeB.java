@@ -109,7 +109,7 @@ public final class SmokeB {
             check(false, "assembly/catalog", "0 blueprints loaded (data/huhu_dronepal/assembly/*.json)");
             return;
         }
-        check(SurvivalWorks.plans.size() == 45, "assembly/catalog",
+        check(SurvivalWorks.plans.size() == 46, "assembly/catalog",
                 SurvivalWorks.plans.size() + " blueprints loaded");
         level.getChunk(BENCH_POS);
         resetBlock(level, BENCH_POS, SurvivalWorks.BENCH.get().defaultBlockState());

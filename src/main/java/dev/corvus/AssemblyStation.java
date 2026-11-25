@@ -77,7 +77,7 @@ public final class AssemblyStation extends BlockEntity {
     boolean start() {
         SurvivalWorks.Plan plan = plan();
         if (busy() || plan == null) return false;
-        ItemStack result = plan.output().stack();
+        ItemStack result = plan.result();
         if (result.isEmpty() || !room(result)) return false;
         int[] allocation = new int[INPUTS];
         for (SurvivalWorks.Cost cost : plan.costs()) {

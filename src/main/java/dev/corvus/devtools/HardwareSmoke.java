@@ -3,11 +3,13 @@ package dev.corvus.devtools;
 import com.mojang.authlib.GameProfile;
 import dev.corvus.Batteries;
 import dev.corvus.Corvus;
+import dev.corvus.DroneEntity;
 import dev.corvus.Frames;
 import dev.corvus.Hardware;
 import dev.corvus.LootSerializers;
 import dev.corvus.PaintCans;
 import dev.corvus.ServerOptions;
+import dev.corvus.data.CorvusKeys;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -15,6 +17,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.CreativeModeTab;
@@ -82,6 +85,7 @@ public final class HardwareSmoke {
 
     private static void run(MinecraftServer server) {
         checkFrames();
+        checkFrameStats(server);
         checkBatteries();
         checkModuleDefinitions();
         checkModuleSync();
@@ -451,11 +455,12 @@ public final class HardwareSmoke {
         for (net.minecraft.world.item.crafting.Recipe<?> recipe : server.getRecipeManager().getRecipes()) {
             if (Corvus.ID.equals(recipe.getId().getNamespace())) ours.add(recipe.getId().getPath());
         }
-        // 40 files: 39 load here (the mill adds eight family-specific smelting recipes, eight
+        // 41 files on disk, 40 load here (the mill adds eight family-specific smelting recipes, eight
         // coarse-sand-to-concentrate recipes and three nine-shard recipes; the pipe adds one crafting
-        // recipe). corvus_manual produces patchouli:guide_book, and Patchouli is not a dependency of this
-        // build, so that one is (correctly) skipped rather than producing a ghost item.
-        check("recipes.count", ours.size() == 39, "loaded=" + ours.size() + " " + ours);
+        // recipe and the wireless power tower another). corvus_manual produces patchouli:guide_book, and
+        // Patchouli is not a dependency of this build, so that one is (correctly) skipped rather than
+        // producing a ghost item.
+        check("recipes.count", ours.size() == 40, "loaded=" + ours.size() + " " + ours);
         check("recipes.manual_needs_patchouli", !ours.contains("corvus_manual"), "");
         check("recipes.paint_can", ours.contains("paint_can_rust"), "");
         check("recipes.bench", ours.stream().anyMatch(id -> id.endsWith("assembly_bench")), "");
@@ -532,6 +537,124 @@ public final class HardwareSmoke {
         ResourceLocation id = ForgeRegistries.ITEMS.getKey(stack.getItem());
         CompoundTag tag = stack.getTag();
         return (id == null ? "?" : id.toString()) + (tag == null ? "" : " " + tag);
+    }
+
+    // ---------------------------------------------------------------------------------------------
+    // R1: the frame numbers have to reach the live entity, not just the data table
+    // ---------------------------------------------------------------------------------------------
+
+    /**
+     * The four {@code frames/*.json} numbers that used to be dead code on this build: max health, the
+     * per-hit ceiling, the invulnerability policy and the follow/teleport/unload distances.
+     *
+     * <p>Driven through the real entity: a projection is spawned, given a frame, damaged, re-framed,
+     * teleported and finally walked out of range. The {@code creative_owner} policy's creative branch is
+     * asserted on {@link DroneEntity#protectedFrom} because a smoke-run owner is a {@code FakePlayer},
+     * which the player list never returns (so {@code ownerCreative()} can only be false here).</p>
+     */
+    private static void checkFrameStats(MinecraftServer server) {
+        ServerLevel level = server.overworld();
+        ServerPlayer owner = fakePlayer(server);
+        owner.moveTo(0.5D, 100D, 0.5D, 0F, 0F);
+
+        // 1) a 游隼 spawns with its 80 HP, not the vanilla PathfinderMob 20
+        DroneEntity peregrine = spawnAt(level, owner, "peregrine", 0D);
+        check("frame.live.peregrine_hp", peregrine.getMaxHealth() == 80F && peregrine.getHealth() == 80F,
+                "max=" + peregrine.getMaxHealth() + " hp=" + peregrine.getHealth());
+        check("frame.live.peregrine_hit_cap_field", peregrine.hitCap() == 10F, "cap=" + peregrine.hitCap());
+
+        // 2) one 20-damage hit is cut to the frame's 10 (max_damage_per_hit)
+        peregrine.hurt(level.damageSources().generic(), 20F);
+        check("frame.live.hit_cap_single_shot", Math.abs(peregrine.getHealth() - 70F) < 0.01F,
+                "20 damage landed as " + (80F - peregrine.getHealth()));
+
+        // 3) re-framing keeps the health fraction instead of healing the projection (70/80 -> 126/144)
+        peregrine.setFrame("bedrock");
+        check("frame.live.bedrock_hp", peregrine.getMaxHealth() == 144F, "max=" + peregrine.getMaxHealth());
+        check("frame.live.swap_keeps_fraction", Math.abs(peregrine.getHealth() - 126F) < 0.5F,
+                "hp=" + peregrine.getHealth() + " (70/80 of 144 = 126)");
+
+        // 4) the three invulnerability policies, then the real hurt() path for two of them
+        check("frame.live.invuln.always",
+                DroneEntity.protectedFrom(ServerOptions.Protection.always, false, false)
+                        && DroneEntity.protectedFrom(ServerOptions.Protection.always, true, false), "");
+        check("frame.live.invuln.creative_owner",
+                DroneEntity.protectedFrom(ServerOptions.Protection.creative_owner, true, false)
+                        && !DroneEntity.protectedFrom(ServerOptions.Protection.creative_owner, false, false), "");
+        check("frame.live.invuln.never",
+                !DroneEntity.protectedFrom(ServerOptions.Protection.never, false, false)
+                        && !DroneEntity.protectedFrom(ServerOptions.Protection.never, true, false), "");
+        check("frame.live.invuln.bypass",
+                !DroneEntity.protectedFrom(ServerOptions.Protection.always, true, true),
+                "a /kill-style source must still land");
+        ServerOptions.testProtection(ServerOptions.Protection.always);
+        DroneEntity guarded = spawnAt(level, owner, "peregrine", 0D);
+        boolean refused = guarded.hurt(level.damageSources().generic(), 20F);
+        check("frame.live.policy_always_blocks", !refused && guarded.getHealth() == guarded.getMaxHealth(),
+                "hurt=" + refused + " hp=" + guarded.getHealth());
+        ServerOptions.testProtection(ServerOptions.Protection.never);
+        boolean landed = guarded.hurt(level.damageSources().generic(), 20F);
+        check("frame.live.policy_never_lands", landed && Math.abs(guarded.getHealth() - 70F) < 0.01F,
+                "hurt=" + landed + " hp=" + guarded.getHealth());
+        ServerOptions.testProtection(ServerOptions.Protection.creative_owner);
+        DroneEntity owl = spawnAt(level, owner, "owl", 0D);
+        check("frame.live.policy_creative_owner_noncreative",
+                owl.hurt(level.damageSources().generic(), 20F) && owl.getHealth() < owl.getMaxHealth(),
+                "an owner the player list does not know is not creative, so the hit lands");
+        ServerOptions.testProtection(null);
+
+        // 5) beyond teleport_range (16 for a peregrine) the projection arrives in a single tick
+        DroneEntity jumper = spawnAt(level, owner, "peregrine", 40D);
+        jumper.tick();
+        double arrived = jumper.position().distanceTo(DroneEntity.station(owner));
+        check("frame.live.teleport_in_one_tick", arrived < 0.01D,
+                "distance after one tick=" + arrived + " (40 blocks, threshold 16)");
+
+        // 6) beyond unload_distance (64) the projection is dropped instead of flown after the owner
+        DroneEntity stray = spawnAt(level, owner, "peregrine", 70D);
+        stray.tick();
+        check("frame.live.unload_removes_entity", stray.isRemoved(), "removed=" + stray.isRemoved());
+
+        // 7) inside both ranges the step is the frame's accel_response, not a fixed 0.35 blend
+        DroneEntity follower = spawnAt(level, owner, "peregrine", 10D);
+        double before = follower.getX();
+        double gap = DroneEntity.station(owner).x - before;
+        follower.tick();
+        double step = follower.getX() - before;
+        check("frame.live.accel_step", step > 0.15D * gap && step < 0.25D * gap,
+                "step=" + step + " of a " + gap + " block gap (accel_response 1.0 -> 0.2; the old fixed blend was 0.35)");
+
+        owner.getPersistentData().remove(CorvusKeys.ACTIVE);
+        for (DroneEntity drone : List.of(peregrine, guarded, owl, jumper, stray, follower)) {
+            if (!drone.isRemoved()) drone.discard();
+        }
+    }
+
+    /**
+     * Spawns a projection with {@code frame}, standing where the owner is, and marks it as that owner's
+     * live serial so {@link DroneEntity#tick()} keeps it instead of discarding an unowned body.
+     */
+    /**
+     * Spawns a projection with {@code frame} next to the owner, arms it as that owner's live serial and
+     * places the <b>owner</b> {@code blocks} away. Moving the owner (not the projection) keeps the drone
+     * in the loaded spawn chunk, so {@code addFreshEntity} never silently fails.
+     */
+    private static DroneEntity spawnAt(ServerLevel level, ServerPlayer owner, String frame, double blocks) {
+        moveOwner(owner, 0D);
+        DroneEntity drone = new DroneEntity(Corvus.ENTITY.get(), level);
+        drone.setOwner(owner.getUUID());
+        drone.setTestPilot(owner);
+        drone.setFrame(frame);
+        drone.moveTo(owner.getX(), owner.getY(), owner.getZ(), 0F, 0F);
+        level.addFreshEntity(drone);
+        owner.getPersistentData().putUUID(CorvusKeys.ACTIVE, drone.getUUID());
+        moveOwner(owner, blocks);
+        return drone;
+    }
+
+    /** Moves the owner to the fixed base point plus {@code blocks} east. */
+    private static void moveOwner(ServerPlayer owner, double blocks) {
+        owner.moveTo(0.5D + blocks, 100D, 0.5D, 0F, 0F);
     }
 
     private static ItemStack stack(String path) {

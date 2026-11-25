@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "lamp=0": {
+      "model": "huhu_dronepal:block/power_tower_mid"
+    },
+    "lamp=1": {
+      "model": "huhu_dronepal:block/power_tower_mid"
+    },
+    "lamp=2": {
+      "model": "huhu_dronepal:block/power_tower_mid"
+    }
+  }
+}

@@ -9,6 +9,11 @@
     "huhu_dronepal:ore_mill",
     "huhu_dronepal:water_pump",
     "huhu_dronepal:water_pipe",
-    "huhu_dronepal:ore_mill_side"
+    "huhu_dronepal:ore_mill_side",
+    "huhu_dronepal:power_port",
+    "huhu_dronepal:power_cable",
+    "huhu_dronepal:power_tower",
+    "huhu_dronepal:power_tower_mid",
+    "huhu_dronepal:power_tower_top"
   ]
 }

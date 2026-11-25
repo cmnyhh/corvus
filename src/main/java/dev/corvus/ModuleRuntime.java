@@ -118,6 +118,9 @@ public final class ModuleRuntime {
         if (capacity <= 0) return 0;
         int before = Hardware.energy(controller);
         int drain = Math.max(0, Hardware.drainPerTick(controller)) * SECOND;
+        // TODO(grid): the wireless grid pays first; only the shortfall comes from the on-board cell.
+        int gridFe = dev.corvus.power.grid.GridLink.drawDrone(level, drone, drain);
+        drain = Math.max(0, drain - Math.max(0, gridFe));
         int solar = solarPerSecond(level, drone, controller);
         int after = Mth.clamp(before - drain + solar, 0, capacity);
         if (after != before) Hardware.setEnergy(controller, after);

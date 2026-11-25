@@ -260,6 +260,15 @@ public final class DialogueServer {
         return intent == null ? null : intent.id();
     }
 
+    /**
+     * Test hook: run one line through the loaded library with the real {@link Device} (so the intent
+     * gate, the module gate and the injected order handler all run) and return the reply text.
+     */
+    static String replyTo(ServerPlayer player, String text) {
+        Device device = new Device(player, Hardware.controller(player));
+        return library.respond(device, text, "", ThreadLocalRandom.current()).text();
+    }
+
     record Device(ServerPlayer player, ItemStack stack) implements LocalDialogue.Device {
         public boolean active() {
             return !stack.isEmpty();

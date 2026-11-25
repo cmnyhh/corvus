@@ -141,6 +141,11 @@ public final class DroneHud {
         if (state != null && state.drain() >= 0) {
             power = power.copy().append("   ").append(text("rate", Component.literal(Integer.toString(state.drain()))));
         }
+        if (held && game.level != null && game.player != null) {
+            // TODO(grid): in-grid / off-grid state for the deployed drone's power readout.
+            boolean onGrid = dev.corvus.power.grid.client.TowerClientState.covered(game.level, game.player.blockPosition());
+            power = power.copy().append("   ").append(text(onGrid ? "grid_online" : "grid_offline"));
+        }
 
         int fitted = 0, online = 0;
         if (held) {

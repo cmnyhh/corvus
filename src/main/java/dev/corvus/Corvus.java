@@ -66,6 +66,7 @@ public final class Corvus {
                 SurvivalWorks.addToTab(output);
                 dev.corvus.charging.ChargingDockRegistry.addToTab(output);
                 dev.corvus.power.PowerRegistry.addToTab(output);
+                dev.corvus.power.io.PowerIoRegistry.addToTab(output);
                 // --- 选矿台 + 五个新物品（mill-120） ---
                 dev.corvus.mill.OreMillRegistry.addToTab(output);
             })
@@ -93,6 +94,8 @@ public final class Corvus {
         dev.corvus.charging.ChargingDockRegistry.register(bus);
         // --- 发电与储电（燃烧发电机 / 太阳能发电机 / 蓄电池）: 自成一包，只在这里挂一次。 ---
         dev.corvus.power.PowerRegistry.register(bus);
+        // --- 供能接口 / 电缆（power/io）: 让其它模组经标准 capability 取电，自成一包。 ---
+        dev.corvus.power.io.PowerIoRegistry.register(bus);
         // --- 选矿台（mill-120）：方块/方块实体/菜单/五个物品，自成一包，只在这里挂一次。 ---
         dev.corvus.mill.OreMillRegistry.register(bus);
 

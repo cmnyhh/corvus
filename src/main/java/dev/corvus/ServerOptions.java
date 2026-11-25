@@ -40,6 +40,32 @@ public final class ServerOptions {
             .comment("Buffer of a battery bank, in FE. Input and output are fixed at 2,000 FE/t.")
             .defineInRange("batteryBankCapacity", 500_000, 1_000, 10_000_000);
 
+    public static final ForgeConfigSpec.IntValue PORT_OUTPUT = BUILDER
+            .comment("FE per tick a power port takes from its neighbours and hands to other mods (100-4000).",
+                    "The port buffers 8,000 FE; this is also the ceiling another mod's consumer sees.",
+                    "A cable run carries at most 2,000 FE/t regardless of this value.")
+            .defineInRange("portOutput", 1_000, 100, 4_000);
+
+    // ---- wireless power grid (power_tower) ----
+    public static final ForgeConfigSpec.IntValue TOWER_RADIUS = BUILDER
+            .comment("Coverage radius of a power tower in blocks (8-64). Two towers at most this far",
+                    "apart form one grid, and a device must be inside this radius to attach.",
+                    "The pale coverage ring is shown while holding the deployment terminal (G).")
+            .defineInRange("towerRadius", dev.corvus.core.Grid.DEFAULT_RADIUS,
+                    dev.corvus.core.Grid.MIN_RADIUS, dev.corvus.core.Grid.MAX_RADIUS);
+    public static final ForgeConfigSpec.IntValue TOWER_THROUGHPUT = BUILDER
+            .comment("Output ceiling of one tower in FE/t (100-2,000). Every device attached to that",
+                    "tower shares this budget: drones first, then ore mills, then charging docks.",
+                    "A device that gets only part of its demand keeps running at a lower rate.")
+            .defineInRange("towerThroughput", dev.corvus.core.Grid.DEFAULT_THROUGHPUT,
+                    dev.corvus.core.Grid.MIN_THROUGHPUT, dev.corvus.core.Grid.MAX_THROUGHPUT);
+    public static final ForgeConfigSpec.DoubleValue TOWER_EFFICIENCY = BUILDER
+            .comment("Delivery ratio of one tower-to-tower hop (0.85-1.0). A device drawing through N",
+                    "towers receives efficiency^N of the FE the supplying tower spends; more than five",
+                    "hops is out of reach.")
+            .defineInRange("towerEfficiency", dev.corvus.core.Grid.LINK_EFFICIENCY,
+                    dev.corvus.core.Grid.MIN_EFFICIENCY, dev.corvus.core.Grid.MAX_EFFICIENCY);
+
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     private ServerOptions() {}
@@ -88,7 +114,58 @@ public final class ServerOptions {
         }
     }
 
+    /** Power port ceiling in FE/t, both for intake and for what a consumer may pull. */
+    public static int portOutput() {
+        try {
+            return Mth.clamp(PORT_OUTPUT.get(), 100, 4_000);
+        } catch (RuntimeException unloaded) {
+            return 1_000;
+        }
+    }
+
+    /** Grid link/coverage radius in blocks, always inside the documented 8..64 range. */
+    public static int towerRadius() {
+        try {
+            return dev.corvus.core.Grid.clampRadius(TOWER_RADIUS.get());
+        } catch (RuntimeException unloaded) {
+            return dev.corvus.core.Grid.DEFAULT_RADIUS;
+        }
+    }
+
+    /** Per-tower shared output budget, FE/t. */
+    public static int towerThroughput() {
+        try {
+            return dev.corvus.core.Grid.clampThroughput(TOWER_THROUGHPUT.get());
+        } catch (RuntimeException unloaded) {
+            return dev.corvus.core.Grid.DEFAULT_THROUGHPUT;
+        }
+    }
+
+    /** Per-hop delivery ratio, 0.85..1.0. */
+    public static double towerEfficiency() {
+        try {
+            return dev.corvus.core.Grid.clampEfficiency(TOWER_EFFICIENCY.get());
+        } catch (RuntimeException unloaded) {
+            return dev.corvus.core.Grid.LINK_EFFICIENCY;
+        }
+    }
+
+    /** Active pull from the six neighbours; a shared rule constant, not a config knob. */
+    public static int towerPullRate() { return dev.corvus.core.Grid.TOWER_PULL_RATE; }
+
+    /**
+     * Dev-tool seam: forces the policy for the acceptance run ({@code HardwareSmoke}); {@code null}
+     * reads the config. The loaded Forge config cannot be rewritten at runtime, and the three policies
+     * are a player-visible contract that deserves a real assertion.
+     */
+    private static volatile Protection protectionOverride;
+
+    public static void testProtection(Protection policy) {
+        protectionOverride = policy;
+    }
+
     public static Protection protection() {
+        if (protectionOverride != null) return protectionOverride;
         try {
             return INVULNERABILITY.get();
         } catch (RuntimeException unloaded) {

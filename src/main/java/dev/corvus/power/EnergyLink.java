@@ -1,5 +1,8 @@
 package dev.corvus.power;
 
+import dev.corvus.core.Bank;
+import java.util.ArrayList;
+import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
@@ -17,6 +20,10 @@ import net.minecraftforge.energy.IEnergyStorage;
  * <p>Only the neighbour's own capability is touched — never the global energy net — and every send is
  * a real {@code receiveEnergy(root, false)} call, so a full consumer simply answers 0 and no energy is
  * created or destroyed.</p>
+ *
+ * <p>The split itself is the shared rule ({@link Bank#pushTo}): neighbours are filled <b>in face
+ * order</b>, the first one taking as much as it has room for. The 1.21.1 build used to divide the
+ * budget evenly, which is why the two builds disagreed at a 40 FE/t burner with two pads next to it.</p>
  */
 public final class EnergyLink {
     private EnergyLink() {}
@@ -27,29 +34,45 @@ public final class EnergyLink {
      */
     public static int push(Level level, BlockPos pos, int amount) {
         if (level == null || level.isClientSide || amount <= 0) return 0;
-        int left = amount;
+        List<IEnergyStorage> targets = new ArrayList<>(6);
         for (Direction side : Direction.values()) {
-            if (left <= 0) break;
             IEnergyStorage target = neighbour(level, pos, side);
             if (target == null || !target.canReceive()) continue;
-            int sent = target.receiveEnergy(left, false);
-            if (sent > 0) left -= Math.min(sent, left);
+            targets.add(target);
         }
-        return amount - left;
+        if (targets.isEmpty()) return 0;
+        int[] capacities = new int[targets.size()];
+        int[] stored = new int[targets.size()];
+        for (int i = 0; i < targets.size(); i++) {
+            IEnergyStorage target = targets.get(i);
+            capacities[i] = target.getMaxEnergyStored();
+            stored[i] = target.getEnergyStored();
+        }
+        int[] plan = Bank.pushTo(amount, capacities, stored);
+        int moved = 0;
+        for (int i = 0; i < plan.length; i++) {
+            if (plan[i] <= 0) continue;
+            moved += Math.max(0, targets.get(i).receiveEnergy(plan[i], false));
+        }
+        return moved;
     }
 
     /**
-     * Whether any neighbour would take a single FE right now.
+     * Whether any neighbour would take a single FE right now ({@link Bank#PROBE_FE}).
      *
      * <p>Generators call this before they light a new fuel item (or before they count daylight), so
      * "no receiver, no burn" is a real rule and not just a full-buffer accident. The probe is a
-     * simulation, so asking is free.</p>
+     * simulation, so asking is free, and it is the shared predicate: a present-but-full neighbour
+     * answers 0 and the fire stops on both builds.</p>
      */
     public static boolean receiverPresent(Level level, BlockPos pos) {
         if (level == null || level.isClientSide) return false;
         for (Direction side : Direction.values()) {
             IEnergyStorage target = neighbour(level, pos, side);
-            if (target != null && target.canReceive() && target.receiveEnergy(1, true) > 0) return true;
+            if (target != null && target.canReceive()
+                    && Bank.canTakeProbe(target.receiveEnergy(Bank.PROBE_FE, true))) {
+                return true;
+            }
         }
         return false;
     }

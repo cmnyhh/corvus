@@ -87,6 +87,9 @@ public final class GapSmoke {
         LOG.info("[gap-smoke] controller frame={} serial={} drone={}", Frames.id(controller), serial, drone.getUUID());
 
         dialoguePhase();
+        whitelistPhase(player, controller);
+        unimplementedPhase();
+        switchedOffPhase(player, controller, drone);
         drainPhase(player, controller);
         solarPhase(player, controller);
         noModulePhase(player, controller, drone);
@@ -113,6 +116,141 @@ public final class GapSmoke {
                 "resolved=" + DialogueServer.intentOf("快治疗一下"));
         check("dialogue.text.unknown", DialogueServer.intentOf("今天天气怎么样") == null
                 || !"order.heal".equals(DialogueServer.intentOf("今天天气怎么样")), "smalltalk is not an order");
+    }
+
+    // ---------------------------------------------------------------------------------------------
+    // 0b. R3: one whitelist, every implemented order, identical words for success and failure
+    // ---------------------------------------------------------------------------------------------
+
+    /**
+     * The eleven orders both builds now dispatch. The same sentences are asserted in the 1.21.1
+     * {@code DialogueCheck}, so a whitelist that drifts again fails on one side at once.
+     */
+    private static void whitelistPhase(ServerPlayer player, ItemStack controller) {
+        // sentence, expected id, the one module that order needs ("" = none)
+        List<String[]> cases = List.of(
+                new String[] {"扫描", "scan", "scan_mk1"},
+                new String[] {"附近有怪吗", "scan.hostile", "scan_mk1"},
+                new String[] {"找矿", "scan.ore", "scan_mk1"},
+                new String[] {"治疗", "order.heal", "medic_mk1"},
+                new String[] {"捡一下", "order.fetch", "carry_mk1"},
+                new String[] {"递弹", "order.supply", "carry_mk1"},
+                new String[] {"开灯", "order.light", "light_mk1"},
+                new String[] {"掩护我", "order.cover", "combat_mk1"},
+                new String[] {"停火", "order.hold", "combat_mk1"},
+                new String[] {"上工", "order.work", ""},
+                new String[] {"回来", "order.idle", ""});
+        for (String[] entry : cases) {
+            String sentence = entry[0];
+            String expected = entry[1];
+            String module = entry[2];
+            fit(controller, "omd_bat_300", module.isEmpty() ? new String[0] : new String[] {module});
+            Hardware.setEnergy(controller, Hardware.capacity(controller));
+            String resolved = DialogueServer.intentOf(sentence);
+            String reply = DialogueServer.replyTo(player, sentence);
+            check("whitelist." + expected + ".resolved", expected.equals(resolved), "resolved=" + resolved);
+            check("whitelist." + expected + ".dispatched", !reply.contains("尚未实现"), "reply=" + reply);
+        }
+        // The happy and the refusing path have to answer with the same words as the 1.21.1 build.
+        fit(controller, "omd_bat_300", "light_mk1");
+        Hardware.setEnergy(controller, Hardware.capacity(controller));
+        check("whitelist.reply.success", "指令已执行。".equals(DialogueServer.replyTo(player, "开灯")),
+                "reply=" + DialogueServer.replyTo(player, "开灯"));
+        fit(controller, "omd_bat_300", "medic_mk1");
+        Hardware.setEnergy(controller, Hardware.capacity(controller));
+        check("whitelist.reply.refused", "当前无法执行，请检查能量、目标或冷却。"
+                        .equals(DialogueServer.replyTo(player, "治疗")),
+                "a full-health owner cannot be healed: " + DialogueServer.replyTo(player, "治疗"));
+        fit(controller, "omd_bat_300");
+        Hardware.setEnergy(controller, Hardware.capacity(controller));
+        check("whitelist.reply.refused_work", "当前无法执行，请检查能量、目标或冷却。"
+                        .equals(DialogueServer.replyTo(player, "上工")),
+                "no mill nearby: " + DialogueServer.replyTo(player, "上工"));
+    }
+
+    /**
+     * An order the firmware does not own must still answer "尚未实现" — the other half of R3. Built from
+     * a two-document library so the check cannot be satisfied by the real data by accident.
+     */
+    private static void unimplementedPhase() {
+        var docs = new java.util.HashMap<String, com.google.gson.JsonObject>();
+        docs.put("chips/tactical.json", com.google.gson.JsonParser.parseString(
+                "{\"prompt_profile\":\"tactical\",\"unlocks_chat\":true,\"allows_smalltalk\":true,"
+                        + "\"bark_rate\":0.5,\"bark_cooldown_ticks\":100,\"voice_speed\":1.0}").getAsJsonObject());
+        docs.put("intents/order.hack.json", com.google.gson.JsonParser.parseString(
+                "{\"id\":\"order.hack\",\"aliases\":[\"hack\"],\"response\":\"action\"}").getAsJsonObject());
+        LocalDialogue library = new LocalDialogue(docs);
+        boolean[] executed = {false};
+        LocalDialogue.Device device = new LocalDialogue.Device() {
+            public boolean active() { return true; }
+            public String chip() { return "tactical"; }
+            public boolean installed(String family) { return true; }
+            public java.util.Map<String, String> slots() { return java.util.Map.of(); }
+            public boolean execute(String id) { executed[0] = true; return true; }
+            public String lookup(String intent, String question) { return ""; }
+        };
+        String reply = library.respond(device, "hack", "", new java.util.Random(1)).text();
+        check("whitelist.unknown_is_unimplemented", "当前固件尚未实现这项指令。".equals(reply), "reply=" + reply);
+        check("whitelist.unknown_not_executed", !executed[0], "an unknown order must not reach a handler");
+    }
+
+    // ---------------------------------------------------------------------------------------------
+    // 0c. R2: a module switched off in the wheel stays off, draws nothing and is not re-armed
+    // ---------------------------------------------------------------------------------------------
+
+    /**
+     * The wheel switch used to be invisible to {@code Hardware.online} on this build: a module switched
+     * off still drew power, and the automatic scan re-armed itself 15 s later.
+     */
+    private static void switchedOffPhase(ServerPlayer player, ItemStack controller, DroneEntity drone) {
+        fit(controller, "omd_bat_300", "carry_mk1", "scan_mk1");
+        Hardware.setEnergy(controller, Hardware.capacity(controller));
+        Hardware.Module scan = module(controller, "scan");
+        int both = Hardware.drainPerTick(controller);
+        int scanOnly = scan == null ? -1
+                : (int) Math.round(scan.drain() * Math.min(10D, Math.max(0D, scan.trait("drain_multiplier", 1D))));
+        check("offline.baseline_online", Hardware.online(controller, "carry") && Hardware.online(controller, "scan")
+                && both > scanOnly, "drain=" + both + " scanOnly=" + scanOnly);
+
+        // Flip the switch the wheel flips (same key, same helper).
+        DroneRemote.toggle(controller, "carry");
+        check("offline.switch_off", DroneRemote.disabled(controller, "carry"), "");
+        check("offline.online_false", !Hardware.online(controller, "carry"), "");
+        check("offline.drain_excludes_module", Hardware.drainPerTick(controller) == scanOnly,
+                "drain=" + Hardware.drainPerTick(controller) + " expected=" + scanOnly + " (carry 5 W/t gone)");
+        DroneRemote.toggle(controller, "carry");
+        check("offline.switch_back_on", !DroneRemote.disabled(controller, "carry")
+                && Hardware.online(controller, "carry") && Hardware.drainPerTick(controller) == both,
+                "drain=" + Hardware.drainPerTick(controller) + " expected=" + both);
+
+        // While a scanner is online the automatic patrol arms; switched off, 15 seconds of runtime must
+        // neither re-arm it nor flip the switch back.
+        Hardware.setEnergy(controller, Hardware.capacity(controller));
+        drone.systems().second(drone, player, controller);
+        boolean armedWhileOn = drone.systems().nextAutomaticTick() >= 0;
+        check("offline.autoscan_arms_when_on", armedWhileOn, "nextAutomatic=" + drone.systems().nextAutomaticTick());
+        DroneRemote.toggle(controller, "scan");
+        boolean stayedOff = true;
+        for (int second = 0; second < 15; second++) {
+            drone.systems().second(drone, player, controller);
+            stayedOff &= DroneRemote.disabled(controller, "scan")
+                    && !Hardware.online(controller, "scan")
+                    && drone.systems().nextAutomaticTick() < 0;
+        }
+        check("offline.autoscan_stays_off_15s", stayedOff,
+                "disabled=" + DroneRemote.disabled(controller, "scan")
+                        + " online=" + Hardware.online(controller, "scan")
+                        + " nextAutomatic=" + drone.systems().nextAutomaticTick());
+        check("offline.drain_after_15s", Hardware.drainPerTick(controller) == carryOnly(controller),
+                "drain=" + Hardware.drainPerTick(controller) + " expected=" + carryOnly(controller));
+        // Leave the controller as the later phases expect it: every switch back on.
+        DroneRemote.toggle(controller, "scan");
+    }
+
+    private static int carryOnly(ItemStack controller) {
+        Hardware.Module carry = module(controller, "carry");
+        return carry == null ? -1
+                : (int) Math.round(carry.drain() * Math.min(10D, Math.max(0D, carry.trait("drain_multiplier", 1D))));
     }
 
     // ---------------------------------------------------------------------------------------------

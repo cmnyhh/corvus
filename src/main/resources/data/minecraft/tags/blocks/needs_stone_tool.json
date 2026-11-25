@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "huhu_dronepal:ore_mill",
-    "huhu_dronepal:ore_mill_side"
+    "huhu_dronepal:ore_mill_side",
+    "huhu_dronepal:power_tower",
+    "huhu_dronepal:power_tower_mid",
+    "huhu_dronepal:power_tower_top"
   ]
 }

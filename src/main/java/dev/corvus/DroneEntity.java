@@ -1,5 +1,6 @@
 package dev.corvus;
 
+import dev.corvus.core.FrameStats;
 import dev.corvus.data.CorvusKeys;
 import dev.corvus.mill.DroneWork;
 import java.util.UUID;
@@ -10,11 +11,14 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -57,10 +61,22 @@ public final class DroneEntity extends PathfinderMob {
     private static final double STATION_RIGHT = 1.25D;
     private static final double STATION_BACK = 0.75D;
     private static final double STATION_HEIGHT = 1.55D;
+    /**
+     * Beyond this many blocks the projection is dropped instead of flown after the owner (the same 64
+     * blocks the 1.21.1 build uses); {@link DroneDeployment} rebuilds it at the station on the next
+     * player tick, so a long teleport costs a re-deploy, not a minute of chasing.
+     */
+    public static final double UNLOAD_DISTANCE = 64.0D;
+    /** Blend a frame without an {@code accel_response} falls back to; matches {@link FrameStats}. */
+    private static final double LEGACY_BLEND = 0.35D;
 
     private UUID owner;
     private Vec3 lastOwnerPosition;
     private float followHeading;
+    /** Tick before which the frame may not teleport again ({@code teleport_cooldown_ticks}). */
+    private int nextFrameTeleport;
+    /** Per-hit damage ceiling from the frame's {@code max_damage_per_hit}; see {@link #hurt}. */
+    private float ordinaryHitCap = 10F;
 
     // ---- combat / scan layer (port phase C) -------------------------------------------------
     /** Server-side scan runtime; ticks with the entity and never runs on the client. */
@@ -86,6 +102,12 @@ public final class DroneEntity extends PathfinderMob {
     private boolean workStalled;
     /** Dev-tool seam: a controller supplied for headless acceptance runs instead of the worn one. */
     private ItemStack testController = ItemStack.EMPTY;
+    /**
+     * Dev-tool seam: the pilot this projection follows. A dedicated acceptance run has no connected
+     * player, and {@code PlayerList#getPlayer} returns null for a {@code FakePlayer}, so without this
+     * seam {@link #tick} can only be driven by a real login.
+     */
+    private ServerPlayer testPilot;
     /** Flight-log accounting mark, shared with {@link DroneArchive}. */
     int archiveTick;
     /** Hitbox size of the current frame, in blocks. See {@link #getDimensions}. */
@@ -103,9 +125,129 @@ public final class DroneEntity extends PathfinderMob {
         return entityData.get(DATA_FRAME);
     }
 
+    /**
+     * Applies a frame: hitbox, hit points, per-hit cap and knockback resistance.
+     *
+     * <p>Every number comes from {@code data/huhu_dronepal/frames/*.json} through
+     * {@link Frames.Frame}; the health arithmetic is {@link FrameStats#maxHealth}. Before R1 this build
+     * stored the frame id and the hitbox only, so every airframe kept the vanilla 20 HP and an uncapped
+     * hit. The current health <em>fraction</em> is preserved, so swapping a frame in the terminal cannot
+     * heal a damaged drone for free (and a 10 % drone stays at 10 %).</p>
+     */
     public void setFrame(String frameId) {
         entityData.set(DATA_FRAME, Frames.canonical(frameId));
+        Frames.Frame frame = Frames.byId(getFrameId());
+        if (frame == null) return;
+        applyFrameStats(frame);
         applyFrameDimensions();
+    }
+
+    /**
+     * Writes the frame's combat numbers onto this entity: max health (keeping the current fraction),
+     * the {@code max_damage_per_hit} ceiling used by {@link #hurt} and the base knockback resistance.
+     *
+     * <p>The battery-mass modifier is a separate, transient modifier ({@code Batteries.tickDeployed}),
+     * so the base value here is the frame's own {@code knockback_resistance} and the two add up, exactly
+     * like the 1.21.1 build.</p>
+     */
+    private void applyFrameStats(Frames.Frame frame) {
+        float fraction = getMaxHealth() <= 0F ? 1F : getHealth() / getMaxHealth();
+        var maxHealth = getAttribute(Attributes.MAX_HEALTH);
+        if (maxHealth != null) {
+            maxHealth.setBaseValue(FrameStats.maxHealth(Math.round(frame.maxHealth()), 1.0D));
+            setHealth(Math.max(0F, (float) (getMaxHealth() * fraction)));
+        }
+        ordinaryHitCap = frame.hitCap() > 0F ? frame.hitCap() : 0F;
+        var resistance = getAttribute(Attributes.KNOCKBACK_RESISTANCE);
+        if (resistance != null) resistance.setBaseValue(frame.knockbackResistance());
+    }
+
+    /** The live per-hit damage ceiling, for tooling and the smoke harness. */
+    public float hitCap() {
+        return ordinaryHitCap;
+    }
+
+    /**
+     * Damage gate: the configured invulnerability policy, then the frame's per-hit ceiling.
+     *
+     * <p>The policy is the same one the 1.21.1 build reads ({@link ServerOptions#protection()}):
+     * {@code always} = untouchable, {@code creative_owner} = untouchable while the owner is in creative,
+     * {@code never} = the ceiling is the only protection. Damage sources flagged
+     * {@link DamageTypeTags#BYPASSES_INVULNERABILITY} (the void, {@code /kill}) skip the gate, so a
+     * projection can always be removed. The ceiling is applied through
+     * {@link FrameStats#mitigate(amount, multiplier, cap)} — the shared arithmetic, not a local
+     * {@code Math.min}.</p>
+     */
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+        boolean bypasses = source.is(DamageTypeTags.BYPASSES_INVULNERABILITY);
+        if (!bypasses) amount = (float) FrameStats.mitigate(amount, 1.0D, ordinaryHitCap);
+        // The policy is a server decision (same guard as the 1.21.1 build); the client still plays the
+        // hit so the animation/sound stay in sync.
+        if (level() instanceof ServerLevel
+                && protectedFrom(ServerOptions.protection(), ownerCreative(), bypasses)) return false;
+        return super.hurt(source, amount);
+    }
+
+    /** True when the flying owner is a creative player; false when the owner is offline or unknown. */
+    boolean ownerCreative() {
+        if (owner == null || !(level() instanceof ServerLevel serverLevel)) return false;
+        ServerPlayer pilot = serverLevel.getServer().getPlayerList().getPlayer(owner);
+        return pilot != null && pilot.isCreative();
+    }
+
+    /**
+     * The invulnerability decision for one hit: {@code always} = untouchable, {@code creative_owner} =
+     * untouchable while the owner is creative, {@code never} = the per-hit ceiling is the only
+     * protection. A source that bypasses invulnerability (the void, {@code /kill}) always lands.
+     *
+     * <p>Pure, so the acceptance run can drive all three policies (and both owner game modes) without
+     * needing a second connected player; {@link #hurt} is the only production caller.</p>
+     *
+     * @param policy         the configured policy, never {@code null}
+     * @param ownerCreative  whether the owner is a creative player
+     * @param bypasses       whether the damage source is tagged {@code bypasses_invulnerability}
+     * @return true when the hit must be refused
+     */
+    public static boolean protectedFrom(ServerOptions.Protection policy, boolean ownerCreative, boolean bypasses) {
+        if (bypasses) return false;
+        return policy == ServerOptions.Protection.always
+                || (policy == ServerOptions.Protection.creative_owner && ownerCreative);
+    }
+
+    /**
+     * True when the owner is too far away to keep flying after them ({@link #UNLOAD_DISTANCE}).
+     *
+     * <p>Separate from {@link #tick} so the rule is one line both the tick and the acceptance run read.</p>
+     */
+    boolean tooFarToFollow(net.minecraft.world.entity.Entity pilot) {
+        return pilot != null && distanceToSqr(pilot) > UNLOAD_DISTANCE * UNLOAD_DISTANCE;
+    }
+
+    /**
+     * One follow step towards the station, frame-driven.
+     *
+     * <p>Two rules from the frame file: {@code follow_teleport_threshold} (beyond it, and once
+     * {@code teleport_cooldown_ticks} have elapsed, the projection arrives in one step unless
+     * {@code teleport_fail_chance} rolls) and {@code accel_response} (the per-tick easing fraction,
+     * {@link FrameStats#followStep}). This build used a fixed {@code lerp(target, 0.35)} that ignored the
+     * frame entirely, which is why a 磐石 and a 夜枭 followed at the same speed.</p>
+     */
+    Vec3 followPosition(Vec3 target) {
+        Frames.Frame frame = Frames.byId(getFrameId());
+        if (frame == null) return position().lerp(target, LEGACY_BLEND);
+        double threshold = frame.teleportThreshold();
+        if (tickCount >= nextFrameTeleport && position().distanceToSqr(target) > threshold * threshold) {
+            nextFrameTeleport = tickCount + frame.teleportCooldown();
+            if (frame.teleportFailChance() <= 0F || getRandom().nextFloat() >= frame.teleportFailChance()) {
+                return target;
+            }
+        }
+        double accel = frame.accelResponse();
+        return new Vec3(
+                FrameStats.followStep(getX(), target.x, accel, 1),
+                FrameStats.followStep(getY(), target.y, accel, 1),
+                FrameStats.followStep(getZ(), target.z, accel, 1));
     }
 
     /**
@@ -215,6 +357,9 @@ public final class DroneEntity extends PathfinderMob {
     /** Dev-tool seam: makes {@link #controller()} answer with a supplied stack. */
     public void setTestController(ItemStack stack) { testController = stack == null ? ItemStack.EMPTY : stack; }
 
+    /** Dev-tool seam: makes {@link #tick()} follow this pilot instead of a player-list lookup. */
+    public void setTestPilot(ServerPlayer pilot) { testPilot = pilot; }
+
     /** The controller that carries this projection's serial, or EMPTY when it is not worn. */
     public ItemStack controller() {
         if (!testController.isEmpty()) return testController;
@@ -267,8 +412,8 @@ public final class DroneEntity extends PathfinderMob {
     public void tick() {
         super.tick();
         if (!(level() instanceof ServerLevel serverLevel)) return;
-        ServerPlayer pilot = owner == null
-                ? null
+        ServerPlayer pilot = testPilot != null ? testPilot
+                : owner == null ? null
                 : serverLevel.getServer().getPlayerList().getPlayer(owner);
         CompoundTag state = pilot == null ? null : pilot.getPersistentData();
         boolean active = state != null
@@ -293,6 +438,12 @@ public final class DroneEntity extends PathfinderMob {
         }
         systems.tick(this, pilot);
         combat.tick(this);
+        if (tooFarToFollow(pilot)) {
+            // Out of follow range: drop the body. DroneDeployment.reconcile() rebuilds it at the
+            // station on the owner's next tick, which is the 1.21.1 "unload then redeploy" behaviour.
+            discard();
+            return;
+        }
         if (workTarget != null && DroneWork.chase(this, pilot)) return;
         working(false);
         if (holdingStation) {
@@ -301,11 +452,11 @@ public final class DroneEntity extends PathfinderMob {
             return;
         }
         Vec3 target = station(pilot.position(), followHeading);
-        // TODO(corvus-core): 0.35 is a fixed blend and ignores the frame's accel_response; it should be
-        // dev.corvus.core.FrameStats#followStep(..., accel, 1) per axis, like the 1.21.1 side.
         setDeltaMovement(Vec3.ZERO);
         Vec3 previous = position();
-        setPos(previous.lerp(target, 0.35D));
+        // The blend and the teleport branch are the frame's (dev.corvus.core.FrameStats), so the two
+        // builds step identically for the same frame JSON.
+        setPos(followPosition(target));
         double speed = position().subtract(previous).horizontalDistance();
         entityData.set(DATA_FLIGHT, (byte) Math.round(15 * Math.min(speed / 0.22D, 1D)));
         if (getTarget() == null) faceHeading(followHeading);
@@ -391,7 +542,9 @@ public final class DroneEntity extends PathfinderMob {
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
         if (tag.hasUUID(CorvusKeys.OWNER)) owner = tag.getUUID(CorvusKeys.OWNER);
-        if (tag.contains(CorvusKeys.FRAME)) setFrame(tag.getString(CorvusKeys.FRAME));
+        // Always re-apply: a save written before R1 has no frame stats, and an explicit id must update
+        // max health / hit cap / knockback even when the synched default already matches.
+        setFrame(tag.contains(CorvusKeys.FRAME) ? tag.getString(CorvusKeys.FRAME) : getFrameId());
         if (tag.contains(CorvusKeys.PAINT)) setPaint(tag.getString(CorvusKeys.PAINT));
         workTarget = tag.contains("WorkTarget") ? BlockPos.of(tag.getLong("WorkTarget")) : null;
         workStalled = tag.getBoolean("WorkStalled");

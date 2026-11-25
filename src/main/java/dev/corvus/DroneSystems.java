@@ -102,6 +102,16 @@ final class DroneSystems {
         if (intent.equals("order.fetch") || intent.equals("order.supply")) {
             return CarryLight.execute(player, stack, intent);
         }
+        if (intent.equals("order.cover") || intent.equals("order.hold")) {
+            // Weapon-bus orders, routed exactly like the 1.21.1 Hardware.execute: a fitted combat module
+            // that declares the intent and is online, then the bus arms (cover) or safes (hold). These two
+            // ids used to be blocked by the dialogue whitelist on this side alone (R3).
+            Hardware.Module combat = Hardware.installed(stack).stream()
+                    .filter(candidate -> candidate.family().equals("combat") && candidate.intents().contains(intent))
+                    .findFirst().orElse(null);
+            if (combat == null || !Hardware.online(stack, "combat")) return false;
+            return DroneCombat.setDeployed(drone, intent.equals("order.cover"));
+        }
         String family = intent.equals("order.heal") ? "medic" : "scan";
         Hardware.Module module = Hardware.installed(stack).stream()
                 .filter(candidate -> candidate.family().equals(family) && candidate.intents().contains(intent))
@@ -415,6 +425,11 @@ final class DroneSystems {
             nextAutomatic = now + ServerOptions.autoScanSeconds() * 20L;
             scan(drone, player, stack, scanner, "scan", false);
         }
+    }
+
+    /** Test hook: the tick the automatic patrol is next due, or -1 when it is not armed. */
+    long nextAutomaticTick() {
+        return nextAutomatic;
     }
 
     /** Test hook: how many ore marks the current scan holds. */

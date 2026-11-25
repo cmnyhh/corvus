@@ -91,8 +91,9 @@ public final class BatteryBankEntity extends BlockEntity implements IEnergyStora
 
     public Component status() {
         // Same shape as the 1.21.1 build: percent is filled into "%3$s%%" by the format string, and the
-        // gauge is reported as a human 1-based segment out of four.
-        return Component.translatable("message.dronepal.bank_status", energy, capacity(), percent(), gauge() + 1);
+        // gauge is printed as the raw 0..3 segment (the block-state value), not a 1-based "x/4" — the two
+        // builds used to print 3/4 and 2/4 for the same charge (R5).
+        return Component.translatable("message.dronepal.bank_status", energy, capacity(), percent(), gauge());
     }
 
     public int storedEnergy() { return energy; }

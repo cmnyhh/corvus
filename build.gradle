@@ -42,6 +42,11 @@ minecraft {
             property 'corvus.power', (project.findProperty('corvusPower') ?: '0').toString()
             // Ore mill acceptance run (see dev.corvus.devtools.MillSmoke).
             property 'corvus.mill', (project.findProperty('corvusMill') ?: '0').toString()
+            // Wireless power grid acceptance run (see dev.corvus.devtools.GridSmoke).
+            property 'corvus.grid', (project.findProperty('corvusGrid') ?: '0').toString()
+            // Power interface acceptance run (see dev.corvus.devtools.PowerIoSmoke): port outlet,
+            // intake from a bank, cable runs (32-block limit) and persistence.
+            property 'corvus.powerio', (project.findProperty('corvusPowerIo') ?: '0').toString()
             // A unique log file per acceptance run, so parallel agents cannot overwrite each other's
             // latest.log (the default Forge appender is one shared file in run-server/logs).
             if (project.hasProperty('corvusLog')) {

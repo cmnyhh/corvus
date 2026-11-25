@@ -20,8 +20,24 @@ import org.lwjgl.glfw.GLFW;
 public final class DroneWheel extends Screen {
     private static final KeyMapping KEY = new KeyMapping("key.dronepal.wheel", InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.categories.dronepal");
     private static final int RING=0xd526293a, EMPTY=0xa51c1e2c, SELECTED=0xf165438e, WHITE=0xfff5f2ff, MUTED=0xffc3bcd2;
+    /**
+     * The wheel only appears after the key has been held this long. Measuring before the screen opens
+     * matters: {@code Minecraft.setScreen} calls {@code KeyMapping.releaseAll()}, so once a screen is
+     * up {@code KEY.isDown()} is false even while the physical V key is still held.
+     */
+    private static final long HOLD_MILLIS=160;
+    /** Dev-only timeline trace: {@code -Ddronepal.wheelLog=1} prints every open/close with a timestamp. */
+    private static final boolean DIAG="1".equals(System.getProperty("dronepal.wheelLog"));
+    private static String lastSample;
     private static int sequence;
     private static boolean lastDown;
+    /** Wall-clock start of the press under measurement, 0 when no press is pending. */
+    private static long pressedAt;
+    /** This press already opened the wheel or showed the no-drone hint; release must not act again. */
+    private static boolean resolved;
+    static void diag(String message, Object... args) {
+        if(DIAG) System.out.println("[wheel-diag] "+String.format(message,args));
+    }
     private final int nonce=++sequence;
     private final long opened=net.minecraft.Util.getMillis();
     private DroneRemote.Status state;
@@ -31,6 +47,8 @@ public final class DroneWheel extends Screen {
     private void query() { PacketDistributor.sendToServer(new DroneRemote.Query(nonce, ++revision)); }
     private void accept(DroneRemote.Status update) {
         if (update.nonce() != nonce || update.revision() <= accepted || update.revision() < pending) return;
+        diag("accept nonce=%d rev=%d signal=%s enabled=0x%x", update.nonce(), update.revision(),
+                update.signal(), update.enabled());
         state = update;
         accepted = update.revision();
         pending = 0;
@@ -49,16 +67,88 @@ public final class DroneWheel extends Screen {
     @SubscribeEvent static void clientTick(ClientTickEvent.Post event) {
         Minecraft game=Minecraft.getInstance();
         boolean down=KEY.isDown();
+        long now=net.minecraft.Util.getMillis();
+        if(DIAG) {
+            String screen = game.screen==null ? "null" : game.screen.getClass().getSimpleName();
+            String sample = down+"/"+lastDown+"/"+screen;
+            if(!sample.equals(lastSample)) {
+                diag("tick at=%d down=%s lastDown=%s screen=%s", now, down, lastDown, screen);
+                lastSample=sample;
+            }
+        }
         if(down && !lastDown && game.player!=null && game.screen==null) {
-            DroneWheel w=new DroneWheel();
-            game.setScreen(w);
-            w.query();
+            // Hold-to-open: only start the stopwatch here, never show the screen yet.
+            pressedAt=now;
+            resolved=false;
+            diag("press at=%d; wheel waits for %d ms", now, HOLD_MILLIS);
+        }
+        if(down && !resolved && pressedAt!=0 && game.player!=null && game.screen==null
+                && now-pressedAt>=HOLD_MILLIS) {
+            long held=now-pressedAt;
+            boolean noDrone=noDrone(game);
+            resolved=true;
+            pressedAt=0;
+            if(noDrone) {
+                hint(game);
+            } else {
+                diag("open requested at=%d held=%d", now, held);
+                DroneWheel w=new DroneWheel();
+                game.setScreen(w);
+                w.query();
+                diag("open done at=%d screen=%s keyDownAfterSetScreen=%s", net.minecraft.Util.getMillis(),
+                        game.screen==null?"null":game.screen.getClass().getSimpleName(), KEY.isDown());
+            }
+        }
+        if(!down && pressedAt!=0) {
+            // Released before the hold completed: a tap never opens, never acts, and never pretends a
+            // command was attempted, so it stays silent even when no controller is fitted.
+            diag("tap released at=%d held=%d resolved=%s", now, now-pressedAt, resolved);
+            pressedAt=0;
+            resolved=false;
         }
         lastDown=down;
     }
+
+    /** True only when the synced Curios slot positively has no controller in it. */
+    private static boolean noDrone(Minecraft game) {
+        if(game.player==null) return true;
+        try {
+            var handler=top.theillusivec4.curios.api.CuriosApi.getCuriosInventory(game.player)
+                    .flatMap(inventory -> inventory.getStacksHandler("drone"));
+            if(handler.isEmpty()) return true;
+            var stacks=handler.get().getStacks();
+            for(int i=0;i<stacks.getSlots();i++) {
+                if(stacks.getStackInSlot(i).is(Dronepal.DRONE.get())) return false;
+            }
+            return true;
+        } catch(RuntimeException | LinkageError unreadable) {
+            // Curios did not expose the slot (e.g. a client-side read failure): never swallow the wheel.
+            diag("controller read failed: %s", unreadable.toString());
+            return false;
+        }
+    }
+
+    private static void hint(Minecraft game) {
+        if(game.player==null) return;
+        game.player.displayClientMessage(Component.translatable("dronepal.wheel.no_drone"), true);
+        diag("hint shown: no deployed drone");
+    }
     @Override protected void init() {
+        diag("init nonce=%d age=%d keyDown=%s", nonce, net.minecraft.Util.getMillis()-opened, KEY.isDown());
         var window=minecraft.getWindow();
         GLFW.glfwSetCursorPos(window.getWindow(), window.getScreenWidth()/2.0, window.getScreenHeight()/2.0);
+    }
+    @Override public void onClose() {
+        diag("onClose nonce=%d age=%d selection=%d", nonce, net.minecraft.Util.getMillis()-opened, selection);
+        if(DIAG) {
+            var stack=new Throwable().getStackTrace();
+            for(int i=1;i<Math.min(stack.length,9);i++) System.out.println("[wheel-diag]   at "+stack[i]);
+        }
+        super.onClose();
+    }
+    @Override public void removed() {
+        diag("removed nonce=%d age=%d", nonce, net.minecraft.Util.getMillis()-opened);
+        super.removed();
     }
     @Override public boolean isPauseScreen() { return false; }
     private java.util.List<net.minecraft.util.FormattedCharSequence> footer() {
@@ -173,6 +263,7 @@ public final class DroneWheel extends Screen {
         }
     }
     private void sendAction(int slot) {
+        diag("sendAction slot=%d action=%s selectable=%s pending=%d", slot, action(slot), selectable(slot), pending);
         if (pending != 0 || !selectable(slot)) return;
         pending = ++revision;
         PacketDistributor.sendToServer(new DroneRemote.Command(state.serial(), action(slot), nonce, pending));
@@ -189,10 +280,15 @@ public final class DroneWheel extends Screen {
         var window = minecraft.getWindow();
         selection = layout().sector(minecraft.mouseHandler.xpos() * width / window.getScreenWidth(),
                 minecraft.mouseHandler.ypos() * height / window.getScreenHeight());
-        if(!clickedWhileOpen && net.minecraft.Util.getMillis()-opened>=160) sendAction(selection);
+        diag("release nonce=%d age=%d selection=%d clicked=%s keyDown=%s", nonce,
+                net.minecraft.Util.getMillis()-opened, selection, clickedWhileOpen, KEY.isDown());
+        // The wheel only exists after a completed hold, so releasing always runs the aimed sector.
+        if(!clickedWhileOpen) sendAction(selection);
         onClose();
     }
     @Override public boolean keyReleased(int key,int scan,int modifiers) {
+        diag("keyReleased key=%d scan=%d matches=%s screen=%s", key, scan, KEY.matches(key,scan),
+                minecraft==null||minecraft.screen==null?"null":minecraft.screen.getClass().getSimpleName());
         if(KEY.matches(key,scan)) { release(); return true; }
         return super.keyReleased(key,scan,modifiers);
     }

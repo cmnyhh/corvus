@@ -246,13 +246,14 @@ final class DroneSystems {
                 } else healingLeft = 0;
             }
         } else healingLeft = 0;
-        // TODO(grid): the wireless grid pays first; only the shortfall is taken from the on-board cell.
-        int gridFe = dev.dronepal.power.grid.GridLink.drawDrone(level, drone, drain);
-        drain -= Math.min(drain, Math.max(0, gridFe));
-        boolean gridOnline = gridFe > 0 || dev.dronepal.power.grid.GridLink.droneInGrid(level, drone);
-        int end = Math.clamp(start + charge - drain, 0, capacity);
-        if (end != start) Hardware.setEnergy(stack, end);
-        DroneTelemetry.publish(drone, p, stack, Math.min(drain, start + charge), charge, gridOnline);
+        // TODO(grid): the wireless grid pays the module drain first and writes the rest into the cell.
+        var grid = dev.dronepal.power.grid.DroneCharger.service(level, drone, stack, drain);
+        drain -= grid.drainPaid();
+        int afterGrid = Hardware.energy(stack);
+        int end = Math.clamp(afterGrid + charge - drain, 0, capacity);
+        if (end != afterGrid) Hardware.setEnergy(stack, end);
+        DroneTelemetry.publish(drone, p, stack, Math.min(Math.max(0, drain), afterGrid + charge), charge,
+                grid.online(), grid.ratePerSecond());
         CarryLight.second(drone,p,stack);
         // The mill's extra 20 FE/t is settled with the rest of the hardware draw, once a second.
         dev.dronepal.mill.DroneWork.second(drone, stack);

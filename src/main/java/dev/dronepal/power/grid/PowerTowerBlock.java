@@ -80,6 +80,10 @@ public final class PowerTowerBlock extends BaseEntityBlock {
         if (!level.isClientSide && !movedByPiston && state.is(this) && !next.is(this)) {
             clearPart(level, pos.above());
             clearPart(level, pos.above(2));
+            // Spawn directly instead of through the loot table: the bottom is the only segment
+            // with an item, and this makes "break any segment, one drop" independent of loot data.
+            net.minecraft.world.Containers.dropItemStack(level, pos.getX() + 0.5D, pos.getY() + 0.5D,
+                    pos.getZ() + 0.5D, new net.minecraft.world.item.ItemStack(TowerRegistry.TOWER.get()));
         }
         super.onRemove(state, level, pos, next, movedByPiston);
     }

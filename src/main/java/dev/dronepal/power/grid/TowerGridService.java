@@ -174,8 +174,10 @@ public final class TowerGridService {
     /** Test/command seam: allocate immediately, ignoring the normal once-per-tick guard. */
     static void forceAllocate(ServerLevel level) {
         LevelState state = state(level);
-        state.tick = level.getGameTime();
         allocate(state);
+        // Mark the current game tick so the device draw that follows this call does not allocate
+        // a second time; repeated calls still allocate once each because they do not check the mark.
+        state.tick = level.getGameTime();
     }
 
     private static void allocate(LevelState state) {
@@ -291,6 +293,15 @@ public final class TowerGridService {
         if (load == null) return false;
         Binding binding = state.loads.get(load);
         return binding != null && binding.supplier != null && Grid.reachable(binding.hops);
+    }
+
+    /** True when the drone has a tower attached (whether or not it is charging). */
+    static boolean droneAttached(ServerLevel level, net.minecraft.world.entity.Entity drone) {
+        LevelState state = state(level);
+        DroneLoad load = state.droneLoads.get(drone.getUUID());
+        if (load == null) return false;
+        Binding binding = state.loads.get(load);
+        return binding != null && binding.attached != null;
     }
 
     /** Test/command readout of one device's current attachment and grant. */

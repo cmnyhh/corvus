@@ -1,0 +1,21 @@
+// GUI fixture for the V command wheel: scripts real key timing (tap / hold / hold+aim) and photographs
+// each state. Same shape as gradle/mill-visual.init.gradle, but reuses the project's dev world so the
+// player already exists in a loaded chunk.
+// gradlew -I gradle/wheel-visual.init.gradle runWheelVisual
+allprojects { p -> p.afterEvaluate {
+    if (!p.plugins.hasPlugin('net.neoforged.moddev')) return
+    def source = p.sourceSets.create('wheelVisual') {
+        compileClasspath += p.sourceSets.main.output + p.sourceSets.main.compileClasspath
+        runtimeClasspath += p.sourceSets.main.output + p.sourceSets.main.runtimeClasspath
+    }
+    p.neoForge.mods.huhu_dronepal.sourceSet(source)
+    p.neoForge.runs.create('wheelVisual') {
+        client()
+        sourceSet = source
+        gameDirectory = p.layout.projectDirectory.dir('run')
+        programArguments.addAll('--width','1280','--height','800','--quickPlaySingleplayer','New World')
+        systemProperty 'dronepal.wheelTiming', '1'
+        systemProperty 'dronepal.wheelLog', '1'
+        systemProperty 'dronepal.wheel.dir', p.layout.projectDirectory.dir('artifacts/client').asFile.absolutePath
+    }
+} }

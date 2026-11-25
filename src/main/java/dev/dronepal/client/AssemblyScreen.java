@@ -6,6 +6,7 @@ import dev.dronepal.SurvivalWorks;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Tooltip;
@@ -36,6 +37,11 @@ public final class AssemblyScreen extends AbstractContainerScreen<AssemblyMenu> 
 
     private Button previous, next, start;
     private int scroll, shownSelection = -1, hoveredRow = -1;
+    /** Row the player just clicked, highlighted until the server's answer arrives. -1 = none in flight. */
+    private int pendingRow = -1;
+    private long pendingAt, deniedAt;
+    /** How long an unanswered click keeps the row lit before the screen trusts the menu again. */
+    private static final long PENDING_MS = 1000L, DENIED_MS = 1200L;
 
     public AssemblyScreen(AssemblyMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
@@ -56,23 +62,50 @@ public final class AssemblyScreen extends AbstractContainerScreen<AssemblyMenu> 
 
     @Override protected void init() {
         super.init();
-        previous = arrowButton(268, 3, "‹", 0, "assembly.dronepal.previous");
+        previous = arrowButton(268, 3, "‹", -1, "assembly.dronepal.previous");
         next = arrowButton(290, 3, "›", 1, "assembly.dronepal.next");
         start = addRenderableWidget(Button.builder(Component.translatable("assembly.dronepal.start"), b -> click(2))
                 .bounds(leftPos + COL_X, topPos + START_Y, COL_W, 18).build());
     }
-    private Button arrowButton(int x, int y, String glyph, int action, String tooltip) {
+    private Button arrowButton(int x, int y, String glyph, int delta, String tooltip) {
         Component description = Component.translatable(tooltip);
-        return addRenderableWidget(Button.builder(Component.literal(glyph), b -> click(action))
+        return addRenderableWidget(Button.builder(Component.literal(glyph), b -> step(delta))
                 .bounds(leftPos + x, topPos + y, 20, 14).tooltip(Tooltip.create(description)).build());
     }
 
     // ---- selection ----
+    /**
+     * Sends the clicked row straight through. The menu's {@code selection()} is only a mirror of the
+     * server's ContainerData, so right after an earlier click (or on a link with any latency) it still
+     * holds the previous row; comparing the click against it swallowed the packet and the row never
+     * moved. {@code AssemblyMenu.clickMenuButton} resolves SELECT+index idempotently, so the packet is
+     * always safe to send, and the row is lit locally so the click answers immediately.
+     */
     private void selectIndex(int index) {
-        if (menu.busy() || index < 0 || index >= entries().size() || index == menu.selection() - 1) return;
+        if (index < 0 || index >= entries().size()) return;
+        if (menu.busy()) { deniedAt = Util.getMillis(); return; }
         ensureVisible(index);
+        pendingRow = index;
+        pendingAt = Util.getMillis();
         click(AssemblyMenu.SELECT + index);
     }
+    /** Relative step (‹ › and ↑↓): resolved by the server from its own index, so it cannot go stale. */
+    private void step(int delta) {
+        pendingRow = -1;
+        if (menu.busy()) { deniedAt = Util.getMillis(); return; }
+        click(delta < 0 ? 0 : 1);
+    }
+    /** Highlighted row: the click still in flight, else the server's selection. 0-based, -1 = nothing. */
+    private int selectedRow() {
+        if (pendingRow >= 0) {
+            int server = menu.selection() - 1;
+            if (server == pendingRow || Util.getMillis() - pendingAt > PENDING_MS) pendingRow = -1;
+            else return pendingRow;
+        }
+        return menu.selection() - 1;
+    }
+    /** True briefly after a click was refused because a job owns the blueprint. */
+    private boolean deniedNow() { return menu.busy() && Util.getMillis() - deniedAt < DENIED_MS; }
     private void ensureVisible(int index) {
         int max = Math.max(0, entries().size() - ROWS);
         if (index < scroll) scroll = index;
@@ -103,9 +136,9 @@ public final class AssemblyScreen extends AbstractContainerScreen<AssemblyMenu> 
     @Override public boolean mouseScrolled(double mouseX, double mouseY, double scrollX, double scrollY) {
         int size = entries().size();
         if (rowAt(mouseX, mouseY) >= 0 && size > ROWS) {
-            int step = scrollY > 0 ? -1 : scrollY < 0 ? 1 : 0;
-            if (step != 0) {
-                scroll = Math.clamp(scroll + step, 0, size - ROWS);
+            int notches = scrollY > 0 ? -1 : scrollY < 0 ? 1 : 0;
+            if (notches != 0) {
+                scroll = Math.clamp(scroll + notches, 0, size - ROWS);
                 return true;
             }
         }
@@ -113,11 +146,10 @@ public final class AssemblyScreen extends AbstractContainerScreen<AssemblyMenu> 
     }
     @Override public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
         int size = entries().size();
-        if (size > 0 && !menu.busy()) {
-            int selection = Math.clamp(menu.selection() - 1, -1, size - 1);
+        if (size > 0) {
             switch (keyCode) {
-                case GLFW.GLFW_KEY_UP -> { selectIndex(selection <= 0 ? 0 : selection - 1); return true; }
-                case GLFW.GLFW_KEY_DOWN -> { selectIndex(selection < 0 ? 0 : Math.min(size - 1, selection + 1)); return true; }
+                case GLFW.GLFW_KEY_UP -> { step(-1); return true; }
+                case GLFW.GLFW_KEY_DOWN -> { step(1); return true; }
                 case GLFW.GLFW_KEY_PAGE_UP -> { scroll = Math.max(0, scroll - ROWS); return true; }
                 case GLFW.GLFW_KEY_PAGE_DOWN -> { scroll = Math.clamp(scroll + ROWS, 0, Math.max(0, size - ROWS)); return true; }
                 default -> { }
@@ -143,7 +175,7 @@ public final class AssemblyScreen extends AbstractContainerScreen<AssemblyMenu> 
     @Override public void render(GuiGraphics g, int mouseX, int mouseY, float partial) {
         followSelection();
         hoveredRow = rowAt(mouseX, mouseY);
-        start.active = !menu.busy() && menu.selection() > 0;
+        start.active = !menu.busy() && selectedRow() >= 0;
         start.setMessage(Component.translatable(menu.busy() ? "assembly.dronepal.working" : "assembly.dronepal.start"));
         previous.active = next.active = !menu.busy();
         super.render(g, mouseX, mouseY, partial);
@@ -162,6 +194,13 @@ public final class AssemblyScreen extends AbstractContainerScreen<AssemblyMenu> 
         g.fill(lx, ly, lx + LIST_W, ly + LIST_H, 0xff16251f);
         rows(g, lx, ly);
         if (menu.busy()) g.fill(lx, ly, lx + LIST_W, ly + LIST_H, 0x9a0f1b16);
+        // A refused click has to answer too: the row the player pressed gets a red frame for a moment.
+        if (deniedNow()) {
+            g.fill(lx - 1, ly - 1, lx + LIST_W + 1, ly, SHORT);
+            g.fill(lx - 1, ly + LIST_H, lx + LIST_W + 1, ly + LIST_H + 1, SHORT);
+            g.fill(lx - 1, ly - 1, lx, ly + LIST_H + 1, SHORT);
+            g.fill(lx + LIST_W, ly - 1, lx + LIST_W + 1, ly + LIST_H + 1, SHORT);
+        }
         for (var slot : menu.slots) {
             int sx = x + slot.x, sy = y + slot.y;
             g.fill(sx - 1, sy - 1, sx + 17, sy + 17, 0xff638173);
@@ -174,7 +213,7 @@ public final class AssemblyScreen extends AbstractContainerScreen<AssemblyMenu> 
 
     private void rows(GuiGraphics g, int lx, int ly) {
         var entries = entries();
-        int selection = menu.selection() - 1;
+        int selection = selectedRow();
         for (int row = 0; row < ROWS; row++) {
             int index = scroll + row;
             if (index >= entries.size()) break;
@@ -206,11 +245,12 @@ public final class AssemblyScreen extends AbstractContainerScreen<AssemblyMenu> 
 
     @Override protected void renderLabels(GuiGraphics g, int mouseX, int mouseY) {
         var entries = entries();
-        int index = menu.selection() - 1;
+        int index = selectedRow();
         g.drawString(font, title, 8, 6, TEXT, false);
         g.drawString(font, Component.translatable("assembly.dronepal.catalog_size", entries.size()), 178, 6, DIM, false);
         if (entries.isEmpty()) g.drawString(font, Component.translatable("assembly.dronepal.no_catalog"), LIST_X + 6, LIST_Y + 6, SHORT, false);
-        g.drawString(font, Component.translatable(menu.busy() ? "assembly.dronepal.busy_hint" : "assembly.dronepal.list_hint"), LIST_X + 2, 132, DIM, false);
+        g.drawString(font, Component.translatable(menu.busy() ? "assembly.dronepal.busy_hint" : "assembly.dronepal.list_hint"),
+                LIST_X + 2, 132, deniedNow() ? SHORT : DIM, false);
         g.drawString(font, playerInventoryTitle, 8, 144, TEXT, false);
 
         Component name = index >= 0 && index < entries.size() ? entries.get(index).name() : menu.getSlot(AssemblyMenu.PREVIEW).getItem().getHoverName();

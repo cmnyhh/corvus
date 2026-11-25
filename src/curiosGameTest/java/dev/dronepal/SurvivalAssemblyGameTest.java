@@ -134,6 +134,19 @@ public final class SurvivalAssemblyGameTest {
         player.setPos(station.getBlockPos().getCenter());
         test.assertTrue(menu.clickMenuButton(player, AssemblyMenu.SELECT), "selection failed after returning in range");
 
+        // Every visible list row must select exactly itself, and re-clicking the row that is already
+        // selected must be accepted. The screen sends SELECT+index unconditionally: menu.selection() is
+        // a mirror of this ContainerData that lags on the client, and using it to skip "redundant"
+        // clicks dropped real row clicks (the "clicking a blueprint does nothing" bug).
+        for (int i = 0; i < plans.size(); i++) {
+            test.assertTrue(menu.clickMenuButton(player, AssemblyMenu.SELECT + i), "row " + i + " was refused");
+            test.assertTrue(station.selectedIndex() == i, "row " + i + " selected index " + station.selectedIndex());
+            test.assertTrue(menu.selection() == i + 1, "row " + i + " did not reach the menu data slot");
+        }
+        int last = plans.size() - 1;
+        test.assertTrue(menu.clickMenuButton(player, AssemblyMenu.SELECT + last), "re-selecting the current row was refused");
+        test.assertTrue(station.selectedIndex() == last, "re-selecting the current row moved it");
+
         int listRight = AssemblyMenu.LIST_X + AssemblyMenu.LIST_WIDTH;
         int listBottom = AssemblyMenu.LIST_Y + AssemblyMenu.LIST_ROWS * AssemblyMenu.ROW_HEIGHT;
         test.assertTrue(AssemblyMenu.PANEL_WIDTH <= 320 && AssemblyMenu.PANEL_HEIGHT <= 240, "panel no longer fits a small window");

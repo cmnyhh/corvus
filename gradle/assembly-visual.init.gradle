@@ -1,0 +1,18 @@
+// Isolated client that opens the real assembly bench, drives real mouse clicks on the blueprint list
+// (screen.mouseClicked, the same entry point MouseHandler uses) and photographs the highlighted row.
+// gradlew -I gradle/assembly-visual.init.gradle runAssemblyVisual
+allprojects { p -> p.afterEvaluate {
+    if (!p.plugins.hasPlugin('net.neoforged.moddev')) return
+    def source = p.sourceSets.create('assemblyVisual') {
+        compileClasspath += p.sourceSets.main.output + p.sourceSets.main.compileClasspath
+        runtimeClasspath += p.sourceSets.main.output + p.sourceSets.main.runtimeClasspath
+    }
+    p.neoForge.mods.huhu_dronepal.sourceSet(source)
+    p.neoForge.runs.create('assemblyVisual') {
+        client()
+        sourceSet = source
+        gameDirectory = p.layout.projectDirectory.dir('run')   // the healthy 1.21.1 dev world
+        programArguments.addAll('--width','1280','--height','800','--quickPlaySingleplayer','New World')
+        systemProperty 'dronepal.assembly.dir', p.layout.projectDirectory.dir('artifacts/client').asFile.absolutePath
+    }
+} }

@@ -68,6 +68,7 @@
   "dronepal.wheel.solar": "Solar +%s FE/t",
   "dronepal.wheel.connecting": "Connecting…",
   "dronepal.wheel.none": "No drone",
+  "dronepal.wheel.no_drone": "No drone deployed",
   "dronepal.wheel.signal": "Signal lost",
   "dronepal.wheel.cancel": "Cancel",
   "dronepal.wheel.off": "Off",
@@ -623,5 +624,7 @@
   "message.dronepal.grid_overlay.off": "Tower coverage hidden",
   "key.dronepal.grid_range": "Toggle tower coverage",
   "hud.dronepal.grid_online": "on grid",
-  "hud.dronepal.grid_offline": "off grid"
+  "hud.dronepal.grid_offline": "off grid",
+  "hud.dronepal.grid_charging": "on grid · charging +%s FE/s",
+  "hud.dronepal.grid_full": "on grid · full"
 }

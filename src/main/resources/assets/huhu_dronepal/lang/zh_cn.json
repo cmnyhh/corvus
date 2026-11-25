@@ -68,6 +68,7 @@
   "dronepal.wheel.solar": "太阳能 +%s FE/t",
   "dronepal.wheel.connecting": "连接中…",
   "dronepal.wheel.none": "未部署",
+  "dronepal.wheel.no_drone": "没有已部署的无人机",
   "dronepal.wheel.signal": "失去信号",
   "dronepal.wheel.cancel": "取消",
   "dronepal.wheel.off": "已关闭",
@@ -623,5 +624,7 @@
   "message.dronepal.grid_overlay.off": "已隐藏供电塔覆盖范围",
   "key.dronepal.grid_range": "显示/隐藏供电塔覆盖范围",
   "hud.dronepal.grid_online": "在网",
-  "hud.dronepal.grid_offline": "离网"
+  "hud.dronepal.grid_offline": "离网",
+  "hud.dronepal.grid_charging": "在网 · 充电 +%s FE/s",
+  "hud.dronepal.grid_full": "在网 · 已满"
 }

@@ -1,0 +1,18 @@
+// Isolated client that builds a water-pipe test yard and photographs it.
+// ./gradlew --offline -I gradle/pipe-visual.init.gradle runPipeVisual [-PpipeOut=artifacts/client/pipe-after]
+allprojects { p -> p.afterEvaluate {
+    if (!p.plugins.hasPlugin('net.neoforged.moddev')) return
+    def source = p.sourceSets.create('pipeVisual') {
+        compileClasspath += p.sourceSets.main.output + p.sourceSets.main.compileClasspath
+        runtimeClasspath += p.sourceSets.main.output + p.sourceSets.main.runtimeClasspath
+    }
+    p.neoForge.mods.huhu_dronepal.sourceSet(source)
+    p.neoForge.runs.create('pipeVisual') {
+        client()
+        sourceSet = source
+        gameDirectory = p.layout.buildDirectory.dir('pipe-visual-client')
+        programArguments.addAll('--width','1280','--height','800','--quickPlaySingleplayer','New World')
+        systemProperty 'dronepal.pipe.dir',
+                p.file(p.findProperty('pipeOut') ?: 'artifacts/client').absolutePath
+    }
+} }

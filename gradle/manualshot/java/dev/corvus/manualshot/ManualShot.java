@@ -49,17 +49,24 @@ public final class ManualShot {
     private static final ResourceLocation ENTRY_CRAFTING = new ResourceLocation("huhu_dronepal", "build/parts");
     private static final ResourceLocation ENTRY_SPOTLIGHT = new ResourceLocation("huhu_dronepal", "start/what");
 
+    /**
+     * Ticks to wait after a screen opens before it is photographed. 40 ticks (2 s) is twice the
+     * 20-tick floor: it rules out catching a page still being laid out / an animation mid-way, so a
+     * capture-timing artefact cannot be mistaken for a typography defect.
+     */
+    private static final int SETTLE = 40;
+
     private static final int GIVE_AT = 40;
     private static final int DUMP_AT = 55;
     private static final int LANDING_AT = 70;
-    private static final int SHOT_LANDING_AT = 90;
-    private static final int CATEGORY_AT = 100;
-    private static final int SHOT_CATEGORY_AT = 120;
-    private static final int ENTRY_CRAFT_AT = 130;
-    private static final int SHOT_ENTRY_CRAFT_AT = 152;
-    private static final int ENTRY_SPOT_AT = 162;
-    private static final int SHOT_ENTRY_SPOT_AT = 184;
-    private static final int DONE_AT = 198;
+    private static final int SHOT_LANDING_AT = LANDING_AT + SETTLE;
+    private static final int CATEGORY_AT = SHOT_LANDING_AT + 10;
+    private static final int SHOT_CATEGORY_AT = CATEGORY_AT + SETTLE;
+    private static final int ENTRY_CRAFT_AT = SHOT_CATEGORY_AT + 10;
+    private static final int SHOT_ENTRY_CRAFT_AT = ENTRY_CRAFT_AT + SETTLE;
+    private static final int ENTRY_SPOT_AT = SHOT_ENTRY_CRAFT_AT + 10;
+    private static final int SHOT_ENTRY_SPOT_AT = ENTRY_SPOT_AT + SETTLE;
+    private static final int DONE_AT = SHOT_ENTRY_SPOT_AT + 20;
 
     private static int ticks;
     private static boolean gave, dumped, landing, shotLanding, category, shotCategory;
@@ -200,6 +207,7 @@ public final class ManualShot {
             return;
         }
         for (BookEntry entry : contents.entries.values()) pageCount += entry.getPages().size();
+        LOGGER.info("[manual-shot] pages(actual, authoritative)={}", pageCount);
         LOGGER.info("[manual-shot] contents: categories={} entries={} pages={} errored={}",
                 contents.categories.size(), contents.entries.size(), pageCount, contents.isErrored());
         for (BookCategory category : contents.categories.values()) {
@@ -243,7 +251,11 @@ public final class ManualShot {
             LOGGER.error("[manual-shot] no screen open at the screenshot tick ({})", name);
             return;
         }
-        LOGGER.info("[manual-shot] screenshot with screen={}", game.screen.getClass().getName());
+        String state = "";
+        if (game.screen instanceof vazkii.patchouli.client.book.gui.GuiBook guiBook) {
+            state = " ticksInBook=" + guiBook.ticksInBook;
+        }
+        LOGGER.info("[manual-shot] screenshot with screen={}{}", game.screen.getClass().getName(), state);
         NativeImage image = Screenshot.takeScreenshot(game.getMainRenderTarget());
         File target = new File(directory, name);
         try {

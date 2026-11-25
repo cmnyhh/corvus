@@ -6,6 +6,7 @@ import com.mojang.math.Axis;
 import dev.corvus.Corvus;
 import dev.corvus.DroneEntity;
 import dev.corvus.Frames;
+import dev.corvus.core.WorkCycle;
 import java.io.Reader;
 import java.util.HashMap;
 import java.util.List;
@@ -51,7 +52,6 @@ public final class DroneRenderer extends EntityRenderer<DroneEntity> {
     /** Full fold angle, in degrees: the authored stow clip ends here. */
     private static final float FOLD_LIMIT = 85F;
     private static final float RADIANS = (float) Math.PI / 180F;
-
     private record Frame(DroneEntity entity, MultiBufferSource buffers, RenderType texture, int light,
                          Vector3f bob, Vector3f lean, Vector3f sweep, float foldX, float pitch, float swivel) {}
 
@@ -64,6 +64,9 @@ public final class DroneRenderer extends EntityRenderer<DroneEntity> {
     private final DroneClip stow;
     private final DroneClip deploy;
     private final Map<DroneEntity, Float> lastFold = new WeakHashMap<>();
+    /** Per-tick enter/leave fade for the work stance (see {@link WorkCycle#ENTER_TICKS}). */
+    private record WorkFade(int tick, float value) {}
+    private final Map<DroneEntity, WorkFade> workFades = new WeakHashMap<>();
 
     public DroneRenderer(EntityRendererProvider.Context context) {
         super(context);
@@ -129,20 +132,60 @@ public final class DroneRenderer extends EntityRenderer<DroneEntity> {
         float time = (entity.tickCount + partialTick) / 20F;
         Vector3f bob = idle.sample(mod(time, idle.duration())).div(16F);
         Vector3f lean = boost.sample(entity.getFlightBlend() * boost.duration());
+        // The old 40-tick work pulse is gone: the work stance now comes from WorkCycle alone, exactly
+        // like the 1.21.1 build, so a screenshot of one build reads the same as the other.
         Vector3f sweep = entity.isScanActive() ? scan.sample(mod(time, scan.duration())) : null;
         Vector3f hit = damaged.hurt(entity.hurtTime, entity.hurtDuration, partialTick).mul(RADIANS);
         poses.mulPose(new Quaternionf().rotationZYX(hit.z, hit.y, hit.x));
+
+        // Work-station stance: every number comes from dev.corvus.core.WorkCycle, the same class the
+        // 1.21.1 build draws with. The position half of the orbit AND the body heading are server-side
+        // (DroneWork#chase puts the entity on the circle and yaws it along the tangent), so this
+        // renderer adds no bearing of its own - only the work pitch, which is a pose, not a position.
+        int cycle = entity.level() == null ? entity.tickCount : (int) entity.level().getGameTime();
+        float fade = workFade(entity);
+        float orbit = (float) WorkCycle.orbitAngle(cycle);
+        if (fade > 0F) {
+            poses.mulPose(Axis.XP.rotationDegrees((float) (-WorkCycle.pitchDegrees(cycle) * fade)));
+        }
 
         float fold = clamp(entity.mountPitch(), 0F, FOLD_LIMIT);
         float progress = fold / FOLD_LIMIT;
         float foldX = foldCurve(entity, progress);
         float deployed = 1F - progress;
         float pitch = deployed * clamp(entity.aimPitch(), -85F, 85F);
+        if (entity.isWorking()) pitch += (float) Math.sin(time * 0.9F) * 20F;
         float swivel = deployed * clamp(entity.aimYaw(), -75F, 75F);
+        if (fade > 0F) {
+            // Work gimbal: the head looks at the disc (yaw) and down at it (-60 degrees), measured from
+            // the orbiting body so the two rotations stay independent instead of cancelling out.
+            float workPitch = (float) -WorkCycle.gimbalPitch(cycle);
+            float workSwivel = (float) (WorkCycle.gimbalYaw(cycle) - orbit);
+            pitch = pitch + (workPitch - pitch) * fade;
+            swivel = swivel + (workSwivel - swivel) * fade;
+        }
         Frame frame = new Frame(entity, buffers, type, packedLight, bob, lean, sweep, foldX, pitch, swivel);
         for (DroneMesh.Bone root : rig) renderBone(root, poses, frame);
         poses.popPose();
         super.render(entity, entityYaw, partialTick, poses, buffers, packedLight);
+    }
+
+    /**
+     * How far the work stance has faded in, 0 (idle) .. 1 (on station).
+     *
+     * <p>Advanced once per game tick, not once per frame, so the {@link WorkCycle#ENTER_TICKS} tick
+     * transition takes the same wall-clock time at any frame rate. The fade runs both ways: a recall
+     * plays the exit before the drone reads as idle again.</p>
+     */
+    private float workFade(DroneEntity entity) {
+        WorkFade fade = workFades.get(entity);
+        if (fade != null && fade.tick() == entity.tickCount) return fade.value();
+        float previous = fade == null ? 0F : fade.value();
+        float target = entity.isWorking() ? 1F : 0F;
+        float step = 1F / WorkCycle.ENTER_TICKS;
+        float next = previous + clamp(target - previous, -step, step);
+        workFades.put(entity, new WorkFade(entity.tickCount, next));
+        return next;
     }
 
     /**
@@ -196,12 +239,15 @@ public final class DroneRenderer extends EntityRenderer<DroneEntity> {
         if (!bone.vertices().isEmpty()) {
             PoseStack.Pose pose = poses.last();
             VertexConsumer out = frame.buffers().getBuffer(frame.texture());
+            // No work lamp: the sensor head is drawn like every other bone, with its own texture
+            // colour and the light of the block it is standing in - no tint, no FULL_BRIGHT.
+            int light = frame.light();
             for (DroneMesh.Vertex vertex : bone.vertices()) {
                 out.vertex(pose.pose(), vertex.x(), vertex.y(), vertex.z())
                         .color(255, 255, 255, 255)
                         .uv(vertex.u(), vertex.v())
                         .overlayCoords(OverlayTexture.NO_OVERLAY)
-                        .uv2(frame.light())
+                        .uv2(light)
                         .normal(pose.normal(), vertex.nx(), vertex.ny(), vertex.nz())
                         .endVertex();
             }

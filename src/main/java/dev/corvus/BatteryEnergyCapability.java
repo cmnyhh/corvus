@@ -22,9 +22,14 @@ import net.minecraftforge.energy.IEnergyStorage;
  * <p>This provider exposes that charge as a normal {@link IEnergyStorage}:</p>
  * <ul>
  *   <li>{@link #canExtract()} is {@code true}: the cell can be drained by anything that understands FE.</li>
- *   <li>{@link #canReceive()} is {@code false}: charging keeps going through the dock / coal path, so
- *       the per-tick ceiling and the {@code charge_tick} bookkeeping cannot be bypassed.</li>
+ *   <li>{@link #canReceive()} is {@code true}: filling goes through {@link Hardware#charge}, the same
+ *       call the dock uses, so the per-tick ceiling and the {@code charge_tick} budget still hold.</li>
  * </ul>
+ *
+ * <p>Both directions have to live here. This provider comes from {@code Item#initCapabilities}, which
+ * Forge consults <em>before</em> the ones attached through {@code AttachCapabilitiesEvent} (the dock's
+ * charge-only port). A receive-disabled view here would therefore shadow that port and make the cell
+ * look unfillable to every FE charger in the pack. Delegating instead keeps the first answer complete.</p>
  *
  * <p>Attached per stack through {@link net.minecraft.world.item.Item#initCapabilities}; 1.20.1 has no
  * {@code RegisterCapabilitiesEvent} for items.</p>
@@ -48,7 +53,7 @@ public final class BatteryEnergyCapability implements ICapabilityProvider, IEner
 
     @Override
     public int receiveEnergy(int amount, boolean simulate) {
-        return 0;
+        return Hardware.charge(stack, amount, simulate);
     }
 
     @Override
@@ -84,6 +89,7 @@ public final class BatteryEnergyCapability implements ICapabilityProvider, IEner
 
     @Override
     public boolean canReceive() {
-        return false;
+        Batteries.Model model = model();
+        return model != null && Batteries.energy(stack, model) < model.capacity();
     }
 }

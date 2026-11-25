@@ -31,5 +31,6 @@ public final class CorvusClient {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(Corvus.ENTITY.get(), DroneRenderer::new);
+        OreMillRenderer.register(event);
     }
 }

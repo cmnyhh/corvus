@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:coarse_redstone"
+    },
+    {
+      "item": "huhu_dronepal:coarse_redstone"
+    },
+    {
+      "item": "huhu_dronepal:coarse_redstone"
+    },
+    {
+      "item": "huhu_dronepal:coarse_redstone"
+    },
+    {
+      "item": "huhu_dronepal:coarse_redstone"
+    },
+    {
+      "item": "huhu_dronepal:coarse_redstone"
+    },
+    {
+      "item": "huhu_dronepal:coarse_redstone"
+    },
+    {
+      "item": "huhu_dronepal:coarse_redstone"
+    },
+    {
+      "item": "huhu_dronepal:coarse_redstone"
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:redstone_concentrate",
+    "count": 1
+  }
+}

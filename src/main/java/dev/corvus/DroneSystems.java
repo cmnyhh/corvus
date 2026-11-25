@@ -96,6 +96,9 @@ final class DroneSystems {
      */
     boolean execute(DroneEntity drone, ServerPlayer player, ItemStack stack, String intent) {
         if (stack.isEmpty() || !player.isAlive()) return false;
+        if (intent.equals("order.work") || intent.equals("order.idle")) {
+            return dev.corvus.mill.DroneWork.order(player, intent);
+        }
         if (intent.equals("order.fetch") || intent.equals("order.supply")) {
             return CarryLight.execute(player, stack, intent);
         }

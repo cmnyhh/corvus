@@ -26,6 +26,20 @@ public final class ServerOptions {
             .comment("Seconds between automatic scans by a deployed, powered scanner.")
             .defineInRange("autoScanSeconds", 15, 5, 300);
 
+    public static final ForgeConfigSpec.IntValue BURNER_OUTPUT = BUILDER
+            .comment("FE per tick a burner generator pushes into its neighbours (10-400).",
+                    "Fuel value is fixed at burn ticks x 2.5, so this only changes how fast it is released.")
+            .defineInRange("burnerOutput", 40, 10, 400);
+
+    public static final ForgeConfigSpec.IntValue SOLAR_OUTPUT = BUILDER
+            .comment("Peak FE per tick of a solar generator in clear daylight (10-200).",
+                    "Rain or thunder halves it; night or a blocked view of the sky gives 0.")
+            .defineInRange("solarOutput", 60, 10, 200);
+
+    public static final ForgeConfigSpec.IntValue BATTERY_BANK_CAPACITY = BUILDER
+            .comment("Buffer of a battery bank, in FE. Input and output are fixed at 2,000 FE/t.")
+            .defineInRange("batteryBankCapacity", 500_000, 1_000, 10_000_000);
+
     public static final ForgeConfigSpec SPEC = BUILDER.build();
 
     private ServerOptions() {}
@@ -44,6 +58,33 @@ public final class ServerOptions {
             return Mth.clamp(AUTO_SCAN_SECONDS.get(), 5, 300);
         } catch (RuntimeException unloaded) {
             return 15;
+        }
+    }
+
+    /** Burner generator output in FE/t; clamped like the config so a reload cannot go out of range. */
+    public static int burnerOutput() {
+        try {
+            return Mth.clamp(BURNER_OUTPUT.get(), 10, 400);
+        } catch (RuntimeException unloaded) {
+            return 40;
+        }
+    }
+
+    /** Solar peak output in FE/t at clear noon. */
+    public static int solarOutput() {
+        try {
+            return Mth.clamp(SOLAR_OUTPUT.get(), 10, 200);
+        } catch (RuntimeException unloaded) {
+            return 60;
+        }
+    }
+
+    /** Battery bank buffer in FE. */
+    public static int batteryBankCapacity() {
+        try {
+            return Mth.clamp(BATTERY_BANK_CAPACITY.get(), 1_000, 10_000_000);
+        } catch (RuntimeException unloaded) {
+            return 500_000;
         }
     }
 

@@ -50,9 +50,10 @@ public final class Corvus {
     /**
      * The 随行无人机 creative page.
      *
-     * <p>78 entries in total, matching the 1.21 build: 4 frames, 27 modules, 3 chips, 10 batteries,
-     * 9 spray cans (this class and {@link Hardware}/{@link PaintCans}), plus the assembly bench, its 23
-     * parts and the charging dock contributed by the UI/block layer at the merge point below.</p>
+     * <p>98 entries in total: 4 frames, 27 modules, 3 chips, 10 batteries, 9 spray cans (this class and
+     * {@link Hardware}/{@link PaintCans}), the assembly bench and its 23 parts, the charging dock, the
+     * three power blocks, the ore mill + head, the water pump and pipe, and the mill's 14 products, all
+     * contributed at the merge points below.</p>
      */
     public static final RegistryObject<CreativeModeTab> TAB = TABS.register("drones", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.dronepal.drones"))
@@ -64,6 +65,9 @@ public final class Corvus {
                 // --- B（界面与方块）: 装配台 + 23 个零件 + 充电座 ---
                 SurvivalWorks.addToTab(output);
                 dev.corvus.charging.ChargingDockRegistry.addToTab(output);
+                dev.corvus.power.PowerRegistry.addToTab(output);
+                // --- 选矿台 + 五个新物品（mill-120） ---
+                dev.corvus.mill.OreMillRegistry.addToTab(output);
             })
             .build());
 
@@ -87,6 +91,10 @@ public final class Corvus {
         TerminalMenus.register(bus);
         SurvivalWorks.register(bus);
         dev.corvus.charging.ChargingDockRegistry.register(bus);
+        // --- 发电与储电（燃烧发电机 / 太阳能发电机 / 蓄电池）: 自成一包，只在这里挂一次。 ---
+        dev.corvus.power.PowerRegistry.register(bus);
+        // --- 选矿台（mill-120）：方块/方块实体/菜单/五个物品，自成一包，只在这里挂一次。 ---
+        dev.corvus.mill.OreMillRegistry.register(bus);
 
         // --- C（战斗/扫描/对话）: SimpleChannel + 6 个包 + Hardware 注入点 + engage_modes reload。
         // CorvusNetwork.register() 内部同时调用 DroneCombat.register()，只调一次即可。 ---

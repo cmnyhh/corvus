@@ -43,7 +43,7 @@ import org.slf4j.LoggerFactory;
  *   <li>the brown-out rule takes exactly one module offline below one fifth charge and all of them at 0</li>
  *   <li>the per-tick receive budget is enforced on the cell</li>
  *   <li>the supply loot modifiers resolve, and a real chest roll produces mod loot at the documented rate</li>
- *   <li>the creative page holds the 53 entries this layer contributes</li>
+ *   <li>the creative page shows every registered mod item, the power blocks and the mill items included</li>
  * </ul>
  *
  * <p>Not gameplay code: it never ships behaviour that runs without the system property.</p>
@@ -320,12 +320,29 @@ public final class HardwareSmoke {
         CreativeModeTab tab = Corvus.TAB.get();
         tab.buildContents(new CreativeModeTab.ItemDisplayParameters(FeatureFlags.DEFAULT_FLAGS, false,
                 server.registryAccess()));
-        int size = tab.getDisplayItems().size();
-        // 4 frames + 27 modules + 3 chips + 10 batteries + 9 spray cans (this layer) + bench + 23 parts
-        // + dock (the UI/block layer) = the 78 entries the 1.21 build has.
-        check("creative.entries_78", size == 78, "entries=" + size);
-        LOG.info("[hw-smoke] creative page: {} entries (4 frames + 27 modules + 3 chips + 10 batteries"
-                + " + 9 cans + bench + 23 parts + dock)", size);
+        java.util.Collection<ItemStack> shown = tab.getDisplayItems();
+        // Several agents add entries to this page in parallel, so a hardcoded number rots on every merge.
+        // What has to hold instead: the page shows every item this mod registers, and the blocks added
+        // by the power layer are among them.
+        java.util.Set<Item> inTab = new java.util.HashSet<>();
+        for (ItemStack stack : shown) inTab.add(stack.getItem());
+        List<Item> registered = new ArrayList<>();
+        for (Item item : ForgeRegistries.ITEMS.getValues()) {
+            ResourceLocation id = ForgeRegistries.ITEMS.getKey(item);
+            if (id != null && Corvus.ID.equals(id.getNamespace())) registered.add(item);
+        }
+        List<String> missing = new ArrayList<>();
+        for (Item item : registered) {
+            if (!inTab.contains(item)) missing.add(String.valueOf(ForgeRegistries.ITEMS.getKey(item)));
+        }
+        check("creative.covers_registry", missing.isEmpty(), "missing=" + missing);
+        List<Item> power = new ArrayList<>();
+        for (String path : List.of("burner_generator", "solar_generator", "battery_bank")) {
+            power.add(ForgeRegistries.ITEMS.getValue(new ResourceLocation(Corvus.ID, path)));
+        }
+        check("creative.power_blocks", inTab.containsAll(power), "burner/solar/bank");
+        LOG.info("[hw-smoke] creative page: {} stacks, {} registered mod items, coverage {}", shown.size(),
+                registered.size(), missing.isEmpty() ? "complete" : "missing " + missing);
     }
 
     /**
@@ -434,13 +451,19 @@ public final class HardwareSmoke {
         for (net.minecraft.world.item.crafting.Recipe<?> recipe : server.getRecipeManager().getRecipes()) {
             if (Corvus.ID.equals(recipe.getId().getNamespace())) ours.add(recipe.getId().getPath());
         }
-        // 20 files: 19 load here. corvus_manual produces patchouli:guide_book, and Patchouli is not a
-        // dependency of this build, so the recipe is (correctly) skipped rather than producing a ghost item.
-        check("recipes.count", ours.size() == 19, "loaded=" + ours.size() + " " + ours);
+        // 40 files: 39 load here (the mill adds eight family-specific smelting recipes, eight
+        // coarse-sand-to-concentrate recipes and three nine-shard recipes; the pipe adds one crafting
+        // recipe). corvus_manual produces patchouli:guide_book, and Patchouli is not a dependency of this
+        // build, so that one is (correctly) skipped rather than producing a ghost item.
+        check("recipes.count", ours.size() == 39, "loaded=" + ours.size() + " " + ours);
         check("recipes.manual_needs_patchouli", !ours.contains("corvus_manual"), "");
         check("recipes.paint_can", ours.contains("paint_can_rust"), "");
         check("recipes.bench", ours.stream().anyMatch(id -> id.endsWith("assembly_bench")), "");
         check("recipes.dock", ours.stream().anyMatch(id -> id.endsWith("charging_dock")), "");
+        check("recipes.refined_smelting", ours.contains("iron_concentrate_smelting")
+                && ours.contains("copper_concentrate_smelting"), "");
+        check("recipes.rare_shards", ours.contains("diamond_shard_nine")
+                && ours.contains("emerald_shard_nine") && ours.contains("debris_shard_nine"), "");
     }
 
     private static void checkLoot(MinecraftServer server) {
@@ -489,6 +512,10 @@ public final class HardwareSmoke {
                 if (id == null || !Corvus.ID.equals(id.getNamespace())) continue;
                 produced = true;
                 if (stack.is(Corvus.DRONE.get())) {
+                    // This path rolls the table directly, so it bypasses LootSupplyModifier#prepare,
+                    // which is where a real chest roll stamps the per-stack UUID. Stamp it the same way
+                    // here and then assert the serial is readable.
+                    dev.corvus.DroneItem.ensureSerial(stack);
                     check("loot.drone_serial", dev.corvus.DroneItem.serial(stack) != null, describeStack(stack));
                 }
             }

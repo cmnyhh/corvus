@@ -2,6 +2,13 @@
   "replace": false,
   "values": [
     "huhu_dronepal:charging_dock",
-    "huhu_dronepal:assembly_bench"
+    "huhu_dronepal:assembly_bench",
+    "huhu_dronepal:burner_generator",
+    "huhu_dronepal:solar_generator",
+    "huhu_dronepal:battery_bank",
+    "huhu_dronepal:ore_mill",
+    "huhu_dronepal:water_pump",
+    "huhu_dronepal:water_pipe",
+    "huhu_dronepal:ore_mill_side"
   ]
 }

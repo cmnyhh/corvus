@@ -654,6 +654,9 @@ public final class Hardware {
     }
 
     public static boolean online(ItemStack controller, String family) {
+        // TODO(corvus-core): R2. This must become
+        // dev.corvus.core.HardwareRules#online(userDisabled, powered) — the player switch is missing here,
+        // so a module switched off in the wheel still draws power and re-arms automatic scans.
         return powered(controller, family);
     }
 

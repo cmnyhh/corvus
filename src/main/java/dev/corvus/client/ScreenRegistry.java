@@ -3,6 +3,7 @@ package dev.corvus.client;
 import dev.corvus.Corvus;
 import dev.corvus.SurvivalWorks;
 import dev.corvus.TerminalMenus;
+import dev.corvus.mill.OreMillRegistry;
 import dev.corvus.charging.ChargingDockRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,6 +29,7 @@ public final class ScreenRegistry {
             MenuScreens.register(TerminalMenus.TERMINAL.get(), TerminalScreen::new);
             for (var type : TerminalMenus.CARGO) MenuScreens.register(type.get(), CargoScreen::new);
             MenuScreens.register(SurvivalWorks.MENU.get(), AssemblyScreen::new);
+            MenuScreens.register(OreMillRegistry.MENU.get(), OreMillScreen::new);
         });
     }
 

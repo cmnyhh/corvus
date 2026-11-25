@@ -24,7 +24,7 @@ import net.minecraft.world.item.ItemStack;
  * answers harmless. 1.20.1 carries the packets on {@link CorvusNetwork}'s {@code SimpleChannel}.</p>
  */
 public final class DroneRemote {
-    public enum Action { FOLLOW, WEAPON, MODE, SCAN, MEDIC, CARRY, LIGHT, LINK, RECALL, DELIVER, SUPPLY, FIREMODE }
+    public enum Action { FOLLOW, WEAPON, MODE, SCAN, MEDIC, CARRY, LIGHT, LINK, RECALL, DELIVER, SUPPLY, FIREMODE, WORK }
 
     static final UUID EMPTY = new UUID(0, 0);
     /** NBT switch prefix on the controller: {@code dronepal_off_<family>}. */
@@ -205,6 +205,7 @@ public final class DroneRemote {
         int off = 0;
         int solar = -1;
         int drain = -1;
+        boolean lightFitted = false;
         if (!stack.isEmpty()) {
             enabled = 1;
             drain = Hardware.drainPerTick(stack);
@@ -221,6 +222,7 @@ public final class DroneRemote {
                     default -> -1;
                 };
                 if (slot >= 0) {
+                    if (slot == 6) lightFitted = true;
                     enabled |= 1 << slot;
                     labels.set(slot, module.wheelLabel());
                     if (disabled(stack, module.family())) off |= 1 << slot;
@@ -243,6 +245,13 @@ public final class DroneRemote {
                     solar = Hardware.solarOutput(module, sky, level.isDay(), level.isRaining());
                 }
             }
+            // The mill's work sector is the Shift variant of the lamp sector. It lights up whenever a
+            // mill is within 32 blocks, even on a drone without a lamp; the label says "work" then.
+            if (dev.corvus.mill.DroneWork.nearest(player.serverLevel(), player.blockPosition(),
+                    dev.corvus.mill.OreMillRules.WORK_RANGE) != null) {
+                enabled |= 1 << 6;
+                if (!lightFitted) labels.set(6, "dronepal.wheel.work");
+            }
         }
         return new Status(nonce, revision, id, signal, enabled, off, solar, drain, labels);
     }
@@ -257,6 +266,7 @@ public final class DroneRemote {
             case FOLLOW -> {
                 toggle(stack, "follow");
                 drone.holdingStation = disabled(stack, "follow");
+                if (drone.holdingStation) dev.corvus.mill.DroneWork.stop(drone);
                 yield true;
             }
             case WEAPON -> DroneCombat.toggle(drone);
@@ -268,6 +278,7 @@ public final class DroneRemote {
                 yield true;
             }
             case FIREMODE -> DroneCombat.cycleMode(drone);
+            case WORK -> Hardware.execute(player, "order.work");
             case DELIVER, SUPPLY -> Hardware.execute(player, command.action == Action.DELIVER ? "order.fetch" : "order.supply");
             case MEDIC, CARRY, LIGHT, LINK -> {
                 String family = command.action.name().toLowerCase(Locale.ROOT);
@@ -295,6 +306,7 @@ public final class DroneRemote {
             drone = entity(player, id);
         }
         if (drone == null) return false;
+        dev.corvus.mill.DroneWork.stop(drone);
         drone.holdingStation = false;
         drone.setTarget(null);
         drone.setDeltaMovement(net.minecraft.world.phys.Vec3.ZERO);

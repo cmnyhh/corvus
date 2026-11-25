@@ -12,7 +12,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -23,28 +22,39 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.IEnergyStorage;
 
 /**
- * A charging pad. Coal or cable FE fills a 32,000 FE buffer, which tops up the single cell (or the
- * battery inside a docked controller) sitting in the pad.
+ * A charging pad. Furnace fuel or cable FE fills a 32,000 FE buffer, which tops up the single cell (or
+ * the battery inside a docked controller) sitting in the pad.
+ *
+ * <p>Any vanilla fuel is accepted, not just coal: the pad asks the furnace rules
+ * ({@code AbstractFurnaceBlockEntity.isFuel} / {@code ForgeHooks.getBurnTime}) and turns one item into
+ * {@code burnTicks x 2.5} FE ({@link dev.corvus.power.FuelPower}) released at 200 FE/t. Coal 4,000,
+ * coal block 40,000, blaze rod 6,000, lava bucket 50,000.</p>
  *
  * <p>1.20.1 exposes energy through Forge's {@link IEnergyStorage} capability: the pad itself is the
  * storage and {@code ChargingCapabilities} publishes it through {@code AttachCapabilitiesEvent}.</p>
  *
  * <p>Everything the client draws travels in {@link #getUpdateTag}: the buffer, the docked stack and the
  * stats of its cell. Tags are pushed at most once every {@value #SYNC_INTERVAL} ticks while a value is
- * moving, and immediately on insert/take/coal so the hologram never shows stale numbers.</p>
+ * moving, and immediately on insert/take/fuel so the hologram never shows stale numbers.</p>
  */
 public final class ChargingDockEntity extends BlockEntity implements IEnergyStorage {
     public static final int BUFFER = 32_000;
     static final int BASE_CABLE_RATE = 2_000;
-    static final int COAL_YIELD = 4_000;
-    static final int COAL_RATE = 200;
+    /** FE released per tick while fuel is burning; the fuel's own value sets how long that lasts. */
+    static final int FUEL_RATE = 200;
+    /** How many items the fuel slot holds. */
+    public static final int FUEL_LIMIT = 64;
+    /** Guard against a forged NBT value; real fuels are far below this. */
+    private static final int MAX_BURN = 10_000_000;
     /** Ticks between two throttled update packets (10 ticks = twice a second). */
     public static final int SYNC_INTERVAL = 10;
 
     private final LazyOptional<IEnergyStorage> energyCapability = LazyOptional.of(() -> this);
     private ItemStack target = ItemStack.EMPTY;
-    private int coal;
+    private ItemStack fuel = ItemStack.EMPTY;
     private int burnRemaining;
+    /** FE the item now burning was worth when it started: the fuel's yield, for status and checks. */
+    private int burnTotal;
     private int energy;
     private int targetEnergy;
     private int targetCapacity;
@@ -52,7 +62,7 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
     private int cableReceived;
     /** Snapshot of what the last update tag told the clients, used to throttle packets. */
     private int syncedEnergy;
-    private int syncedCoal;
+    private ItemStack syncedFuel = ItemStack.EMPTY;
     private ItemStack syncedTarget = ItemStack.EMPTY;
     private long syncedTick = Long.MIN_VALUE;
     private boolean syncPending;
@@ -75,12 +85,24 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
         return result;
     }
 
-    public int addCoal(int offered) {
-        int accepted = Mth.clamp(offered, 0, 64 - coal);
-        if (accepted > 0) {
-            coal += accepted;
-            requestSync();
+    /**
+     * Loads the fuel slot with any furnace fuel. Only one item type fits at a time (like a furnace's
+     * fuel slot), and the slot tops out at {@value #FUEL_LIMIT} items.
+     *
+     * @return how many items of {@code offered} were taken
+     */
+    public int addFuel(ItemStack offered) {
+        if (offered == null || offered.isEmpty() || !dev.corvus.power.FuelPower.fuel(offered)) return 0;
+        if (!fuel.isEmpty() && !ItemStack.isSameItemSameTags(fuel, offered)) return 0;
+        int accepted = Mth.clamp(offered.getCount(), 0, FUEL_LIMIT - fuel.getCount());
+        if (accepted <= 0) return 0;
+        if (fuel.isEmpty()) {
+            fuel = offered.copy();
+            fuel.setCount(accepted);
+        } else {
+            fuel.grow(accepted);
         }
+        requestSync();
         return accepted;
     }
 
@@ -89,25 +111,43 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
                 ? Component.translatable("message.dronepal.dock_empty")
                 : Component.empty().append(target.getHoverName())
                         .append(" " + DockEnergy.energy(target) + "/" + DockEnergy.capacity(target) + " FE");
-        return Component.translatable("message.dronepal.dock_status", energy, BUFFER, coal, detail);
+        Component fuelDetail = fuel.isEmpty()
+                ? Component.translatable("message.dronepal.fuel_empty")
+                : Component.empty().append(fuel.getHoverName()).append(" ×" + fuel.getCount());
+        return Component.translatable("message.dronepal.dock_status", energy, BUFFER, fuelDetail, detail);
     }
 
     public void dropContents() {
         if (level == null || level.isClientSide) return;
         if (!target.isEmpty())
             Containers.dropItemStack(level, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), take());
-        if (coal > 0)
-            Containers.dropItemStack(level, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(),
-                    new ItemStack(Items.COAL, coal));
-        coal = 0;
+        if (!fuel.isEmpty())
+            Containers.dropItemStack(level, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), fuel);
+        fuel = ItemStack.EMPTY;
     }
 
     void tick(ServerLevel world) {
-        if (energy < BUFFER && (burnRemaining > 0 || coal > 0)) {
-            if (burnRemaining == 0) { coal--; burnRemaining = COAL_YIELD; }
-            int generated = Math.min(Math.min(COAL_RATE, burnRemaining), BUFFER - energy);
-            energy += generated;
-            burnRemaining -= generated;
+        if (energy < BUFFER && (burnRemaining > 0 || !fuel.isEmpty())) {
+            if (burnRemaining <= 0 && !fuel.isEmpty()) {
+                // Any furnace fuel: the item's own burn time decides how much FE it is worth.
+                burnTotal = dev.corvus.power.FuelPower.fe(fuel);
+                burnRemaining = burnTotal;
+                ItemStack burnt = fuel.copy();
+                fuel.shrink(1);
+                // A lava bucket leaves its bucket behind; never swallow it.
+                ItemStack remainder = dev.corvus.power.FuelPower.remainder(burnt);
+                if (!remainder.isEmpty()) {
+                    Containers.dropItemStack(level, worldPosition.getX() + 0.5D, worldPosition.getY() + 0.6D,
+                            worldPosition.getZ() + 0.5D, remainder);
+                }
+            }
+            if (burnRemaining > 0) {
+                int generated = Math.min(Math.min(FUEL_RATE, burnRemaining), BUFFER - energy);
+                if (generated > 0) {
+                    energy += generated;
+                    burnRemaining -= generated;
+                }
+            }
             setChanged();
         }
         if (energy > 0) {
@@ -163,7 +203,8 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
      * {@value #SYNC_INTERVAL} ticks so a charging pad never becomes a per-tick packet source.
      */
     private void pushSync(ServerLevel world) {
-        boolean changed = energy != syncedEnergy || coal != syncedCoal || !ItemStack.matches(target, syncedTarget);
+        boolean changed = energy != syncedEnergy || !ItemStack.matches(fuel, syncedFuel)
+                || !ItemStack.matches(target, syncedTarget);
         if (!syncPending && !changed) return;
         long now = world.getGameTime();
         if (!syncPending && now - syncedTick < SYNC_INTERVAL) return;
@@ -171,7 +212,7 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
         syncPending = false;
         syncedTick = now;
         syncedEnergy = energy;
-        syncedCoal = coal;
+        syncedFuel = fuel.copy();
         syncedTarget = target.copy();
         world.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);
     }
@@ -185,7 +226,13 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
 
     public int storedEnergy() { return energy; }
     public int buffer() { return BUFFER; }
-    public int coalCount() { return coal; }
+    /** Fuel items left in the slot (kept under the old name so the renderer and dev tools still read it). */
+    public int coalCount() { return fuel.getCount(); }
+    public ItemStack fuelStack() { return fuel; }
+    /** FE still queued from the item currently burning; the yield checks read this. */
+    public int burnRemainingFe() { return burnRemaining; }
+    /** What the item now burning was worth in total (coal 4,000, coal block 40,000). */
+    public int burnTotalFe() { return burnTotal; }
     public ItemStack targetStack() { return target; }
     public int targetEnergy() { return targetEnergy; }
     public int targetCapacity() { return targetCapacity; }
@@ -196,12 +243,12 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
         CompoundTag tag = new CompoundTag();
         tag.putInt("Energy", energy);
         tag.putInt("Buffer", BUFFER);
-        tag.putInt("Coal", coal);
+        tag.put("Fuel", fuel.save(new CompoundTag()));
         tag.putInt("TargetEnergy", targetEnergy);
         tag.putInt("TargetCapacity", targetCapacity);
         tag.put("Target", target.save(new CompoundTag()));
         syncedEnergy = energy;
-        syncedCoal = coal;
+        syncedFuel = fuel.copy();
         syncedTarget = target.copy();
         return tag;
     }
@@ -216,7 +263,8 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
 
     @Override public void handleUpdateTag(CompoundTag tag) {
         energy = Mth.clamp(tag.getInt("Energy"), 0, BUFFER);
-        coal = Mth.clamp(tag.getInt("Coal"), 0, 64);
+        fuel = ItemStack.of(tag.getCompound("Fuel"));
+        if (fuel.getCount() > FUEL_LIMIT) fuel.setCount(FUEL_LIMIT);
         target = ItemStack.of(tag.getCompound("Target"));
         targetEnergy = Math.max(0, tag.getInt("TargetEnergy"));
         targetCapacity = Math.max(0, tag.getInt("TargetCapacity"));
@@ -263,16 +311,19 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
     @Override protected void saveAdditional(CompoundTag tag) {
         super.saveAdditional(tag);
         tag.put("Target", target.save(new CompoundTag()));
-        tag.putInt("Coal", coal);
+        tag.put("Fuel", fuel.save(new CompoundTag()));
         tag.putInt("BurnRemaining", burnRemaining);
+        tag.putInt("BurnTotal", burnTotal);
         tag.putInt("Energy", energy);
     }
 
     @Override public void load(CompoundTag tag) {
         super.load(tag);
         target = ItemStack.of(tag.getCompound("Target"));
-        coal = Mth.clamp(tag.getInt("Coal"), 0, 64);
-        burnRemaining = Mth.clamp(tag.getInt("BurnRemaining"), 0, COAL_YIELD);
+        fuel = ItemStack.of(tag.getCompound("Fuel"));
+        if (fuel.getCount() > FUEL_LIMIT) fuel.setCount(FUEL_LIMIT);
+        burnRemaining = Mth.clamp(tag.getInt("BurnRemaining"), 0, MAX_BURN);
+        burnTotal = Mth.clamp(tag.getInt("BurnTotal"), 0, MAX_BURN);
         energy = Mth.clamp(tag.getInt("Energy"), 0, BUFFER);
         refreshTarget();
     }

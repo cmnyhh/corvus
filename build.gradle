@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 }
-version = '0.1.0'
+version = '0.2.0'
 group = 'dev.corvus'
 base { archivesName = '渡鸦-随行无人机-1.20.1' }
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -37,6 +37,17 @@ minecraft {
             property 'corvus.gaps', (project.findProperty('corvusGaps') ?: '0').toString()
             // TaCZ gun-backend acceptance run (see dev.corvus.devtools.TaczSmoke).
             property 'corvus.tacztest', (project.findProperty('corvusTacz') ?: '0').toString()
+            // Power grid acceptance run (see dev.corvus.devtools.PowerSmoke): dock fuel values, burner,
+            // solar, battery bank, persistence and drops.
+            property 'corvus.power', (project.findProperty('corvusPower') ?: '0').toString()
+            // Ore mill acceptance run (see dev.corvus.devtools.MillSmoke).
+            property 'corvus.mill', (project.findProperty('corvusMill') ?: '0').toString()
+            // A unique log file per acceptance run, so parallel agents cannot overwrite each other's
+            // latest.log (the default Forge appender is one shared file in run-server/logs).
+            if (project.hasProperty('corvusLog')) {
+                jvmArgs "-Dlog4j.configurationFile=${project.file('tools/log4j-corvus.xml').absolutePath}",
+                        "-Dcorvus.logfile=${project.property('corvusLog')}"
+            }
             mixinProps.each { key, value -> property key, value.toString() }
             args '--nogui'
             // Parallel agents share run-server; -PcorvusLevel=<name> runs the smoke against its own
@@ -53,6 +64,9 @@ minecraft {
     }
 }
 repositories {
+    // Offline-friendly: corvus-core's parity table only needs JUnit 5, already in ~/.m2. No runtime
+    // artifact of the mod resolves from here.
+    mavenLocal()
     mavenCentral()
     // TaCZ ships no maven artifact this build can reach. fg.deobf cannot remap a files(...) dependency
     // (ForgeGradle warns and keeps the obfuscated jar), so the staged jar is exposed as a flatDir module
@@ -84,7 +98,13 @@ dependencies {
     //                mixin refmap through the two mixin properties below (same as Curios).
     compileOnly group: 'tacz', name: 'tacz-1.20.1', version: '1.1.8'
     runtimeOnly fg.deobf(group: 'tacz', name: 'tacz-1.20.1', version: '1.1.8')
+
+    // corvus-core/src/test: plain JUnit 5, no Minecraft (the same table the 1.21.1 build runs).
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.5'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.5'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.5'
 }
+tasks.named('test') { useJUnitPlatform() }
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
 
 // ---- Mixin wiring (dev.corvus.mixin) -----------------------------------------------------------
@@ -114,5 +134,15 @@ jar {
     exclude 'META-INF/MANIFEST.MF'
     manifest {
         attributes('MixinConfigs': mixinConfigs)
+    }
+}
+
+// Corvus shared core: one copy of the cross-version rules, compiled into both loaders.
+sourceSets {
+    main {
+        java.srcDir '../corvus-core/src/main/java'
+    }
+    test {
+        java.srcDir '../corvus-core/src/test/java'
     }
 }

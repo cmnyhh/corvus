@@ -212,6 +212,14 @@ public final class DroneWheel extends Screen {
         if (slot == 7 && hasShiftDown()) return DroneRemote.Action.SUPPLY;
         if (slot == 5 && hasShiftDown()) return DroneRemote.Action.DELIVER;
         if (slot == 2 && hasShiftDown()) return DroneRemote.Action.FIREMODE;
+        if (slot == 6) {
+            // Shift+6 is always the work sector. Without a lamp module the server relabels the whole
+            // sector as work when a mill is in range, so a plain press means work there too.
+            if (hasShiftDown()) return DroneRemote.Action.WORK;
+            if (state != null && "dronepal.wheel.work".equals(state.labels().get(6))) {
+                return DroneRemote.Action.WORK;
+            }
+        }
         return DroneRemote.Action.values()[slot];
     }
 
@@ -227,6 +235,7 @@ public final class DroneWheel extends Screen {
             case SUPPLY -> text("supply");
             case DELIVER -> text("deliver");
             case FIREMODE -> text("firemode");
+            case WORK -> text("work");
             default -> state != null && slot < state.labels().size()
                     ? Component.translatable(state.labels().get(slot)) : Component.empty();
         };
@@ -246,6 +255,7 @@ public final class DroneWheel extends Screen {
             case LIGHT -> "wheel_light";
             case LINK, SUPPLY -> "wheel_link";
             case FIREMODE -> "wheel_burst";
+            case WORK -> "wheel_work";
         };
     }
 

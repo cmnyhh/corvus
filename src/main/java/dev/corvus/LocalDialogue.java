@@ -172,7 +172,7 @@ final class LocalDialogue {
                     // Scan, medic and cargo orders all execute through the same injected handler; the
                     // cover/hold combat orders stay "not implemented" until the combat layer routes them.
                     case "scan", "scan.hostile", "scan.ore", "order.heal", "order.fetch", "order.supply",
-                         "order.light" -> {
+                         "order.light", "order.work", "order.idle" -> {
                         if (!device.execute(intent.id())) return new Reply("当前无法执行，请检查能量、目标或冷却。");
                         // A successful scan answers exactly once, when its results are ready.
                         return new Reply(intent.id().startsWith("scan") ? "" : "指令已执行。");

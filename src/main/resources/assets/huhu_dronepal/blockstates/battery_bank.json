@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "charge=0": {
+      "model": "huhu_dronepal:block/battery_bank"
+    },
+    "charge=1": {
+      "model": "huhu_dronepal:block/battery_bank_1"
+    },
+    "charge=2": {
+      "model": "huhu_dronepal:block/battery_bank_2"
+    },
+    "charge=3": {
+      "model": "huhu_dronepal:block/battery_bank_3"
+    }
+  }
+}

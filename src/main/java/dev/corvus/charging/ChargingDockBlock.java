@@ -7,7 +7,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -22,8 +21,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 /**
- * The charging pad block: a flat 8/16-high slab. Right-click with coal to feed it, with a cell to dock
- * the cell, and with an empty hand to take the docked cell back.
+ * The charging pad block: a flat 8/16-high slab. Right-click with any furnace fuel to feed it, with a
+ * cell to dock the cell, and with an empty hand to take the docked cell back.
  */
 final class ChargingDockBlock extends BaseEntityBlock {
     private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 8, 16);
@@ -47,9 +46,8 @@ final class ChargingDockBlock extends BaseEntityBlock {
                                            InteractionHand hand, BlockHitResult hit) {
         ItemStack held = player.getItemInHand(hand);
         if (!level.isClientSide && level.getBlockEntity(pos) instanceof ChargingDockEntity dock) {
-            if (held.is(Items.COAL)) {
-                int accepted = dock.addCoal(held.getCount());
-                held.shrink(accepted);
+            if (dev.corvus.power.FuelPower.fuel(held)) {
+                held.shrink(dock.addFuel(held));
             } else if (!held.isEmpty() && DockEnergy.chargeable(held)) {
                 dwimInsert(dock, held);
             } else if (held.isEmpty()) {

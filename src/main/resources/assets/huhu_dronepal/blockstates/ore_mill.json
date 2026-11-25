@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "huhu_dronepal:block/ore_mill"
+    },
+    "facing=east": {
+      "model": "huhu_dronepal:block/ore_mill",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "huhu_dronepal:block/ore_mill",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "huhu_dronepal:block/ore_mill",
+      "y": 270
+    }
+  }
+}

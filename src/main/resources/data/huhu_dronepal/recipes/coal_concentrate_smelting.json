@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": {
+    "item": "huhu_dronepal:coal_concentrate"
+  },
+  "result": {
+    "item": "minecraft:coal",
+    "count": 2
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

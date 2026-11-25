@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:coarse_quartz"
+    },
+    {
+      "item": "huhu_dronepal:coarse_quartz"
+    },
+    {
+      "item": "huhu_dronepal:coarse_quartz"
+    },
+    {
+      "item": "huhu_dronepal:coarse_quartz"
+    },
+    {
+      "item": "huhu_dronepal:coarse_quartz"
+    },
+    {
+      "item": "huhu_dronepal:coarse_quartz"
+    },
+    {
+      "item": "huhu_dronepal:coarse_quartz"
+    },
+    {
+      "item": "huhu_dronepal:coarse_quartz"
+    },
+    {
+      "item": "huhu_dronepal:coarse_quartz"
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:quartz_concentrate",
+    "count": 1
+  }
+}

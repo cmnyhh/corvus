@@ -109,7 +109,7 @@ public final class SmokeB {
             check(false, "assembly/catalog", "0 blueprints loaded (data/huhu_dronepal/assembly/*.json)");
             return;
         }
-        check(SurvivalWorks.plans.size() == 38, "assembly/catalog",
+        check(SurvivalWorks.plans.size() == 45, "assembly/catalog",
                 SurvivalWorks.plans.size() + " blueprints loaded");
         level.getChunk(BENCH_POS);
         resetBlock(level, BENCH_POS, SurvivalWorks.BENCH.get().defaultBlockState());
@@ -303,7 +303,7 @@ public final class SmokeB {
         check(first == 2_000 && second == 0, "dock/cable-rate",
                 "first=" + first + " FE, same-tick second=" + second + " FE (buffer cap 2000/t)");
         check(entity.getMaxEnergyStored() == 32_000, "dock/buffer", "buffer=" + entity.getMaxEnergyStored() + " FE");
-        entity.addCoal(4);
+        entity.addFuel(new ItemStack(Items.COAL, 4));
         ItemStack battery = new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation(Corvus.ID, "ahi_bat_mk1")));
         // A freshly crafted cell counts as full (same rule as the 1.21 build), so drain it first or the
         // transfer check would pass without moving a single FE.
@@ -331,7 +331,7 @@ public final class SmokeB {
 
         // Leave a non-zero buffer and coal behind: persisting zeros would prove nothing.
         dock.receiveEnergy(1_500, false);
-        dock.addCoal(2);
+        dock.addFuel(new ItemStack(Items.COAL, 2));
         int keptEnergy = dock.storedEnergy();
         int keptCoal = dock.coalCount();
         // Persistence: same tag a chunk save would write, loaded into a fresh block entity.

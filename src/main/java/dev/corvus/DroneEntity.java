@@ -1,7 +1,9 @@
 package dev.corvus;
 
 import dev.corvus.data.CorvusKeys;
+import dev.corvus.mill.DroneWork;
 import java.util.UUID;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -46,6 +48,9 @@ public final class DroneEntity extends PathfinderMob {
     /** 0..15 flight-blend sample, feeding the boost clip. */
     private static final EntityDataAccessor<Byte> DATA_FLIGHT =
             SynchedEntityData.defineId(DroneEntity.class, EntityDataSerializers.BYTE);
+    /** True while the projection is hovering over its ore mill; the renderer adds a small work bob. */
+    private static final EntityDataAccessor<Boolean> DATA_WORKING =
+            SynchedEntityData.defineId(DroneEntity.class, EntityDataSerializers.BOOLEAN);
     public static final int FOLD_LIMIT = 85;
 
     /** Offset used at deploy time and by the follow loop: right shoulder, slightly behind. */
@@ -71,6 +76,16 @@ public final class DroneEntity extends PathfinderMob {
     }
     /** Follow switch: park at the station instead of chasing the owner. */
     public boolean holdingStation;
+    /**
+     * Ore mill this projection is working at. Non-null wins over the follow station: the drone flies to
+     * the mill, hovers, and the mill resolves the projection through this field on every tick. Cleared by
+     * recall, the follow switch and {@code order.idle}.
+     */
+    private BlockPos workTarget;
+    /** Sticky while below 15 % charge; cleared again only at 40 % (see {@link DroneWork#second}). */
+    private boolean workStalled;
+    /** Dev-tool seam: a controller supplied for headless acceptance runs instead of the worn one. */
+    private ItemStack testController = ItemStack.EMPTY;
     /** Flight-log accounting mark, shared with {@link DroneArchive}. */
     int archiveTick;
     /** Hitbox size of the current frame, in blocks. See {@link #getDimensions}. */
@@ -197,8 +212,12 @@ public final class DroneEntity extends PathfinderMob {
         return systems.execute(this, player, controller(), intent);
     }
 
+    /** Dev-tool seam: makes {@link #controller()} answer with a supplied stack. */
+    public void setTestController(ItemStack stack) { testController = stack == null ? ItemStack.EMPTY : stack; }
+
     /** The controller that carries this projection's serial, or EMPTY when it is not worn. */
     public ItemStack controller() {
+        if (!testController.isEmpty()) return testController;
         if (owner == null || !(level() instanceof ServerLevel serverLevel)) return ItemStack.EMPTY;
         ServerPlayer pilot = serverLevel.getServer().getPlayerList().getPlayer(owner);
         return pilot == null ? ItemStack.EMPTY : controller(pilot);
@@ -268,17 +287,22 @@ public final class DroneEntity extends PathfinderMob {
                 DroneArchive.checkpoint(serverLevel, this);
                 // Power transaction, lamp profile and cargo pickup, once per second (see ModuleRuntime).
                 ModuleRuntime.second(this, pilot, terminal);
+                DroneWork.second(this, terminal);
                 systems.second(this, pilot, terminal);
             }
         }
         systems.tick(this, pilot);
         combat.tick(this);
+        if (workTarget != null && DroneWork.chase(this, pilot)) return;
+        working(false);
         if (holdingStation) {
             setDeltaMovement(Vec3.ZERO);
             entityData.set(DATA_FLIGHT, (byte) 0);
             return;
         }
         Vec3 target = station(pilot.position(), followHeading);
+        // TODO(corvus-core): 0.35 is a fixed blend and ignores the frame's accel_response; it should be
+        // dev.corvus.core.FrameStats#followStep(..., accel, 1) per axis, like the 1.21.1 side.
         setDeltaMovement(Vec3.ZERO);
         Vec3 previous = position();
         setPos(previous.lerp(target, 0.35D));
@@ -296,6 +320,51 @@ public final class DroneEntity extends PathfinderMob {
         }
         super.remove(reason);
     }
+
+    /** The mill this projection is stationed at, or {@code null}. */
+    public BlockPos workTarget() {
+        return workTarget;
+    }
+
+    /** Assign or clear the work station; the mill re-checks this field itself. */
+    public void setWorkTarget(BlockPos target) {
+        workTarget = target;
+    }
+
+    public boolean workStalled() { return workStalled; }
+
+    public void setWorkStalled(boolean stalled) { workStalled = stalled; }
+
+    /**
+     * The work orbit turns the hull with the shared cycle (22.5 degrees per tick). That is faster than
+     * the vanilla body follower re-aims a mob that is not moving horizontally - during the drop and the
+     * reset the drone hangs still - so while a work order runs the hull simply follows the synced
+     * heading. Every other state (idle, follow, combat) keeps the vanilla rule, where the body turns
+     * toward the direction of travel and a parked drone looks wherever it last looked.
+     */
+    @Override protected float tickHeadTurn(float bodyYaw, float radius) {
+        float turn = super.tickHeadTurn(bodyYaw, radius);
+        if (isWorking()) setYBodyRot(getYRot());
+        return turn;
+    }
+
+    /** Work-order entry point: point at a mill and clear any sticky battery stall. */
+    public void assignWork(BlockPos pos) {
+        workTarget = pos;
+        workStalled = false;
+    }
+
+    public void clearWork() {
+        workTarget = null;
+        workStalled = false;
+        working(false);
+    }
+
+    public boolean isWorking() { return entityData.get(DATA_WORKING); }
+
+    public void working(boolean active) { entityData.set(DATA_WORKING, active); }
+
+    public void setFlight(int value) { entityData.set(DATA_FLIGHT, (byte) Mth.clamp(value, 0, 15)); }
 
     public void faceHeading(float heading) {
         setYRot(heading);
@@ -315,6 +384,7 @@ public final class DroneEntity extends PathfinderMob {
         entityData.define(DATA_AIM_PITCH, 0F);
         entityData.define(DATA_SCANNING, false);
         entityData.define(DATA_FLIGHT, (byte) 0);
+        entityData.define(DATA_WORKING, false);
     }
 
     @Override
@@ -323,6 +393,8 @@ public final class DroneEntity extends PathfinderMob {
         if (tag.hasUUID(CorvusKeys.OWNER)) owner = tag.getUUID(CorvusKeys.OWNER);
         if (tag.contains(CorvusKeys.FRAME)) setFrame(tag.getString(CorvusKeys.FRAME));
         if (tag.contains(CorvusKeys.PAINT)) setPaint(tag.getString(CorvusKeys.PAINT));
+        workTarget = tag.contains("WorkTarget") ? BlockPos.of(tag.getLong("WorkTarget")) : null;
+        workStalled = tag.getBoolean("WorkStalled");
     }
 
     @Override
@@ -331,5 +403,7 @@ public final class DroneEntity extends PathfinderMob {
         if (owner != null) tag.putUUID(CorvusKeys.OWNER, owner);
         tag.putString(CorvusKeys.FRAME, getFrameId());
         tag.putString(CorvusKeys.PAINT, getPaintName());
+        if (workTarget != null) tag.putLong("WorkTarget", workTarget.asLong());
+        tag.putBoolean("WorkStalled", workStalled);
     }
 }

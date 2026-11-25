@@ -1,0 +1,23 @@
+{
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 6
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 4
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 3
+    },
+    {
+      "item": "minecraft:furnace",
+      "count": 1
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:burner_generator"
+  }
+}

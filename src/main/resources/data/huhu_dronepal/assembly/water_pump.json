@@ -1,0 +1,23 @@
+{
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 6
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 4
+    },
+    {
+      "item": "minecraft:glass",
+      "count": 2
+    },
+    {
+      "item": "minecraft:piston",
+      "count": 2
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:water_pump"
+  }
+}

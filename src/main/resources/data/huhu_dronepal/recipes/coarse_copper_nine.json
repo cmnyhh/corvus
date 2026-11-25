@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "huhu_dronepal:coarse_copper"
+    },
+    {
+      "item": "huhu_dronepal:coarse_copper"
+    },
+    {
+      "item": "huhu_dronepal:coarse_copper"
+    },
+    {
+      "item": "huhu_dronepal:coarse_copper"
+    },
+    {
+      "item": "huhu_dronepal:coarse_copper"
+    },
+    {
+      "item": "huhu_dronepal:coarse_copper"
+    },
+    {
+      "item": "huhu_dronepal:coarse_copper"
+    },
+    {
+      "item": "huhu_dronepal:coarse_copper"
+    },
+    {
+      "item": "huhu_dronepal:coarse_copper"
+    }
+  ],
+  "result": {
+    "item": "huhu_dronepal:copper_concentrate",
+    "count": 1
+  }
+}

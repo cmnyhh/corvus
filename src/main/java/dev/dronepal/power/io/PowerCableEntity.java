@@ -1,6 +1,8 @@
 package dev.dronepal.power.io;
 
+import dev.corvus.core.EnergyNet;
 import dev.corvus.core.PowerIo;
+import dev.dronepal.power.EnergyLink;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -10,29 +12,43 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.energy.IEnergyStorage;
 
 /**
- * One cell of an FE run.
+ * One cell of an FE network.
  *
- * <p>The cell is a wire, not a battery: it stores <b>nothing</b>. Everything it hands out is pulled on
- * demand from the machines along the run ({@link CableNetwork#draw}), which is why there is no ticker —
- * an idle run costs nothing, and a run that is too long simply delivers zero instead of quietly trapping
- * a buffer's worth of energy. (The spec allowed "at most 200 FE of smoothing"; that option is
- * deliberately not taken, because our generators and banks <em>push</em> into anything that accepts
- * power, so a receiving cable would swallow 2,000 FE/t into a reserve nothing could ever spend.)</p>
+ * <p>The cell is a wire, not a battery: it stores <b>nothing</b>. The energy a network moves is pulled
+ * from its source endpoints and delivered to its sinks by {@link EnergyLink#tick(ServerLevel)}, once per
+ * tick, under one budget and one priority order. The cable is only the medium: it refuses
+ * {@code receiveEnergy}, so a generator pushing into a run is a no-op and nothing can be stranded in
+ * the wire (the spec allowed a 200 FE smoothing reserve; it is deliberately not taken for exactly that
+ * reason).</p>
  *
- * <p>Right-click reports the three numbers a builder needs: the run's current flow, how many ports sit
- * on it, and how many cells it is. A run longer than {@link PowerIo#CABLE_LENGTH} carries nothing and
- * the status line says so; the length is still printed so the player can see how far over it is.</p>
+ * <p>The energy capability is still published, because another mod's machine may want to draw from our
+ * run: {@link #extractEnergy} serves that pull out of the network's sources, inside whatever is left of
+ * the same per-tick budget the network's own pass uses ({@link EnergyLink#pull}). Our own blocks never
+ * take that path — they are endpoints of the pass.</p>
+ *
+ * <p>Right-click reports the run's current flow, how many ports sit on it and how many cells it is. A
+ * path longer than {@link EnergyNet#MAX_LENGTH} cells from source to sink carries nothing and the
+ * status line says so; the length is still printed so the player can see how far over it is.</p>
  */
 public final class PowerCableEntity extends BlockEntity implements IEnergyStorage {
     PowerCableEntity(BlockPos pos, BlockState state) {
         super(PowerIoRegistry.CABLE_TYPE.get(), pos, state);
     }
 
+    @Override public void setLevel(Level level) {
+        super.setLevel(level);
+        if (level instanceof ServerLevel server) EnergyLink.registerCable(server, worldPosition);
+    }
+
+    @Override public void setRemoved() {
+        if (level instanceof ServerLevel server) EnergyLink.unregisterCable(server, worldPosition);
+        super.setRemoved();
+    }
+
     /** Current numbers for the status line, computed on demand. */
     Component status(ServerLevel level) {
         CableNetwork.Scan scan = CableNetwork.scan(level, worldPosition);
-        int flow = CableNetwork.flow(level, scan.root, level.getGameTime());
-        return PowerCableBlock.status(flow, scan.ports, scan.cells);
+        return PowerCableBlock.status(EnergyLink.flow(level, worldPosition), scan.ports, scan.cells);
     }
 
     void readStatus(ServerLevel level, net.minecraft.server.level.ServerPlayer player) {
@@ -63,10 +79,13 @@ public final class PowerCableEntity extends BlockEntity implements IEnergyStorag
     /** A cable is a wire: it never accepts energy, so nothing can be stranded inside it. */
     @Override public int receiveEnergy(int amount, boolean simulate) { return 0; }
 
-    /** Hands out FE the run pulls on demand from the machines along it, within the run's tick window. */
+    /**
+     * Serves a foreign pull out of this network's sources, inside the per-tick budget that is left after
+     * the network's own source &rarr; sink pass. A network with nothing left to carry answers 0.
+     */
     @Override public int extractEnergy(int amount, boolean simulate) {
         if (level == null || level.isClientSide || amount <= 0) return 0;
-        return CableNetwork.draw(level, worldPosition, amount, simulate);
+        return EnergyLink.pull(level, worldPosition, amount, simulate);
     }
 
     @Override public int getEnergyStored() { return 0; }

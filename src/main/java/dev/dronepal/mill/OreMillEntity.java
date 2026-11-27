@@ -43,7 +43,8 @@ import net.minecraft.world.level.material.Fluids;
  * also actively pulled from the six neighbours every tick, so a mill next to a battery bank keeps
  * running without cables. The buffer is {@value OreMillRules#BUFFER} FE.</p>
  */
-public final class OreMillEntity extends BlockEntity implements IEnergyStorage, IFluidHandler {
+public final class OreMillEntity extends BlockEntity implements IEnergyStorage, IFluidHandler,
+        dev.dronepal.power.EnergyLink.Node {
     /** What the status lamp shows and why. {@link #WORKING} is the only green state. */
     public enum Link {
         NONE("none"), OFFLINE("offline"), WORKING("working"), IDLE("idle"),
@@ -457,6 +458,28 @@ public final class OreMillEntity extends BlockEntity implements IEnergyStorage, 
     }
     @Override public FluidStack drain(FluidStack resource, FluidAction action) { return FluidStack.EMPTY; }
     @Override public FluidStack drain(int maxDrain, FluidAction action) { return FluidStack.EMPTY; }
+    // ---- cable network endpoint (loaded by dev.dronepal.power.EnergyLink) ----
+
+    /**
+     * FE the mill could take from a cable network this tick: what is left of its 20 FE/t input window
+     * and of its 60,000 FE buffer. Both numbers are the machine's own, so a cable, a wireless tower and
+     * a neighbouring battery together still cannot push more than {@link OreMillRules#FE_PER_TICK}.
+     */
+    @Override public int netDemand() {
+        if (!(level instanceof ServerLevel world)) return 0;
+        resetInputClock(world);
+        return Math.max(0, Math.min(OreMillRules.FE_PER_TICK - inputThisTick, OreMillRules.BUFFER - energy));
+    }
+
+    /** After the towers and the batteries; the mill is a machine, not storage. */
+    @Override public int netPriority() { return dev.corvus.core.EnergyNet.PRIORITY_MILL; }
+
+    @Override public int netOffer() { return 0; }
+
+    @Override public int netSpend(int amount) { return 0; }
+
+    @Override public int netAccept(int amount, boolean simulate) { return receiveEnergy(amount, simulate); }
+
     @Override public int getEnergyStored() { return energy; }
     @Override public int getMaxEnergyStored() { return OreMillRules.BUFFER; }
     @Override public boolean canReceive() { return true; }

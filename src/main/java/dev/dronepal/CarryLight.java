@@ -68,6 +68,8 @@ final class CarryLight {
             if (changed) {
                 if (m.params().get("sort").getAsBoolean()) cargo.sort(Comparator.comparing(s -> BuiltInRegistries.ITEM.getKey(s.getItem())));
                 save(owner,controller,cargo);
+                // A pickup is a one-shot job: the hold is billed at its in-use rate for this window.
+                drone.markActive("carry");
             }
             if (m.params().get("auto_deliver").getAsBoolean() && !cargo.isEmpty()) deliver(owner,controller,cargo,false);
         }
@@ -121,6 +123,8 @@ final class CarryLight {
             changed |= item.getCount()!=before;
         }
         if (changed) save(p,controller,cargo);
+        // A delivery is work for the hold too, whether it was ordered or triggered by auto_deliver.
+        if (changed) Hardware.markActive(p, "carry");
         return changed;
     }
     static boolean execute(ServerPlayer p, ItemStack stack, String intent) {

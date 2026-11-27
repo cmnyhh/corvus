@@ -11,7 +11,9 @@ package dev.corvus.core;
  *
  * <p>The per-tower output budget is a shared resource: every device directly attached to a tower
  * competes for the same {@code towerThroughput} FE/t, allocated by priority (lower value first:
- * drone 0, ore mill 1, charging dock 2). A device that gets a partial grant keeps working at a
+ * drone 0, ore mill 1, charging dock 2, power port 3). The port is last on purpose — it is the outlet
+ * for other mods, so the machines of this mod are served before it, and a port that is inside a tower's
+ * radius can also fall back on its cable network when the tower is empty. A device that gets a partial grant keeps working at a
  * reduced rate instead of switching off; this class only does the arithmetic, the loader-side code
  * remembers which device got which grant.</p>
  *
@@ -42,6 +44,8 @@ public final class Grid {
     public static final int PRIORITY_DRONE = 0;
     public static final int PRIORITY_MILL = 1;
     public static final int PRIORITY_DOCK = 2;
+    /** Serviced after the mod's own machines: a {@code power_port} feeding another mod. */
+    public static final int PRIORITY_PORT = 3;
 
     private Grid() {}
 

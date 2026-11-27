@@ -16,7 +16,11 @@ import net.minecraft.world.level.block.state.BlockState;
 final class PowerIoSources {
     private PowerIoSources() {}
 
-    /** A machine of ours that makes or stores FE: burner, solar, battery bank (a tower joins here). */
+    /**
+     * A machine of ours that makes or stores FE: burner, solar, battery bank. The power tower is not
+     * here on purpose — it refuses capability extraction (devices go through the wireless grid) and
+     * joins the cable network as an {@code EnergyLink.Node} instead.
+     */
     static boolean machine(BlockState state) {
         return state.getBlock() instanceof BurnerGeneratorBlock
                 || state.getBlock() instanceof SolarGeneratorBlock
@@ -30,8 +34,14 @@ final class PowerIoSources {
                 || machine(state);
     }
 
-    /** Blocks a port or a cable may pull FE out of. A port is an outlet, never a source. */
+    /**
+     * Blocks a {@code power_port} may pull FE out of directly, on a face other than its outlet.
+     *
+     * <p>A cable is deliberately <b>not</b> one of them: the run used to be drained by a port pull
+     * loop, which is what made a cable useless to batteries and machines. Cables are now a network that
+     * pushes into its sinks ({@link dev.dronepal.power.EnergyLink}), and the port is one of them.</p>
+     */
     static boolean supplying(BlockState state) {
-        return state.getBlock() instanceof PowerCableBlock || machine(state);
+        return machine(state);
     }
 }

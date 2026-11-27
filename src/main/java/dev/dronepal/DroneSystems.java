@@ -209,13 +209,33 @@ final class DroneSystems {
             p.removeEffect(effect.get().getEffect());
         }
     }
+    /**
+     * Is this family doing work during the settlement window that is being billed?
+     *
+     * <p>This is the half of the idle/active split only the runtime can answer: a fitted lamp switched
+     * off, a scanner between pulses, a parked weapon bus and an idle hold all pay their standby rate,
+     * while a lit lamp, a running sweep, an engagement, a pickup/hand-off and a treatment pay the full
+     * in-use rate. Pickups and link hand-offs are one-shot events, so they leave a short mark on the
+     * airframe ({@link DroneEntity#markActive}) that the next settlement still sees.</p>
+     */
+    private boolean inUse(DroneEntity drone, String family) {
+        return switch (family) {
+            case "scan" -> drone.isScanActive();
+            case "light" -> drone.lightProfile() != 0;
+            case "combat" -> drone.getTarget() != null;
+            case "medic" -> healingLeft > 0;
+            case "carry", "link" -> drone.activeWithin(family);
+            // solar makes power; it does not spend any.
+            default -> false;
+        };
+    }
     void second(DroneEntity drone, ServerPlayer p, ItemStack stack) {
         Batteries.tickDeployed(drone, stack);
         if (CombatSlots.available()) TaczLink.second(p, stack);
         var modules = Hardware.installed(stack);
         Hardware.updateReliability(drone, stack, modules);
         int start = Hardware.energy(stack), capacity = Hardware.capacity(stack);
-        int charge = 0, drain = 0;
+        int charge = 0;
         var level = p.serverLevel();
         for (var m : modules) {
             if (m.family().equals("solar") && !Hardware.faulted(stack, m) && level.canSeeSky(drone.blockPosition())) {
@@ -224,8 +244,10 @@ final class DroneSystems {
                 double scale = jitter > 0 ? 1 + jitter * (p.getRandom().nextDouble() * 2 - 1) : 1;
                 charge = (int) Math.round(20 * Math.clamp(m.integer(key), 0, 500) * scale);
             }
-            if (Hardware.online(stack, m.family())) drain += m.draw(20);
         }
+        // The whole bill comes from the shared rule: standby rates, in-use rates for the families doing
+        // work this second, the deployed baseline, then one lump multiplier and one rounding.
+        int drain = Hardware.drainPerSecond(stack, true, family -> inUse(drone, family));
         var medic = modules.stream().filter(m -> m.family().equals("medic")).findFirst().orElse(null);
         if (medic != null && Hardware.online(stack, "medic")) {
             boolean interrupted = p.hurtTime > 0 || p.getLastHurtByMobTimestamp() != lastHurt;
@@ -246,14 +268,14 @@ final class DroneSystems {
                 } else healingLeft = 0;
             }
         } else healingLeft = 0;
-        // TODO(grid): the wireless grid pays the module drain first and writes the rest into the cell.
+        // The wireless grid pays the module drain first and writes the rest into the cell.
         var grid = dev.dronepal.power.grid.DroneCharger.service(level, drone, stack, drain);
         drain -= grid.drainPaid();
         int afterGrid = Hardware.energy(stack);
         int end = Math.clamp(afterGrid + charge - drain, 0, capacity);
         if (end != afterGrid) Hardware.setEnergy(stack, end);
         DroneTelemetry.publish(drone, p, stack, Math.min(Math.max(0, drain), afterGrid + charge), charge,
-                grid.online(), grid.ratePerSecond());
+                grid.online(), grid.ratePerSecond(), grid.queued());
         CarryLight.second(drone,p,stack);
         // The mill's extra 20 FE/t is settled with the rest of the hardware draw, once a second.
         dev.dronepal.mill.DroneWork.second(drone, stack);

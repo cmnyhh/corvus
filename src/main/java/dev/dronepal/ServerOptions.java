@@ -16,6 +16,14 @@ public final class ServerOptions {
     static final ModConfigSpec.IntValue AUTO_SCAN_SECONDS = BUILDER
         .comment("Seconds between automatic scans by a deployed, powered scanner.")
         .defineInRange("autoScanSeconds", 15, 5, 300);
+    static final ModConfigSpec.DoubleValue DRAIN_MULTIPLIER = BUILDER
+        .comment("Scale on every module's draw (standby and in-use) and on the deployed airframe's 0.5 FE/t baseline.",
+                 "0.25 = 4x the endurance, 1.0 = the pre-rebalance cost, 3.0 = 3x the cost (0.25-3.0, default 0.6).",
+                 "It multiplies the whole settled bill once a second, so it never changes the relative cost of two modules.",
+                 "The HUD's FE/s figure and the remaining-time estimate already include it.")
+        .defineInRange("drainMultiplier", dev.corvus.core.HardwareRules.DEFAULT_DRAIN_MULTIPLIER,
+                dev.corvus.core.HardwareRules.MIN_DRAIN_MULTIPLIER,
+                dev.corvus.core.HardwareRules.MAX_DRAIN_MULTIPLIER);
     static final ModConfigSpec.IntValue BURNER_OUTPUT = BUILDER
         .comment("Burner generator output in FE per tick. Any furnace fuel is worth burnTicks x 2.5 FE,",
                  "so one coal lump feeds 4,000 FE regardless of this rate; the buffer is always 100,000 FE.")
@@ -33,6 +41,14 @@ public final class ServerOptions {
                  "The port buffers 8,000 FE; this is also the ceiling another mod's consumer sees.",
                  "A cable run carries at most 2,000 FE/t regardless of this value.")
         .defineInRange("portOutput", 1_000, 100, 4_000);
+    static final ModConfigSpec.IntValue CABLE_THROUGHPUT = BUILDER
+        .comment("Total FE per tick one cable network may move (100-8000, default 2,000).",
+                 "A network is every power_cable block connected to the same run. Cables are general",
+                 "conductors: any of our FE blocks that touches a cable is an endpoint, and the network",
+                 "moves power source -> sink each tick by priority (tower, battery, ore mill, dock, port).",
+                 "A run longer than 32 blocks between source and sink carries nothing.")
+        .defineInRange("cableThroughput", dev.corvus.core.EnergyNet.THROUGHPUT_DEFAULT,
+                dev.corvus.core.EnergyNet.THROUGHPUT_MIN, dev.corvus.core.EnergyNet.THROUGHPUT_MAX);
     // ---- wireless power grid (power_tower) ----
     static final ModConfigSpec.IntValue TOWER_RADIUS = BUILDER
         .comment("Coverage radius of a power tower in blocks (8-64). Two towers at most this far apart",
@@ -58,6 +74,11 @@ public final class ServerOptions {
         try { return Math.clamp(CHARGE_RATE_MULTIPLIER.get(), 0.25D, 20.0D); }
         catch (RuntimeException unloaded) { return 1.0D; }
     }
+    /** Server-wide drain scale (0.25..3.0); the default is 0.6, see {@link #DRAIN_MULTIPLIER}. */
+    public static double drainMultiplier() {
+        try { return dev.corvus.core.HardwareRules.clampMultiplier(DRAIN_MULTIPLIER.get()); }
+        catch (RuntimeException unloaded) { return dev.corvus.core.HardwareRules.DEFAULT_DRAIN_MULTIPLIER; }
+    }
     public static int burnerOutput() {
         try { return Math.clamp(BURNER_OUTPUT.get(), 10, 400); }
         catch (RuntimeException unloaded) { return 40; }
@@ -73,6 +94,11 @@ public final class ServerOptions {
     public static int portOutput() {
         try { return Math.clamp(PORT_OUTPUT.get(), 100, 4_000); }
         catch (RuntimeException unloaded) { return 1_000; }
+    }
+    /** Per-network cable throughput, FE/t; clamped to the shared 100..8000 range even if the file is junk. */
+    public static int cableThroughput() {
+        try { return dev.corvus.core.EnergyNet.clampThroughput(CABLE_THROUGHPUT.get()); }
+        catch (RuntimeException unloaded) { return dev.corvus.core.EnergyNet.THROUGHPUT_DEFAULT; }
     }
     /** Grid link/coverage radius; clamped to the documented 8..64 even if the file holds junk. */
     public static int towerRadius() {

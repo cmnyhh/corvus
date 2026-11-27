@@ -1,5 +1,6 @@
 package dev.dronepal.charging;
 
+import dev.corvus.core.EnergyNet;
 import dev.dronepal.DroneEntity;
 import dev.dronepal.Hardware;
 import dev.dronepal.power.FuelBuffer;
@@ -28,18 +29,29 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
  * (or the battery inside a docked controller) sitting in the pad.
  * <p>
  * Fuel is worth {@code burnTicks x 2.5} FE ({@link FuelValues}), so coal still contributes its old
- * 4,000 FE while a coal block gives 40,000 and a blaze rod 6,000; the buffered trickle stays capped at
- * 200 FE/t. Up to 64 items of one fuel type fit in the hopper and are returned on an empty-handed
- * right-click or spilled when the pad is broken.
+ * 4,000 FE while a coal block gives 40,000 and a blaze rod 6,000; the buffered trickle is capped at
+ * 800 FE/t, which is what a rebalanced cell (600-2,000 FE/t receive rate) can actually absorb. Up to
+ * 64 items of one fuel type fit in the hopper and are returned on an empty-handed right-click or
+ * spilled when the pad is broken.
  * <p>
  * Everything the client draws travels in {@link #getUpdateTag}: the buffer, the docked stack and the
  * stats of its cell. Tags are pushed at most once every {@value #SYNC_INTERVAL} ticks while a value
  * is moving, and immediately on insert/take/fuel so the hologram never shows stale numbers.
  */
-public final class ChargingDockEntity extends BlockEntity implements IEnergyStorage {
+public final class ChargingDockEntity extends BlockEntity implements IEnergyStorage,
+        dev.dronepal.power.EnergyLink.Node {
     private static final int BUFFER = 32_000;
     static final int BASE_CABLE_RATE = 2_000;
-    private static final int COAL_RATE = 200;
+    /**
+     * FE/t the pad pushes into its buffer from fuel.
+     *
+     * <p>Was 200, which capped every recharged cell at a tenth of its receive rate: a 700,000 FE pack
+     * needed 29 minutes on a pad it could have swallowed at 800 FE/t. The pad's cable/grid input is
+     * separate ({@link #BASE_CABLE_RATE}) and the cell's own receive ceiling still applies.</p>
+     */
+    static final int COAL_RATE = 800;
+    /** FE/t the pad handed to a projected drone's controller during the previous tick, 0 when none. */
+    private int droneRate;
     /** Ticks between two throttled update packets (10 ticks = twice a second). */
     static final int SYNC_INTERVAL = 10;
     private ItemStack target = ItemStack.EMPTY;
@@ -91,6 +103,9 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
     Component status() {
         Component detail = target.isEmpty() ? Component.translatable("message.dronepal.dock_empty") :
                 Component.empty().append(target.getHoverName()).append(" " + DockEnergy.energy(target) + "/" + DockEnergy.capacity(target) + " FE");
+        // A projected drone hovering on the pad is the case players ask about: name the rate it gets.
+        if (droneRate > 0) detail = detail.copy().append(" · ")
+                .append(Component.translatable("message.dronepal.dock_drone", droneRate));
         Component fuelLabel = fuel.stack().isEmpty() ? Component.translatable("message.dronepal.fuel_empty") :
                 Component.empty().append(fuel.stack().getHoverName()).append(" ×" + fuel.count());
         return Component.translatable("message.dronepal.dock_status", energy, BUFFER, fuelLabel, detail);
@@ -104,21 +119,20 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
     }
 
     void tick(ServerLevel world) {
-        // TODO(grid): an in-grid pad fills its buffer from the wireless grid before burning fuel.
-        int gridRoom = Math.min(BASE_CABLE_RATE, BUFFER - energy);
+        // An in-grid pad fills its buffer from the wireless grid before burning fuel, inside the same
+        // per-tick cable window the cable network and the capability input use.
+        int gridRoom = cableRoom(world);
         if (gridRoom > 0) {
             int fromGrid = dev.dronepal.power.grid.GridLink.draw(world, this, gridRoom,
                     dev.dronepal.power.grid.GridLink.PRIORITY_DOCK,
-                    () -> Math.min(BASE_CABLE_RATE, BUFFER - energy));
-            if (fromGrid > 0) {
-                energy += fromGrid;
-                setChanged();
-            }
+                    () -> Math.min(cableRate(), BUFFER - energy));
+            if (fromGrid > 0) noteCable(world, fromGrid);
         }
         if (energy < BUFFER && fuel.hasFuel() && fuel.ignite(world, worldPosition)) {
             energy += fuel.draw(Math.min(COAL_RATE, BUFFER - energy));
             setChanged();
         }
+        droneRate = 0;
         if (energy > 0) {
             if (!target.isEmpty()) {
                 transfer(target);
@@ -126,7 +140,10 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
                 // A projected drone touching the pad charges its owner's actual controller stack.
                 var dockZone = new AABB(worldPosition).expandTowards(0, 0.75, 0);
                 for (var drone : world.getEntitiesOfClass(DroneEntity.class, dockZone)) {
-                    if (transfer(drone.controller())) break;
+                    int received = transfer(drone.controller());
+                    if (received <= 0) continue;
+                    droneRate = received;
+                    break;
                 }
             }
         }
@@ -134,12 +151,13 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
         pushSync(world);
     }
 
-    private boolean transfer(ItemStack stack) {
+    /** Moves what the cell will take out of the buffer; returns the FE that actually moved. */
+    private int transfer(ItemStack stack) {
         int received = DockEnergy.charge(stack, energy, false);
-        if (received == 0) return false;
+        if (received == 0) return 0;
         energy -= received;
         setChanged();
-        return true;
+        return received;
     }
 
     /**
@@ -187,6 +205,8 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
     public ItemStack targetStack() { return target; }
     public int targetEnergy() { return targetEnergy; }
     public int targetCapacity() { return targetCapacity; }
+    /** FE/t this pad handed to a projected drone's controller on the last tick (0 when none). */
+    public int droneRate() { return droneRate; }
 
     @Override public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         refreshTarget();
@@ -243,6 +263,41 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
     private static int cableRate() {
         return (int)Math.clamp(Math.round(BASE_CABLE_RATE * dev.dronepal.ServerOptions.chargeMultiplier()), 1, 1_000_000);
     }
+
+    /** Free buffer room left in this tick's cable/grid window. */
+    private int cableRoom(ServerLevel world) {
+        long now = world.getGameTime();
+        int used = cableTick == now ? cableReceived : 0;
+        return Math.max(0, Math.min(cableRate() - used, BUFFER - energy));
+    }
+
+    /** Books FE that arrived from the wireless grid against the cable window, so the two cannot stack. */
+    private void noteCable(ServerLevel world, int amount) {
+        long now = world.getGameTime();
+        if (cableTick != now) {
+            cableTick = now;
+            cableReceived = 0;
+        }
+        cableReceived += amount;
+        energy += amount;
+        setChanged();
+    }
+
+    // ---- cable network endpoint (loaded by dev.dronepal.power.EnergyLink) ----
+
+    /** A pad is a sink only: the cell in it is charged, the pad never feeds the grid back. */
+    @Override public int netOffer() { return 0; }
+
+    @Override public int netDemand() {
+        return level instanceof ServerLevel world ? cableRoom(world) : 0;
+    }
+
+    /** After towers, batteries and the mill; a pad is a convenience, not production. */
+    @Override public int netPriority() { return EnergyNet.PRIORITY_DOCK; }
+
+    @Override public int netSpend(int amount) { return 0; }
+
+    @Override public int netAccept(int amount, boolean simulate) { return receiveEnergy(amount, simulate); }
     @Override public int getEnergyStored() { return storedEnergy(); }
     @Override public int getMaxEnergyStored() { return BUFFER; }
     @Override public boolean canReceive() { return true; }

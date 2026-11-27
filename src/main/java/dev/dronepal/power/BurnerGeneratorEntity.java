@@ -1,5 +1,6 @@
 package dev.dronepal.power;
 
+import dev.corvus.core.EnergyNet;
 import dev.dronepal.ServerOptions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -20,8 +21,13 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
  * puff of smoke from vanishing because the neighbour happened to be full for one tick. It only burns
  * while it has somewhere to put the energy, so a generator with nothing attached does not quietly eat
  * a chest of coal — see {@link #tick}.</p>
+ *
+ * <p>"Somewhere to put it" includes a cable ({@link EnergyLink#wantsPower}): a cable refuses to store
+ * energy, so the old {@link PowerPush#canAccept} probe alone would have read "nobody wants this" and
+ * left a generator wired to a battery bank stone cold. The cable is a source endpoint as well
+ * ({@link #netOffer()}), which is how a bank 20 blocks of cable away gets filled.</p>
  */
-public final class BurnerGeneratorEntity extends BlockEntity implements IEnergyStorage {
+public final class BurnerGeneratorEntity extends BlockEntity implements IEnergyStorage, EnergyLink.Node {
     public static final int BUFFER = 100_000;
     private final FuelBuffer fuel = new FuelBuffer();
     private int energy;
@@ -42,7 +48,8 @@ public final class BurnerGeneratorEntity extends BlockEntity implements IEnergyS
         // Idle when the output is full or nothing can take power: "no fuel burnt into nothing". The
         // receiver test is a one-FE simulated offer (PowerPush#canAccept / Bank#canTakeProbe), the same
         // rule the 1.20.1 burner uses, so a present-but-full neighbour stops the fire on both builds.
-        boolean canBurn = energy < BUFFER && PowerPush.canAccept(level, worldPosition);
+        boolean canBurn = energy < BUFFER
+                && (PowerPush.canAccept(level, worldPosition) || EnergyLink.wantsPower(level, worldPosition));
         int generated = 0;
         if (canBurn && fuel.hasFuel() && fuel.ignite(level, worldPosition)) {
             generated = fuel.draw(Math.min(output(), BUFFER - energy));
@@ -87,6 +94,23 @@ public final class BurnerGeneratorEntity extends BlockEntity implements IEnergyS
     @Override public int getMaxEnergyStored() { return BUFFER; }
     @Override public boolean canReceive() { return false; }
     @Override public boolean canExtract() { return true; }
+
+    // ---- cable network endpoint (loaded by dev.dronepal.power.EnergyLink) ----
+
+    /** FE the buffer could hand to a cable network this tick: a source, never a sink. */
+    @Override public int netOffer() {
+        if (level == null || level.isClientSide) return 0;
+        return Math.max(0, Math.min(energy, 2_000));
+    }
+
+    @Override public int netDemand() { return 0; }
+
+    /** Priority is only read for sinks; a generator is never one. */
+    @Override public int netPriority() { return EnergyNet.PRIORITY_PORT; }
+
+    @Override public int netSpend(int amount) { return extractEnergy(amount, false); }
+
+    @Override public int netAccept(int amount, boolean simulate) { return 0; }
 
     @Override protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);

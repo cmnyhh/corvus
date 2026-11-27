@@ -1,0 +1,11 @@
+{
+  "ingredients": [
+    { "item": "minecraft:copper_ingot", "count": 6 },
+    { "item": "minecraft:iron_ingot", "count": 2 },
+    { "item": "minecraft:redstone", "count": 4 }
+  ],
+  "result": {
+    "item": "huhu_dronepal:power_port",
+    "count": 1
+  }
+}

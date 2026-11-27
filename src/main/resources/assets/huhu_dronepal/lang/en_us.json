@@ -626,5 +626,11 @@
   "hud.dronepal.grid_online": "on grid",
   "hud.dronepal.grid_offline": "off grid",
   "hud.dronepal.grid_charging": "on grid · charging +%s FE/s",
-  "hud.dronepal.grid_full": "on grid · full"
+  "hud.dronepal.grid_full": "on grid · full",
+  "hud.dronepal.grid_queued": "on grid · queued",
+  "hud.dronepal.net": "Net %s FE/s",
+  "hud.dronepal.remaining": "%s left",
+  "dronepal.tip.idle_active": "Standby %1$s FE/t · In use %2$s FE/t",
+  "message.dronepal.dock_drone": "Charging a drone at %s FE/t",
+  "message.dronepal.tower_drone": "Charging a drone at %s FE/t"
 }

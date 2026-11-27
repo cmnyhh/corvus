@@ -39,8 +39,9 @@ public final class BatteryModelsGameTest {
 
     @GameTest(template = "curios_test_room")
     public static void vendorLimitsFollowPhysicalCell(GameTestHelper test) {
-        int[] capacities = {250000,600000,1200000,180000,350000,600000,150000,300000,280000,560000};
-        int[] rates = {600,800,1000,300,400,500,400,500,420,560};
+        // Rebalanced cells: capacity and receive rate both scale, so charge time per cell is unchanged.
+        int[] capacities = {500000,1200000,2400000,360000,700000,1200000,300000,600000,450000,900000};
+        int[] rates = {1200,1600,2000,600,800,1000,800,1000,675,900};
         test.assertTrue(Hardware.BATTERIES.size() == 10, "expected ten battery models");
         for (int i = 0; i < rates.length; i++) {
             var cell = Hardware.BATTERIES.get(i).toStack();
@@ -82,11 +83,11 @@ public final class BatteryModelsGameTest {
     @GameTest(template = "curios_test_room")
     public static void chargeRateMultiplierScalesReceive(GameTestHelper test) {
         // Pure arithmetic: no config mutation, so parallel tests never observe a different rate.
-        var model = Batteries.model(Hardware.BATTERIES.get(3).toStack()); // 万向 100, 300 FE/t
-        test.assertTrue(model != null && Batteries.receiveRate(model, 1.0D) == 300, "baseline rate changed");
-        test.assertTrue(Batteries.receiveRate(model, 2.0D) == 600, "2x multiplier does not double the rate");
-        test.assertTrue(Batteries.receiveRate(model, 4.0D) == 1200, "4x multiplier does not scale the rate");
-        test.assertTrue(Batteries.receiveRate(model, 20.0D) == 6000, "upper bound of the multiplier is wrong");
+        var model = Batteries.model(Hardware.BATTERIES.get(3).toStack()); // 万向 100, 600 FE/t after the rebalance
+        test.assertTrue(model != null && Batteries.receiveRate(model, 1.0D) == 600, "baseline rate changed");
+        test.assertTrue(Batteries.receiveRate(model, 2.0D) == 1200, "2x multiplier does not double the rate");
+        test.assertTrue(Batteries.receiveRate(model, 4.0D) == 2400, "4x multiplier does not scale the rate");
+        test.assertTrue(Batteries.receiveRate(model, 20.0D) == 12000, "upper bound of the multiplier is wrong");
         test.assertTrue(Math.abs(ServerOptions.chargeMultiplier() - 1.0D) < 1e-9, "default multiplier should be 1.0");
         test.succeed();
     }

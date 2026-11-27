@@ -47,8 +47,11 @@ public final class ChargingDockGameTest {
             var charged = clientView(dock, world);
             test.assertTrue(charged.storedEnergy() > fuelled.storedEnergy(), "buffer did not grow between ticks");
             test.assertTrue(charged.storedEnergy() == dock.getEnergyStored(), "client buffer differs from the server");
-            test.assertTrue(charged.coalCount() == dock.coalCount() && charged.coalCount() == 1, "coal count was not mirrored");
-            test.assertTrue(charged.storedEnergy() == 4_000, "20 ticks of one coal should buffer 4000 FE, got " + charged.storedEnergy());
+            test.assertTrue(charged.coalCount() == dock.coalCount() && charged.coalCount() == 0,
+                    "coal count was not mirrored");
+            // The pad releases 800 FE/t now, so two coals (2 x 4,000) are spent inside 20 ticks and the
+            // whole yield ends up in the buffer. Before, 20 ticks only got through the first one.
+            test.assertTrue(charged.storedEnergy() == 8_000, "two coals should buffer 8000 FE, got " + charged.storedEnergy());
             test.succeed();
         });
     }
@@ -70,7 +73,7 @@ public final class ChargingDockGameTest {
         test.assertTrue(player.getMainHandItem().isEmpty(), "dock rejected the cell");
         var inserted = clientView(dock, world);
         test.assertTrue(inserted.targetStack().is(Hardware.BATTERIES.getFirst().get()), "client view lost the docked cell");
-        test.assertTrue(inserted.targetCapacity() == 250_000 && inserted.targetEnergy() == 0, "client view lost the cell charge stats");
+        test.assertTrue(inserted.targetCapacity() == 500_000 && inserted.targetEnergy() == 0, "client view lost the cell charge stats");
         test.assertTrue(inserted.storedEnergy() == 2_000, "client buffer lost the cable charge");
         test.runAfterDelay(10, () -> {
             var charging = clientView(dock, world);
@@ -97,7 +100,7 @@ public final class ChargingDockGameTest {
         var dock = (ChargingDockEntity) world.getBlockEntity(pos);
         var port = world.getCapability(Capabilities.EnergyStorage.BLOCK, pos, Direction.NORTH);
         test.assertTrue(port != null && port.receiveEnergy(2_000, false) == 2_000, "dock did not accept cable FE");
-        player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.COAL, 2));
+        player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.COAL, 8));
         test.useBlock(pad, player);
         test.runAfterDelay(6, () -> {
             test.assertTrue(clientView(dock, world).storedEnergy() > 2_000, "coal did not buffer FE while the pad was empty");
@@ -109,7 +112,7 @@ public final class ChargingDockGameTest {
                 int stored = dock.getEnergyStored();
                 int cellCharge = Hardware.energy(dock.targetStack());
                 int coal = dock.coalCount();
-                test.assertTrue(cellCharge > 0 && coal == 1, "dock did not charge before the reload");
+                test.assertTrue(cellCharge > 0 && coal > 0, "dock did not charge before the reload");
                 var saved = dock.saveWithFullMetadata(world.registryAccess());
                 var restored = new ChargingDockEntity(pos, world.getBlockState(pos));
                 restored.loadWithComponents(saved, world.registryAccess());
@@ -118,7 +121,7 @@ public final class ChargingDockGameTest {
                 var restoredView = clientView(restored, world);
                 test.assertTrue(restoredView.storedEnergy() == stored, "reloaded buffer differs from the saved value");
                 test.assertTrue(restoredView.targetEnergy() == cellCharge, "reloaded cell charge differs from the saved value");
-                test.assertTrue(restoredView.coalCount() == coal && restoredView.targetCapacity() == 250_000, "reloaded view lost coal or capacity");
+                test.assertTrue(restoredView.coalCount() == coal && restoredView.targetCapacity() == 500_000, "reloaded view lost coal or capacity");
                 world.removeBlockEntity(pos);
                 world.setBlockEntity(restored);
                 test.runAfterDelay(10, () -> {
@@ -166,12 +169,13 @@ public final class ChargingDockGameTest {
         player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.COAL));
         test.useBlock(pad, player);
         test.assertTrue(player.getMainHandItem().isEmpty(), "coal not consumed");
-        test.runAfterDelay(6, () -> {
+        test.runAfterDelay(2, () -> {
             BlockPos pos = test.absolutePos(pad);
             var dock = (ChargingDockEntity) world.getBlockEntity(pos);
             var saved = dock.saveWithFullMetadata(world.registryAccess());
             int remaining = saved.getInt("BurnRemaining");
-            test.assertTrue(remaining > 0 && remaining < 4000 && remaining % 200 == 0, "incorrect partial burn");
+            // Two ticks of an 800 FE/t burn leave 2,400 of the coal's 4,000 FE unspent.
+            test.assertTrue(remaining > 0 && remaining < 4000 && remaining % 800 == 0, "incorrect partial burn");
             var restored = new ChargingDockEntity(pos, world.getBlockState(pos));
             restored.loadWithComponents(saved, world.registryAccess());
             world.removeBlockEntity(pos);
@@ -202,7 +206,8 @@ public final class ChargingDockGameTest {
         test.assertTrue(player.getMainHandItem().isEmpty(), "dock rejected a terminal with a battery");
         player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.COAL, 3));
         test.useBlock(pad, player);
-        test.runAfterDelay(6, () -> {
+        // Two ticks at 800 FE/t is 1,600 FE: the second lump has not been touched yet, so two must come back.
+        test.runAfterDelay(2, () -> {
             BlockPos pos = test.absolutePos(pad);
             world.destroyBlock(pos, false);
             var drops = world.getEntitiesOfClass(net.minecraft.world.entity.item.ItemEntity.class,
@@ -228,10 +233,15 @@ public final class ChargingDockGameTest {
         ItemStack cell = Hardware.BATTERIES.getFirst().toStack();
         CustomData.update(DataComponents.CUSTOM_DATA, cell, tag -> tag.putInt("energy", 0));
         var item = cell.getCapability(Capabilities.EnergyStorage.ITEM);
-        test.assertTrue(item != null && item.receiveEnergy(9999, true) == 600 && item.getEnergyStored() == 0, "battery FE simulation invalid");
-        test.assertTrue(item.receiveEnergy(9999, false) == 600 && item.receiveEnergy(9999, false) == 0, "battery exceeded Mk.I 600 FE/t");
+        // Mk.I accepts 1,200 FE/t after the rebalance (was 600), matching its 500,000 FE cell.
+        int cellRate = dev.dronepal.Batteries.model(cell).maxReceive();
+        test.assertTrue(cellRate == 1_200, "Mk.I receive rate is not 1,200 FE/t: " + cellRate);
+        test.assertTrue(item != null && item.receiveEnergy(9999, true) == cellRate && item.getEnergyStored() == 0, "battery FE simulation invalid");
+        test.assertTrue(item.receiveEnergy(9999, false) == cellRate && item.receiveEnergy(9999, false) == 0,
+                "battery exceeded Mk.I " + cellRate + " FE/t");
         test.runAfterDelay(2, () -> {
-            test.assertTrue(port.receiveEnergy(9999, false) == 2000 && item.receiveEnergy(9999, false) == 600, "tick budgets did not reset");
+            test.assertTrue(port.receiveEnergy(9999, false) == 2000 && item.receiveEnergy(9999, false) == cellRate,
+                    "tick budgets did not reset");
             test.succeed();
         });
     }

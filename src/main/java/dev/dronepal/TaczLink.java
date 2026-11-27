@@ -52,6 +52,8 @@ final class TaczLink {
         ItemStack gun = player.getMainHandItem();
         if (!TaczCombat.isGun(gun)) return false;
         int moved = CarryLight.deliverMatching(player, controller, stack -> compatible(gun, stack));
+        // A magazine hand-off is the link doing work, not keeping the channel open (idle = 1 FE/t).
+        if (moved > 0) Hardware.markActive(player, "link");
         if (moved > 0) player.displayClientMessage(Component.translatable("dronepal.link.supplied", moved), true);
         return moved > 0;
     }
@@ -71,15 +73,20 @@ final class TaczLink {
         // Ammo is not narrated on every tick: only a finished reload or a reserve running low gets a line,
         // and that line still obeys the chip's master switch.
         if (sample.loaded == 0 && reserve == 0) {
-            if (armed && (last == null || !sample.equals(last))) DialogueServer.signal(player, "no_ammo");
+            if (armed && (last == null || !sample.equals(last))) {
+                Hardware.markActive(player, "link");
+                DialogueServer.signal(player, "no_ammo");
+            }
         } else if (armed && last != null && sample.loaded > last.loaded && sample.reserve < last.reserve) {
             if (now >= nextAmmoCry.getOrDefault(player, 0L) && player.getRandom().nextFloat() < 0.75F) {
                 nextAmmoCry.put(player, now + 200);
+                Hardware.markActive(player, "link");
                 DialogueServer.signal(player, "reload_done");
             }
         } else if (armed && reserve > 0 && reserve <= LOW_RESERVE) {
             if (now >= nextAmmoCry.getOrDefault(player, 0L) && player.getRandom().nextFloat() < 0.6F) {
                 nextAmmoCry.put(player, now + 400);
+                Hardware.markActive(player, "link");
                 DialogueServer.signal(player, "low_ammo");
             }
         }
@@ -98,6 +105,7 @@ final class TaczLink {
         long now = owner.serverLevel().getGameTime();
         if (!kill && now < nextHit.getOrDefault(owner, 0L)) return;
         nextHit.put(owner, now + 10);
+        Hardware.markActive(owner, "link");
         var report = Component.translatable(kill ? "dronepal.link.kill" : "dronepal.link.hit", target.getDisplayName());
         if (!kill && permits(module, "armor_hint") && target.getArmorValue() > 0) report.append(Component.translatable("dronepal.link.armor", target.getArmorValue()));
         owner.displayClientMessage(report, true);

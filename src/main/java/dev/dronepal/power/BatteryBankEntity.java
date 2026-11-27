@@ -1,6 +1,7 @@
 package dev.dronepal.power;
 
 import dev.corvus.core.Bank;
+import dev.corvus.core.EnergyNet;
 import dev.dronepal.ServerOptions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -18,8 +19,15 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
  * <p>Charge belongs to the block, not the item. Breaking it drops the housing and the energy is gone —
  * that is deliberate: a portable 500k FE battery would make every other power block pointless.
  * Right-clicking reports the charge, because a block with no GUI still has to be readable.</p>
+ *
+ * <p>It is also the first block that is both a source and a sink of a cable network
+ * ({@link EnergyLink.Node}): it may charge from the grid and discharge into it in the same tick, but
+ * the network never pays its charge out of its own discharge ({@link EnergyNet#allocate} pairs every
+ * grant with a <em>different</em> endpoint). {@link #netOffer()} and {@link #netDemand()} subtract what
+ * this bank already pushed to its direct neighbours this tick, so the direct path and the cable path
+ * share one 2,000 FE/t window instead of stacking into 4,000.</p>
  */
-public final class BatteryBankEntity extends BlockEntity implements IEnergyStorage {
+public final class BatteryBankEntity extends BlockEntity implements IEnergyStorage, EnergyLink.Node {
     public static final int RATE = 2_000;
 
     private int energy;
@@ -104,6 +112,29 @@ public final class BatteryBankEntity extends BlockEntity implements IEnergyStora
         }
         return moved;
     }
+
+    // ---- cable network endpoint (loaded by dev.dronepal.power.EnergyLink) ----
+
+    /** FE this bank may give a cable network this tick, after what it already pushed to neighbours. */
+    @Override public int netOffer() {
+        if (level == null || level.isClientSide) return 0;
+        int used = outputTick == level.getGameTime() ? outputThisTick : 0;
+        return Math.max(0, Math.min(energy, RATE - used));
+    }
+
+    /** FE this bank could take from a cable network this tick: free room inside its 2,000 FE/t input. */
+    @Override public int netDemand() {
+        if (level == null || level.isClientSide) return 0;
+        int used = inputTick == level.getGameTime() ? inputThisTick : 0;
+        return Math.max(0, Math.min(capacity() - energy, RATE - used));
+    }
+
+    /** Charging a bank comes after a tower's buffer and before every machine. */
+    @Override public int netPriority() { return EnergyNet.PRIORITY_BATTERY; }
+
+    @Override public int netSpend(int amount) { return extractEnergy(amount, false); }
+
+    @Override public int netAccept(int amount, boolean simulate) { return receiveEnergy(amount, simulate); }
 
     @Override public int getEnergyStored() { return energy; }
     @Override public int getMaxEnergyStored() { return capacity(); }

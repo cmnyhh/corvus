@@ -103,9 +103,16 @@ public final class DroneEntity extends net.minecraft.world.entity.PathfinderMob 
     private final DroneSystems systems = new DroneSystems();
     ScanSnapshot scanSnapshot;
     @Override public void remove(RemovalReason reason) {
-        if (scanSnapshot != null && level() instanceof ServerLevel world) {
-            systems.clearScan(this, owner == null ? null : world.getServer().getPlayerList().getPlayer(owner));
+        ServerLevel server = level() instanceof ServerLevel world ? world : null;
+        ServerPlayer pilot = server == null || owner == null ? null
+                : server.getServer().getPlayerList().getPlayer(owner);
+        if (scanSnapshot != null && server != null) {
+            systems.clearScan(this, pilot);
         }
+        // Leaving the world (chunk unload, recall, relog, another dimension): the settlement can only
+        // run from this entity's own tick, so no FE will move again. Publish the "off grid" frame now
+        // rather than letting the HUD keep the last "charging" line until it times out.
+        DroneTelemetry.offline(this, pilot);
         super.remove(reason);
     }
     public boolean isScanActive() { return entityData.get(SCANNING); }
@@ -154,8 +161,29 @@ public final class DroneEntity extends net.minecraft.world.entity.PathfinderMob 
             lastOwnerPosition = current;
         }
     }
-    /** Fallback for mods that interact with the entity directly rather than firing the use event. */
-    @Override public net.minecraft.world.InteractionResult mobInteract(net.minecraft.world.entity.player.Player player, net.minecraft.world.InteractionHand hand) {
+    /**
+     * Families that did a one-shot job recently, i.e. a carry pickup or a link hand-off.
+     *
+     * <p>Those two are not continuous states (unlike a lit lamp or an engagement), so the drain cannot
+     * read them off the entity. Marking the airframe for a little over one settlement window means a
+     * pickup that happens just after a settlement is still billed at the in-use rate on the next one
+     * instead of slipping between the two.</p>
+     */
+    private final java.util.Map<String, Long> activeUntil = new java.util.HashMap<>();
+    private static final long ACTIVITY_WINDOW = 25L;
+
+    /** Records that {@code family} did work now, so the next settlement bills its in-use rate. */
+    void markActive(String family) {
+        if (family == null || family.isEmpty()) return;
+        activeUntil.put(family, level().getGameTime() + ACTIVITY_WINDOW);
+    }
+
+    /** True while {@code family} has work inside the current settlement window. */
+    boolean activeWithin(String family) {
+        return activeUntil.getOrDefault(family, Long.MIN_VALUE) >= level().getGameTime();
+    }
+
+    /** Fallback for mods that interact with the entity directly rather than firing the use event. */    @Override public net.minecraft.world.InteractionResult mobInteract(net.minecraft.world.entity.player.Player player, net.minecraft.world.InteractionHand hand) {
         if (player.isShiftKeyDown() && player.getItemInHand(hand).isEmpty()
                 && player instanceof ServerPlayer owner && owner.containerMenu instanceof TerminalMenu == false
                 && TerminalMenus.openTerminal(owner, this)) return net.minecraft.world.InteractionResult.SUCCESS;

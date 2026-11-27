@@ -1,5 +1,6 @@
 package dev.dronepal.power.io;
 
+import dev.corvus.core.EnergyNet;
 import dev.corvus.core.PowerIo;
 import dev.dronepal.Dronepal;
 import dev.dronepal.ServerOptions;
@@ -100,7 +101,8 @@ public final class PowerIoRegistry {
     private static List<Component> cableTooltip() {
         return List.of(
                 Component.translatable("block.huhu_dronepal.power_cable.tip.rate",
-                        amount(PowerIo.CABLE_RATE), PowerIo.CABLE_LENGTH),
+                        amount(EnergyNet.clampThroughput(ServerOptions.cableThroughput())),
+                        EnergyNet.MAX_LENGTH),
                 Component.translatable("block.huhu_dronepal.power_cable.tip.use"),
                 Component.translatable("block.huhu_dronepal.power_cable.tip.read"));
     }

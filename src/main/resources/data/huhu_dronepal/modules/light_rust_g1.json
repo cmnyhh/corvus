@@ -4,7 +4,8 @@
   "vendor": "rust",
   "tier_label": "G1",
   "product_name": "拆车大灯",
-  "drain_watts": 3,
+  "drain_idle": 0,
+  "drain_active": 3,
   "goals": [
     "drone_light"
   ],

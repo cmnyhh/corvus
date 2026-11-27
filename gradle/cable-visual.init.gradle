@@ -1,0 +1,20 @@
+// Isolated client that builds a power-cable test yard and photographs it.
+// ./gradlew --offline -I gradle/cable-visual.init.gradle runCableVisual [-PcableOut=artifacts/client/cable-after]
+allprojects { p -> p.afterEvaluate {
+    if (!p.plugins.hasPlugin('net.neoforged.moddev')) return
+    def source = p.sourceSets.create('cableVisual') {
+        compileClasspath += p.sourceSets.main.output + p.sourceSets.main.compileClasspath
+        runtimeClasspath += p.sourceSets.main.output + p.sourceSets.main.runtimeClasspath
+    }
+    p.neoForge.mods.huhu_dronepal.sourceSet(source)
+    p.neoForge.runs.create('cableVisual') {
+        client()
+        sourceSet = source
+        // own game directory (the dev save is copied in once) so a cable run never
+        // fights an assembly/pipe run over the same session.lock
+        gameDirectory = p.layout.buildDirectory.dir('cable-visual-client')
+        programArguments.addAll('--width','1280','--height','800','--quickPlaySingleplayer','New World')
+        systemProperty 'dronepal.cable.dir',
+                p.file(p.findProperty('cableOut') ?: 'artifacts/client').absolutePath
+    }
+} }

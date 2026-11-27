@@ -55,11 +55,21 @@ public final class DroneHud {
         var header = Component.empty().append(Frames.name(sample.frame())).append(" · ").append(status);
         var battery = sample.capacity() == 0 ? text("no_battery") : text(low ? "low" : "charge", 100L*sample.energy()/sample.capacity());
         var rate = text("rate", DroneTelemetry.rate(sample.consumed()));
-        // TODO(grid): grid state, charging rate and "full" are part of the deployed-power readout.
+        // Five grid states, so "in coverage but not charging" has a name instead of showing a plain
+        // "on grid": off grid / on grid / on grid · charging +N FE/s / on grid · full / on grid · queued.
         var grid = !sample.gridOnline() ? text("grid_offline")
+                : sample.capacity() > 0 && sample.energy() >= sample.capacity() ? text("grid_full")
                 : sample.gridRate() > 0 ? text("grid_charging", sample.gridRate())
-                : sample.energy() >= sample.capacity() ? text("grid_full") : text("grid_online");
-        var power = Component.empty().append(battery).append("   ").append(rate).append("   ").append(grid);
+                : sample.gridQueued() ? text("grid_queued")
+                : text("grid_online");
+        // Net drain and endurance: what the cell loses per second right now, and how long that lasts.
+        // consumed already excludes what the grid paid and the panels made, so this is the real loss.
+        int net = Math.max(0, sample.consumed() - sample.generated() - sample.gridRate());
+        boolean charging = sample.gridRate() > 0;
+        var endurance = text("remaining", dev.corvus.core.HardwareRules.remainingHhMm(
+                sample.energy(), sample.capacity(), net / 20.0D, charging));
+        var power = Component.empty().append(battery).append("   ").append(rate).append("   ")
+                .append(text("net", net)).append(" · ").append(endurance).append("   ").append(grid);
         var modes = text("modules", Integer.bitCount(sample.online()), Integer.bitCount(sample.fitted()));
         var summary = Component.empty().append(modes);
         if ((sample.fitted() & 1) != 0) summary.append(" · ").append(Component.translatable("dronepal.engage." + sample.mode()));

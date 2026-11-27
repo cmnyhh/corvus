@@ -3,7 +3,8 @@
   "family": "combat",
   "tier": 3,
   "slot_type": "function",
-  "drain_watts": 22,
+  "drain_idle": 3,
+  "drain_active": 22,
   "goals": [
     "drone_attack"
   ],

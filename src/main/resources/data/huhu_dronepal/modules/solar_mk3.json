@@ -3,7 +3,8 @@
   "family": "solar",
   "tier": 3,
   "slot_type": "function",
-  "drain_watts": 0,
+  "drain_idle": 0,
+  "drain_active": 0,
   "goals": [],
   "intents": [],
   "params": {

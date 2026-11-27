@@ -22,7 +22,8 @@ public final class DroneItem extends Item {
 
     @Override public Component getName(ItemStack stack) { return Frames.name(Frames.id(stack)); }
 
-    static UUID serial(ItemStack stack) {
+    /** The airframe this controller belongs to, or {@code null} for anything that is not a controller. */
+    public static UUID serial(ItemStack stack) {
         if (!stack.is(Dronepal.DRONE.get())) return null;
         CompoundTag tag = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
         return tag.hasUUID(SERIAL) ? tag.getUUID(SERIAL) : null;

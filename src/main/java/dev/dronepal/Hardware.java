@@ -67,7 +67,17 @@ public final class Hardware {
         NeoForge.EVENT_BUS.addListener(Hardware::reload);
         NeoForge.EVENT_BUS.addListener(Batteries::reload);
     }
-    record Module(ResourceLocation id, String family, int tier, int drain, JsonObject params, Set<String> intents, String wheelLabel,
+    /**
+     * One module definition.
+     *
+     * <p>The draw is split in two (see {@code dev.corvus.core.HardwareRules}): {@code drainIdle} is
+     * paid whenever the module is switched on but not working, {@code drainActive} only while it is
+     * doing work (a scan pulse, a lit lamp, an engagement, a pickup, a treatment, a magazine hand-off).
+     * A data pack that only carries the old {@code drain_watts} is read as {@code drain_active} with the
+     * family's standby default, so it keeps its old cost while it works and nothing while it rests.</p>
+     */
+    record Module(ResourceLocation id, String family, int tier, int drainIdle, int drainActive, JsonObject params,
+                  Set<String> intents, String wheelLabel,
                   String vendor, String tierLabel, String productKey, String productName) {
         double trait(String key, double fallback) {
             var values = vendorTraits.get(vendor);
@@ -77,7 +87,16 @@ public final class Hardware {
             var values = vendorTraits.get(vendor);
             return values != null && values.has("consumes_medkit") && values.get("consumes_medkit").getAsBoolean();
         }
-        int draw(int ticks) { return (int) Math.round(drain * ticks * Math.clamp(trait("drain_multiplier", 1), 0, 10)); }
+        /** Vendor scale on both halves of the draw (OmniDrive 0.85, Rustnail 1.3, ...). */
+        private double vendorScale() { return Math.clamp(trait("drain_multiplier", 1), 0, 10); }
+        /** Standby FE/t after the vendor trait, before the server's {@code drainMultiplier}. */
+        double idleWatts() { return drainIdle * vendorScale(); }
+        /** In-use FE/t after the vendor trait, before the server's {@code drainMultiplier}. */
+        double activeWatts() { return drainActive * vendorScale(); }
+        /** Legacy single figure: what the module used to draw all the time, i.e. its in-use rate. */
+        int drain() { return drainActive; }
+        /** FE drawn over {@code ticks} at the in-use rate, after the vendor drain multiplier. */
+        int draw(int ticks) { return (int) Math.round(drainActive * ticks * vendorScale()); }
         int integer(String key) { return params.get(key).getAsInt(); }
         float decimal(String key) { return params.get(key).getAsFloat(); }
     }
@@ -92,7 +111,12 @@ public final class Hardware {
         Set<String> intents = new HashSet<>();
         o.getAsJsonArray("intents").forEach(v -> intents.add(v.getAsString()));
         String key = "dronepal.product." + (id.equals(original) ? family : id.getPath());
-        Module m = new Module(id, family, tier, Math.clamp(o.get("drain_watts").getAsInt(), 0, 10000),
+        // Standby/active split with the shared compatibility rule (HardwareRules): an older pack that
+        // only knows drain_watts bills it while the module works and takes the family standby default.
+        int idle = HardwareRules.idleWatts(o.has("drain_idle") ? o.get("drain_idle").getAsInt() : null, family);
+        int active = HardwareRules.activeWatts(o.has("drain_active") ? o.get("drain_active").getAsInt() : null,
+                o.has("drain_watts") ? o.get("drain_watts").getAsInt() : null);
+        Module m = new Module(id, family, tier, idle, active,
                 o.getAsJsonObject("params"), Set.copyOf(intents), label, o.get("vendor").getAsString(),
                 o.get("tier_label").getAsString(), key, o.get("product_name").getAsString());
         switch (family) {
@@ -273,6 +297,37 @@ public final class Hardware {
         if (disabled.equals(family)) return false;
         return installed.stream().anyMatch(m -> m.family().equals(family) && !faulted(stack, m));
     }
+    /**
+     * FE/t this controller draws right now.
+     *
+     * <p>Shared arithmetic ({@code dev.corvus.core.HardwareRules#drainPerTick}): every online module
+     * pays its standby rate, the families {@code inUse} reports as busy pay their in-use rate instead,
+     * a deployed airframe pays {@link HardwareRules#DEPLOYED_BASELINE_WATTS} even with every module
+     * switched off, and the server's {@code drainMultiplier} scales the total once.</p>
+     *
+     * @param controller the fitted controller stack
+     * @param deployed   true while the airframe is projected (the baseline is paid then)
+     * @param inUse      which families are doing work this second; the runtime owns that knowledge
+     * @return FE/t, before the once-per-second rounding of {@link #drainPerSecond}
+     */
+    public static double drainPerTick(ItemStack controller, boolean deployed, java.util.function.Predicate<String> inUse) {
+        var modules = installed(controller);
+        int count = modules.size();
+        double[] idle = new double[count], active = new double[count];
+        int[] online = new int[count], busy = new int[count];
+        for (int i = 0; i < count; i++) {
+            var m = modules.get(i);
+            idle[i] = m.idleWatts();
+            active[i] = m.activeWatts();
+            online[i] = online(controller, m.family()) ? 1 : 0;
+            busy[i] = online[i] != 0 && inUse != null && inUse.test(m.family()) ? 1 : 0;
+        }
+        return HardwareRules.drainPerTick(idle, active, online, busy, deployed, ServerOptions.drainMultiplier());
+    }
+    /** Whole FE the next one-second settlement of this airframe will debit, at the current state. */
+    public static int drainPerSecond(ItemStack controller, boolean deployed, java.util.function.Predicate<String> inUse) {
+        return HardwareRules.drainForWindow(drainPerTick(controller, deployed, inUse), 20);
+    }
     static boolean faulted(ItemStack stack, Module module) {
         var server = net.neoforged.neoforge.server.ServerLifecycleHooks.getCurrentServer();
         return server != null && data(stack).getLong("dronepal_fault_" + module.id().getPath()) > server.overworld().getGameTime();
@@ -328,6 +383,11 @@ public final class Hardware {
         return tag.hasUUID(DroneItem.ACTIVE) && p.serverLevel().getEntity(tag.getUUID(DroneItem.ACTIVE)) instanceof DroneEntity d && p.getUUID().equals(d.owner) && d.getUUID().equals(DroneItem.serial(CuriosDrones.equipped(p))) ? d : null;
     }
     public static ItemStack controller(ServerPlayer p) { DroneEntity d = active(p); return d == null ? ItemStack.EMPTY : d.controller(); }
+    /** Records a one-shot module job (a pickup, a magazine hand-off) for the idle/active drain split. */
+    static void markActive(ServerPlayer p, String family) {
+        DroneEntity drone = active(p);
+        if (drone != null) drone.markActive(family);
+    }
     public static boolean execute(ServerPlayer p, String intent) {
         DroneEntity drone = active(p);
         if (drone == null) return false;

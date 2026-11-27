@@ -50,6 +50,12 @@ def main():
         for ident in sorted(ids):
             key = f'{prefix}.{NS}.{ident}'
             for name, table in locales.items():
+                # A BlockItem inherits Minecraft's block description id (`block.<ns>.<id>`), so a block
+                # that is also a registered item may be named by either key. The power blocks use one
+                # `block.*` key for block and item; inventing an unused `item.*` alias would hide
+                # nothing and show nothing.
+                if prefix == 'item' and ident in blocks and f'block.{NS}.{ident}' in table:
+                    continue
                 if key not in table:
                     missing.append(f'{name}: {key}')
     if missing:

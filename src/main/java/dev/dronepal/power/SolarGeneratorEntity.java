@@ -1,5 +1,6 @@
 package dev.dronepal.power;
 
+import dev.corvus.core.EnergyNet;
 import dev.corvus.core.Solar;
 import dev.dronepal.ServerOptions;
 import net.minecraft.core.BlockPos;
@@ -26,7 +27,7 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
  * {@code corvus-core/}. This class only translates the level into its four boolean inputs and turns
  * the resulting {@link Solar.State} into the block state, the FE/t and the status line.</p>
  */
-public final class SolarGeneratorEntity extends BlockEntity implements IEnergyStorage {
+public final class SolarGeneratorEntity extends BlockEntity implements IEnergyStorage, EnergyLink.Node {
     public static final int BUFFER = 50_000;
 
     private int energy;
@@ -125,6 +126,23 @@ public final class SolarGeneratorEntity extends BlockEntity implements IEnergySt
     @Override public int getMaxEnergyStored() { return BUFFER; }
     @Override public boolean canReceive() { return false; }
     @Override public boolean canExtract() { return true; }
+
+    // ---- cable network endpoint (loaded by dev.dronepal.power.EnergyLink) ----
+
+    /** FE the panel's buffer could hand to a cable network this tick; the panel produces on its own. */
+    @Override public int netOffer() {
+        if (level == null || level.isClientSide) return 0;
+        return Math.max(0, Math.min(energy, peak()));
+    }
+
+    @Override public int netDemand() { return 0; }
+
+    /** Priority is only read for sinks; a solar panel is never one. */
+    @Override public int netPriority() { return EnergyNet.PRIORITY_PORT; }
+
+    @Override public int netSpend(int amount) { return extractEnergy(amount, false); }
+
+    @Override public int netAccept(int amount, boolean simulate) { return 0; }
 
     @Override protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);

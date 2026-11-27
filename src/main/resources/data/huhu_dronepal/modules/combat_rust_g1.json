@@ -4,7 +4,8 @@
   "vendor": "rust",
   "tier_label": "G1",
   "product_name": "土制击发器",
-  "drain_watts": 10,
+  "drain_idle": 3,
+  "drain_active": 10,
   "goals": [
     "drone_attack"
   ],

@@ -4,7 +4,8 @@
   "vendor": "rust",
   "tier_label": "G1",
   "product_name": "焊铁货筐",
-  "drain_watts": 4,
+  "drain_idle": 0,
+  "drain_active": 4,
   "goals": [
     "drone_pickup"
   ],

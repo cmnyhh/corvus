@@ -1,7 +1,10 @@
 package dev.dronepal.power.io;
 
+import dev.corvus.core.EnergyNet;
 import dev.corvus.core.PowerIo;
 import dev.dronepal.ServerOptions;
+import dev.dronepal.power.EnergyLink;
+import dev.dronepal.power.grid.GridLink;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -18,17 +21,30 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
  * Energy outlet for other mods: an 8,000 FE buffer that other mods' cables and machines may drain
  * through a plain {@link IEnergyStorage} ({@code canExtract}, never {@code canReceive}).
  *
- * <p>It fills itself from the energy blocks of this mod that touch it — battery banks, generators, a
- * future power tower, and our own {@code power_cable} runs, which draw from wherever the run starts —
- * at most {@code portOutput} FE/t (default 1,000, config range 100–4000) and at most one buffer's worth.
- * The facing side is the outlet and is therefore <b>not</b> a supply side; every face still answers the
- * energy capability, so a foreign cable can attach wherever it likes.</p>
+ * <p>It fills itself, in this order, at most {@code portOutput} FE/t (default 1,000, config range
+ * 100–4000) and at most one buffer's worth:</p>
+ *
+ * <ol>
+ *   <li><b>the wireless grid</b> — if the port stands inside a tower's coverage radius it draws a
+ *       {@link GridLink} grant (priority {@code PORT}, so our own machines are served first) at
+ *       {@code 0.95^hops} efficiency;</li>
+ *   <li><b>the cable network</b> — the port is a sink endpoint ({@link EnergyLink.Node}, priority
+ *       {@code PORT}) and the network delivers into the buffer during its own tick;</li>
+ *   <li><b>the blocks touching it</b> — a battery bank or a generator on a face other than the outlet.</li>
+ * </ol>
+ *
+ * <p>A cable is <em>not</em> in that neighbour list any more: a run used to be drained by the port with
+ * a pull loop, which is exactly what made a cable useless to every other block. Now the network pushes
+ * and the port is one of its sinks, so "the tower is empty, fall back to the cable" happens without the
+ * port knowing where the energy came from. The facing side is the outlet and is therefore <b>not</b> a
+ * supply side; every face still answers the energy capability, so a foreign cable can attach wherever
+ * it likes, and the port never accepts energy through it ({@code receiveEnergy} stays 0).</p>
  *
  * <p>The same per-tick ceiling governs what the port hands out, so two consumers pulling in the same
  * tick cannot each take a full {@code portOutput}: the first caller is filled, the second sees the
  * remainder ({@link PowerIo#remainder(int, int)}), which is the "顺序喂饱" rule the smoke test pins.</p>
  */
-public final class PowerPortEntity extends BlockEntity implements IEnergyStorage {
+public final class PowerPortEntity extends BlockEntity implements IEnergyStorage, EnergyLink.Node {
     /** Buffer, FE. A socket, not a battery: the block loses what it holds when broken. */
     public static final int BUFFER = PowerIo.PORT_BUFFER;
 
@@ -69,8 +85,20 @@ public final class PowerPortEntity extends BlockEntity implements IEnergyStorage
             pullTick = now;
             pulledThisTick = 0;
         }
-        int rate = outputRate();
-        int left = Math.min(PowerIo.intake(energy, BUFFER, rate), PowerIo.remainder(rate, pulledThisTick));
+        // 1) wireless grid first: a port inside a tower's radius is fed by the tower, at 0.95^hops.
+        int left = room(level);
+        if (left > 0) {
+            int fromGrid = GridLink.draw(level, this, left, GridLink.PRIORITY_PORT,
+                    () -> Math.min(BUFFER - energy, outputRate()));
+            if (fromGrid > 0) {
+                energy += fromGrid;
+                pulledThisTick += fromGrid;
+                setChanged();
+                left = room(level);
+            }
+        }
+        // 2) then the blocks that touch it. A cable is not one of them any more: the network delivers
+        //    into this buffer during its own tick (see netDemand/netAccept below).
         if (left <= 0) return;
         Direction outlet = outletFacing();
         int moved = 0;
@@ -87,6 +115,12 @@ public final class PowerPortEntity extends BlockEntity implements IEnergyStorage
             pulledThisTick += moved;
             setChanged();
         }
+    }
+
+    /** Free buffer room left in this tick's intake window (neighbours, grid and cable share it). */
+    private int room(ServerLevel level) {
+        int used = pullTick == level.getGameTime() ? pulledThisTick : 0;
+        return Math.min(PowerIo.intake(energy, BUFFER, outputRate()), PowerIo.remainder(outputRate(), used));
     }
 
     /** How many touching blocks could feed this port, regardless of how full they are. */
@@ -108,6 +142,42 @@ public final class PowerPortEntity extends BlockEntity implements IEnergyStorage
     Component status() {
         return Component.translatable("message.dronepal.power_port.status",
                 energy, BUFFER, outputRate(), suppliers);
+    }
+
+    // ---- Cable network endpoint (loaded by dev.dronepal.power.EnergyLink) ----
+    //
+    // The port is a sink only: it never gives energy back to the cable (that would be a loop through
+    // another mod's machines). Its demand is the free buffer room inside the same portOutput window the
+    // grid draw and the neighbour pull use, so all three sources together cannot exceed one window.
+
+    @Override public int netOffer() { return 0; }
+
+    @Override public int netDemand() {
+        if (!(level instanceof ServerLevel server)) return 0;
+        return room(server);
+    }
+
+    /** Served last: another mod's machines come after this mod's own towers, banks, mills and docks. */
+    @Override public int netPriority() { return EnergyNet.PRIORITY_PORT; }
+
+    @Override public int netSpend(int amount) { return 0; }
+
+    @Override public int netAccept(int amount, boolean simulate) {
+        if (!(level instanceof ServerLevel server) || amount <= 0) return 0;
+        long now = server.getGameTime();
+        int used = pullTick == now ? pulledThisTick : 0;
+        int give = Math.min(amount, Math.min(PowerIo.intake(energy, BUFFER, outputRate()),
+                PowerIo.remainder(outputRate(), used)));
+        if (give <= 0) return 0;
+        if (simulate) return give;
+        if (pullTick != now) {
+            pullTick = now;
+            pulledThisTick = 0;
+        }
+        energy += give;
+        pulledThisTick += give;
+        setChanged();
+        return give;
     }
 
     // ---- Energy capability: outlet only ----

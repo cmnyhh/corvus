@@ -40,13 +40,13 @@ public final class DockedDroneGameTest {
         test.assertTrue(new net.minecraft.world.phys.AABB(pos).expandTowards(0, .75, 0).intersects(drone.getBoundingBox()),
                 "deployed drone missed pad: " + drone.position() + " vs " + pos);
         var port = drone.getCapability(Capabilities.EnergyStorage.ENTITY, Direction.DOWN);
-        test.assertTrue(port != null && port.receiveEnergy(2000, false) == 600 && Hardware.energy(terminal) == 600,
+        test.assertTrue(port != null && port.receiveEnergy(2000, false) == 1200 && Hardware.energy(terminal) == 1200,
                 "entity FE port did not update owner's original battery");
         test.assertTrue(port.receiveEnergy(2000, false) == 0, "repeated entity charge exceeded one tick's allowance");
         var dock = world.getCapability(Capabilities.EnergyStorage.BLOCK, pos, Direction.UP);
         test.assertTrue(dock.receiveEnergy(2000, false) == 2000, "dock did not accept cable input");
         test.runAfterDelay(8, () -> {
-            test.assertTrue(Hardware.energy(terminal) == 2600 && dock.getEnergyStored() == 0,
+            test.assertTrue(Hardware.energy(terminal) == 3200 && dock.getEnergyStored() == 0,
                     "nearby projected drone did not receive the dock's 2000 FE");
             test.succeed();
         });

@@ -4,7 +4,8 @@
   "vendor": "rust",
   "tier_label": "G1",
   "product_name": "捡来的板子",
-  "drain_watts": 0,
+  "drain_idle": 0,
+  "drain_active": 0,
   "goals": [],
   "intents": [],
   "params": {

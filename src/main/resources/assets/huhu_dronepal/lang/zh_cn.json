@@ -626,5 +626,11 @@
   "hud.dronepal.grid_online": "在网",
   "hud.dronepal.grid_offline": "离网",
   "hud.dronepal.grid_charging": "在网 · 充电 +%s FE/s",
-  "hud.dronepal.grid_full": "在网 · 已满"
+  "hud.dronepal.grid_full": "在网 · 已满",
+  "hud.dronepal.grid_queued": "在网 · 排队中",
+  "hud.dronepal.net": "净耗电 %s FE/s",
+  "hud.dronepal.remaining": "剩余 %s",
+  "dronepal.tip.idle_active": "待机 %1$s FE/t · 在用 %2$s FE/t",
+  "message.dronepal.dock_drone": "给无人机充 %s FE/t",
+  "message.dronepal.tower_drone": "给无人机充 %s FE/t"
 }

@@ -28,6 +28,7 @@ public final class GridLink {
     public static final int PRIORITY_DRONE = Grid.PRIORITY_DRONE;
     public static final int PRIORITY_MILL = Grid.PRIORITY_MILL;
     public static final int PRIORITY_DOCK = Grid.PRIORITY_DOCK;
+    public static final int PRIORITY_PORT = Grid.PRIORITY_PORT;
 
     private GridLink() {}
 

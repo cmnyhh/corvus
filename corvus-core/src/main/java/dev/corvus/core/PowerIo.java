@@ -35,10 +35,17 @@ public final class PowerIo {
     public static final int PORT_OUTPUT_MIN = 100;
     /** Highest value {@code portOutput} may be configured to. */
     public static final int PORT_OUTPUT_MAX = 4_000;
-    /** FE/t a cable run may carry, shared by every consumer drawing through that run. */
-    public static final int CABLE_RATE = 2_000;
-    /** Longest run, in blocks, that still carries power. */
-    public static final int CABLE_LENGTH = 32;
+    /**
+     * Default FE/t a cable network may move, shared by every endpoint of that network. The live value is
+     * the {@code cableThroughput} config entry; this is the default both builds ship
+     * ({@link EnergyNet#THROUGHPUT_DEFAULT}) and the number the tooltip falls back to.
+     */
+    public static final int CABLE_RATE = EnergyNet.THROUGHPUT_DEFAULT;
+    /**
+     * Longest source-to-sink path, in blocks, that still carries power
+     * ({@link EnergyNet#MAX_LENGTH}); the cable status line uses it to report a dead run.
+     */
+    public static final int CABLE_LENGTH = EnergyNet.MAX_LENGTH;
     /** Hard limit on the cells one cable scan may visit, so a pathological build cannot stall a tick. */
     public static final int CABLE_SCAN_LIMIT = 96;
 

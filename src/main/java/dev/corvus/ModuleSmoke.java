@@ -158,13 +158,16 @@ public final class ModuleSmoke {
     private static void drainPhase() {
         fit("omd_bat_300", "combat_mk1", "scan_mk1");
         Hardware.setEnergy(controller, 500_000);
+        // Standby, not the old always-on figure: combat stands by at 3 FE/t (x1.10 vendor trait), the
+        // scanner costs nothing between pulses (14 and 6 are its in-use rates now).
         int drain = Hardware.drainPerTick(controller);
-        check("power.drain_hand_calc", drain == 21, "drain=" + drain + " (combat 14×1.10 + scan 6×1.00)");
+        check("power.drain_hand_calc", drain == 3, "drain=" + drain + " (combat 3×1.10 standby + scan 0 standby)");
         int before = Hardware.energy(controller);
         int delta = ModuleRuntime.settle(level, drone, controller);
         int after = Hardware.energy(controller);
-        check("power.settled_once", delta == -420 && after == before - 420,
-                "delta=" + delta + " " + before + " -> " + after + " (21 FE/t × 20)");
+        // standby 3.3 + deployed baseline 0.5 = 3.8 FE/t, x the default 0.6 multiplier = 2.28 -> 46 FE.
+        check("power.settled_once", delta == -46 && after == before - 46,
+                "delta=" + delta + " " + before + " -> " + after + " (3.8 FE/t x 0.6 x 20)");
         LOG.info("[module-smoke] settle: {} -> {} FE (delta {}) for {} FE/t", before, after, delta, drain);
         // Night, for the next step: the solar module must then make nothing at all.
         level.setDayTime(18000L);

@@ -3,7 +3,8 @@
   "family": "light",
   "tier": 1,
   "slot_type": "function",
-  "drain_watts": 2,
+  "drain_idle": 0,
+  "drain_active": 2,
   "goals": [],
   "intents": [
     "order.light"

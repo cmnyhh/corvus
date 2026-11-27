@@ -40,6 +40,10 @@ public final class DroneHud {
     private static final int TEXT = 0xfff2f4f6, DIM = 0xffe0e4e8, GOOD = 0xffa4ddbe, LOW = 0xffff8079;
     /** Client-side estimate of the grid charge rate, sampled once per second. */
     private static int lastEnergy, chargeRate;
+    /** Consecutive one-second samples with no FE gained, i.e. "on the grid but not being served". */
+    private static int quietSamples;
+    /** FE/s the cell actually lost over the last sample; -1 until there is a second to compare. */
+    private static int netRate = -1;
     private static long lastSample;
     private static final int BOX = 0xb51c2024, TRACK = 0xff57616a;
 
@@ -163,25 +167,47 @@ public final class DroneHud {
             power = power.copy().append("   ").append(text("rate", Component.literal(Integer.toString(state.drain()))));
         }
         if (held && game.level != null && game.player != null) {
-            // TODO(grid): in-grid / charging / full state for the deployed drone's power readout.
+            // The five grid states, in the same order 1.21.1's server-driven HUD uses:
+            // off grid / on grid / charging +N FE/s / full / queued.
+            //
+            // 1.20.1 has no DroneTelemetry packet, so this block measures instead of asking: the FE
+            // delta of the synced controller over the last second is the delivered rate. "No drone in
+            // the world" (not deployed, chunk unloaded, recalled, another dimension) or no tower in
+            // reach means off grid — never a stale "charging". A rate of zero for two consecutive
+            // samples while deployed in coverage is the "budget went to the ore mill / dock" case,
+            // which is exactly what the server reports as queued on 1.21.1.
             boolean onGrid = dev.corvus.power.grid.client.TowerClientState.covered(game.level, game.player.blockPosition());
+            boolean deployed = droneInWorld(game);
             Component gridText;
-            if (!onGrid) {
+            if (!onGrid || !deployed) {
                 gridText = text("grid_offline");
                 lastEnergy = energy;
                 lastSample = game.level.getGameTime();
                 chargeRate = 0;
+                quietSamples = 0;
+                netRate = -1;
             } else {
                 long now = game.level.getGameTime();
                 if (now - lastSample >= 20) {
                     chargeRate = Math.max(0, energy - lastEnergy);
+                    // The same sample gives the net loss: what the cell paid the modules this second.
+                    netRate = Math.max(0, lastEnergy - energy);
                     lastEnergy = energy;
                     lastSample = now;
+                    quietSamples = chargeRate > 0 ? 0 : quietSamples + 1;
                 }
                 gridText = capacity > 0 && energy >= capacity ? text("grid_full")
-                        : chargeRate > 0 ? text("grid_charging", chargeRate) : text("grid_online");
+                        : chargeRate > 0 ? text("grid_charging", chargeRate)
+                        : quietSamples >= 2 ? text("grid_queued")
+                        : text("grid_online");
             }
-            power = power.copy().append("   ").append(gridText);
+            // Net drain and endurance: what the cell loses per second right now and how long that lasts.
+            boolean charging = chargeRate > 0;
+            var endurance = text("remaining", dev.corvus.core.HardwareRules.remainingHhMm(
+                    energy, capacity, netRate / 20.0D, charging));
+            var net = text("net", netRate < 0 ? "\u2014" : Integer.toString(netRate));
+            power = power.copy().append("   ").append(net).append(" · ").append(endurance)
+                    .append("   ").append(gridText);
         }
 
         int fitted = 0, online = 0;

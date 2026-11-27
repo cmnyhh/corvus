@@ -51,7 +51,7 @@ public final class BatteryBankEntity extends BlockEntity implements IEnergyStora
         syncGauge(world);
         int budget = Math.min(RATE, energy);
         if (budget <= 0) return;
-        int sent = EnergyLink.push(world, worldPosition, budget);
+        int sent = PowerPush.push(world, worldPosition, budget);
         if (sent > 0) {
             energy -= sent;
             setChanged();

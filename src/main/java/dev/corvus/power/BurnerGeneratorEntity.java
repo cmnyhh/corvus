@@ -16,7 +16,7 @@ import net.minecraftforge.energy.IEnergyStorage;
  *
  * <p>Fuel is any furnace fuel ({@link FuelPower}); one item is worth {@code burnTicks x 2.5} FE and is
  * released at {@link ServerOptions#burnerOutput()} FE/t. Power is pushed into all six neighbours every
- * tick (see {@link EnergyLink}), which is what makes "pad next to burner" work with no cable.</p>
+ * tick (see {@link PowerPush}), which is what makes "pad next to burner" work with no cable.</p>
  *
  * <p>Fuel is only spent while somebody can actually take the power: the generator probes its neighbours
  * before it lights the next item and pauses while its own buffer is full, so an idle machine never eats
@@ -91,7 +91,7 @@ public final class BurnerGeneratorEntity extends BlockEntity implements IEnergyS
      */
     public void tick(ServerLevel world) {
         int output = output();
-        boolean wanted = EnergyLink.receiverPresent(world, worldPosition);
+        boolean wanted = PowerPush.receiverPresent(world, worldPosition);
         if (wanted && energy < BUFFER) {
             if (burnRemaining <= 0 && !fuel.isEmpty()) {
                 burnTotal = FuelPower.fe(fuel);
@@ -117,7 +117,7 @@ public final class BurnerGeneratorEntity extends BlockEntity implements IEnergyS
         }
         int budget = Math.min(output, energy);
         if (budget > 0) {
-            int sent = EnergyLink.push(world, worldPosition, budget);
+            int sent = PowerPush.push(world, worldPosition, budget);
             if (sent > 0) {
                 energy -= sent;
                 setChanged();

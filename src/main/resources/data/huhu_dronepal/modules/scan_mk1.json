@@ -3,7 +3,8 @@
   "family": "scan",
   "tier": 1,
   "slot_type": "function",
-  "drain_watts": 6,
+  "drain_idle": 0,
+  "drain_active": 6,
   "goals": [],
   "intents": [
     "scan",

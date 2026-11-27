@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 }
-version = '0.2.3'
+version = '0.2.4'
 group = 'dev.corvus'
 base { archivesName = '渡鸦-随行无人机-1.20.1' }
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)

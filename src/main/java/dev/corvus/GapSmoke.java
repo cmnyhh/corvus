@@ -203,24 +203,26 @@ public final class GapSmoke {
      * off still drew power, and the automatic scan re-armed itself 15 s later.
      */
     private static void switchedOffPhase(ServerPlayer player, ItemStack controller, DroneEntity drone) {
-        fit(controller, "omd_bat_300", "carry_mk1", "scan_mk1");
+        // combat_mk1 is the module with a non-zero standby draw (3 FE/t x 1.10 vendor trait = 3.3), so it
+        // is the one that can show a switch-off in the standby figure. carry and scan stand by at 0.
+        fit(controller, "omd_bat_300", "combat_mk1", "scan_mk1");
         Hardware.setEnergy(controller, Hardware.capacity(controller));
         Hardware.Module scan = module(controller, "scan");
         int both = Hardware.drainPerTick(controller);
-        int scanOnly = scan == null ? -1
-                : (int) Math.round(scan.drain() * Math.min(10D, Math.max(0D, scan.trait("drain_multiplier", 1D))));
-        check("offline.baseline_online", Hardware.online(controller, "carry") && Hardware.online(controller, "scan")
+        int scanOnly = scan == null ? -1 : idleOf(scan);
+        check("offline.baseline_online", Hardware.online(controller, "combat") && Hardware.online(controller, "scan")
                 && both > scanOnly, "drain=" + both + " scanOnly=" + scanOnly);
 
         // Flip the switch the wheel flips (same key, same helper).
-        DroneRemote.toggle(controller, "carry");
-        check("offline.switch_off", DroneRemote.disabled(controller, "carry"), "");
-        check("offline.online_false", !Hardware.online(controller, "carry"), "");
+        DroneRemote.toggle(controller, "combat");
+        check("offline.switch_off", DroneRemote.disabled(controller, "combat"), "");
+        check("offline.online_false", !Hardware.online(controller, "combat"), "");
         check("offline.drain_excludes_module", Hardware.drainPerTick(controller) == scanOnly,
-                "drain=" + Hardware.drainPerTick(controller) + " expected=" + scanOnly + " (carry 5 W/t gone)");
-        DroneRemote.toggle(controller, "carry");
-        check("offline.switch_back_on", !DroneRemote.disabled(controller, "carry")
-                && Hardware.online(controller, "carry") && Hardware.drainPerTick(controller) == both,
+                "drain=" + Hardware.drainPerTick(controller) + " expected=" + scanOnly
+                        + " (combat standby 3.3 W/t gone, scan stands by at 0)");
+        DroneRemote.toggle(controller, "combat");
+        check("offline.switch_back_on", !DroneRemote.disabled(controller, "combat")
+                && Hardware.online(controller, "combat") && Hardware.drainPerTick(controller) == both,
                 "drain=" + Hardware.drainPerTick(controller) + " expected=" + both);
 
         // While a scanner is online the automatic patrol arms; switched off, 15 seconds of runtime must
@@ -241,16 +243,21 @@ public final class GapSmoke {
                 "disabled=" + DroneRemote.disabled(controller, "scan")
                         + " online=" + Hardware.online(controller, "scan")
                         + " nextAutomatic=" + drone.systems().nextAutomaticTick());
-        check("offline.drain_after_15s", Hardware.drainPerTick(controller) == carryOnly(controller),
-                "drain=" + Hardware.drainPerTick(controller) + " expected=" + carryOnly(controller));
+        check("offline.drain_after_15s", Hardware.drainPerTick(controller) == combatOnly(controller),
+                "drain=" + Hardware.drainPerTick(controller) + " expected=" + combatOnly(controller)
+                        + " (combat standby only; the scanner is switched off)");
         // Leave the controller as the later phases expect it: every switch back on.
         DroneRemote.toggle(controller, "scan");
     }
 
-    private static int carryOnly(ItemStack controller) {
-        Hardware.Module carry = module(controller, "carry");
-        return carry == null ? -1
-                : (int) Math.round(carry.drain() * Math.min(10D, Math.max(0D, carry.trait("drain_multiplier", 1D))));
+    private static int combatOnly(ItemStack controller) {
+        Hardware.Module combat = module(controller, "combat");
+        return combat == null ? -1 : idleOf(combat);
+    }
+
+    /** Standby FE/t of one module, vendor trait included, rounded the way the status field rounds. */
+    private static int idleOf(Hardware.Module module) {
+        return (int) Math.round(module.idleWatts());
     }
 
     // ---------------------------------------------------------------------------------------------
@@ -260,11 +267,11 @@ public final class GapSmoke {
     private static void drainPhase(ServerPlayer player, ItemStack controller) {
         fit(controller, "omd_bat_300", "combat_mk1", "scan_mk1");
         Hardware.setEnergy(controller, Hardware.capacity(controller));
-        // Hand calculation straight out of the data files, vendor multipliers included:
-        //   combat_mk1 (ahi, ×1.10) 14 W/t -> 15.4
-        //   scan_mk1   (cvs, ×1.00)  6 W/t ->  6.0
-        //   total 21.4 -> 21 FE/t
-        // (The 1.21 panel prints one decimal and would say 21.4; this field is an int, hence 21.)
+        // Hand calculation straight out of the data files, vendor multipliers included, at STANDBY:
+        //   combat_mk1 (ahi, ×1.10) 3 FE/t idle -> 3.3
+        //   scan_mk1   (cvs, ×1.00) 0 FE/t idle -> 0.0   (14 and 6 are the in-use rates now)
+        //   total 3.3 -> 3 FE/t
+        // (The 1.21 panel prints one decimal and would say 3.3; this field is an int, hence 3.)
         Hardware.Module combat = module(controller, "combat");
         Hardware.Module scan = module(controller, "scan");
         check("drain.data_combat", combat != null && combat.drain() == 14
@@ -273,11 +280,11 @@ public final class GapSmoke {
         check("drain.data_scan", scan != null && scan.drain() == 6
                 && Math.abs(scan.trait("drain_multiplier", 1D) - 1.0) < 1.0E-4,
                 scan == null ? "not fitted" : scan.drain() + " W/t ×" + scan.trait("drain_multiplier", 1D));
-        int expected = 21;
+        int expected = 3;
         int measured = Hardware.drainPerTick(controller);
         check("drain.measured_hand_calc", measured == expected,
-                "measured=" + measured + " expected=" + expected + " (14×1.10 + 6×1.00 = 21.4)");
-        LOG.info("[gap-smoke] drain: combat_mk1 14×1.10 + scan_mk1 6×1.00 = 21.4 -> {} FE/t", measured);
+                "measured=" + measured + " expected=" + expected + " (3×1.10 + 0×1.00 = 3.3)");
+        LOG.info("[gap-smoke] drain: combat_mk1 3×1.10 standby + scan_mk1 0 standby = 3.3 -> {} FE/t", measured);
 
         DroneRemote.Status status = DroneRemote.status(player, 1, 1);
         check("status.drain_hand_calc", status != null && status.drain() == expected,
@@ -502,8 +509,10 @@ public final class GapSmoke {
         Hardware.setEnergy(controller, Hardware.capacity(controller) / 10);
         check("brownout.carry_off", !Hardware.online(controller, "carry"), "carry is the hungriest module");
         check("brownout.medic_on", Hardware.online(controller, "medic"), "");
-        check("brownout.drain_counts_online_only", Hardware.drainPerTick(controller) == 4,
-                "drain=" + Hardware.drainPerTick(controller) + " (medic_mk1 4 W/t, carry dropped)");
+        // Both survivors stand by at 0 FE/t now, so the figure is 0 with or without the carry module:
+        // the two online() checks above are what proves the brown-out cut exactly one module.
+        check("brownout.drain_counts_online_only", Hardware.drainPerTick(controller) == 0,
+                "drain=" + Hardware.drainPerTick(controller) + " (medic_mk1 standby 0 FE/t, carry dropped)");
         say(player, "递弹");
         check("brownout.supply_refused", holdCount(controller) == 3, "hold=" + holdCount(controller));
         say(player, "捡一下");

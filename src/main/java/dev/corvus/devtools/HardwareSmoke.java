@@ -147,7 +147,7 @@ public final class HardwareSmoke {
         check("batteries.ten", missing.isEmpty(), "missing=" + missing);
 
         Batteries.Model cell = Batteries.model(stack("ahi_bat_mk3"));
-        check("battery.capacity", cell != null && cell.capacity() == 1_200_000 && cell.maxReceive() == 1000
+        check("battery.capacity", cell != null && cell.capacity() == 2_400_000 && cell.maxReceive() == 2000
                 && cell.tier() == 3, String.valueOf(cell));
 
         Batteries.Model scrap = Batteries.model(stack("rn_bat_g1"));
@@ -155,9 +155,9 @@ public final class HardwareSmoke {
                 && Math.abs(scrap.leakFraction() - 0.05D) < 1.0E-9, String.valueOf(scrap));
 
         // A fresh cell reads as full: the charge key is absent until something writes it.
-        check("battery.fresh_is_full", cell != null && Batteries.energy(stack("ahi_bat_mk3"), cell) == 1_200_000, "");
-        check("battery.receive_rate", Batteries.receiveRate(cell, 1.0D) == 1000
-                && Batteries.receiveRate(cell, 2.0D) == 2000, "rate=" + Batteries.receiveRate(cell));
+        check("battery.fresh_is_full", cell != null && Batteries.energy(stack("ahi_bat_mk3"), cell) == 2_400_000, "");
+        check("battery.receive_rate", Batteries.receiveRate(cell, 1.0D) == 2000
+                && Batteries.receiveRate(cell, 2.0D) == 4000, "rate=" + Batteries.receiveRate(cell));
         check("battery.not_a_battery", Batteries.model(stack("module")) == null, "");
     }
 
@@ -223,28 +223,28 @@ public final class HardwareSmoke {
         check("nbt.describe", before.equals(Hardware.describe(reloaded)), Hardware.describe(reloaded));
         check("nbt.raw_equal", controller.getTag() != null && controller.getTag().equals(reloaded.getTag()),
                 "bytes=" + saved.size());
-        check("nbt.energy_full", Hardware.energy(reloaded) == 350_000, "energy=" + Hardware.energy(reloaded));
+        check("nbt.energy_full", Hardware.energy(reloaded) == 700_000, "energy=" + Hardware.energy(reloaded));
         check("nbt.chip", "tactical".equals(Hardware.chip(reloaded)) && Hardware.hasChip(reloaded), "");
         check("nbt.installed_family", Hardware.installed(reloaded).size() == 1
                 && Hardware.tier(reloaded, "combat") == 1, "");
 
-        // Charge accounting: one tick accepts at most the model's receive rate (omd 200 -> 400 FE/t),
+        // Charge accounting: one tick accepts at most the model's receive rate (omd 200 -> 800 FE/t),
         // the rest of the request is dropped rather than queued, and the budget is spent once.
         Hardware.setEnergy(controller, 100_000);
         int accepted = Hardware.charge(controller, 1_000_000, false);
-        check("charge.rate_cap", accepted == 400, "accepted=" + accepted + " of 1000000 requested");
+        check("charge.rate_cap", accepted == 800, "accepted=" + accepted + " of 1000000 requested");
         int again = Hardware.charge(controller, 1_000_000, false);
         check("charge.same_tick_refused", again == 0, "accepted=" + again);
-        check("charge.persisted", Hardware.energy(ItemStack.of(controller.save(new CompoundTag()))) == 100_400,
+        check("charge.persisted", Hardware.energy(ItemStack.of(controller.save(new CompoundTag()))) == 100_800,
                 "energy=" + Hardware.energy(controller));
         // The budget is per cell, so a second, untouched cell still has its full allowance this tick.
         ItemStack fresh = Frames.create("peregrine");
         Hardware.save(fresh, new ArrayList<>(List.of(stack("omd_bat_200"))));
         Hardware.setEnergy(fresh, 100_000);
         int simulate = Hardware.charge(fresh, 1000, true);
-        check("charge.simulate_spends_nothing", simulate == 400 && Hardware.energy(fresh) == 100_000,
+        check("charge.simulate_spends_nothing", simulate == 800 && Hardware.energy(fresh) == 100_000,
                 "simulated=" + simulate + " energy=" + Hardware.energy(fresh));
-        Hardware.setEnergy(controller, 350_000);
+        Hardware.setEnergy(controller, 700_000);
         check("charge.full", Hardware.charge(controller, 1000, false) == 0, "energy=" + Hardware.energy(controller));
 
         // Removing the module returns it and leaves the battery in place.
@@ -306,7 +306,7 @@ public final class HardwareSmoke {
         check("power.full.combat", Hardware.online(controller, "combat"), "full charge");
         check("power.full.scan", Hardware.online(controller, "scan"), "");
 
-        Hardware.setEnergy(controller, 350_000 / 10);
+        Hardware.setEnergy(controller, 700_000 / 10);
         check("power.low.combat_off", !Hardware.online(controller, "combat"),
                 "energy=" + Hardware.energy(controller) + " draw=" + Hardware.installed(controller).get(0).draw(20));
         check("power.low.scan_on", Hardware.online(controller, "scan"), "");
@@ -316,7 +316,7 @@ public final class HardwareSmoke {
         check("power.empty.combat", !Hardware.online(controller, "combat"), "");
         check("power.empty.scan", !Hardware.online(controller, "scan"), "");
         check("power.empty.carry", !Hardware.online(controller, "carry"), "");
-        check("power.empty.capacity", Hardware.capacity(controller) == 350_000, "");
+        check("power.empty.capacity", Hardware.capacity(controller) == 700_000, "");
         check("power.no_battery", !Hardware.online(Frames.create("peregrine"), "combat"), "");
     }
 

@@ -92,14 +92,15 @@ public final class Hardware {
      * @param id         product id, e.g. {@code huhu_dronepal:combat_mk2}
      * @param family     one of {@link #FAMILIES}; only one module per family may be fitted
      * @param tier       1..3
-     * @param drain      base FE per tick while powered
-     * @param params     the raw {@code params} object, read through {@link #integer}/{@link #decimal}
+     * @param drainIdle   FE per tick while switched on but not working
+     * @param drainActive FE per tick while the module is doing work (a pulse, a lit lamp, an engagement)
+     * @param params      the raw {@code params} object, read through {@link #integer}/{@link #decimal}
      * @param intents    wheel orders this module can execute ({@code order.cover}, ...)
      * @param wheelLabel translation key of the wheel label
      * @param vendor     vendor id, used for the trait multipliers and the name prefix
      */
-    public record Module(ResourceLocation id, String family, int tier, int drain, JsonObject params,
-                         Set<String> intents, String wheelLabel, String vendor, String tierLabel,
+    public record Module(ResourceLocation id, String family, int tier, int drainIdle, int drainActive,
+                         JsonObject params, Set<String> intents, String wheelLabel, String vendor, String tierLabel,
                          String productKey, String productName) {
         /** Vendor multiplier lookup; the vendor files carry the whole family of traits. */
         public double trait(String key, double fallback) {
@@ -112,9 +113,29 @@ public final class Hardware {
             return values != null && values.has("consumes_medkit") && values.get("consumes_medkit").getAsBoolean();
         }
 
-        /** FE drawn over {@code ticks}, after the vendor drain multiplier. */
+        /** Vendor scale on both halves of the draw (OmniDrive 0.85, Rustnail 1.3, ...). */
+        private double vendorScale() {
+            return Mth.clamp(trait("drain_multiplier", 1D), 0D, 10D);
+        }
+
+        /** Standby FE/t after the vendor trait, before the server's {@code drainMultiplier}. */
+        public double idleWatts() {
+            return drainIdle * vendorScale();
+        }
+
+        /** In-use FE/t after the vendor trait, before the server's {@code drainMultiplier}. */
+        public double activeWatts() {
+            return drainActive * vendorScale();
+        }
+
+        /** Legacy single figure: what the module used to draw all the time, i.e. its in-use rate. */
+        public int drain() {
+            return drainActive;
+        }
+
+        /** FE drawn over {@code ticks} at the in-use rate, after the vendor drain multiplier. */
         public int draw(int ticks) {
-            return (int) Math.round(drain * ticks * Mth.clamp(trait("drain_multiplier", 1D), 0D, 10D));
+            return (int) Math.round(drainActive * ticks * vendorScale());
         }
 
         public int integer(String key) {
@@ -285,7 +306,12 @@ public final class Hardware {
         Set<String> intents = new HashSet<>();
         if (o.has("intents")) o.getAsJsonArray("intents").forEach(value -> intents.add(value.getAsString()));
         String productKey = "dronepal.product." + (id.equals(original) ? family : id.getPath());
-        Module module = new Module(id, family, tier, Mth.clamp(o.get("drain_watts").getAsInt(), 0, 10000),
+        // Standby/in-use split with the shared compatibility rule (HardwareRules): an older pack that
+        // only knows drain_watts bills it while the module works and takes the family standby default.
+        int idle = HardwareRules.idleWatts(o.has("drain_idle") ? o.get("drain_idle").getAsInt() : null, family);
+        int active = HardwareRules.activeWatts(o.has("drain_active") ? o.get("drain_active").getAsInt() : null,
+                o.has("drain_watts") ? o.get("drain_watts").getAsInt() : null);
+        Module module = new Module(id, family, tier, idle, active,
                 o.getAsJsonObject("params"), Set.copyOf(intents), label,
                 o.has("vendor") ? o.get("vendor").getAsString() : "cvs",
                 o.has("tier_label") ? o.get("tier_label").getAsString() : ("Mk." + tier),
@@ -691,24 +717,66 @@ public final class Hardware {
     }
 
     /**
-     * FE/t this controller spends right now: the {@code drain_watts} of every fitted module that is
-     * currently {@linkplain #online online} (fitted, powered, fault-free and <em>not switched off</em>),
-     * after its vendor {@code drain_multiplier}. That is the same
-     * sum the 1.21 telemetry loop reports as {@code consumed / 20}.
+     * Standby FE/t of a fitted controller: the {@code drain_idle} of every module that is currently
+     * {@linkplain #online online} (fitted, powered, fault-free and <em>not switched off</em>), after its
+     * vendor {@code drain_multiplier} and the server's {@code drainMultiplier}.
+     *
+     * <p>This is the figure the wheel and the HUD quote for a parked drone, so it deliberately excludes
+     * the in-use rates (a scan pulse, a lit lamp, an engagement): those are only known to the running
+     * airframe, and {@link #drainPerSecond(ItemStack, boolean, java.util.function.Predicate)} is what
+     * the settlement bills. The deployed baseline is left out for the same reason — it is half a watt,
+     * which this integer cannot show.</p>
      *
      * <p>Returns {@code -1} when there is no controller at all, so a panel can print "—" instead of a
      * zero it cannot vouch for. A fitted controller with no modules really does draw 0.</p>
      */
     public static int drainPerTick(ItemStack controller) {
         if (controller == null || controller.isEmpty()) return -1;
-        double total = 0D;
-        for (Module module : installed(controller)) {
-            // online(), not powered(): a module the player switched off draws nothing (R2).
-            if (!online(controller, module.family())) continue;
-            total += module.drain() * Mth.clamp(module.trait("drain_multiplier", 1D), 0D, 10D);
-        }
-        return (int) Math.round(total);
+        return (int) Math.round(drainPerTick(controller, false, family -> false));
     }
+
+    /** Records a one-shot module job (a pickup, a magazine hand-off) for the idle/active drain split. */
+    public static void markActive(ServerPlayer player, String family) {
+        DroneEntity drone = DroneDeployment.active(player);
+        if (drone != null) drone.markActive(family);
+    }
+
+    /**
+     * FE/t the airframe draws right now, idle/active split included.
+     *
+     * <p>Shared arithmetic ({@code dev.corvus.core.HardwareRules#drainPerTick}): standby rates for the
+     * online modules, the in-use rate for the families {@code inUse} reports as busy, the deployment
+     * baseline while projected, and the server's {@code drainMultiplier} once on the total.</p>
+     *
+     * @param controller the fitted controller stack
+     * @param deployed   true while the projection exists (it is holding itself up, module or not)
+     * @param inUse      which families are working this second; the module runtime owns that knowledge
+     * @return FE/t before the once-per-second rounding of {@link #drainPerSecond}
+     */
+    public static double drainPerTick(ItemStack controller, boolean deployed,
+            java.util.function.Predicate<String> inUse) {
+        List<Module> modules = installed(controller);
+        int count = modules.size();
+        double[] idle = new double[count], active = new double[count];
+        int[] online = new int[count], busy = new int[count];
+        for (int i = 0; i < count; i++) {
+            Module module = modules.get(i);
+            idle[i] = module.idleWatts();
+            active[i] = module.activeWatts();
+            online[i] = online(controller, module.family()) ? 1 : 0;
+            busy[i] = online[i] != 0 && inUse != null && inUse.test(module.family()) ? 1 : 0;
+        }
+        return HardwareRules.drainPerTick(idle, active, online, busy, deployed, ServerOptions.drainMultiplier());
+    }
+
+    /** Whole FE the next one-second settlement of this airframe will debit, at the current state. */
+    public static int drainPerSecond(ItemStack controller, boolean deployed,
+            java.util.function.Predicate<String> inUse) {
+        return HardwareRules.drainForWindow(drainPerTick(controller, deployed, inUse), SECOND_TICKS);
+    }
+
+    /** Ticks in one settlement window (the module runtime bills once a second). */
+    static final int SECOND_TICKS = 20;
 
     /**
      * FE/t a fitted solar module makes in the given weather and daylight, or 0 when it has no view of

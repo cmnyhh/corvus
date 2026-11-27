@@ -23,7 +23,7 @@ import net.minecraftforge.energy.IEnergyStorage;
  * blocks. Every tick the tower pulls up to {@link Grid#TOWER_PULL_RATE} FE/t from the six neighbouring
  * FE blocks, and the grid service spends the pool when it allocates a device grant.
  */
-public final class PowerTowerEntity extends BlockEntity implements IEnergyStorage {
+public final class PowerTowerEntity extends BlockEntity implements IEnergyStorage, dev.corvus.power.EnergyLink.Node {
     public static final int CAPACITY = Grid.TOWER_BUFFER;
     private static final int PULL_RATE = Grid.TOWER_PULL_RATE;
 
@@ -121,8 +121,12 @@ public final class PowerTowerEntity extends BlockEntity implements IEnergyStorag
 
     Component status(ServerLevel level) {
         TowerGridService.NetworkInfo info = TowerGridService.info(level, worldPosition);
-        return Component.translatable("message.dronepal.tower_status",
+        Component line = Component.translatable("message.dronepal.tower_status",
                 energy, CAPACITY, info.radius(), info.towers(), info.outputUsed(), info.outputLimit(), info.devices());
+        // Drones are priority 0 on this tower's budget, so say how much of the output went to them.
+        if (info.droneUsed() > 0) line = line.copy().append(" · ")
+                .append(Component.translatable("message.dronepal.tower_drone", info.droneUsed()));
+        return line;
     }
 
     // ---- Forge energy ----
@@ -142,6 +146,42 @@ public final class PowerTowerEntity extends BlockEntity implements IEnergyStorag
     }
 
     @Override public int extractEnergy(int amount, boolean simulate) { return 0; }
+
+    // ---- cable network endpoint (loaded by dev.corvus.power.EnergyLink) ----
+    //
+    // A tower is both a source and a sink of a cable network: a cable may fill its pool (so a base can
+    // be kept alive from a battery bank across the yard) and it may also give the cable what its pool
+    // holds (so a run of batteries can be charged from a distant tower). `canExtract` stays false on the
+    // capability on purpose — devices go through the grid service, the only thing allowed to spend the
+    // pool at 0.95^hops — and the cable is served by netSpend/netAccept, so each tick there is exactly
+    // one way a battery sees the tower's energy.
+
+    /** FE the pool could hand to a cable network this tick, capped by the tower's own 2,000 FE/t. */
+    @Override public int netOffer() {
+        if (level == null || level.isClientSide) return 0;
+        return Math.max(0, Math.min(energy, PULL_RATE));
+    }
+
+    /** Free room this tick: the pool's spare capacity inside the same 2,000 FE/t input window. */
+    @Override public int netDemand() {
+        if (level == null || level.isClientSide) return 0;
+        long now = level.getGameTime();
+        int used = receiveTick == now ? receivedThisTick : 0;
+        return Math.max(0, Math.min(CAPACITY - energy, PULL_RATE - used));
+    }
+
+    /** A tower's buffer is refilled before anything else: an empty tower stops the whole wireless grid. */
+    @Override public int netPriority() { return dev.corvus.core.EnergyNet.PRIORITY_TOWER; }
+
+    /** Moves pool FE into the cable; the pool is the same one the grid service spends from. */
+    @Override public int netSpend(int amount) {
+        int moved = Math.max(0, Math.min(amount, energy));
+        if (moved > 0) spend(moved);
+        return moved;
+    }
+
+    @Override public int netAccept(int amount, boolean simulate) { return receiveEnergy(amount, simulate); }
+
     @Override public int getEnergyStored() { return energy; }
     @Override public int getMaxEnergyStored() { return CAPACITY; }
     @Override public boolean canReceive() { return true; }

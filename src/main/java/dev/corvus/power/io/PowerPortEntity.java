@@ -1,7 +1,10 @@
 package dev.corvus.power.io;
 
 import dev.corvus.ServerOptions;
+import dev.corvus.core.EnergyNet;
 import dev.corvus.core.PowerIo;
+import dev.corvus.power.EnergyLink;
+import dev.corvus.power.grid.GridLink;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -23,8 +26,15 @@ import net.minecraftforge.energy.IEnergyStorage;
  * {@link #getCapability} with a {@link LazyOptional} — the same shape the battery bank and the charging
  * dock use in this source set. Everything else (buffer, per-tick windows, ordered fill) is the shared
  * {@link PowerIo} rule, so the numbers match the 1.21.1 port exactly.</p>
+ *
+ * <p>Intake order, all inside one {@code portOutput} window: <b>wireless grid first</b>
+ * ({@link GridLink}, priority {@code PORT}, {@code 0.95^hops}), then the <b>cable network</b>, which
+ * delivers into the buffer during its own tick ({@link EnergyLink#tick}), then the <b>blocks touching
+ * it</b>. A cable used to be drained by this port with a pull loop; that is exactly what made a run
+ * useless to every other block, so now the network pushes and the port is one of its sinks
+ * ({@code netDemand}/{@code netAccept}, priority {@code PORT} — last).</p>
  */
-public final class PowerPortEntity extends BlockEntity implements IEnergyStorage {
+public final class PowerPortEntity extends BlockEntity implements IEnergyStorage, EnergyLink.Node {
     /** Buffer, FE. A socket, not a battery: the block loses what it holds when broken. */
     public static final int BUFFER = PowerIo.PORT_BUFFER;
 
@@ -67,8 +77,19 @@ public final class PowerPortEntity extends BlockEntity implements IEnergyStorage
             pullTick = now;
             pulledThisTick = 0;
         }
-        int rate = outputRate();
-        int left = Math.min(PowerIo.intake(energy, BUFFER, rate), PowerIo.remainder(rate, pulledThisTick));
+        // 1) wireless grid first: a port inside a tower's radius is fed by the tower, at 0.95^hops.
+        int left = room(level);
+        if (left > 0) {
+            int fromGrid = GridLink.draw(level, this, left, GridLink.PRIORITY_PORT,
+                    () -> Math.min(BUFFER - energy, outputRate()));
+            if (fromGrid > 0) {
+                energy += fromGrid;
+                pulledThisTick += fromGrid;
+                setChanged();
+                left = room(level);
+            }
+        }
+        // 2) then the blocks that touch it; a cable is not one of them any more (the network pushes).
         if (left <= 0) return;
         Direction outlet = outletFacing();
         int moved = 0;
@@ -85,6 +106,12 @@ public final class PowerPortEntity extends BlockEntity implements IEnergyStorage
             pulledThisTick += moved;
             setChanged();
         }
+    }
+
+    /** Free buffer room left in this tick's intake window (grid, cable and neighbours share it). */
+    private int room(ServerLevel level) {
+        int used = pullTick == level.getGameTime() ? pulledThisTick : 0;
+        return Math.min(PowerIo.intake(energy, BUFFER, outputRate()), PowerIo.remainder(outputRate(), used));
     }
 
     /** The neighbour's storage as seen from this block, or {@code null} when it has none. */
@@ -113,6 +140,41 @@ public final class PowerPortEntity extends BlockEntity implements IEnergyStorage
     Component status() {
         return Component.translatable("message.dronepal.power_port.status",
                 energy, BUFFER, outputRate(), suppliers);
+    }
+
+    // ---- Cable network endpoint (loaded by dev.corvus.power.EnergyLink) ----
+    //
+    // The port is a sink only: it never gives energy back to the cable (that would be a loop through
+    // another mod's machines). Its demand is the free buffer room inside the same portOutput window the
+    // grid draw and the neighbour pull use, so all three sources together cannot exceed one window.
+
+    @Override public int netOffer() { return 0; }
+
+    @Override public int netDemand() {
+        return level instanceof ServerLevel server ? room(server) : 0;
+    }
+
+    /** Served last: another mod's machines come after this mod's own towers, banks, mills and docks. */
+    @Override public int netPriority() { return EnergyNet.PRIORITY_PORT; }
+
+    @Override public int netSpend(int amount) { return 0; }
+
+    @Override public int netAccept(int amount, boolean simulate) {
+        if (!(level instanceof ServerLevel server) || amount <= 0) return 0;
+        long now = server.getGameTime();
+        int used = pullTick == now ? pulledThisTick : 0;
+        int give = Math.min(amount, Math.min(PowerIo.intake(energy, BUFFER, outputRate()),
+                PowerIo.remainder(outputRate(), used)));
+        if (give <= 0) return 0;
+        if (simulate) return give;
+        if (pullTick != now) {
+            pullTick = now;
+            pulledThisTick = 0;
+        }
+        energy += give;
+        pulledThisTick += give;
+        setChanged();
+        return give;
     }
 
     // ---- Forge energy: outlet only ----

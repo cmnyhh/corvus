@@ -3,7 +3,8 @@
   "family": "medic",
   "tier": 3,
   "slot_type": "function",
-  "drain_watts": 8,
+  "drain_idle": 0,
+  "drain_active": 8,
   "goals": [
     "drone_heal"
   ],

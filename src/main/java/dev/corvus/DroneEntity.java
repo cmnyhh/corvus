@@ -346,6 +346,28 @@ public final class DroneEntity extends PathfinderMob {
         return systems;
     }
 
+    /**
+     * Families that did a one-shot job recently, i.e. a carry pickup or a link hand-off.
+     *
+     * <p>Those two are not continuous states (unlike a lit lamp or an engagement), so the drain cannot
+     * read them off the entity. Marking the airframe for a little over one settlement window means a
+     * pickup that happens just after a settlement is still billed at the in-use rate on the next one
+     * instead of slipping between the two.</p>
+     */
+    private final java.util.Map<String, Long> activeUntil = new java.util.HashMap<>();
+    private static final long ACTIVITY_WINDOW = 25L;
+
+    /** Records that {@code family} did work now, so the next settlement bills its in-use rate. */
+    void markActive(String family) {
+        if (family == null || family.isEmpty()) return;
+        activeUntil.put(family, level().getGameTime() + ACTIVITY_WINDOW);
+    }
+
+    /** True while {@code family} has work inside the current settlement window. */
+    boolean activeWithin(String family) {
+        return activeUntil.getOrDefault(family, Long.MIN_VALUE) >= level().getGameTime();
+    }
+
     void scanPatrolChanged(ServerPlayer player, boolean enabled) {
         systems.patrolChanged(this, player, enabled);
     }

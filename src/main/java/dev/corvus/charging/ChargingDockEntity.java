@@ -40,8 +40,14 @@ import net.minecraftforge.energy.IEnergyStorage;
 public final class ChargingDockEntity extends BlockEntity implements IEnergyStorage {
     public static final int BUFFER = 32_000;
     static final int BASE_CABLE_RATE = 2_000;
-    /** FE released per tick while fuel is burning; the fuel's own value sets how long that lasts. */
-    static final int FUEL_RATE = 200;
+    /**
+     * FE released per tick while fuel is burning; the fuel's own value sets how long that lasts.
+     *
+     * <p>Was 200, which capped every recharged cell at a fraction of its receive rate: a 700,000 FE
+     * pack needed 29 minutes on a pad it could have swallowed at 800 FE/t. This is the pad's output;
+     * the cell's own receive ceiling still applies on top.</p>
+     */
+    static final int FUEL_RATE = 800;
     /** How many items the fuel slot holds. */
     public static final int FUEL_LIMIT = 64;
     /** Guard against a forged NBT value; real fuels are far below this. */
@@ -58,6 +64,8 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
     private int energy;
     private int targetEnergy;
     private int targetCapacity;
+    /** FE/t this pad handed to a projected drone's controller on the previous tick, 0 when none. */
+    private int droneRate;
     private long cableTick = Long.MIN_VALUE;
     private int cableReceived;
     /** Snapshot of what the last update tag told the clients, used to throttle packets. */
@@ -111,6 +119,9 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
                 ? Component.translatable("message.dronepal.dock_empty")
                 : Component.empty().append(target.getHoverName())
                         .append(" " + DockEnergy.energy(target) + "/" + DockEnergy.capacity(target) + " FE");
+        // A projected drone hovering on the pad is the case players ask about: name the rate it gets.
+        if (droneRate > 0) detail = detail.copy().append(" · ")
+                .append(Component.translatable("message.dronepal.dock_drone", droneRate));
         Component fuelDetail = fuel.isEmpty()
                 ? Component.translatable("message.dronepal.fuel_empty")
                 : Component.empty().append(fuel.getHoverName()).append(" ×" + fuel.getCount());
@@ -161,6 +172,7 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
             }
             setChanged();
         }
+        droneRate = 0;
         if (energy > 0) {
             if (!target.isEmpty()) {
                 transfer(target);
@@ -168,7 +180,10 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
                 // A projected drone touching the pad charges its owner's actual controller stack.
                 AABB dockZone = new AABB(worldPosition).expandTowards(0, 0.75, 0);
                 for (DroneEntity drone : world.getEntitiesOfClass(DroneEntity.class, dockZone)) {
-                    if (transfer(controllerOf(drone))) break;
+                    int received = transfer(controllerOf(drone));
+                    if (received <= 0) continue;
+                    droneRate = received;
+                    break;
                 }
             }
         }
@@ -185,12 +200,18 @@ public final class ChargingDockEntity extends BlockEntity implements IEnergyStor
         return player == null ? ItemStack.EMPTY : Hardware.controller(player);
     }
 
-    private boolean transfer(ItemStack stack) {
+    /** Moves what the cell will take out of the buffer; returns the FE that actually moved. */
+    private int transfer(ItemStack stack) {
         int received = DockEnergy.charge(stack, energy, false);
-        if (received == 0) return false;
+        if (received == 0) return 0;
         energy -= received;
         setChanged();
-        return true;
+        return received;
+    }
+
+    /** FE/t this pad handed to a projected drone's controller on the last tick (0 when none). */
+    public int droneRate() {
+        return droneRate;
     }
 
     /**

@@ -109,7 +109,7 @@ public final class SolarGeneratorEntity extends BlockEntity implements IEnergySt
         }
         int budget = Math.min(PUSH_RATE, energy);
         if (budget > 0) {
-            int sent = EnergyLink.push(world, worldPosition, budget);
+            int sent = PowerPush.push(world, worldPosition, budget);
             if (sent > 0) {
                 energy -= sent;
                 setChanged();

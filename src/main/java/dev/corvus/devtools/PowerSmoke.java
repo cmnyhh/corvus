@@ -45,7 +45,7 @@ import org.slf4j.LoggerFactory;
  * generator and battery bank.
  *
  * <p>Inactive unless {@code -Dcorvus.power=1} or {@code CORVUS_POWERTEST=1}. It is a multi-tick run
- * because almost everything under test is a per-tick world fact: the pad releases 200 FE/t, a generator
+ * because almost everything under test is a per-tick world fact: the pad releases 800 FE/t, a generator
  * only pushes when somebody can take the power, the solar panel reads the real sky, weather and time of
  * day, and the bank fills and empties at a fixed rate. So the harness places real blocks in the real
  * world, lets the server tick them and reads the block entities back — no hand-called tick methods, no
@@ -241,7 +241,7 @@ public final class PowerSmoke {
                 String.valueOf(FuelPower.fe(new ItemStack(Items.LAVA_BUCKET))));
         check("fuel.bread_is_not_fuel", !FuelPower.fuel(new ItemStack(Items.BREAD)), "bread");
 
-        // The pad already burns at 200 FE/t, but the burner and bank phases would need 800 and 1,250
+        // The pad already burns at 800 FE/t, but the burner and bank phases would need 800 and 1,250
         // ticks at the default 40 FE/t. Run those at the configured ceiling and restore 40 before the
         // rate check, which is what proves the default.
         ServerOptions.BURNER_OUTPUT.set(400);
@@ -263,7 +263,7 @@ public final class PowerSmoke {
         ChargingDockEntity dock = dock(dockFuelPos);
         LOG.info("[power-smoke] dock after charcoal: energy={} burn={} fuel={}", dock.storedEnergy(),
                 dock.burnRemainingFe(), dock.fuelStack().getCount());
-        // Charcoal is 1,600 burn ticks -> 4,000 FE, released at 200 FE/t: 20 ticks of burning.
+        // Charcoal is 1,600 burn ticks -> 4,000 FE, released at 800 FE/t: 5 ticks of burning.
         check("dock.charcoal_4000", dock.storedEnergy() == 4_000, "energy=" + dock.storedEnergy());
         check("dock.charcoal_consumed", dock.fuelStack().isEmpty(), "fuel=" + dock.fuelStack());
         int accepted = dock.addFuel(new ItemStack(Items.COAL_BLOCK));
@@ -682,18 +682,19 @@ public final class PowerSmoke {
         check("battery.port_present", batteryPort != null, "capability");
         if (batteryPort == null) return;
         check("battery.port_can_receive", batteryPort.canReceive(), "canReceive");
-        int first = batteryPort.receiveEnergy(600, false);
-        int second = batteryPort.receiveEnergy(600, false);
-        check("battery.charge_600", first == 600, "first=" + first);
+        // ahi_bat_mk1 recharges at 1,200 FE/t after the rebalance (was 600), so the tick budget is 1,200.
+        int first = batteryPort.receiveEnergy(1_200, false);
+        int second = batteryPort.receiveEnergy(1_200, false);
+        check("battery.charge_1200", first == 1_200, "first=" + first);
         check("battery.tick_budget", second == 0, "same-tick second=" + second);
         wait = 1;
     }
 
     private static void batteryCapabilityNextTick() {
         if (batteryPort == null) return;
-        int next = batteryPort.receiveEnergy(600, false);
-        check("battery.next_tick_600", next == 600, "next=" + next);
-        check("battery.two_ticks_total", dev.corvus.Hardware.energy(batteryCell) == 1_200,
+        int next = batteryPort.receiveEnergy(1_200, false);
+        check("battery.next_tick_1200", next == 1_200, "next=" + next);
+        check("battery.two_ticks_total", dev.corvus.Hardware.energy(batteryCell) == 2_400,
                 "energy=" + dev.corvus.Hardware.energy(batteryCell));
         int out = batteryPort.extractEnergy(200, false);
         check("battery.extract_still_works", out == 200, "out=" + out);

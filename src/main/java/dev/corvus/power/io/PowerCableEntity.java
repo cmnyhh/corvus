@@ -1,6 +1,8 @@
 package dev.corvus.power.io;
 
+import dev.corvus.core.EnergyNet;
 import dev.corvus.core.PowerIo;
+import dev.corvus.power.EnergyLink;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -15,14 +17,19 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.IEnergyStorage;
 
 /**
- * One cell of an FE run.
+ * One cell of an FE network.
  *
- * <p>Mirror of the 1.21.1 cell: a wire, not a battery. It stores nothing and pulls on demand from the
- * machines along the run ({@link CableNetwork#draw}), so an idle run is free and a run that is too long
- * delivers zero instead of trapping a buffer's worth of energy.</p>
+ * <p>Mirror of the 1.21.1 cell: a wire, not a battery. It stores nothing; the energy a network moves is
+ * pulled from its source endpoints and delivered to its sinks by {@link EnergyLink#tick(ServerLevel)},
+ * once per tick, under one budget and one priority order. The cell refuses {@code receiveEnergy}, so a
+ * generator pushing into a run is a no-op and nothing can be stranded in the wire.</p>
+ *
+ * <p>The Forge energy capability is still published because another mod's machine may pull from our
+ * run; {@link #extractEnergy} serves that pull from the network's sources inside the same per-tick
+ * budget ({@link EnergyLink#pull}). Our own blocks never take that path — they are endpoints.</p>
  *
  * <p>Right-click reports the run's current flow, how many ports sit on it and how many cells it is; a
- * run longer than {@link PowerIo#CABLE_LENGTH} carries nothing and says so.</p>
+ * path longer than {@link EnergyNet#MAX_LENGTH} from source to sink carries nothing and says so.</p>
  */
 public final class PowerCableEntity extends BlockEntity implements IEnergyStorage {
     private final LazyOptional<IEnergyStorage> energyCapability = LazyOptional.of(() -> this);
@@ -30,11 +37,20 @@ public final class PowerCableEntity extends BlockEntity implements IEnergyStorag
         super(PowerIoRegistry.CABLE_TYPE.get(), pos, state);
     }
 
+    @Override public void setLevel(Level level) {
+        super.setLevel(level);
+        if (level instanceof ServerLevel server) EnergyLink.registerCable(server, worldPosition);
+    }
+
+    @Override public void setRemoved() {
+        if (level instanceof ServerLevel server) EnergyLink.unregisterCable(server, worldPosition);
+        super.setRemoved();
+    }
+
     /** Current numbers for the status line, computed on demand. */
     Component status(ServerLevel level) {
         CableNetwork.Scan scan = CableNetwork.scan(level, worldPosition);
-        int flow = CableNetwork.flow(level, scan.root, level.getGameTime());
-        return PowerCableBlock.status(flow, scan.ports, scan.cells);
+        return PowerCableBlock.status(EnergyLink.flow(level, worldPosition), scan.ports, scan.cells);
     }
 
     void readStatus(ServerLevel level, ServerPlayer player) {
@@ -64,9 +80,13 @@ public final class PowerCableEntity extends BlockEntity implements IEnergyStorag
     /** A cable is a wire: it never accepts energy, so nothing can be stranded inside it. */
     @Override public int receiveEnergy(int amount, boolean simulate) { return 0; }
 
+    /**
+     * Serves a foreign pull out of this network's sources, inside the per-tick budget that is left after
+     * the network's own source &rarr; sink pass. A network with nothing left to carry answers 0.
+     */
     @Override public int extractEnergy(int amount, boolean simulate) {
         if (level == null || level.isClientSide || amount <= 0) return 0;
-        return CableNetwork.draw(level, worldPosition, amount, simulate);
+        return EnergyLink.pull(level, worldPosition, amount, simulate);
     }
 
     @Override public int getEnergyStored() { return 0; }

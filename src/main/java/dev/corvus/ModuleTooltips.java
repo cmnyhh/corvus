@@ -112,12 +112,16 @@ public final class ModuleTooltips {
             }
             default -> { }
         }
-        double watts = module.draw(20) / 20D;
+        // The hover used to print one figure because every module drew it all the time. Now the two
+        // halves are printed whenever they differ, so "0 FE/t standing by" is not a surprise in the HUD.
+        double idle = module.idleWatts(), active = module.activeWatts();
         if (module.family().equals("medic")) {
-            double active = watts + Mth.clamp(module.integer("active_drain_watts") - module.drain(), 0, 10000);
-            lines.add(line("active_draw", n(watts), n(active)));
+            double treating = active + Mth.clamp(module.integer("active_drain_watts") - module.drain(), 0, 10000);
+            lines.add(line("active_draw", n(idle), n(treating)));
+        } else if (Math.abs(idle - active) > 1e-9) {
+            lines.add(line("idle_active", n(idle), n(active)));
         } else {
-            lines.add(line("draw", n(watts)));
+            lines.add(line("draw", n(active)));
         }
         for (String trait : List.of("drain_multiplier", "spread_multiplier",
                 "scan_radius_multiplier", "heal_rate_multiplier")) {

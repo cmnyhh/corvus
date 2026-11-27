@@ -313,7 +313,7 @@ public final class SmokeB {
         check(docked && !entity.targetStack().isEmpty(), "dock/insert",
                 "docked=" + docked + " stack=" + (entity.targetStack().isEmpty() ? "empty" : entity.targetStack().getItem()));
         check(entity.coalCount() == 4 && cellEnergyBefore == 0, "dock/coal",
-                "coal=" + entity.coalCount() + " (4000 FE each, 200 FE/t), docked cell=" + cellEnergyBefore + " FE");
+                "coal=" + entity.coalCount() + " (4000 FE each, 800 FE/t), docked cell=" + cellEnergyBefore + " FE");
     }
 
     private static void verifyCharging(MinecraftServer server) {
@@ -321,7 +321,7 @@ public final class SmokeB {
         int stored = dock.storedEnergy();
         ItemStack target = dock.targetStack();
         int charged = target.isEmpty() ? 0 : Hardware.energy(target);
-        check(charged > 0 && charged <= 250_000, "dock/charge-flow",
+        check(charged > 0 && charged <= Hardware.capacity(target), "dock/charge-flow",
                 "cell " + cellEnergyBefore + " -> " + charged + "/" + Hardware.capacity(target) + " FE, buffer "
                         + dockEnergyBefore + " -> " + stored);
         int generated = cableAccepted + 4 * 4_000; // cable input + four pieces of coal

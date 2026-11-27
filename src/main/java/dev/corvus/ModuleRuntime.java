@@ -117,7 +117,9 @@ public final class ModuleRuntime {
         int capacity = Hardware.capacity(controller);
         if (capacity <= 0) return 0;
         int before = Hardware.energy(controller);
-        int drain = Math.max(0, Hardware.drainPerTick(controller)) * SECOND;
+        // One shared bill (dev.corvus.core.HardwareRules#drainPerTick): standby rates, the in-use rate
+        // for the families busy this second, the deployed baseline, then one multiplier and one rounding.
+        int drain = Hardware.drainPerSecond(controller, true, family -> busy(drone, controller, family));
         // TODO(grid): the grid pays the drain first and writes the rest into the cell.
         var grid = dev.corvus.power.grid.DroneCharger.service(level, drone, controller, drain);
         drain = Math.max(0, drain - grid.drainPaid());
@@ -126,6 +128,27 @@ public final class ModuleRuntime {
         int after = Mth.clamp(cellAfterGrid + solar - drain, 0, capacity);
         if (after != cellAfterGrid) Hardware.setEnergy(controller, after);
         return after - before;
+    }
+
+    /**
+     * Is {@code family} doing work during the settlement window being billed?
+     *
+     * <p>The half of the idle/active split only the runtime can answer: a scanner between pulses, a
+     * dark lamp, a parked weapon bus and an idle hold all pay their standby rate; a running sweep, a
+     * lit lamp, an engagement and a treatment pay the in-use rate. Carry pickups and link hand-offs are
+     * one-shot events, so they leave a short mark on the airframe ({@link DroneEntity#markActive}) that
+     * the next settlement still sees.</p>
+     */
+    static boolean busy(DroneEntity drone, ItemStack controller, String family) {
+        return switch (family) {
+            case "scan" -> drone.systems().scanning();
+            case "light" -> lightProfile(drone, controller) != 0;
+            case "combat" -> drone.getTarget() != null;
+            case "medic" -> drone.systems().healing();
+            case "carry", "link" -> drone.activeWithin(family);
+            // solar makes power; it does not spend any.
+            default -> false;
+        };
     }
 
     /** FE the fitted photovoltaic modules make in one second, jitter included. */
@@ -286,6 +309,7 @@ public final class ModuleRuntime {
             else drop.setItem(moving);
         }
         if (!changed) return false;
+        drone.markActive("carry");
         if (hold.flag("sort")) {
             cargo.sort(Comparator.comparing(stack -> String.valueOf(
                     BuiltInRegistries.ITEM.getKey(stack.getItem()))));

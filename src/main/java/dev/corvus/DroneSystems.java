@@ -57,6 +57,11 @@ final class DroneSystems {
     private float healingLeft;
     private int lastHurt;
 
+    /** True while a treatment is in progress: the medic module's in-use rate applies then. */
+    boolean healing() {
+        return healingLeft > 0;
+    }
+
     DroneSystems() {
         this(DialogueServer::scanComplete);
     }

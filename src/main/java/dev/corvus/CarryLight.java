@@ -130,6 +130,8 @@ public final class CarryLight {
             int moved = before - item.getCount();
             if (moved <= 0) continue;
             save(controller, nonEmpty(cargo));
+            // A hand-off is the hold doing work, not idling.
+            Hardware.markActive(player, "carry");
             return moved;
         }
         return 0;
@@ -158,6 +160,7 @@ public final class CarryLight {
             changed |= item.getCount() != before;
         }
         if (changed) save(controller, nonEmpty(cargo));
+        if (changed) Hardware.markActive(player, "carry");
         return changed;
     }
 

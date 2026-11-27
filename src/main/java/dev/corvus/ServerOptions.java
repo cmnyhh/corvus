@@ -26,6 +26,14 @@ public final class ServerOptions {
             .comment("Seconds between automatic scans by a deployed, powered scanner.")
             .defineInRange("autoScanSeconds", 15, 5, 300);
 
+    public static final ForgeConfigSpec.DoubleValue DRAIN_MULTIPLIER = BUILDER
+            .comment("Scale on every module's draw (standby and in-use) and on the deployed airframe's 0.5 FE/t baseline.",
+                    "0.25 = 4x the endurance, 1.0 = the pre-rebalance cost, 3.0 = 3x the cost (0.25-3.0, default 0.6).",
+                    "It multiplies the whole settled bill once a second, so it never changes the relative cost of two modules.")
+            .defineInRange("drainMultiplier", dev.corvus.core.HardwareRules.DEFAULT_DRAIN_MULTIPLIER,
+                    dev.corvus.core.HardwareRules.MIN_DRAIN_MULTIPLIER,
+                    dev.corvus.core.HardwareRules.MAX_DRAIN_MULTIPLIER);
+
     public static final ForgeConfigSpec.IntValue BURNER_OUTPUT = BUILDER
             .comment("FE per tick a burner generator pushes into its neighbours (10-400).",
                     "Fuel value is fixed at burn ticks x 2.5, so this only changes how fast it is released.")
@@ -45,6 +53,18 @@ public final class ServerOptions {
                     "The port buffers 8,000 FE; this is also the ceiling another mod's consumer sees.",
                     "A cable run carries at most 2,000 FE/t regardless of this value.")
             .defineInRange("portOutput", 1_000, 100, 4_000);
+
+    /**
+     * Total FE per tick one cable network may move. Cables are general conductors: every one of our FE
+     * blocks that touches a cable is an endpoint, and the network moves power source -> sink each tick
+     * by priority (tower, battery, ore mill, dock, port). 32 blocks is the longest source-to-sink path.
+     */
+    public static final ForgeConfigSpec.IntValue CABLE_THROUGHPUT = BUILDER
+            .comment("Total FE per tick one cable network may move (100-8000, default 2,000).",
+                    "A network is every power_cable block connected to the same run.",
+                    "A run longer than 32 blocks between source and sink carries nothing.")
+            .defineInRange("cableThroughput", dev.corvus.core.EnergyNet.THROUGHPUT_DEFAULT,
+                    dev.corvus.core.EnergyNet.THROUGHPUT_MIN, dev.corvus.core.EnergyNet.THROUGHPUT_MAX);
 
     // ---- wireless power grid (power_tower) ----
     public static final ForgeConfigSpec.IntValue TOWER_RADIUS = BUILDER
@@ -71,6 +91,15 @@ public final class ServerOptions {
     private ServerOptions() {}
 
     /** No-throw accessor: the config may be unloaded in early load or unit contexts. */
+    /** Server-wide drain scale (0.25..3.0); 0.6 by default, see {@link #DRAIN_MULTIPLIER}. */
+    public static double drainMultiplier() {
+        try {
+            return dev.corvus.core.HardwareRules.clampMultiplier(DRAIN_MULTIPLIER.get());
+        } catch (RuntimeException unloaded) {
+            return dev.corvus.core.HardwareRules.DEFAULT_DRAIN_MULTIPLIER;
+        }
+    }
+
     public static double chargeMultiplier() {
         try {
             return Mth.clamp(CHARGE_RATE_MULTIPLIER.get(), 0.25D, 20.0D);
@@ -111,6 +140,15 @@ public final class ServerOptions {
             return Mth.clamp(BATTERY_BANK_CAPACITY.get(), 1_000, 10_000_000);
         } catch (RuntimeException unloaded) {
             return 500_000;
+        }
+    }
+
+    /** Per-network cable throughput, FE/t, clamped to the shared 100..8000 range. */
+    public static int cableThroughput() {
+        try {
+            return dev.corvus.core.EnergyNet.clampThroughput(CABLE_THROUGHPUT.get());
+        } catch (RuntimeException unloaded) {
+            return dev.corvus.core.EnergyNet.THROUGHPUT_DEFAULT;
         }
     }
 

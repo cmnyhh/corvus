@@ -35,13 +35,24 @@ import net.minecraft.world.phys.Vec3;
  * still withdraw exactly what was allocated. Nothing is created or duplicated: the tower's energy is
  * the only source, and a grant that cannot be covered by the supplying tower is cut down.</p>
  *
+ * <p><b>Rounding.</b> Grants are whole FE, but the per-hop cost is a ratio, so the fraction of a FE
+ * that a tick cannot deliver is <em>carried</em> per device ({@link Binding#carried}) instead of being
+ * floored away. Without that carry a device asking for one or two FE per tick — a drone topping off a
+ * big cell, or any device attached to a tower that is itself only trickle-fed — receives
+ * {@code floor(1 * 0.95) = 0} every tick while the tower keeps paying, i.e. it never charges at all.</p>
+ *
  * <p>All state is per {@link ServerLevel} and touched only on the server thread. The class is a
  * singleton service rather than saved data: tower energy itself lives in each tower's block entity
  * NBT, and the topology is rebuilt from the loaded towers after a reload.</p>
  */
 public final class TowerGridService {
     /** Live readout for the block's right-click message and the client overlay. */
-    public record NetworkInfo(int towers, int devices, int outputUsed, int outputLimit, int radius) {}
+    /**
+     * @param droneUsed FE/t of {@code outputUsed} that went to drone sockets (priority 0); a share of
+     *                  {@code outputUsed}, never an addition to it
+     */
+    public record NetworkInfo(int towers, int devices, int outputUsed, int outputLimit, int radius,
+            int droneUsed) {}
 
     /** One device's state for the current tick. */
     private static final class Binding {
@@ -53,6 +64,16 @@ public final class TowerGridService {
         double efficiency;
         BlockPos attached;
         BlockPos supplier;
+        /**
+         * Fraction of a FE this device is still owed from earlier ticks, in {@code [0, 1)}.
+         *
+         * <p>Delivery is whole FE, so {@code floor(spend * efficiency)} throws the fraction away every
+         * tick. For a device that only asks for one or two FE per tick — a drone topping off, or any
+         * device on a tower whose pool is being trickle-fed — {@code floor(1 * 0.95) = 0}, i.e. the
+         * tower pays and the device never receives anything at all. Carrying the fraction per load
+         * makes the *average* exactly {@code spend * efficiency}.</p>
+         */
+        double carried;
 
         Binding(GridLoad load) { this.load = load; }
     }
@@ -64,6 +85,7 @@ public final class TowerGridService {
         final Map<BlockPos, BlockLoad> blockLoads = new HashMap<>();
         final Map<java.util.UUID, DroneLoad> droneLoads = new HashMap<>();
         final Map<BlockPos, Integer> outputUsed = new HashMap<>();
+        final Map<BlockPos, Integer> droneUsed = new HashMap<>();
         List<List<BlockPos>> components = List.of();
         Map<BlockPos, Integer> componentOf = Map.of();
         int builtRadius = -1;
@@ -183,6 +205,7 @@ public final class TowerGridService {
     private static void allocate(LevelState state) {
         ServerLevel level = state.level;
         state.outputUsed.clear();
+        state.droneUsed.clear();
         state.towers.entrySet().removeIf(entry -> {
             PowerTowerEntity tower = entry.getValue();
             return tower.isRemoved() || tower.getLevel() != level || level.getBlockEntity(entry.getKey()) != tower;
@@ -236,15 +259,25 @@ public final class TowerGridService {
                 // The grant is tower-side output: the tower spends up to that much, and the device
                 // receives efficiency^hops of it. A 400 FE/t grant over one hop delivers 380.
                 int spend = Math.min(grant, source.energy());
-                int delivered = Grid.delivered(spend, supplier.hops, configured);
-                if (delivered <= 0) continue;
+                if (spend <= 0) continue;
                 source.spend(spend);
-                binding.grant = delivered;
-                binding.credit += delivered;
+                // Whole-FE delivery, with the fraction carried to the next tick (Binding#carried).
+                // Plain Grid.delivered() floors the cost of the hop away on every single tick, so a
+                // device asking for 1-2 FE/t receives floor(1 * 0.95) = 0 for ever while the tower pays.
+                double exact = spend * efficiency + binding.carried;
+                int delivered = (int) Math.floor(exact);
+                binding.carried = exact - delivered;
                 binding.supplier = supplier.pos;
                 binding.hops = supplier.hops;
                 binding.efficiency = efficiency;
+                binding.grant = delivered;
+                if (delivered <= 0) continue;   // the fraction stays carried; the tower paid for it
+                binding.credit += delivered;
                 state.outputUsed.merge(supplier.pos, delivered, Integer::sum);
+                // Drones are priority 0: this is the part of the budget they took before anything else.
+                if (binding.load.gridPriority() == Grid.PRIORITY_DRONE) {
+                    state.droneUsed.merge(supplier.pos, delivered, Integer::sum);
+                }
             }
         }
     }
@@ -276,13 +309,21 @@ public final class TowerGridService {
         return draw(level, load, max);
     }
 
+    /**
+     * Legacy per-UUID drone draw. {@link DroneCharger} uses its own per-entity socket now, because a
+     * binding keyed by serial goes stale the moment the projection is reloaded: the map would hand back
+     * the <em>removed</em> entity, every allocation would prune it as invalid and the drone could never
+     * charge again. Kept for API compatibility, but it now re-binds when the entity instance changed.
+     */
     static int drawDrone(ServerLevel level, net.minecraft.world.entity.Entity drone, int perSecondFe) {
         LevelState state = state(level);
-        DroneLoad load = state.droneLoads.computeIfAbsent(drone.getUUID(), id -> {
+        DroneLoad load = state.droneLoads.get(drone.getUUID());
+        if (load == null || load.drone != drone) {
             DroneLoad created = new DroneLoad(drone);
+            state.droneLoads.put(drone.getUUID(), created);
             state.loads.putIfAbsent(created, new Binding(created));
-            return created;
-        });
+            load = created;
+        }
         load.perSecond = Math.max(0, perSecondFe);
         return draw(level, load, load.perSecond);
     }
@@ -325,12 +366,13 @@ public final class TowerGridService {
         LevelState state = state(level);
         beginTick(level);
         Integer component = state.componentOf.get(towerPos);
-        int towers = 0, devices = 0, used = 0;
+        int towers = 0, devices = 0, used = 0, drones = 0;
         if (component != null) {
             for (BlockPos pos : state.towers.keySet()) {
                 if (!component.equals(state.componentOf.get(pos))) continue;
                 towers++;
                 used += state.outputUsed.getOrDefault(pos, 0);
+                drones += state.droneUsed.getOrDefault(pos, 0);
             }
             for (Binding binding : state.loads.values()) {
                 if (binding.attached == null) continue;
@@ -338,7 +380,7 @@ public final class TowerGridService {
                 if (component.equals(attachedComponent)) devices++;
             }
         }
-        return new NetworkInfo(towers, devices, used, ServerOptions.towerThroughput(), radius());
+        return new NetworkInfo(towers, devices, used, ServerOptions.towerThroughput(), radius(), drones);
     }
 
     // ---------------------------------------------------------------- topology

@@ -3,7 +3,8 @@
   "family": "carry",
   "tier": 3,
   "slot_type": "function",
-  "drain_watts": 12,
+  "drain_idle": 0,
+  "drain_active": 12,
   "goals": [],
   "intents": [
     "order.fetch"

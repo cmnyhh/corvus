@@ -79,7 +79,8 @@ public final class ModuleSync {
         json.addProperty("id", module.id().toString());
         json.addProperty("family", module.family());
         json.addProperty("tier", module.tier());
-        json.addProperty("drain", module.drain());
+        json.addProperty("drainIdle", module.drainIdle());
+        json.addProperty("drainActive", module.drainActive());
         json.add("params", module.params());
         JsonArray intents = new JsonArray();
         module.intents().forEach(intents::add);
@@ -125,7 +126,8 @@ public final class ModuleSync {
                 new ResourceLocation(json.get("id").getAsString()),
                 json.get("family").getAsString(),
                 json.get("tier").getAsInt(),
-                json.get("drain").getAsInt(),
+                json.get("drainIdle").getAsInt(),
+                json.get("drainActive").getAsInt(),
                 json.getAsJsonObject("params"),
                 Set.copyOf(intents),
                 json.get("wheel").getAsString(),

@@ -1,251 +1,1484 @@
 {
-  "variants": {
-    "north=false,east=false,south=false,west=false,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_straight"
+  "multipart": [
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": false,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_straight"
+      }
     },
-    "north=false,east=false,south=false,west=false,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_cap",
+        "y": 270
+      }
     },
-    "north=false,east=false,south=false,west=false,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_cap"
+      }
     },
-    "north=false,east=false,south=false,west=false,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner"
+      }
     },
-    "north=false,east=false,south=false,west=true,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_cap",
-      "y": 180
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_cap",
+        "y": 90
+      }
     },
-    "north=false,east=false,south=false,west=true,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_straight"
+      }
     },
-    "north=false,east=false,south=false,west=true,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 90
+      }
     },
-    "north=false,east=false,south=false,west=true,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee"
+      }
     },
-    "north=false,east=false,south=true,west=false,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_cap",
-      "y": 90
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_cap",
+        "y": 180
+      }
     },
-    "north=false,east=false,south=true,west=false,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 270
+      }
     },
-    "north=false,east=false,south=true,west=false,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_straight",
+        "y": 90
+      }
     },
-    "north=false,east=false,south=true,west=false,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 270
+      }
     },
-    "north=false,east=false,south=true,west=true,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 180
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 180
+      }
     },
-    "north=false,east=false,south=true,west=true,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 180
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 180
+      }
     },
-    "north=false,east=false,south=true,west=true,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 180
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 90
+      }
     },
-    "north=false,east=false,south=true,west=true,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 180
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_cross"
+      }
     },
-    "north=false,east=true,south=false,west=false,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_cap",
-      "y": 0
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_cap_vertical"
+      }
     },
-    "north=false,east=true,south=false,west=false,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "x": 270,
+        "y": 270
+      }
     },
-    "north=false,east=true,south=false,west=false,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "x": 270
+      }
     },
-    "north=false,east=true,south=false,west=false,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner"
+      }
     },
-    "north=false,east=true,south=false,west=true,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "y": 90
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
     },
-    "north=false,east=true,south=false,west=true,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "y": 90
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "x": 270,
+        "y": 90
+      }
     },
-    "north=false,east=true,south=false,west=true,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "y": 90
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_straight"
+      }
     },
-    "north=false,east=true,south=false,west=true,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "y": 90
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
     },
-    "north=false,east=true,south=true,west=false,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 90
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 90
+      }
     },
-    "north=false,east=true,south=true,west=false,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 90
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
     },
-    "north=false,east=true,south=true,west=false,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 90
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee"
+      }
     },
-    "north=false,east=true,south=true,west=false,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 90
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
     },
-    "north=false,east=true,south=true,west=true,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 90
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "x": 270,
+        "y": 180
+      }
     },
-    "north=false,east=true,south=true,west=true,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 90
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 270
+      }
     },
-    "north=false,east=true,south=true,west=true,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 90
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
     },
-    "north=false,east=true,south=true,west=true,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 90
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_straight",
+        "y": 90
+      }
     },
-    "north=true,east=false,south=false,west=false,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_cap",
-      "y": 270
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
     },
-    "north=true,east=false,south=false,west=false,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 270
+      }
     },
-    "north=true,east=false,south=false,west=false,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
     },
-    "north=true,east=false,south=false,west=false,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight",
-      "x": 90
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 180
+      }
     },
-    "north=true,east=false,south=false,west=true,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 270
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
     },
-    "north=true,east=false,south=false,west=true,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 270
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 180
+      }
     },
-    "north=true,east=false,south=false,west=true,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 270
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
     },
-    "north=true,east=false,south=false,west=true,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 270
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 90
+      }
     },
-    "north=true,east=false,south=true,west=false,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_straight"
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
     },
-    "north=true,east=false,south=true,west=false,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight"
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_cross"
+      }
     },
-    "north=true,east=false,south=true,west=false,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_straight"
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": false
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
     },
-    "north=true,east=false,south=true,west=false,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_straight"
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_cap_vertical",
+        "x": 180
+      }
     },
-    "north=true,east=false,south=true,west=true,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 180
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "x": 90,
+        "y": 270
+      }
     },
-    "north=true,east=false,south=true,west=true,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 180
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "x": 90
+      }
     },
-    "north=true,east=false,south=true,west=true,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 180
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner"
+      }
     },
-    "north=true,east=false,south=true,west=true,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 180
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
     },
-    "north=true,east=true,south=false,west=false,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 0
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "x": 90,
+        "y": 90
+      }
     },
-    "north=true,east=true,south=false,west=false,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 0
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_straight"
+      }
     },
-    "north=true,east=true,south=false,west=false,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 0
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
     },
-    "north=true,east=true,south=false,west=false,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_corner",
-      "y": 0
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 90
+      }
     },
-    "north=true,east=true,south=false,west=true,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 270
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
     },
-    "north=true,east=true,south=false,west=true,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 270
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee"
+      }
     },
-    "north=true,east=true,south=false,west=true,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 270
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
     },
-    "north=true,east=true,south=false,west=true,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 270
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "x": 90,
+        "y": 180
+      }
     },
-    "north=true,east=true,south=true,west=false,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 0
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 270
+      }
     },
-    "north=true,east=true,south=true,west=false,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 0
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
     },
-    "north=true,east=true,south=true,west=false,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 0
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_straight",
+        "y": 90
+      }
     },
-    "north=true,east=true,south=true,west=false,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_tee",
-      "y": 0
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
     },
-    "north=true,east=true,south=true,west=true,up=false,down=false": {
-      "model": "huhu_dronepal:block/power_cable_cross"
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 270
+      }
     },
-    "north=true,east=true,south=true,west=true,up=false,down=true": {
-      "model": "huhu_dronepal:block/power_cable_cross"
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
     },
-    "north=true,east=true,south=true,west=true,up=true,down=false": {
-      "model": "huhu_dronepal:block/power_cable_cross"
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 180
+      }
     },
-    "north=true,east=true,south=true,west=true,up=true,down=true": {
-      "model": "huhu_dronepal:block/power_cable_cross"
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_cross"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": false,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_straight",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_straight"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "x": 90,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_straight",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_corner",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_tee",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
+    },
+    {
+      "when": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_cross"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up"
+      }
+    },
+    {
+      "when": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": true,
+        "up": true,
+        "down": true
+      },
+      "apply": {
+        "model": "huhu_dronepal:block/power_cable_arm_up",
+        "x": 180
+      }
     }
-  }
+  ]
 }
